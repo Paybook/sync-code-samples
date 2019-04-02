@@ -1,0 +1,34 @@
+<html>
+<head>
+  <script>
+    !function(w,d,s,id,r){
+      var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";
+      if(!d.getElementById(id)){
+        w[r]={};
+        w[r]=w[r]||function(){w[r].q=w[r].q||[].push(arguments)};
+        js=d.createElement(s);
+        js.id=id;
+        js.type = 'text/javascript';
+        js.src=p+"://www.paybook.com/sync/widget.js";
+        fjs.parentNode.insertBefore(js,fjs);
+      }
+    }(window,document,"script","sync-widget", "syncWidget");
+
+    var sync_token_session = "{TOKEN}";
+    var widget_callback = function(response){
+      console.log(response);
+    }
+    var widget_options = {
+      token: sync_token_session,
+      baseDiv: "sync_container",
+      theme: "light",
+      avoidAdmin: true,
+      callback : widget_callback
+    }
+
+    syncWidget.options = widget_options;
+    if (typeof syncWidget.setToken === "function") {syncWidget.setToken(sync_token_session)}
+  </script>
+</head>
+	<div id="sync_container" style="height: 800px;width: 600px;"></div>
+</html>

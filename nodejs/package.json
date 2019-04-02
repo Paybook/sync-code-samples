@@ -1,0 +1,24 @@
+{
+  "name": "sync_api_for_nodejs",
+  "version": "1.0.0",
+  "description": "Sync API examples for Node.js",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donmikeazul/sync-code-samples.git"
+  },
+  "author": "mateo@paybook.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/donmikeazul/sync-code-samples/issues"
+  },
+  "homepage": "https://github.com/donmikeazul/sync-code-samples#readme",
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  }
+}
