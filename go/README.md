@@ -97,24 +97,25 @@ sync-code-samples -test
 #### Create
 ```
 export SYNC_USERNAME="Test user"
-sync-code-samples -user=create
+sync-code-samples -users=create
 ```
 
 ### Get
 ```
-sync-code-samples -user=get
+sync-code-samples -users=get
 ```
 
 ### Modify
 ```
+export SYNC_IDUSERNAME=xxxxxx
 export SYNC_USERNAME="Test user1"
-sync-code-samples -user=modify
+sync-code-samples -users=modify
 ```
 
 ### Delete
 ```
 export SYNC_IDUSERNAME=xxxxxx
-sync-code-samples -user=delete
+sync-code-samples -usesr=delete
 ```
 
 ## Sessions
