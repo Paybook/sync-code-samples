@@ -232,3 +232,22 @@ siteName: Nombre del sitio.
 </html>
 ```
 
+
+
+##Casos de uso
+
+###Configuración del Widget para iniciar en un sitio en específico:
+
+Suponiendo que se desea iniciar en el sitio del SAT para descarga de facturas (id_site : )
+
+```javascript
+var widget_options = {
+      token: sync_token_session, 
+      baseDiv: "sync_container", 
+      theme: "light", 
+      avoidAdmin: true,
+      callback : widget_callback,
+  		inc : ["56cf5728784806f72b8b456f"]
+    }
+```
+
