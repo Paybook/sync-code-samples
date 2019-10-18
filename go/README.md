@@ -45,12 +45,12 @@ https://sync.paybook.com/v1/
 ## Docker
 ### Run docker
 
+Change PATHS con volumes
+
 ```bash
 docker run \  
 --rm -it \  
-## Change this PATH
 -v $PAYBOOK/git/sync-code-samples/go:/go/src/paybook.com/sync-code-samples \
-## Change this PATH
 -w /go \
 -e SYNC_BASEURL=https://sync.paybook.com/v1/ \
 -e SYNC_APIKEY=xxxxxxxxx \
@@ -107,21 +107,21 @@ sync-code-samples -users=get
 
 ### Modify
 ```
-export SYNC_IDUSERNAME=xxxxxx
+export SYNC_IDUSER=xxxxxx
 export SYNC_USERNAME="Test user1"
 sync-code-samples -users=modify
 ```
 
 ### Delete
 ```
-export SYNC_IDUSERNAME=xxxxxx
+export SYNC_IDUSER=xxxxxx
 sync-code-samples -usesr=delete
 ```
 
 ## Sessions
 ### Get token
 ```
-export SYNC_IDUSERNAME=xxxxxx
+export SYNC_IDUSER=xxxxxx
 sync-code-samples -sessions=get_token
 ```
 ### Verify token
