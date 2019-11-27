@@ -1,255 +1,279 @@
+# Widget Documentation
+
+## Overview
+
+The *Sync Widget* can be used to **create**, **update** and **trigger synchronization** of credentials.
+
+The *Sync widget* will take the 100% of the screen when opened in *Mobile* devices, or devices with a screen size lesser than **600px**. When opened in bigger devices e.g. Desktop, the widget will be a modal.
+
+The *Sync widget* also has an status *Toast* that displays the status of the current action being executed, this is, a credential being **created**, **updated** or **sychronized**.
+
+When an action is being executed, the user is free to close the modal. When the modal is closed, a small Toast will appear in order to notify the user of the current process' status, and to prompot the user for more information if necessary e.g. two-fa.
+
+The developer can easily integrate the *Sync Widget* by using:
+
+- Configuration params
+- Widget instance methods
+- Handle the different events emitted
+
+The *Sync Widget* can be used in 3 different use cases:
+
+#### CreationCase
+
+Opens the Sync Widget modal in order to add a new credential.
+
+When to use this case?
+
+- Use this case when creating a new credential
+
+#### UpdateCase
+
+Opens the *Sync Widget* modal directly for the specified site. Since the *Sync API* uniquely identifies each credential, when an end-user introduces some credential values that already exist, the *Sync API* will automatically detect this is an existing credential, and update the exisitng credential with the new provided data.
 
 
-# Widget
+When to use this case?
 
-### Introducción
+- If the end-user changed his password for a given site, use this mode to prompt the user to update his site password in the Sync API.
 
-El Widget es un recurso de Paybook Sync que asiste al usuario final en la creación de las credenciales.
+#### SyncCase
 
+Opens the Sync Widget status Toast for the specified credential. This action triggers a job in the Sync API to synchronize the credential. If the credential does not require two-fa, then no more information is required. However, if the credential requires two-fa, the status Toast will eventually ask the user for this value.
 
+When to use this case?
 
-### Ventajas
+- To keep two-fa credentials up to date.
 
-* El Widget implementa las mejores prácticas de seguridad para el manejo de las credenciales del usuario.
-* Al añadir el Widget a tu proyecto reduces el tiempo de la integración.
-* Si un sitio presenta un nuevo elemento Multi-factor para la autenticación, éste será añadido automáticamente en el Widget.  
+## Docs
 
+### Params
 
+To instantiate the *Sync Widget* specify these parameters:
 
-### Elementos que debes definir
+| **Parameter**    |      **Type**       | **Default Value** | **Description**                                              |
+| ---------------- | :-----------------: | :---------------- | :----------------------------------------------------------- |
+| `token`          |     **String**      | *N/A*             | A valid Sync API **token** whether for Sandbox or Production environments |
+| `element`        | **String, Element** | `"#widget"`       | A valid *HTML DOM* element selector in which the widget will be rendered OR an **Element** instance from the DOM |
+| `config`         |  **WidgetConfig**   | *See table below* | A valid **WidgetConfig** object                              |
+| `enableTestMode` |     **Boolean**     | `false`           | Enable widget to access test mode                            |
 
-<table>
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Variable en Ejemplo</th>
-            <th>Descripción</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Token de Sesión</td>
-            <td>sync_token_session</td>
-            <td>Es el token de sesión generado en el Back End</td>
-        </tr>
-        <tr>
-            <td>Opciones</td>
-            <td>widget_options</td>
-            <td>Opciones de configuración para el Widget</td>
-        </tr>
-        <tr>
-            <td>Callback</td>
-            <td>widget_callback</td>
-            <td>Función que ejecuta el Widget una vez que las credenciales han sido creadas, ésto le permite al usuario retomar el flujo una vez concluída la participación del Widget</td>
-        </tr>
-    </tbody>
-</table>
+The **WidgetConfig** attributes are described in this table:
 
+| **Attribute**                          |     **Type**      | **Available or Sample Values**            | **Default Value**   | **Description**                                              |
+| -------------------------------------- | :---------------: | :---------------------------------------- | :------------------ | :----------------------------------------------------------- |
+| `locale`                               |    **String**     | `"en"`, `"es"`                            | `"en"`              | Specifies the widget language                                |
+| `entrypoint`                           |    **Object**     | An object                                 | `{ country: 'MX' }` | Specifies the entrypoint of the widget. If not given, the widget is to be opened in **CreationCase** |
+| `entrypoint.country`¹                  |    **String**     | A valid country Id or ISO country code    | `"MX"`              | Opens the widget in **CreationCase** for the given country   |
+| `entrypoint.siteOrganizationType`¹     |    **String**     | A valid site organization type ID or name | `"Bank"`            | Opens widget in **CreationCase** and selects the tab related to the given site organization type |
+| `entrypoint.credential`¹ ²             |    **String**     | A valid credential ID                     | `null`              | Opens the widget in **SyncCase** for the given credential    |
+| `entrypoint.site`¹ ²                   |    **String**     | A valid site ID                           | `null`              | Opens widget in **UpdateCase** for the given site            |
+| `navigation`                           |    **Object**     | An object                                 | `{}`                | Specifies navigation settings                                |
+| `navigation.displayLogoImages`         |    **Boolean**    | `true`, `false`                           | `true`              | If true, display all logos (images) for sites, site organizations, and the logo image in the notification status toast. If false, logos will not be displayed anywhere. |
+| `navigation.displayPersonalSites`      |    **Boolean**    | `true`, `false`                           | `true`              | If true, display all Personal sites. Hide all personal sites otherwise |
+| `navigation.displayBusinessSites`      |    **Boolean**    | `true`, `false`                           | `true`              | If true, display all Business sites. Hide all business sites otherwise |
+| `navigation.displayStatusInToast`      |    **Boolean**    | `true`, `false`                           | `false`             | If true, close the modal when the web socket is initiated and thus the process will continue in the toast. If false the synchronization process can be continued in the modal, or in the toast if the user manually closes the modal |
+| `navigation.enableBackNavigation`      |    **Boolean**    | `true`, `false`                           | `true`              | If true, display the *Back* buttons in both, the *Side Menu* and in the *Credential Input Form*. Otherwise these back buttons will be hidden thus preventing the user from nagivating back once a site is selected for synchronization |
+| `navigation.hideSiteOrganizationTypes` | **Array<String>** | `['Blockchain']`                          | `[]`                | Hide any given site organzation type. Array items can be IDs or names. |
+| `navigation.hideSiteOrganizations`     | **Array<String>** | `['SAT']`                                 | `[]`                | Hide any given site organization. Array items can be IDs or names. |
+| `navigation.hideSites`                 | **Array<String>** | `['CIEC']`                                | `[]`                | Hide any given site. Array items can be IDs or names.        |
 
+¹ If a given entrypoint attribute value is not found, the widget will raise an exception and will not display any data. For instance, if you provide an idSite that is not found in the Sync API catalogues, or it exists but not allowed for the given configuration e.g. given a Business idSite when the widget is configured to display only Personal sites.
 
-### Integración del Widget
+² For the entrypoint attributes, `credential` takes precedence over `site` if both attributes are given.
 
-Para agregar el widget de Paybook en tu proyecto, primero tienes que incluir un div con **id** _sync_container_:
+To create a widget instance you need to call the *Sync Widget* constructor and pass along the desired params:
 
-```html
-<div id="sync_container"></div>
+```
+...
+
+const params = {
+    token,
+    element: #widget,
+    config: {
+      ...
+    }
+};
+
+syncWidget = new SyncWidget(params);
 ```
 
-Después de eso, agrega el siguiente script:
+### Methods
 
-```html
-<script> 
-  !function(w,d,s,id,r){
-    var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";
-    if(!d.getElementById(id)){
-      w[r]={};
-      w[r]=w[r]||function(){w[r].q=w[r].q||[].push(arguments)};
-      js=d.createElement(s);
-      js.id=id;
-      js.type = 'text/javascript';
-      js.src=p+"://www.paybook.com/sync/widget.js";
-      fjs.parentNode.insertBefore(js,fjs);
+The *Sync Widget* **instance** methods are described in this table:
+
+| **Method**                                                |                      **Sample**                      | **Description**                                              |
+| --------------------------------------------------------- | :--------------------------------------------------: | :----------------------------------------------------------- |
+| `setEntrypointSite(String<ObjectId> idSite)`              |    `syncWidget.setEntrypointSite('some-site-id')`    | Sets ups the *Sync Widget* instance in **UpdateCase** for the given site |
+| `setEntrypointCredential(String<ObjectId> idCredential)`¹ | `syncWidget.setEntrypointSite('some-credential-id')` | Opens the *Sync Widget* instance in **SyncCase** for the given credential |
+| `setToken(String token)`                                  |     `syncWidget.setToken('some-sync-api-token')`     | Sets up the *Sync Widget* instance authentication token. This token is used to authenticate against Sync API |
+| `open(void)`                                              |                 `syncWidget.open()`                  | Opens the *Sync Widget* modal                                |
+| `close(void)`                                             |                 `syncWidget.close()`                 | Close the *Sync Widget* modal                                |
+| `setConfig(Object<WidgetConfig> widgetConfig)`            |            `syncWidget.setConfig({...})`             | Set a new *Sync Widget* configuration. This config will totally replace the current's widget instance configuration |
+| `upsertConfig(Object<WidgetConfig> widgetConfig)`         |           `syncWidget.upsertConfig({...})`           | Update *Sync Widget* config. This config will be merged with the current's widget instance configuration |
+| `$on(String eventName)`                                   |         `syncWidget.$on("opened", () => {})`         | Subscribe to a *Sync Widget* event                           |
+
+¹ `setEntrypointCredential(...)` method will trigger the synchronization process. Since this action starts the widget for the **SyncCase** and this case does not uses the modal, there is no need to execute `open()` after setting the credential entrypoint.
+
+### Events
+
+These are the events emitted by the *Sync Widget*:
+
+| **Event Name** |     **Value**      | **Description**                                              |
+| -------------- | :----------------: | :----------------------------------------------------------- |
+| `"opened"`     |       `void`       | Triggered when the *Sync Widget* is opened                   |
+| `"closed"`     |       `void`       | Triggered when the *Sync Widget* is closed                   |
+| `"updated"`    |    `Credential`    | Triggered after credential values are sent to the *Sync API* using POST/PUT endpoints |
+| `"status"`     | `CredentialStatus` | Triggered after each websocket status change reported to the *Sync Widget* from *Sync API* |
+| `"success"`    |    `Credential`    | Triggered if a credential is successfully synchronized. A final success status is obtained from *Sync API* |
+| `"error"`      |    `Credential`    | Triggered if a credential had an error while being synchronized. A final error status is obtained from *Sync API* |
+
+The event values can belong to the following models:
+
+```
+CredentialStatus {
+    code: Number;
+}
+```
+
+```
+Credential {
+    id_credential: String;
+    username: String;
+    is_new: Number;
+    ws: String;
+    status: String;
+    twofa: String;
+}
+```
+
+To subscribe to these events you call the syncWidget.$on instance method:
+
+```
+syncWidget.$on(string EventName, Function callback)
+```
+
+For instance:
+
+```
+syncWidget.$on("opened", () => { console.log('Sync Widget opened');
+```
+
+## Config Sample
+
+This is how the default's widget config looks like:
+
+```
+{
+    locale: 'es', 
+    entrypoint: {
+        country: 'MX'
+    },
+    navigation: {
+        displayLogoImages: true,
+        displayPersonalSites: true,
+        displayBusinessSites: true,
+        enableBackNavigation: true,
+        displayStatusInToast: true,
+        hideSiteOrganizationTypes: [],
+        hideSiteOrganizations: [],
+        hideSites: []
     }
-  }(window,document,"script","sync-widget", "syncWidget");
+}
+```
 
-  var sync_token_session = "{TOKEN}";
-  var widget_callback = function(response){
-    // Developer's code
-  }
-  var widget_options = {
-    token: sync_token_session, 
-    baseDiv: "sync_container", 
-    theme: "light", 
-    avoidAdmin: true,
-    callback : widget_callback    
-  }
-  
-  syncWidget.options = widget_options;
-	if (typeof syncWidget.setToken === "function") {syncWidget.setToken(sync_token_session)} 	
-</script> 
+## Some real cases explained (as of Paybook app)
+
+### Case 1:
+
+Open the widget in CreationCase, display only Personal sites, hide Renapo site, and hide Blockchain and Digital Wallets organization types
+
+```
+{
+    locale: 'es', 
+    navigation: {
+        displayBusinessSites: false,
+        hideSites: ['Renapo'],
+        hideSiteOrganizationTypes: ['Blockchain', 'Digital Wallet']
+    }
+}
+```
+
+### Case 2:
+
+Open the widget in CreationCase, display Personal and Business sites and hide Renapo site
+
+```
+{
+    locale: 'es', 
+    navigation: {
+        hideSites: ['Renapo']
+    }
+}
+```
+
+### Case 3:
+
+Open the widget in UpdateCase and exclude navigation, because I don't want for the user to navigate to other widget screens and thus being able to sync a new site
+
+```
+{
+    locale: 'es', 
+    entrypoint: {
+        site: '121321'
+    },
+    navigation: {
+        displayBusinessSites: false,
+        hideSites: ['Renapo'],
+        hideSiteOrganizationTypes: ['Blockchain', 'Digital Wallet'],
+        enableBackNavigation: false
+    }
+}
+```
+
+### Case 4:
+
+Open the widget in SyncCase:
+
+```
+{
+    locale: 'es', 
+    entrypoint: {
+        credential: '121321'
+    }
+}
 ```
 
 
 
-### Opciones del Widget
-
-<table>
-    <thead>
-        <tr>
-            <th>Opción</th>
-            <th>Tipo</th>
-            <th>Descripción</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>noLogo</td>
-            <td>Booleano</td>
-            <td>Cuando es verdadero, oculta los logs de los bancos y sólo muestra el texto con el nombre</td>
-        </tr>
-        <tr>
-            <td>quickAnswer</td>
-            <td>Booleano</td>
-            <td>Manda un mensaje de éxito cuando el proceso ha logrado iniciar sesión</td>
-        </tr>
-        <tr>
-            <td>exc</td>
-            <td>Arreglo</td>
-            <td>Arreglo de id_site_organization de las instituciones que serán excluidas.</td>
-        </tr>
-      	<tr>
-            <td>inc</td>
-            <td>Arreglo</td>
-            <td>Arreglo de id_site_organization de las únicas instituciones que serán incluidas.</td>
-        </tr>
-      	<tr>
-            <td>callback</td>
-            <td>Función</td>
-            <td>Callback que se llama cuando algunas acciones son ejecutadas con éxito. Regresa un objeto con las siguientes variables:
-credentials: Objeto que contiene: id_credential: ID de la credencial, status: URL para obtener cambios en el estatus del proceso.
-message: Mensaje de respuesta.
-organizationName: Nombre de la organización.
-response: Código de respuesta.
-siteName: Nombre del sitio.
-</td>
-        </tr>
-      	<tr>
-            <td>theme</td>
-            <td>String</td>
-            <td>Cambia el tema. Actualmente los valores pueden ser "dark" o "light"</td>
-        </tr>
-      	<tr>
-            <td>userTest</td>
-            <td>Booleano</td>
-            <td>Cuando el usuario necesita asistencia del equipo de Sync, es necesario tener ésta bandera activa para la depuración.</td>
-        </tr>
-      	<tr>
-            <td>baseDiv</td>
-            <td>String</td>
-            <td>Id del div contenedor</td>
-        </tr>
-      	<tr>
-            <td>widgetId</td>
-            <td>String</td>
-            <td>Id del widget. Es útil cuando más de un widget es requerido en la misma página.</td>
-        </tr>
-      	<tr>
-            <td>token</td>
-            <td>String</td>
-            <td>Token de la sesión.</td>
-        </tr>
-     		<tr>
-            <td>sandbox</td>
-            <td>String</td>
-            <td>Fija el modo de depuración.</td>
-        </tr>
-       	<tr>
-            <td>locale</td>
-            <td>String</td>
-            <td>Locale define el lenguaje del usuario.</td>
-        </tr>
-     		<tr>
-            <td>start</td>
-            <td>String</td>
-            <td>Si pones 'admin' el widget inicia en la lista de cuentas agregadas o inicia en un banco específico si pones el nombre del banco.</td>
-        </tr>
-       	<tr>
-            <td>avoidAdmin</td>
-            <td>Booleano</td>
-            <td>Si es "true", no te permitirá ir a la lista de cuentas agregadas después de agregar una cuenta.</td>
-        </tr>
-     		<tr>
-            <td>catalogue</td>
-            <td>Arreglo</td>
-            <td>Filtra por tipo de servicio, las opciones son: 'utility’, 'government’ y 'banks', para utilidades, gobierno y bancos respectivamente</td>
-        </tr>
-      	<tr>
-            <td>siteType</td>
-            <td>Arreglo</td>
-            <td>Filtra por tipo de siteType, las opciones son: 'credentials’, 'document’</td>
-        </tr>
-    </tbody>
-</table>
-
-
-
-### Ejemplo
+### Example:
 
 ```html
-<html>
-<head>
-  <script> 
-    !function(w,d,s,id,r){
-      var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";
-      if(!d.getElementById(id)){
-        w[r]={};
-        w[r]=w[r]||function(){w[r].q=w[r].q||[].push(arguments)};
-        js=d.createElement(s);
-        js.id=id;
-        js.type = 'text/javascript';
-        js.src=p+"://www.paybook.com/sync/widget.js";
-        fjs.parentNode.insertBefore(js,fjs);
-      }
-    }(window,document,"script","sync-widget", "syncWidget");
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.paybook.com/sync/widget/v2/widget.css">
+    <title>Sync Widget</title>
+  </head>
+  <body>
 
-    var sync_token_session = "{TOKEN}";
-    var widget_callback = function(response){
-      console.log(response);
-    }
-    var widget_options = {
-      token: sync_token_session, 
-      baseDiv: "sync_container", 
-      theme: "light", 
-      avoidAdmin: true,
-      callback : widget_callback    
-    }
+    <div id="widget"></div>
+    
+    <script type="text/javascript" src="https://www.paybook.com/sync/widget/v2/widget.js"></script>
+    <script>
+    
+        var widgetSettings = {
+            token : '{{SYNC_TOKEN}}',
+            config: {
+                locale : 'es',
+            }
+        };
+        var syncWidget = new SyncWidget(widgetSettings);
+        syncWidget.open();
 
-    syncWidget.options = widget_options;
-    if (typeof syncWidget.setToken === "function") {syncWidget.setToken(sync_token_session)} 	
-  </script> 
-</head>
-	<div id="sync_container" style="height: 800px;width: 600px;"></div>
+    </script>
+  </body>
 </html>
-```
-
-
-
-
-
-## Casos de uso
-
-### Configuración del Widget para iniciar en un sitio en específico
-
-Suponiendo que se desea iniciar en el sitio del SAT para descarga de facturas (id_site : 56cf5728784806f72b8b456f )
-
-```javascript
-var widget_options = {
-      token: sync_token_session, 
-      baseDiv: "sync_container", 
-      theme: "light", 
-      avoidAdmin: true,
-      callback : widget_callback,
-  		inc : ["56cf5728784806f72b8b456f"]
-    }
 ```
 
