@@ -5,8 +5,7 @@
 ## Overview
 
 <figure class="image">
-  <img src="https://raw.githubusercontent.com/Paybook/sync-code-samples/master/widget/img/widget_1.png" style="zoom:80%;" />
-  <figcaption>Widget</figcaption>
+  <img src="https://raw.githubusercontent.com/Paybook/sync-code-samples/master/widget/img/widget_1.png" style="zoom:50%;" />
 </figure>
 
 The *Sync Widget* can be used to **create**, **update** and **trigger synchronization** of credentials.
@@ -16,7 +15,7 @@ The *Sync widget* will take the 100% of the screen when opened in *Mobile* devic
 The *Sync widget* also has an status *Toast* that displays the status of the current action being executed, this is, a credential being **created**, **updated** or **sychronized**.
 
 <figure class="image">
-  <img src="https://raw.githubusercontent.com/Paybook/sync-code-samples/master/widget/img/widget_5.png" style="zoom:80%;" />
+  <img src="https://raw.githubusercontent.com/Paybook/sync-code-samples/master/widget/img/widget_5.png" style="zoom:50%;" />
 </figure>
 
 When an action is being executed, the user is free to close the modal. When the modal is closed, a small Toast will appear in order to notify the user of the current process' status, and to prompot the user for more information if necessary e.g. two-fa.
