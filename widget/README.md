@@ -2,7 +2,7 @@
 
 
 
-![alt text](https://raw.githubusercontent.com/Paybook/sync-code-samples/master/widget/img/widget_1.png)
+<img src="https://raw.githubusercontent.com/Paybook/sync-code-samples/master/widget/img/widget_1.png" alt="alt text" style="zoom:80%;" />
 
 
 
