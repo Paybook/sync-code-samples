@@ -2,7 +2,11 @@
 
 
 
-<img src="https://raw.githubusercontent.com/Paybook/sync-code-samples/master/widget/img/widget_1.png" alt="alt text" style="zoom:80%;" />
+
+<figure class="image">
+  <img src="https://raw.githubusercontent.com/Paybook/sync-code-samples/master/widget/img/widget_1.png" style="zoom:80%;" />
+  <figcaption>Widget</figcaption>
+</figure>
 
 
 
