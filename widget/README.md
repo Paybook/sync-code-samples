@@ -1,5 +1,11 @@
 # Widget Documentation
 
+
+
+![alt text](https://raw.githubusercontent.com/Paybook/sync-code-samples/master/widget/img/widget_1.png)
+
+
+
 ## Overview
 
 The *Sync Widget* can be used to **create**, **update** and **trigger synchronization** of credentials.
