@@ -17,7 +17,6 @@ The *Sync widget* also has an status *Toast* that displays the status of the cur
 
 <figure class="image">
   <img src="https://raw.githubusercontent.com/Paybook/sync-code-samples/master/widget/img/widget_5.png" style="zoom:80%;" />
-  <figcaption>Toast</figcaption>
 </figure>
 
 When an action is being executed, the user is free to close the modal. When the modal is closed, a small Toast will appear in order to notify the user of the current process' status, and to prompot the user for more information if necessary e.g. two-fa.
