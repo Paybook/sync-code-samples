@@ -4,9 +4,9 @@
 
 ## Overview
 
-<figure class="image">
-  <img src="https://raw.githubusercontent.com/Paybook/sync-code-samples/master/widget/img/widget_1.png" style="zoom:50%;" />
-</figure>
+
+
+![Alt Text](https://media.giphy.com/media/U4G4EzT6b2JfL0JLGV/giphy.gif)
 
 The *Sync Widget* can be used to **create**, **update** and **trigger synchronization** of credentials.
 
