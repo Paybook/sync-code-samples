@@ -4,9 +4,9 @@
 
 ## Overview
 
-
-
-![Alt Text](https://media.giphy.com/media/U4G4EzT6b2JfL0JLGV/giphy.gif)
+<figure class="image">
+  <img src="https://media.giphy.com/media/U4G4EzT6b2JfL0JLGV/giphy.gif" style="zoom:150%;" />
+</figure>
 
 The *Sync Widget* can be used to **create**, **update** and **trigger synchronization** of credentials.
 
