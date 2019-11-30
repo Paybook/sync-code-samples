@@ -5,7 +5,7 @@
 ## Overview
 
 <figure class="image">
-  <img src="https://media.giphy.com/media/U4G4EzT6b2JfL0JLGV/giphy.gif" style="zoom:150%;" />
+  <img src="https://media.giphy.com/media/VDYqOwZ2YNJebQaVwi/giphy.gif"/>
 </figure>
 
 The *Sync Widget* can be used to **create**, **update** and **trigger synchronization** of credentials.
