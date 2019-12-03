@@ -5,7 +5,7 @@
 ## Overview
 
 <figure class="image">
-  <img src="https://drive.google.com/uc?export=view&id=1x4ALFFkV5Z6hUIqsYOAhVrNeyYNkT60J"/>
+  <img src="https://drive.google.com/uc?export=view&id=1Ll-fQQodIEnlx9ys0U4hn67y8w_EjNlX"/>
 </figure>
 
 The *Sync Widget* can be used to **create**, **update** and **trigger synchronization** of credentials.
