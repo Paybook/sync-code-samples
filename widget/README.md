@@ -5,7 +5,7 @@
 ## Overview
 
 <figure class="image">
-  <img src="https://media.giphy.com/media/VDYqOwZ2YNJebQaVwi/giphy.gif"/>
+  <img src="https://drive.google.com/uc?export=view&id=1x4ALFFkV5Z6hUIqsYOAhVrNeyYNkT60J"/>
 </figure>
 
 The *Sync Widget* can be used to **create**, **update** and **trigger synchronization** of credentials.
@@ -13,10 +13,6 @@ The *Sync Widget* can be used to **create**, **update** and **trigger synchroniz
 The *Sync widget* will take the 100% of the screen when opened in *Mobile* devices, or devices with a screen size lesser than **600px**. When opened in bigger devices e.g. Desktop, the widget will be a modal.
 
 The *Sync widget* also has an status *Toast* that displays the status of the current action being executed, this is, a credential being **created**, **updated** or **sychronized**.
-
-<figure class="image">
-  <img src="https://raw.githubusercontent.com/Paybook/sync-code-samples/master/widget/img/widget_5.png" style="zoom:50%;" />
-</figure>
 
 When an action is being executed, the user is free to close the modal. When the modal is closed, a small Toast will appear in order to notify the user of the current process' status, and to prompot the user for more information if necessary e.g. two-fa.
 
@@ -262,6 +258,8 @@ Open the widget in SyncCase:
 
 
 ### Example:
+
+Simple example with default settings:
 
 ```html
 <!DOCTYPE html>
