@@ -164,7 +164,7 @@ sync-code-samples -credentials=delete
 ```
 export SYNC_TOKEN=xxxxxxxxxxx  
 export SYNC_IDCREDENTIAL=xxxxxxxxxxx 
-sync-code-samples -acounts=get
+sync-code-samples -accounts=get
 ```
 
 ## Transactions
