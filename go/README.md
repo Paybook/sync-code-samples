@@ -21,6 +21,8 @@ SYNC_BASEURL=https://sync.paybook.com/v1/
 SYNC_APIKEY=xxxxxxxxx    
 SYNC_CREDENTIALS={"username":"test","password":"test"}  
 SYNC_IDACCOUNT=xxxxxxx  
+SYNC_IDTRANSACTION=xxxxxxxxx \
+SYNC_TRANSACTIONLIMIT=xx \
 SYNC_IDCREDENTIAL=xxxxxxxxx  
 SYNC_IDSITE=xxxxxxxxx  
 SYNC_IDUSER=xxxxxxxxx  
@@ -56,6 +58,8 @@ docker run \
 -e SYNC_APIKEY=xxxxxxxxx \
 -e SYNC_CREDENTIALS=`{"username":"test","password":"test"}` \
 -e SYNC_IDACCOUNT=xxxxxxxxx \
+-e SYNC_IDTRANSACTION=xxxxxxxxx \
+-e SYNC_TRANSACTIONLIMIT=10 \
 -e SYNC_IDCREDENTIAL=xxxxxxxxx \
 -e SYNC_IDSITE=xxxxxxxxx \
 -e SYNC_IDUSER=xxxxxxxxx \
@@ -173,6 +177,7 @@ sync-code-samples -accounts=get
 export SYNC_TOKEN=xxxxxxxxxxx  
 export SYNC_IDCREDENTIAL=xxxxxxxxxxx 
 export SYNC_IDACCOUNT=xxxxxxxxxxx 
+export SYNC_TRANSACTIONLIMIT=xxxxxxxxxxx 
 sync-code-samples -transactions=get
 ```
 
@@ -183,6 +188,16 @@ export SYNC_TOKEN=xxxxxxxxxxx
 export SYNC_IDCREDENTIAL=xxxxxxxxxxx 
 export SYNC_IDACCOUNT=xxxxxxxxxxx 
 sync-code-samples -attachments=get
+```
+
+### Download 
+Download the attachments from transaction to current directory
+```
+export SYNC_TOKEN=xxxxxxxxxxx  
+export SYNC_IDCREDENTIAL=xxxxxxxxxxx 
+export SYNC_IDACCOUNT=xxxxxxxxxxx 
+export SYNC_IDTRANSACTION=xxxxxxxxxxx 
+sync-code-samples -attachments=download
 ```
 
 ## Exit from Docker container

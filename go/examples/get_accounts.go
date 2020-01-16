@@ -50,6 +50,7 @@ func GetAccounts() {
 		fmt.Println(key, ".- Name: ", value.Name)
 		fmt.Println(key, ".- Number: ", value.Number)
 		fmt.Println(key, ".- Balance: ", value.Balance)
+		fmt.Println(key, ".- SYNC_IDACCOUNT="+value.IDAccount)
 		fmt.Println("----------------------------")
 	}
 }

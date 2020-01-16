@@ -9,8 +9,8 @@ import (
 	"paybook.com/sync-code-samples/models"
 )
 
-// GetAttachments from API
-func GetAttachments() {
+// DownloadAttachments from API
+func DownloadAttachments() {
 	var attachments []models.Attachment
 	baseURL := BaseURL + "attachments?pretty=1&id_credential=" + IDCredential + "&id_account=" + IDAccount + "&id_transaction=" + IDTransaction
 
@@ -51,6 +51,22 @@ func GetAttachments() {
 		fmt.Println(key, ".- File: ", value.File)
 		fmt.Println(key, ".- Mime: ", value.Mime)
 		fmt.Println(key, ".- URL: ", value.URL)
+		DownloadFile(value.File, value.URL)
 		fmt.Println("----------------------------")
+	}
+}
+
+// DownloadFile will download a url to a local file. It's efficient because it will
+// write as it downloads and not load the whole file into memory.
+func DownloadFile(filepath string, url string) {
+	resp, err := resty.SetDebug(Debug).R().
+		SetHeader("Content-type", "application/json").
+		SetHeader("Authorization", "TOKEN token="+Token).
+		SetError(&error).
+		SetOutput(filepath).
+		Get(BaseURL + url)
+
+	if err != nil {
+		log.Fatal("Request download error ", err, resp)
 	}
 }

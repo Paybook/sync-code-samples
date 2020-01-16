@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"strconv"
 	"time"
 
 	resty "gopkg.in/resty.v1"
@@ -13,7 +14,7 @@ import (
 // GetTransactions from API
 func GetTransactions() {
 	var transactions []models.Transaction
-	baseURL := BaseURL + "transactions?pretty=1&id_credential=" + IDCredential + "&id_account=" + IDAccount
+	baseURL := BaseURL + "transactions?pretty=1&id_credential=" + IDCredential + "&id_account=" + IDAccount + "&limit=" + strconv.Itoa(TransactionLimit)
 
 	if len(Token) == 0 {
 		log.Fatal("Token not set")

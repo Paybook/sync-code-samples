@@ -46,9 +46,9 @@ func GetCredentials() {
 
 	fmt.Println("Credentials:")
 	for key, value := range credentials {
-		fmt.Println(key, ".- SYNC_IDCREDENTIAL="+value.IDCredential)
 		fmt.Println(key, ".- ID User: ", value.IDUser)
 		fmt.Println(key, ".- Username: ", value.Username)
+		fmt.Println(key, ".- SYNC_IDCREDENTIAL="+value.IDCredential)
 		fmt.Println("----------------------------")
 	}
 }

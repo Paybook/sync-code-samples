@@ -32,5 +32,4 @@ func VerifySessions() {
 	fmt.Println("Code: ", response.Code)
 	fmt.Println("Errors: ", response.Errors)
 	fmt.Println("Status: ", response.Status)
-	fmt.Println("Message: ", response.Message)
 }

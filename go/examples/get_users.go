@@ -45,6 +45,7 @@ func GetUsers() {
 		fmt.Println(key, ".- ID User: ", value.IDUser)
 		fmt.Println(key, ".- ID External: ", value.IDExternal)
 		fmt.Println(key, ".- Name: ", value.Name)
+		fmt.Println(key, ".- SYNC_IDUSER="+value.IDUser)
 		fmt.Println("----------------------------")
 	}
 }

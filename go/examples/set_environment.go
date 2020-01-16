@@ -2,6 +2,7 @@ package examples
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"regexp"
 
@@ -32,6 +33,12 @@ var (
 
 	// IDAccount for requests
 	IDAccount string
+
+	// IDTransaction for requests
+	IDTransaction string
+
+	// TransactionLimit for requests
+	TransactionLimit int
 
 	// Token used on requests
 	Token string
@@ -64,7 +71,7 @@ func Setup(baseURL string, apiKey string) {
 
 // SetToken for requests
 func SetToken(token string) {
-	re := regexp.MustCompile("^[a-f0-9]{32}$")
+	re := regexp.MustCompile("^[a-f0-9]{64}$")
 	errToken := re.MatchString(token)
 	if !errToken {
 		log.Fatal("Invalid token")
@@ -134,6 +141,27 @@ func SetIDAccount(idAccount string) {
 	}
 
 	IDAccount = idAccount
+}
+
+// SetTransactionLimit for requests
+func SetTransactionLimit(transactionLimit int) {
+	if transactionLimit <= 0 {
+		fmt.Println("Transaction limit set to 10 ")
+		transactionLimit = 10
+	}
+
+	TransactionLimit = transactionLimit
+}
+
+// SetIDTransaction for requests
+func SetIDTransaction(idTransaction string) {
+	re := regexp.MustCompile("^[a-f0-9]{24}$")
+	errIDTransaction := re.MatchString(idTransaction)
+	if !errIDTransaction {
+		log.Fatal("Invalid id_transaction")
+	}
+
+	IDTransaction = idTransaction
 }
 
 // SetDebug for requests

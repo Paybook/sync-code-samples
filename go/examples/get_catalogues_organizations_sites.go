@@ -50,6 +50,8 @@ func GetSitesByOrganization() {
 			fmt.Println(keySite, ".- ID Site: ", valueSite.IDSite)
 			fmt.Println(keySite, ".- Name: ", valueSite.Name)
 			fmt.Println(keySite, ".- Version: ", valueSite.Version)
+			fmt.Printf("%d .- Credentials: \n%s\n", keySite, valueSite.Credentials)
+			fmt.Println(keySite, ".- SYNC_IDSITE="+valueSite.IDSite)
 			fmt.Println("----------------------------")
 		}
 	}
