@@ -11,6 +11,7 @@
 3.5 [Accounts](#accounts)  
 3.6 [Transactions](#transactions)  
 3.7 [Attachments](#Attachments)  
+3.8 [Documents](#Documents)  
 
 ## Requirements
 ### Test examples  
@@ -21,13 +22,13 @@ SYNC_BASEURL=https://sync.paybook.com/v1/
 SYNC_APIKEY=xxxxxxxxx    
 SYNC_CREDENTIALS={"username":"test","password":"test"}  
 SYNC_IDACCOUNT=xxxxxxx  
-SYNC_IDTRANSACTION=xxxxxxxxx \
-SYNC_TRANSACTIONLIMIT=xx \
+SYNC_IDTRANSACTION=xxxxxxxxx 
+SYNC_TRANSACTIONLIMIT=xx 
 SYNC_IDCREDENTIAL=xxxxxxxxx  
 SYNC_IDSITE=xxxxxxxxx  
 SYNC_IDUSER=xxxxxxxxx  
 SYNC_TOKEN=xxxxxxxxx  
-SYNC_USERNAME="Sync user"
+SYNC_USERNAME="Sync user" 
 SYNC_TWOFA=`{"token":"test"}`
 
 To set a env variable in your Linux or MacOS system type
@@ -191,7 +192,6 @@ sync-code-samples -attachments=get
 ```
 
 ### Download 
-Download the attachments from transaction to current directory
 ```
 export SYNC_TOKEN=xxxxxxxxxxx  
 export SYNC_IDCREDENTIAL=xxxxxxxxxxx 
@@ -199,6 +199,15 @@ export SYNC_IDACCOUNT=xxxxxxxxxxx
 export SYNC_IDTRANSACTION=xxxxxxxxxxx 
 sync-code-samples -attachments=download
 ```
+Download attachments from transaction to current directory
+
+## Documents
+### Get
+```
+export SYNC_TOKEN=xxxxxxxxxxx 
+sync-code-samples -documents=get
+```
+Get and download documents to current directory
 
 ## Exit from Docker container
 Just type

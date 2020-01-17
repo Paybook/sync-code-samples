@@ -9,30 +9,36 @@ import (
 	"paybook.com/sync-code-samples/examples"
 )
 
+const (
+	get = "get"
+)
+
 // Config app
 type Config struct {
-	BaseURL          string `required:"true"`
 	APIkey           string `required:"true"`
-	Token            string
+	BaseURL          string `required:"true"`
 	Credentials      string
-	IDUser           string
 	UserName         string
-	IDSite           string
-	IDCredential     string
 	IDAccount        string
+	IDCredential     string
+	IDJob            string
+	IDSite           string
 	IDTransaction    string
+	IDUser           string
+	Token            string
 	TransactionLimit int
 }
 
 var (
-	users        = flag.String("users", "", "{create|get|delete|modify}")
-	catalogs     = flag.String("catalogs", "", "{sites}")
-	sessions     = flag.String("sessions", "", "{get_token|verify_token}")
-	credentials  = flag.String("credentials", "", "{create|get|delete}")
 	accounts     = flag.String("accounts", "", "{get}")
-	transactions = flag.String("transactions", "", "{get}")
 	attachments  = flag.String("attachments", "", "{get|download}")
+	catalogs     = flag.String("catalogs", "", "{sites}")
+	credentials  = flag.String("credentials", "", "{create|get|delete}")
+	documents    = flag.String("documents", "", "{get}")
+	sessions     = flag.String("sessions", "", "{get_token|verify_token}")
+	transactions = flag.String("transactions", "", "{get}")
 	test         = flag.Bool("test", false, "true")
+	users        = flag.String("users", "", "{create|get|delete|modify}")
 	config       Config
 )
 
@@ -48,43 +54,31 @@ func main() {
 	examples.Setup(config.BaseURL, config.APIkey)
 	examples.SetDebug(false)
 
-	switch *users {
-	case "create":
-		fmt.Println("Create user")
-		// Create user
-		examples.SetUserName(config.UserName)
-		examples.CreateUser()
-		break
-	case "get":
-		fmt.Println("Get users")
-		// Get ACME id_site
-		examples.GetUsers()
-		break
-	case "modify":
-		fmt.Println("Modify user")
-		examples.SetIDUser(config.IDUser)
-		examples.SetUserName(config.UserName)
-		examples.ModifyUser()
-		break
-	case "delete":
-		fmt.Println("Delete user")
-		examples.SetIDUser(config.IDUser)
-		examples.DeleteUser()
+	switch *accounts {
+	case get:
+		fmt.Println("Get accounts")
+		examples.SetToken(config.Token)
+		examples.SetIDCredential(config.IDCredential)
+		examples.GetAccounts()
 		break
 	}
 
-	switch *sessions {
-	case "get_token":
-		// Create session token
-		fmt.Println("Create token")
-		examples.SetIDUser(config.IDUser)
-		examples.CreateSession()
-		break
-	case "verify_token":
-		// Verify session
-		fmt.Println("Verify token")
+	switch *attachments {
+	case get:
+		fmt.Println("Get attachments")
 		examples.SetToken(config.Token)
-		examples.VerifySessions()
+		examples.SetIDCredential(config.IDCredential)
+		examples.SetIDAccount(config.IDAccount)
+		examples.SetIDTransaction(config.IDTransaction)
+		examples.GetAttachments()
+		break
+	case "download":
+		fmt.Println("Downloading attachments")
+		examples.SetToken(config.Token)
+		examples.SetIDCredential(config.IDCredential)
+		examples.SetIDAccount(config.IDAccount)
+		examples.SetIDTransaction(config.IDTransaction)
+		examples.DownloadAttachments()
 		break
 	}
 
@@ -104,7 +98,7 @@ func main() {
 		examples.SetIDSite(config.IDSite)
 		examples.CreateCredentials()
 		break
-	case "get":
+	case get:
 		fmt.Println("Get credentials")
 		examples.SetToken(config.Token)
 		examples.GetCredentials()
@@ -117,17 +111,30 @@ func main() {
 		break
 	}
 
-	switch *accounts {
-	case "get":
-		fmt.Println("Get accounts")
+	switch *documents {
+	case get:
+		fmt.Println("Get documents")
 		examples.SetToken(config.Token)
-		examples.SetIDCredential(config.IDCredential)
-		examples.GetAccounts()
+		examples.GetDocuments()
+	}
+
+	switch *sessions {
+	case "get_token":
+		// Create session token
+		fmt.Println("Create token")
+		examples.SetIDUser(config.IDUser)
+		examples.CreateSession()
+		break
+	case "verify_token":
+		// Verify session
+		fmt.Println("Verify token")
+		examples.SetToken(config.Token)
+		examples.VerifySessions()
 		break
 	}
 
 	switch *transactions {
-	case "get":
+	case get:
 		fmt.Println("Get transactions")
 		examples.SetToken(config.Token)
 		examples.SetIDCredential(config.IDCredential)
@@ -137,22 +144,28 @@ func main() {
 		break
 	}
 
-	switch *attachments {
-	case "get":
-		fmt.Println("Get attachments")
-		examples.SetToken(config.Token)
-		examples.SetIDCredential(config.IDCredential)
-		examples.SetIDAccount(config.IDAccount)
-		examples.SetIDTransaction(config.IDTransaction)
-		examples.GetAttachments()
+	switch *users {
+	case "create":
+		fmt.Println("Create user")
+		// Create user
+		examples.SetUserName(config.UserName)
+		examples.CreateUser()
 		break
-	case "download":
-		fmt.Println("Downloading attachments")
-		examples.SetToken(config.Token)
-		examples.SetIDCredential(config.IDCredential)
-		examples.SetIDAccount(config.IDAccount)
-		examples.SetIDTransaction(config.IDTransaction)
-		examples.DownloadAttachments()
+	case get:
+		fmt.Println("Get users")
+		// Get ACME id_site
+		examples.GetUsers()
+		break
+	case "modify":
+		fmt.Println("Modify user")
+		examples.SetIDUser(config.IDUser)
+		examples.SetUserName(config.UserName)
+		examples.ModifyUser()
+		break
+	case "delete":
+		fmt.Println("Delete user")
+		examples.SetIDUser(config.IDUser)
+		examples.DeleteUser()
 		break
 	}
 

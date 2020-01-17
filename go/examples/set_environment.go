@@ -10,41 +10,44 @@ import (
 )
 
 var (
-	// BaseURL for all API requests
-	BaseURL string
-
 	// APIkey for all API requests
 	APIkey string
+
+	// BaseURL for all API requests
+	BaseURL string
 
 	// Credentials used on requests
 	Credentials string
 
-	// IDUser for requests
-	IDUser string
-
-	// UserName for requests
-	UserName string
-
-	// IDSite for requests
-	IDSite string
-
-	// IDCredential for requests
-	IDCredential string
+	// Debug option on request
+	Debug bool
 
 	// IDAccount for requests
 	IDAccount string
 
+	// IDCredential for requests
+	IDCredential string
+
+	// IDJob for documents requests
+	IDJob string
+
+	// IDSite for requests
+	IDSite string
+
 	// IDTransaction for requests
 	IDTransaction string
 
-	// TransactionLimit for requests
-	TransactionLimit int
+	// IDUser for requests
+	IDUser string
 
 	// Token used on requests
 	Token string
 
-	// Debug option on request
-	Debug bool
+	// TransactionLimit for requests
+	TransactionLimit int
+
+	// UserName for requests
+	UserName string
 
 	response models.Sync
 	error    models.Sync
@@ -69,17 +72,6 @@ func Setup(baseURL string, apiKey string) {
 	BaseURL = baseURL
 }
 
-// SetToken for requests
-func SetToken(token string) {
-	re := regexp.MustCompile("^[a-f0-9]{64}$")
-	errToken := re.MatchString(token)
-	if !errToken {
-		log.Fatal("Invalid token")
-	}
-
-	Token = token
-}
-
 // SetCredentials for requests
 func SetCredentials(credentials string) {
 	var userCredentials models.UserCredentials
@@ -89,6 +81,17 @@ func SetCredentials(credentials string) {
 		log.Fatal("Invalid credentials", err)
 	}
 	Credentials = credentials
+}
+
+// SetIDJob for documents requests
+func SetIDJob(idJob string) {
+	re := regexp.MustCompile("^[a-f0-9]{24}$")
+	errIDJob := re.MatchString(idJob)
+	if !errIDJob {
+		log.Fatal("Invalid id_job")
+	}
+
+	IDJob = idJob
 }
 
 // SetIDUser for requests
@@ -141,6 +144,17 @@ func SetIDAccount(idAccount string) {
 	}
 
 	IDAccount = idAccount
+}
+
+// SetToken for requests
+func SetToken(token string) {
+	re := regexp.MustCompile("^[a-f0-9]{64}$")
+	errToken := re.MatchString(token)
+	if !errToken {
+		log.Fatal("Invalid token")
+	}
+
+	Token = token
 }
 
 // SetTransactionLimit for requests

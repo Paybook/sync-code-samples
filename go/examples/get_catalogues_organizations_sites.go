@@ -48,6 +48,7 @@ func GetSitesByOrganization() {
 	for _, value := range sites {
 		for keySite, valueSite := range value.Sites {
 			fmt.Println(keySite, ".- ID Site: ", valueSite.IDSite)
+			fmt.Println(keySite, ".- ID Site Organization: ", value.IDSiteOrganization)
 			fmt.Println(keySite, ".- Name: ", valueSite.Name)
 			fmt.Println(keySite, ".- Version: ", valueSite.Version)
 			fmt.Printf("%d .- Credentials: \n%s\n", keySite, valueSite.Credentials)

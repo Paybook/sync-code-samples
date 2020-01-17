@@ -48,10 +48,10 @@ func GetTransactions() {
 
 	fmt.Println("Transactions:")
 	for key, value := range transactions {
-
 		fmt.Println(key, ".- Description: ", value.Description)
 		fmt.Println(key, ".- Amount: ", value.Amount)
 		fmt.Println(key, ".- Date: ", time.Unix(value.DTTransaction, 0))
+		fmt.Println(key, ".- SYNC_IDTRANSACTION="+value.IDTransaction)
 		fmt.Println("----------------------------")
 	}
 }
