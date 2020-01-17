@@ -28,7 +28,7 @@ SYNC_IDCREDENTIAL=xxxxxxxxx
 SYNC_IDSITE=xxxxxxxxx  
 SYNC_IDUSER=xxxxxxxxx  
 SYNC_TOKEN=xxxxxxxxx  
-SYNC_USERNAME="Sync user" 
+SYNC_USERNAME="Sync user"  
 SYNC_TWOFA=`{"token":"test"}`
 
 To set a env variable in your Linux or MacOS system type
