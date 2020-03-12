@@ -2,12 +2,12 @@
     "info": {
       "_postman_id": "cce64113-c9a2-40e6-966f-ea5d00c55242",
       "name": "Paybook Sync",
-      "description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\n\n\n| Code |                       | Description |\n| ---- | --------------------- | ----------- |\n| 400  | Bad Request           |             |\n| 401  | Unauthorized          |             |\n| 402  | Payment Required      |             |\n| 403  | Forbidden             |             |\n| 404  | Not Found             |             |\n| 429  | Too Many Requests     |             |\n| 500  | Internal Server Error |             |\n| 503  | Service Unavailable   |             |\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
+      "description": "# Automation API\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\n\n\n| Code |                       | Description |\n| ---- | --------------------- | ----------- |\n| 400  | Bad Request           |             |\n| 401  | Unauthorized          |             |\n| 402  | Payment Required      |             |\n| 403  | Forbidden             |             |\n| 404  | Not Found             |             |\n| 429  | Too Many Requests     |             |\n| 500  | Internal Server Error |             |\n| 503  | Service Unavailable   |             |\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
       "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
     },
     "item": [
       {
-        "name": "Automation 1",
+        "name": "auto",
         "item": [
           {
             "name": "Get the list of the registered taxpayers for the user",
