@@ -1,4 +1,10 @@
-## Config
+### Config
+
+---
+
+<br />
+
+##### How to instantiate the widget?
 
 Basically, to instantiate the widget you will use the `SyncWidget` constructor and pass to it the required data:
 
@@ -37,22 +43,38 @@ syncWidget = new SyncWidget(params);
 syncWidget.open();
 ```
 
-Here is a more detailed description of the data required to create a SyncWidget instance:
+<br/>
 
-| **Parameter** | **Type** | **REQUIRED** | **Default Value** | **Description** |
-|-|:-:|:-|:-|:-|
-| `token` | **String** | **REQUIRED** | *N/A* | A valid *Sync API* **token** whether for Sandbox or Production environments |
-| `element` | **String, Element** | **REQUIRED** | `"#widget"` | A valid *HTML DOM* element selector in which the widget will be rendered OR an **Element** instance from the *DOM* |
-| `config` | **WidgetConfig** | **REQUIRED** |  *See the docs below* | A valid **WidgetConfig** object |
-| `strict` | **Object** | **OPTIONAL** | *See API Docs on how to get the JWK(s)* | A valid set authorization and body JSON Web Keys |
-| `refreshTokenFunction` | **Function** | **OPTIONAL** |  *See API docs to get information about the token expiration time* | A valid *Javascript* function that must return a promise with the payload `{ token: "...token...", strict: { authorization: "...", body: "..." } }`. "strict" is only required if widget is set up in Strict Mode. |
-| `enableTestMode` | **Bool** | **OPTIONAL** |  `true`, `false` | If test mode wants to be enabled. |
+---
+
+<br />
+
+##### SyncWidget Constructor
+
+Here is a more detailed description of the data required to create a SyncWidget instance using the SyncWidget constructor:
+
+| **Parameter**          |      **Type**       | **REQUIRED** | **Default Value**                                                 | **Description**                                                                                                                                                                                                    |
+| ---------------------- | :-----------------: | :----------- | :---------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `token`                |     **String**      | **REQUIRED** | _N/A_                                                             | A valid _Sync API_ **token** whether for Sandbox or Production environments                                                                                                                                        |
+| `element`              | **String, Element** | **REQUIRED** | `"#widget"`                                                       | A valid _HTML DOM_ element selector in which the widget will be rendered OR an **Element** instance from the _DOM_                                                                                                 |
+| `config`               |  **WidgetConfig**   | **REQUIRED** | _See the docs below_                                              | A valid **WidgetConfig** object                                                                                                                                                                                    |
+| `strict`               |     **Object**      | **OPTIONAL** | _See API Docs on how to get the JWK(s)_                           | A valid set authorization and body JSON Web Keys                                                                                                                                                                   |
+| `refreshTokenFunction` |    **Function**     | **OPTIONAL** | _See API docs to get information about the token expiration time_ | A valid _Javascript_ function that must return a promise with the payload `{ token: "...token...", strict: { authorization: "...", body: "..." } }`. "strict" is only required if widget is set up in Strict Mode. |
+| `enableTestMode`       |      **Bool**       | **OPTIONAL** | `true`, `false`                                                   | If test mode wants to be enabled.                                                                                                                                                                                  |
+
+<br/>
+
+---
+
+<br />
+
+##### WidgetConfig
 
 The **WidgetConfig** object is described below:
 
 ```json
 {
-  // It specifies the widget language. Default='en'. Allowed values: 'en' or 'es'. 
+  // It specifies the widget language. Default='en'. Allowed values: 'en' or 'es'.
   "locale": "string",
   // In general, the entrypoint value will specify where the widget will start when instantiated. Default={}.
   "entrypoint": {
@@ -63,17 +85,17 @@ The **WidgetConfig** object is described below:
     // Starts the widget directly in a site. This is used when updating username, password, etc of a credential of a given site e.g. open the widget directly in Santander Empresas site. It has to be a valid id_site. Default=null
     "site": "string",
     // Starts the widget directly choosing the given organization type e.g. Open the widget directly for the Government organization type. It has to be a valid id_site_organization_type. Default=null
-    "siteOrganizationType": "string",
+    "siteOrganizationType": "string"
   },
-  // In general, the navigation value will specify which elements will be displayed and thus limit or extend the navigation capabilities for the end-user:   
+  // In general, the navigation value will specify which elements will be displayed and thus limit or extend the navigation capabilities for the end-user:
   "navigation": {
-    // If true, display all Business sites e.g. 'cuentas de sitios empresariales'. Default=true 
+    // If true, display all Business sites e.g. 'cuentas de sitios empresariales'. Default=true
     "displayBusinessSites": "bool",
     // If true, display logos in the widget for the site, site organizations, and the site logo in the status toast. If false, no logos will be displayed. Default=true
     "displayLogoImages": "bool",
     // If true, when a final synchronization status is reached, the status toast will automatically expand and display the long description explaining the final result. This is useful when an error is obtained so that the end-user knows exactly what happened. Default=false
     "displayLongDescription": "bool",
-    // If true, display all Personal sites e.g. a personal site is one that is not business. Default=true 
+    // If true, display all Personal sites e.g. a personal site is one that is not business. Default=true
     "displayPersonalSites": "bool",
     // If true, close the modal when the synchronization is initiated (websocket starts) and thus the process will continue in a status toast. If false, the synchronization process will carry on in the modal (if the user closes the modal, then the toast will be displayed). Default=false
     "displayStatusInToast": "bool",
@@ -98,8 +120,8 @@ The **WidgetConfig** object is described below:
     // It specifies the duration in miliseconds that the status toast is to be kept opened when the final status is successful. If the final status is error, the end-user will always need to close the toast manually. Default=5000
     "toastDuration": "number",
     // It specifies, the location in the screen where the status toast is to be displayed. Default='top-right'. Alowed values: 'top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-center', 'bottom-right'
-    "toastPosition": "string",
-  },
+    "toastPosition": "string"
+  }
 }
 ```
 
