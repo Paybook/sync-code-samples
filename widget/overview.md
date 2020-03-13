@@ -1,14 +1,14 @@
-# Overview
+## Overview
 
 <figure class="image">
   <img src="https://drive.google.com/uc?export=view&id=1Ll-fQQodIEnlx9ys0U4hn67y8w_EjNlX"/>
 </figure>
 
-## What is the Sync Widget?
+### What is the Sync Widget?
 
 The *Sync Widget* is the easiest way to implement the Sync API. By using this widget you can very quickly integrate your web application with the Sync API and being able to **create** and **update** credentials right away.
 
-## Where can I use it?
+### Where can I use it?
 
 First of all, since the widget is coded in vanilla javascript, you can use it in any web application no matter what framework you are (React, Vue, Angular, JQuery, etc).
 
@@ -20,7 +20,7 @@ Basically, to use the widget you will need to follow this checklist:
 4. Finally, configure the widget as desired, instantiate it using the token you already have.
 5. Start adding or updating credentials and that's it :)
 
-## What can I do with the Sync Widget?
+### What can I do with the Sync Widget?
 
 You can use the *Sync Widget* for the following use cases:
 
@@ -28,7 +28,7 @@ You can use the *Sync Widget* for the following use cases:
 - **To update an existing credential:** use the Sync Widget to update an existing credential, this is, to update the username, password, etc. of a credential you added in the past. 
 - **To re-sync a credentials:** put a credential up to date, by this we mean to force the synchronization process to be executed whenever your end-users desire, or to run the sinchronization every now and then for those credentials which require token (two factor authentication).
 
-## How can I implement it?
+### How can I implement it?
 
 Use this documentation to know how to implement the widget. Here you will find:
 

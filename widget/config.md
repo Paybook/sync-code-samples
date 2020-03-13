@@ -1,4 +1,4 @@
-# Config
+## Config
 
 Basically, to instantiate the widget you will use the `SyncWidget` constructor and pass to it the required data:
 
@@ -52,7 +52,7 @@ The **WidgetConfig** object is described below:
 
 ```json
 {
-  // It specifies the widget language. Default="en". Allowed values: "en" or "es". 
+  // It specifies the widget language. Default='en'. Allowed values: 'en' or 'es'. 
   "locale": "string",
   // In general, the entrypoint value will specify where the widget will start when instantiated. Default={}.
   "entrypoint": {
@@ -67,7 +67,7 @@ The **WidgetConfig** object is described below:
   },
   // In general, the navigation value will specify which elements will be displayed and thus limit or extend the navigation capabilities for the end-user:   
   "navigation": {
-    // If true, display all Business sites e.g. "cuentas de sitios empresariales". Default=true 
+    // If true, display all Business sites e.g. 'cuentas de sitios empresariales'. Default=true 
     "displayBusinessSites": "bool",
     // If true, display logos in the widget for the site, site organizations, and the site logo in the status toast. If false, no logos will be displayed. Default=true
     "displayLogoImages": "bool",
@@ -97,7 +97,7 @@ The **WidgetConfig** object is described below:
     "displaySiteOrganizationTypes": "array<string>",
     // It specifies the duration in miliseconds that the status toast is to be kept opened when the final status is successful. If the final status is error, the end-user will always need to close the toast manually. Default=5000
     "toastDuration": "number",
-    // It specifies, the location in the screen where the status toast is to be displayed. Default="top-right". Alowed values: "top-left", "top-center", "top-right", "bottom-left", "bottom-center", "bottom-right"
+    // It specifies, the location in the screen where the status toast is to be displayed. Default='top-right'. Alowed values: 'top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-center', 'bottom-right'
     "toastPosition": "string",
   },
 }

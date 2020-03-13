@@ -1,17 +1,94 @@
 
-# Methods
+## Methods
 
-The *Sync Widget* **instance** methods are described in this table:
+The *Sync Widget* **instance** has several methods that you can use to configure it but also to manipulate it:
 
-| **Method** | **Sample** | **Description** |
-|-|:-:|:-|
-| `close(void)` | `syncWidget.close()` | Close the *Sync Widget* modal |
-| `open(void)` | `syncWidget.open()` | Opens the *Sync Widget* modal |
-| `$on(String eventName)` | `syncWidget.$on("opened", () => {})` | Subscribe to a *Sync Widget* event |
-| `setConfig(Object<WidgetConfig> widgetConfig)` | `syncWidget.setConfig({...})` | Set a new *Sync Widget* configuration. This config will totally replace the current's widget instance configuration  |
-| `setEntrypointCredential(String<ObjectId> idCredential)`¹ | `syncWidget.setEntrypointSite('some-credential-id')` | Opens the *Sync Widget* instance in **SyncCase** for the given credential |
-| `setEntrypointSite(String<ObjectId> idSite)` | `syncWidget.setEntrypointSite('some-site-id')` | Sets ups the *Sync Widget* instance in **UpdateCase** for the given site |
-| `setToken(String token)` | `syncWidget.setToken('some-sync-api-token')` | Sets up the *Sync Widget* instance authentication token. This token is used to authenticate against Sync API |
-| `upsertConfig(Object<WidgetConfig> widgetConfig)` | `syncWidget.upsertConfig({...})` | Update *Sync Widget* config. This config will be merged with the current's widget instance configuration  |
+**Important:** All of the methods described below with the exception of `setEntrypointCredential` will only modify the current set up of the widget but will not re-render it automatically. Therefore, after executing those methods and in order to see the changes reflected in the UI the `syncWidget.open` method has to be executed.
 
-¹ `setEntrypointCredential(...)` method will trigger the synchronization process. Since this action starts the widget for the **SyncCase** and this case does not uses the modal, there is no need to execute `open()` after setting the credential entrypoint.
+### open()
+
+```javascript
+/*
+* Use this method to open the Sync Widget modal
+*/
+syncWidget.open();
+```
+
+### close()
+
+```javascript
+/*
+* Use this method to close the Sync Widget modal
+*/
+syncWidget.close();
+```
+
+### setConfig(widgetConfig: WidgetConfig)
+
+```javascript
+/*
+* Use this method to fully replace the current widget configuration or set a new one
+*/
+syncWidget.setConfig({.
+    // ... a valid WidgetConfig value goes here ...
+});
+```
+
+**Important:** notice that the given config will totally replace the current's widget instance configuration. **This is a full replace, not a patch / upsert of the current configuration.**
+
+### upsertConfig(widgetConfig: WidgetConfig)
+
+```javascript
+/*
+* Use this method to patch / upsert the current configuration.
+*/
+syncWidget.upsertConfig({.
+    // ... a partial WidgetConfig value goes here ...
+});
+```
+
+**Important:**  in contrast to `setConfig`, this config will be merged with the current's widget configuration. 
+
+### setToken(token: String)
+```javascript
+/*
+* Use this method to replace or set a new authentication token.
+*/
+syncWidget.setToken('... a valid Sync API token ... ');
+```
+
+### setEntrypointCredential(id_credential: String)
+
+```javascript
+/*
+* Use this method to opens the *Sync Widget* for the given credential and thus re-synchronize the credential or put it up to date
+*/
+syncWidget.setEntrypointCredential('...some-credential-id...');
+```
+
+**Important:**  when called, this method will trigger the synchronization process (opens the status toast right away). Also, since this action starts the widget for the **re-synchronization case** and this case does not uses the modal, there is no need to execute `open()` after setting the credential entrypoint.
+
+
+### setEntrypointSite(id_site: String)
+
+```javascript
+/*
+* Use this methdo to set up the *Sync Widget* entrypoint to the given id_site. When the widget is opened it will starts in the given id_site ready to get the username, password, etc.
+*/
+syncWidget.setEntrypointSite('...some id_site...');
+```
+
+**Important:**  when the widget is set up for a given id_site, and the user happens to introduce the username/password of a credential that already exist, the Sync API will automatically recognize this and update the existing credential to store the new username and password data if valid. This is why, the `entrypoint.site` can be used to edit an existing credential's username, password, etc. Although your not providing the id_credential, the Sync API will infer it from the username provided that this value is unique.
+
+### $on(eventName: string)
+
+```javascript
+/*
+* Use this method to listen to the Sync Widget events and do something
+*/
+syncWidget.$on("opened", () => {
+    // ... do something when the widget is opened ...
+})
+```
+
+The list of valid eventName(s) is here: "401", "error", "success", "status", "updated", "opened", and "closed". You can consult more about events in the **Events** section.
