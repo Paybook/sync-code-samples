@@ -1,26 +1,31 @@
-# Events
+## Events
 
-These are the events emitted by the *Sync Widget*:
+Events are emitted by the widget under certain conditions in order to communicate the status of the synchronization of credentials to your application.
 
-| **Event Name** | **Value** | **Description** |
-|-|:-:|:-|
-| `"closed"` | `void` | Triggered when the *Sync Widget* is closed |
-| `"error"` | `Credential` | Triggered if a credential had an error while being synchronized. A final error status is obtained from *Sync API* |
-| `"__internal__.plaidSitesClicked"` | `void` | Triggered when Find Your Institution button is clicked. Only available If __internal__.plaidSites is set to true |
-| `"opened"` | `void` | Triggered when the *Sync Widget* is opened |
-| `"status"` | `CredentialStatus` | Triggered after each websocket status change reported to the *Sync Widget* from *Sync API* |
-| `"success"` | `Credential` | Triggered if a credential is successfully synchronized. A final success status is obtained from *Sync API*|
-| `"updated"` | `Credential` | Triggered after credential values are sent to the *Sync API* using POST/PUT endpoints |
+To handle this events, after creating your widget instance subscribe to those events using the syncWidget's `$on` method:
 
-The event values can belong to the following models:
+```javascript
+... 
 
+syncWidget = new SyncWidget(params);
+
+myCallbackForThisEvent = () => {
+    /*
+    * This is your registered callback that will be executed every time this event is triggered by the Sync Widget
+    */
+    ....
+}
+
+syncWidget.$on('... some eventName ... ', myCallbackForThisEvent);
 ```
+
+Some events are `void` (meaning that they don't pass any data to the registered callback). However, if the event pass values to the registered callback, those values can be:
+
+```javascript
 CredentialStatus {
     code: Number;
 }
-```
 
-```
 Credential {
     id_credential: String;
     username: String;
@@ -31,14 +36,64 @@ Credential {
 }
 ```
 
-To subscribe to these events you call the syncWidget.$on instance method:
+The list of events available is here:
 
-```
-syncWidget.$on(string EventName, Function callback)
+### $on("opened", ... )
+
+```javascript
+syncWidget.$on("closed", () => {
+    // ... do something when the widget is opened ...
+})
 ```
 
-For instance:
+### $on("closed", ... )
 
+```javascript
+syncWidget.$on("closed", () => {
+    // ... do something when the widget is closed ...
+})
 ```
-syncWidget.$on("opened", () => { console.log('Sync Widget opened');
+
+### $on("updated", ... )
+
+```javascript
+syncWidget.$on("updated", (status: CredentialStatus) => {
+    /*
+    * In particular, this event is triggered after the Sync API responds that it has received the credential values, and the synchronization process is about to start
+
+    ... do something when a new synchronization status is reached ...
+    */
+})
 ```
+
+### $on("status", ... )
+
+```javascript
+syncWidget.$on("status", (status: CredentialStatus) => {
+    /*
+    * In particular, this event is triggered while the synchronization status is running and after each change in the synchronization status this event is triggered with the current's status data
+
+    ... do something when a new synchronization status is reached ...
+    */
+})
+```
+
+For details on which are the statuses and more details on this consult the Sync API docs. 
+
+### $on("success", ... )
+
+```javascript
+syncWidget.$on("success", (credential: Credential) => {
+    // ... do something when the synchronization of a credential is finished successfully
+})
+```
+
+### $on("error", ... )
+
+```javascript
+syncWidget.$on("error", (credential: Credential) => {
+    // ... do something when there is some error in the synchronization of credentials  ...
+})
+```
+
+For details on which errors might happend and how to handle them, consult the Sync API docs. 
