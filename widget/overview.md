@@ -1,5 +1,9 @@
 # Overview
 
+<figure class="image">
+  <img src="https://drive.google.com/uc?export=view&id=1Ll-fQQodIEnlx9ys0U4hn67y8w_EjNlX"/>
+</figure>
+
 ## What is the Sync Widget?
 
 The *Sync Widget* is the easiest way to implement the Sync API. By using this widget you can very quickly integrate your web application to the Sync API and being able to **create** and **update** credentials right away.
