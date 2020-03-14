@@ -15,7 +15,8 @@ syncWidget = new SyncWidget(params);
 
 myCallbackForThisEvent = () => {
     /*
-    * This is your registered callback that will be executed every time this event is triggered by the Sync Widget
+    * This is your registered callback that will be executed every
+    * time this event is triggered by the Sync Widget
     */
     ....
 }
@@ -85,8 +86,10 @@ syncWidget.$on('closed', () => {
 ```javascript
 syncWidget.$on('updated', (status: CredentialStatus) => {
   /*
-    * In particular, this event is triggered after the Sync API responds that it has received the credential values, and the synchronization process is about to start
-
+    * In particular, this event is triggered after the Sync 
+    * API responds that it has received the credential values, 
+    * *and the synchronization process is about to start
+    * 
     ... do something when a new synchronization status is reached ...
     */
 });
@@ -101,7 +104,9 @@ syncWidget.$on('updated', (status: CredentialStatus) => {
 ```javascript
 syncWidget.$on('status', (status: CredentialStatus) => {
   /*
-    * In particular, this event is triggered while the synchronization status is running and after each change in the synchronization status this event is triggered with the current's status data
+    * In particular, this event is triggered while the synchronization status 
+    * is running and after each change in the synchronization status this
+    * event is triggered with the current's status data
 
     ... do something when a new synchronization status is reached ...
     */

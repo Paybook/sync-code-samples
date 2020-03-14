@@ -44,7 +44,8 @@ syncWidget.close();
 
 ```javascript
 /*
-* Use this method to fully replace the current widget configuration or set a new one
+* Use this method to fully replace the current widget
+* configuration or set a new one
 */
 syncWidget.setConfig({.
     // ... a valid WidgetConfig value goes here ...
@@ -91,7 +92,8 @@ syncWidget.setToken('... a valid Sync API token ... ');
 
 ```javascript
 /*
- * Use this method to opens the *Sync Widget* for the given credential and thus re-synchronize the credential or put it up to date
+ * Use this method to opens the *Sync Widget* for the given credential
+ * and thus re-synchronize the credential or put it up to date
  */
 syncWidget.setEntrypointCredential('...some-credential-id...');
 ```
@@ -106,7 +108,9 @@ When called this method, the synchronization process will be triggered (the stat
 
 ```javascript
 /*
- * Use this methdo to set up the *Sync Widget* entrypoint to the given id_site. When the widget is opened it will starts in the given id_site ready to get the username, password, etc.
+ * Use this methdo to set up the *Sync Widget* entrypoint to the
+ * given id_site. When the widget is opened it will starts in the
+ * given id_site ready to get the username, password, etc.
  */
 syncWidget.setEntrypointSite('...some id_site...');
 ```
