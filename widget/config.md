@@ -139,15 +139,15 @@ The **WidgetConfig** object is described below:
     // process will carry on in the modal (if the user closes the modal,
     // then the toast will be displayed). Default=false
     "displayStatusInToast": "bool",
-    // If true, display the *Back* buttons in both, the *Side Menu* and in the
+    // If true, display the *Back* buttons in both, the *Aside Menu* and in the
     //  *Credential Input Form* allowing the end-user to move back in the widget.
     // Otherwise these back buttons will be hidden thus preventing the user from
     // nagivating back once a site is selected for synchronization. Default=true
     "enableBackNavigation": "bool",
-    // If true, will never display the *Side Menu*. Otherwise *Side Menu* will be
+    // If true, will never display the *Aside Menu*. Otherwise *Aide Menu* will be
     // accesible and can be expanded and closed using a hamburger button. Default=false
-    "hideSideMenu": "bool",
-    // If true, hide the *Select Country* input located in the *Side Menu*. Default=false
+    "hideAsideMenu": "bool",
+    // If true, hide the *Select Country* input located in the *Aside Menu*. Default=false
     "hideSelectCountry": "",
     // If specified, the sites given will be hidden in the widget (never displayed).
     //  The array must contain id_site(s) or site's names (as returned by the API).
