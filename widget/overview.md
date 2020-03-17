@@ -8,7 +8,55 @@
   <img src="https://drive.google.com/uc?export=view&id=1Ll-fQQodIEnlx9ys0U4hn67y8w_EjNlX"/>
 </figure>
 
+##### What is the Sync Widget?
+
 The _Sync Widget_ is the easiest way to implement the Sync API. By using this widget you can very quickly integrate your web application with the Sync API and being able to **create** and **update** credentials right away.
+
+---
+
+<br />
+
+##### How to install it?
+
+There are two ways to install the Sync Widget
+
+_[1] Using Node Package Manager:_
+
+The first step is to install [@paybook/sync-widget](https://www.npmjs.com/package/@paybook/sync-widget) with NPM:
+
+```bash
+npm install --save @paybook/sync-widget
+```
+
+And then import the widget styles to your app:
+
+```javascript
+import '@paybook/sync-widget/dist/widget.css';
+```
+
+And finally get access to the `SyncWidget` class by importing it:
+
+```javascript
+import SyncWidget from '@paybook/sync-widget';
+```
+
+_[2] Using CDN:_
+
+To install it via CDN import the following files in your _index.html_ file:
+
+Add this line in the `<head>` element:
+
+```html
+<link rel="stylesheet" href="https://www.paybook.com/sync/widget/v2/widget.css" />
+```
+
+And add this line in the `<body>` element:
+
+```html
+<script type="text/javascript" src="https://www.paybook.com/sync/widget/v2/widget.js"></script>
+```
+
+This will expose the `SyncWidget` class in the global window object
 
 ---
 
@@ -42,12 +90,12 @@ You can use the _Sync Widget_ for the following use cases:
 
 <br />
 
-##### How can I implement it?
+##### Where can I learn how to implement it and customize it?
 
-Use this documentation to know how to implement the widget. Here you will find:
+There is plenty of documentation and resources that will help you implment the Sync Widget, namely:
 
-- Widget Configuration: How to configure the widget
-- Widget Methods: methods you can use to set up and manipulate the widget
+- Widget Configuration: how to configure the widget
+- Widget Methods: the methods you can use to set up and manipulate the widget
 - Widget Events: how to catch events and handle communication between the widget and your application
-- Widget Use Cases: How to set up the widget for each of the use cases explained above
-- Widget Examples: See some examples
+- Widget Use Cases: how to set up the widget for different cases
+- Widget Examples: see some examples

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://www.paybook.com/sync/widget/v2/widget.css" />
+    <title>Sync Widget Quickstart</title>
+  </head>
+  <body>
+    <div id="widget"></div>
+    <script type="text/javascript" src="https://www.paybook.com/sync/widget/v2/widget.js"></script>
+    <script>
+      var params = {
+        token: 'REPLACE_YOUR_TOKEN_HERE',
+        config: {
+          locale: 'es',
+          navigation: {
+            displayStatusInToast: true
+          }
+        }
+      };
+      var syncWidget = new SyncWidget(params);
+      syncWidget.open();
+    </script>
+  </body>
+</html>

@@ -1,12 +1,28 @@
-### Config
+### Set up and Configuration
 
 ---
 
 <br />
 
-##### How to instantiate the widget?
+##### How to set up or instantiate the widget?
 
-Basically, to instantiate the widget you will use the `SyncWidget` constructor and pass to it the required data:
+The first step is to add an `HTML` element in any part of your app:
+
+```html
+<!-- 
+  * Add an element like this in the part of your app 
+  * where you want the widget content to be anchored
+  *
+  * The widget content itself will take this element and
+  * replace it with its own html
+  *
+  * IMPORTANT: The id of this element HAS TO MATCH the "id" in the 
+  * SyncWidget instantiation
+ -->
+<div id="widget"></div>
+```
+
+Then, you will call the `SyncWidget` constructor and pass to it the required data to instantiate the widget:
 
 ```javascript
 /*
@@ -16,6 +32,7 @@ const params = {
     // [REQUIRED] A session token obtained from the Sync API
     token,
     // [REQUIRED] A DOM element identifier
+    // IMPORTANT: This HAS TO MATCH the "id" of the HTML element
     element: "#widget",
     // [OPTIONAL] you can instantiate the widget in strict mode passing the JSON Web Keys
     // JWK(s) as provided in the session object obtained from the Sync API:
@@ -52,7 +69,7 @@ syncWidget.open();
 
 <br />
 
-##### SyncWidget Constructor
+##### The SyncWidget Constructor
 
 Here is a more detailed description of the data required to create a SyncWidget instance using the SyncWidget constructor:
 
@@ -71,7 +88,7 @@ Here is a more detailed description of the data required to create a SyncWidget 
 
 <br />
 
-##### WidgetConfig
+##### The WidgetConfig object
 
 The **WidgetConfig** object is described below:
 
@@ -168,7 +185,7 @@ The **WidgetConfig** object is described below:
 }
 ```
 
-These are some clariffications:
+Take into account these clariffications:
 
 - If any configuration attribut value is not allowable, the widget will raise an exception and will not be displayed.
 - If a given entrypoint attribute value is not valid, the widget will raise an exception and will not display any data. For instance, if you provide a `site` identifier that is not found in the Sync API catalogues, or it exists but not allowed for the given configuration e.g. given a Business `site` when the widget is configured to display only Personal sites.
