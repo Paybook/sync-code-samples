@@ -1533,13 +1533,7 @@
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "api_key api_key={{sync_api_key}}",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "https://sync.paybook.com/v1/users?",
 									"protocol": "https",
@@ -1586,7 +1580,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Mon, 09 Mar 2020 18:13:40 GMT"
+									"value": "Wed, 18 Mar 2020 18:41:07 GMT"
 								},
 								{
 									"key": "Content-Type",
@@ -1634,7 +1628,7 @@
 								},
 								{
 									"key": "Last-Modified",
-									"value": "Mon, 09 Mar 2020 18:13:40 GMT"
+									"value": "Wed, 18 Mar 2020 18:41:07 GMT"
 								},
 								{
 									"key": "Pragma",
@@ -1642,7 +1636,7 @@
 								},
 								{
 									"key": "Request-ID",
-									"value": "97efed96-9b1c-49e5-94dd-896e85a9073d"
+									"value": "4776a7ab-a2e8-4f16-a0cc-7e42d9bf69d0"
 								},
 								{
 									"key": "Content-Encoding",
@@ -1670,147 +1664,11 @@
 								},
 								{
 									"key": "CF-RAY",
-									"value": "5716c5713a43d292-DFW"
+									"value": "57611604d9e97f78-QRO"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"rid\": \"a0d9be24-9749-42f8-98d5-899ff8becbb9\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_user\": \"5e6686d1a8fcf0761318739f\",\n            \"id_external\": \"ELSAN090909\",\n            \"name\": \"El Santo Jr\",\n            \"dt_create\": 1583777489,\n            \"dt_modify\": 1583777752\n        }\n    ]\n}"
-						},
-						{
-							"name": "401",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "api_key api_key={{sync_api_key}}",
-										"type": "text",
-										"disabled": true
-									}
-								],
-								"url": {
-									"raw": "https://sync.paybook.com/v1/users?",
-									"protocol": "https",
-									"host": [
-										"sync",
-										"paybook",
-										"com"
-									],
-									"path": [
-										"v1",
-										"users"
-									],
-									"query": [
-										{
-											"key": "fields",
-											"value": "String",
-											"description": "(optional) Select fields to be returned.",
-											"disabled": true
-										},
-										{
-											"key": "limit",
-											"value": "Number",
-											"description": "(optional) Limit the number of rows to be returned.",
-											"disabled": true
-										},
-										{
-											"key": "skip",
-											"value": "Number",
-											"description": "(optional) Skip rows to be returned.",
-											"disabled": true
-										},
-										{
-											"key": "order",
-											"value": "String",
-											"description": "(optional) Order the rows to be returned.",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"status": "Unauthorized",
-							"code": 401,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Mon, 09 Mar 2020 19:14:11 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Mon, 09 Mar 2020 19:14:11 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "cd9afb8b-7c6a-43bd-9bf8-55c6e209a04a"
-								},
-								{
-									"key": "CF-Cache-Status",
-									"value": "DYNAMIC"
-								},
-								{
-									"key": "Expect-CT",
-									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains; preload"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Server",
-									"value": "cloudflare"
-								},
-								{
-									"key": "CF-RAY",
-									"value": "57171e17cfb0d27a-DFW"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"cd9afb8b-7c6a-43bd-9bf8-55c6e209a04a\",\n    \"code\": 401,\n    \"errors\": null,\n    \"status\": false,\n    \"message\": \"Unauthorized\",\n    \"response\": null\n}"
+							"body": "{\n    \"rid\": \"4776a7ab-a2e8-4f16-a0cc-7e42d9bf69d0\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_external\": \"ACM010101ABC\",\n            \"name\": \"ACME User\",\n            \"dt_create\": 1574860045,\n            \"dt_modify\": 1584556803\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -2012,7 +1870,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"rid\": \"bcfebf43-0cdc-46ae-aee3-1b9354373016\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_user\": \"5e6686d1a8fcf0761318739f\",\n        \"id_external\": \"ELSAN090909\",\n        \"name\": \"El Santo\",\n        \"dt_create\": 1583777489,\n        \"dt_modify\": null\n    }\n}"
+							"body": "{\n    \"rid\": \"bcfebf43-0cdc-46ae-aee3-1b9354373016\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_user\": \"5dde750d8c91e77a123e7013\",\n        \"id_external\": \"ACM010101ABC\",\n        \"name\": \"ACME User\",\n        \"dt_create\": 1574860045,\n        \"dt_modify\": null\n    }\n}"
 						}
 					]
 				},
@@ -2034,7 +1892,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\" : \"{{sync_user_name}}\"\n}"
+							"raw": "{\n\t\"name\" : \"{{sync_user_name}}\",\n\t\"id_external\" : \"{{sync_user_id_external}}\"\n}"
 						},
 						"url": {
 							"raw": "https://sync.paybook.com/v1/users/{{sync_id_user}}?",
@@ -2078,19 +1936,13 @@
 									},
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
 										"value": "application/json",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"name\": \"{{sync_user_name}}\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
+									"raw": "{\n\t\"name\" : \"{{sync_user_name}}\",\n\t\"id_external\" : \"{{sync_user_id_external}}\"\n}"
 								},
 								"url": {
 									"raw": "https://sync.paybook.com/v1/users/{{sync_id_user}}?",
@@ -2127,7 +1979,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Mon, 09 Mar 2020 18:15:52 GMT"
+									"value": "Wed, 18 Mar 2020 18:40:04 GMT"
 								},
 								{
 									"key": "Content-Type",
@@ -2175,7 +2027,7 @@
 								},
 								{
 									"key": "Last-Modified",
-									"value": "Mon, 09 Mar 2020 18:15:52 GMT"
+									"value": "Wed, 18 Mar 2020 18:40:03 GMT"
 								},
 								{
 									"key": "Pragma",
@@ -2183,7 +2035,7 @@
 								},
 								{
 									"key": "Request-ID",
-									"value": "b06d5285-e9fb-4a8b-9420-a316e133d940"
+									"value": "f9a2a964-3eb4-438a-805a-e71962eb0100"
 								},
 								{
 									"key": "Content-Encoding",
@@ -2211,11 +2063,11 @@
 								},
 								{
 									"key": "CF-RAY",
-									"value": "5716c8a83b2bd292-DFW"
+									"value": "57611476da017f78-QRO"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"rid\": \"b06d5285-e9fb-4a8b-9420-a316e133d940\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_user\": \"5e6686d1a8fcf0761318739f\",\n        \"id_external\": \"ELSAN090909\",\n        \"name\": \"El Santo Jr\",\n        \"dt_create\": 1583777489,\n        \"dt_modify\": 1583777752\n    }\n}"
+							"body": "{\n    \"rid\": \"f9a2a964-3eb4-438a-805a-e71962eb0100\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_user\": \"5dde750d8c91e77a123e7013\",\n        \"id_external\": \"ACM010101ABC\",\n        \"name\": \"ACME User\",\n        \"dt_create\": 1574860045,\n        \"dt_modify\": 1584556803\n    }\n}"
 						}
 					]
 				},
@@ -2371,7 +2223,7 @@
 					]
 				}
 			],
-			"description": "Users are logical segmentations for end-users. It's a best practice to register users in order to have their information grouped and have control on both ends. It is required to have at least one user registered to create credentials\n\n\n```json\n{\n    \"id_user\": \"5e6686d1a8fcf0761318739f\", \n    // SyncID, The ID of the User assignated by Paybook Sync\n    \"id_external\": \"ELSAN090909\", \n    // String, The ID of the User assignated by Developer Application\n    \"name\": \"El Santo\",\n    // String, The name of the User\n    \"dt_create\": 1583777489, \n    // Integer; a Unix timestamp of the time when the user was created\n    \"dt_modify\": null \n    // Integer; a Unix timestamp of the time when the user was modified\n}\n```",
+			"description": "Users are logical segmentations for end-users. It's a best practice to register users in order to have their information grouped and have control on both ends. It is required to have at least one user registered to create credentials\n\n\n```json\n{\n    \"id_user\": \"5dde750d8c91e77a123e7013\", \n    // SyncID, The ID of the User assignated by Paybook Sync\n    \"id_external\": \"ACM010101ABC\", \n    // String, The ID of the User assignated by Developer Application\n    \"name\": \"ACME User\",\n    // String, The name of the User\n    \"dt_create\": 1574860045, \n    // Integer; a Unix timestamp of the time when the user was created\n    \"dt_modify\": 1584556803 \n    // Integer; a Unix timestamp of the time when the user was modified\n}\n```",
 			"auth": {
 				"type": "apikey",
 				"apikey": [
@@ -2875,6 +2727,16 @@
 				}
 			],
 			"description": "Credentials are the third-party data that is needed in order to authenticate with a third-party site. Credentials are encrypted upon arrival and won’t be available on any endpoint. Data pull from this endpoint is only complementary.\n\n```json\n{\n    \"id_credential\": \"5e7147e1e1ebe415cd6d7085\",\n    \"id_user\": \"5da7886d3cfb1f31df68bef5\",\n    \"id_environment\": \"574894bf7848066d138b4570\",\n    \"id_external\": \"\",\n    \"id_site\": \"5da784f1f9de2a06483abec1\",\n    \"id_site_organization\": \"56cf4ff5784806152c8b4567\",\n    \"id_site_organization_type\": \"56cf4f5b784806cf028b4569\",\n    \"id_organization\": \"56cf4ff5784806152c8b4567\",\n    \"is_authorized\": 1,\n    \"is_locked\": 0,\n    \"is_twofa\": 0,\n    \"can_sync\": 0,\n    \"ready_in\": 86288,\n    \"username\": \"A**********C\",\n    \"code\": 200,\n    \"keywords\": [\n        \"002\",\n        \"003\",\n        \"3.3\",\n        \"emitidas\",\n        \"i\",\n        \"impuestos\",\n        \"recibidas\",\n        \"timbrefiscaldigital\",\n        \"traslados\",\n        \"vigente\"\n    ],\n    \"dt_authorized\": 1584482308,\n    \"dt_execute\": 1584482273,\n    \"dt_ready\": 1584568708,\n    \"dt_refresh\": 1584482308\n}\n```",
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{sync_token}}",
+						"type": "string"
+					}
+				]
+			},
 			"event": [
 				{
 					"listen": "prerequest",
