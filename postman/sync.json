@@ -5569,12 +5569,259 @@
 			"name": "Attachments",
 			"item": [
 				{
+					"name": "Returns the number of attachments given some search parameters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://sync.paybook.com/v1/attachments/count?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}",
+							"protocol": "https",
+							"host": [
+								"sync",
+								"paybook",
+								"com"
+							],
+							"path": [
+								"v1",
+								"attachments",
+								"count"
+							],
+							"query": [
+								{
+									"key": "id_credential",
+									"value": "{{sync_id_credential}}",
+									"description": " (optional) Credential ID"
+								},
+								{
+									"key": "id_account",
+									"value": "{{sync_id_account}}",
+									"description": " (optional) Filters by account ID"
+								},
+								{
+									"key": "id_attachment_type",
+									"value": "String",
+									"description": " (optional) Attachment Type ID",
+									"disabled": true
+								},
+								{
+									"key": "id_transaction",
+									"value": "String",
+									"description": " (optional) Transaction ID",
+									"disabled": true
+								},
+								{
+									"key": "is_valid",
+									"value": "String",
+									"description": " (optional) Is attachment valid",
+									"disabled": true
+								},
+								{
+									"key": "dt_refresh_from",
+									"value": "Timestamp",
+									"description": " (optional) Filters by transaction refresh date, expected UNIX timestamp",
+									"disabled": true
+								},
+								{
+									"key": "dt_refresh_to",
+									"value": "Timestamp",
+									"description": " (optional) Filters by transaction refresh date, expected UNIX timestamp",
+									"disabled": true
+								},
+								{
+									"key": "keywords",
+									"value": "String",
+									"description": " (optional) Filters by keywords (for multiple keywords concatenate a string using a comma as a separator)",
+									"disabled": true
+								},
+								{
+									"key": "skip_keywords",
+									"value": "String",
+									"description": " (optional) Filters by keywords (for multiple keywords concatenate a string using a comma as a separator)",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://sync.paybook.com/v1/attachments/count?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}",
+									"protocol": "https",
+									"host": [
+										"sync",
+										"paybook",
+										"com"
+									],
+									"path": [
+										"v1",
+										"attachments",
+										"count"
+									],
+									"query": [
+										{
+											"key": "id_credential",
+											"value": "{{sync_id_credential}}",
+											"description": " (optional) Credential ID"
+										},
+										{
+											"key": "id_account",
+											"value": "{{sync_id_account}}",
+											"description": " (optional) Filters by account ID"
+										},
+										{
+											"key": "id_attachment_type",
+											"value": "String",
+											"description": " (optional) Attachment Type ID",
+											"disabled": true
+										},
+										{
+											"key": "id_transaction",
+											"value": "String",
+											"description": " (optional) Transaction ID",
+											"disabled": true
+										},
+										{
+											"key": "is_valid",
+											"value": "String",
+											"description": " (optional) Is attachment valid",
+											"disabled": true
+										},
+										{
+											"key": "dt_refresh_from",
+											"value": "Timestamp",
+											"description": " (optional) Filters by transaction refresh date, expected UNIX timestamp",
+											"disabled": true
+										},
+										{
+											"key": "dt_refresh_to",
+											"value": "Timestamp",
+											"description": " (optional) Filters by transaction refresh date, expected UNIX timestamp",
+											"disabled": true
+										},
+										{
+											"key": "keywords",
+											"value": "String",
+											"description": " (optional) Filters by keywords (for multiple keywords concatenate a string using a comma as a separator)",
+											"disabled": true
+										},
+										{
+											"key": "skip_keywords",
+											"value": "String",
+											"description": " (optional) Filters by keywords (for multiple keywords concatenate a string using a comma as a separator)",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 18 Mar 2020 22:08:21 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Wed, 18 Mar 2020 22:08:21 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "4365e879-7578-4755-ab59-b2a390af6981"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "57624597cf7d202e-DFW"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"4365e879-7578-4755-ab59-b2a390af6981\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"count\": 10356\n    }\n}"
+						}
+					]
+				},
+				{
 					"name": "Returns attachments for specific use",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/attachments?",
+							"raw": "https://sync.paybook.com/v1/attachments?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}&skip=Number&limit=Number",
 							"protocol": "https",
 							"host": [
 								"sync",
@@ -5587,16 +5834,24 @@
 							],
 							"query": [
 								{
-									"key": "id_account",
-									"value": "String",
-									"description": " (optional) Filters by account ID",
-									"disabled": true
+									"key": "id_credential",
+									"value": "{{sync_id_credential}}",
+									"description": " (optional) Credential ID"
 								},
 								{
-									"key": "id_credential",
-									"value": "String",
-									"description": " (optional) Credential ID",
-									"disabled": true
+									"key": "id_account",
+									"value": "{{sync_id_account}}",
+									"description": " (optional) Filters by account ID"
+								},
+								{
+									"key": "skip",
+									"value": "Number",
+									"description": " (optional) Skip rows to be returned"
+								},
+								{
+									"key": "limit",
+									"value": "Number",
+									"description": " (optional) Limit the number of rows to be returned"
 								},
 								{
 									"key": "id_attachment_type",
@@ -5635,18 +5890,6 @@
 									"disabled": true
 								},
 								{
-									"key": "limit",
-									"value": "Number",
-									"description": " (optional) Limit the number of rows to be returned",
-									"disabled": true
-								},
-								{
-									"key": "skip",
-									"value": "Number",
-									"description": " (optional) Skip rows to be returned",
-									"disabled": true
-								},
-								{
 									"key": "order",
 									"value": "String",
 									"description": " (optional) Order the rows to be returned",
@@ -5667,85 +5910,199 @@
 							]
 						}
 					},
-					"response": []
-				},
-				{
-					"name": "Returns the number of attachments given some search parameters",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://sync.paybook.com/v1/attachments/count?",
-							"protocol": "https",
-							"host": [
-								"sync",
-								"paybook",
-								"com"
-							],
-							"path": [
-								"v1",
-								"attachments",
-								"count"
-							],
-							"query": [
-								{
-									"key": "id_account",
-									"value": "String",
-									"description": " (optional) Filters by account ID",
-									"disabled": true
-								},
-								{
-									"key": "id_credential",
-									"value": "String",
-									"description": " (optional) Credential ID",
-									"disabled": true
-								},
-								{
-									"key": "id_attachment_type",
-									"value": "String",
-									"description": " (optional) Attachment Type ID",
-									"disabled": true
-								},
-								{
-									"key": "id_transaction",
-									"value": "String",
-									"description": " (optional) Transaction ID",
-									"disabled": true
-								},
-								{
-									"key": "is_valid",
-									"value": "String",
-									"description": " (optional) Is attachment valid",
-									"disabled": true
-								},
-								{
-									"key": "dt_refresh_from",
-									"value": "Timestamp",
-									"description": " (optional) Filters by transaction refresh date, expected UNIX timestamp",
-									"disabled": true
-								},
-								{
-									"key": "dt_refresh_to",
-									"value": "Timestamp",
-									"description": " (optional) Filters by transaction refresh date, expected UNIX timestamp",
-									"disabled": true
-								},
-								{
-									"key": "keywords",
-									"value": "String",
-									"description": " (optional) Filters by keywords (for multiple keywords concatenate a string using a comma as a separator)",
-									"disabled": true
-								},
-								{
-									"key": "skip_keywords",
-									"value": "String",
-									"description": " (optional) Filters by keywords (for multiple keywords concatenate a string using a comma as a separator)",
-									"disabled": true
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://sync.paybook.com/v1/attachments?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}&skip=0&limit=10",
+									"protocol": "https",
+									"host": [
+										"sync",
+										"paybook",
+										"com"
+									],
+									"path": [
+										"v1",
+										"attachments"
+									],
+									"query": [
+										{
+											"key": "id_credential",
+											"value": "{{sync_id_credential}}",
+											"description": " (optional) Credential ID"
+										},
+										{
+											"key": "id_account",
+											"value": "{{sync_id_account}}",
+											"description": " (optional) Filters by account ID"
+										},
+										{
+											"key": "skip",
+											"value": "0",
+											"description": " (optional) Skip rows to be returned"
+										},
+										{
+											"key": "limit",
+											"value": "10",
+											"description": " (optional) Limit the number of rows to be returned"
+										},
+										{
+											"key": "id_attachment_type",
+											"value": "String",
+											"description": " (optional) Attachment Type ID",
+											"disabled": true
+										},
+										{
+											"key": "id_transaction",
+											"value": "String",
+											"description": " (optional) Transaction ID",
+											"disabled": true
+										},
+										{
+											"key": "is_valid",
+											"value": "String",
+											"description": " (optional) Is attachment valid",
+											"disabled": true
+										},
+										{
+											"key": "dt_refresh_from",
+											"value": "Timestamp",
+											"description": " (optional) Filters by transaction refresh date, expected UNIX timestamp",
+											"disabled": true
+										},
+										{
+											"key": "dt_refresh_to",
+											"value": "Timestamp",
+											"description": " (optional) Filters by transaction refresh date, expected UNIX timestamp",
+											"disabled": true
+										},
+										{
+											"key": "fields",
+											"value": "String",
+											"description": " (optional) Select fields to be returned",
+											"disabled": true
+										},
+										{
+											"key": "order",
+											"value": "String",
+											"description": " (optional) Order the rows to be returned",
+											"disabled": true
+										},
+										{
+											"key": "keywords",
+											"value": "String",
+											"description": " (optional) Filters by keywords (for multiple keywords concatenate a string using a comma as a separator)",
+											"disabled": true
+										},
+										{
+											"key": "skip_keywords",
+											"value": "String",
+											"description": " (optional) Filters by keywords (for multiple keywords concatenate a string using a comma as a separator)",
+											"disabled": true
+										}
+									]
 								}
-							]
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 18 Mar 2020 22:09:11 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Wed, 18 Mar 2020 22:09:11 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "1c7401d3-a99e-424e-add2-77300ecb35d7"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "576246cd09fa202e-DFW"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"1c7401d3-a99e-424e-add2-77300ecb35d7\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_attachment\": \"5db073b4caaf236a6a4c2eb5\",\n            \"id_account\": \"5db073b1caaf236a6a4c2acc\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_external\": \"\",\n            \"id_attachment_type\": \"56bcdfca784806d1378b4567\",\n            \"id_transaction\": \"5db073b1caaf236a6a4c2acd\",\n            \"is_valid\": 1,\n            \"file\": \"4B2B511C-A29E-4CDF-8AD3-143515CF6152.xml\",\n            \"mime\": null,\n            \"url\": \"/attachments/5db073b4caaf236a6a4c2eb5\",\n            \"keywords\": [\n                \"3.3\",\n                \"emitidas\",\n                \"i\",\n                \"timbrefiscaldigital\",\n                \"vigente\"\n            ],\n            \"dt_refresh\": 1571844997\n        },\n        {\n            \"id_attachment\": \"5db073b4caaf236a6a4c2eb6\",\n            \"id_account\": \"5db073b1caaf236a6a4c2acc\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_external\": \"\",\n            \"id_attachment_type\": \"56bcdfca784806d1378b4567\",\n            \"id_transaction\": \"5db073b1caaf236a6a4c2ace\",\n            \"is_valid\": 1,\n            \"file\": \"27D33E8C-0120-4F98-ACCD-1C0DBA9D794F.xml\",\n            \"mime\": null,\n            \"url\": \"/attachments/5db073b4caaf236a6a4c2eb6\",\n            \"keywords\": [\n                \"001\",\n                \"002\",\n                \"3.3\",\n                \"i\",\n                \"impuestos\",\n                \"recibidas\",\n                \"retenciones\",\n                \"timbrefiscaldigital\",\n                \"traslados\",\n                \"vigente\"\n            ],\n            \"dt_refresh\": 1571844997\n        },\n        {\n            \"id_attachment\": \"5db073b4caaf236a6a4c2eb7\",\n            \"id_account\": \"5db073b1caaf236a6a4c2acc\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_external\": \"\",\n            \"id_attachment_type\": \"56bcdfca784806d1378b4567\",\n            \"id_transaction\": \"5db073b1caaf236a6a4c2acf\",\n            \"is_valid\": 1,\n            \"file\": \"D7577C8D-6047-49B6-8B88-8F8D2E526A34.xml\",\n            \"mime\": null,\n            \"url\": \"/attachments/5db073b4caaf236a6a4c2eb7\",\n            \"keywords\": [\n                \"002\",\n                \"003\",\n                \"3.3\",\n                \"emitidas\",\n                \"i\",\n                \"impuestos\",\n                \"timbrefiscaldigital\",\n                \"traslados\",\n                \"vigente\"\n            ],\n            \"dt_refresh\": 1571844997\n        },\n        {\n            \"id_attachment\": \"5db073b4caaf236a6a4c2eb8\",\n            \"id_account\": \"5db073b1caaf236a6a4c2acc\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_external\": \"\",\n            \"id_attachment_type\": \"56bcdfca784806d1378b4567\",\n            \"id_transaction\": \"5db073b1caaf236a6a4c2ad0\",\n            \"is_valid\": 1,\n            \"file\": \"3559A1EC-248D-40C7-8FD0-A4631F222550.xml\",\n            \"mime\": null,\n            \"url\": \"/attachments/5db073b4caaf236a6a4c2eb8\",\n            \"keywords\": [\n                \"002\",\n                \"3.3\",\n                \"i\",\n                \"impuestos\",\n                \"recibidas\",\n                \"timbrefiscaldigital\",\n                \"traslados\",\n                \"vigente\"\n            ],\n            \"dt_refresh\": 1571844997\n        },\n        {\n            \"id_attachment\": \"5db073b4caaf236a6a4c2eb9\",\n            \"id_account\": \"5db073b1caaf236a6a4c2acc\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_external\": \"\",\n            \"id_attachment_type\": \"56bcdfca784806d1378b4567\",\n            \"id_transaction\": \"5db073b1caaf236a6a4c2ad1\",\n            \"is_valid\": 1,\n            \"file\": \"1B6A163D-11A5-4CA1-9F1A-918FC219F35C.xml\",\n            \"mime\": null,\n            \"url\": \"/attachments/5db073b4caaf236a6a4c2eb9\",\n            \"keywords\": [\n                \"002\",\n                \"003\",\n                \"3.3\",\n                \"emitidas\",\n                \"i\",\n                \"impuestos\",\n                \"timbrefiscaldigital\",\n                \"traslados\",\n                \"vigente\"\n            ],\n            \"dt_refresh\": 1571844997\n        },\n        {\n            \"id_attachment\": \"5db073b4caaf236a6a4c2eba\",\n            \"id_account\": \"5db073b1caaf236a6a4c2acc\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_external\": \"\",\n            \"id_attachment_type\": \"56bcdfca784806d1378b4567\",\n            \"id_transaction\": \"5db073b1caaf236a6a4c2ad2\",\n            \"is_valid\": 1,\n            \"file\": \"5AFE2434-5962-481E-BA57-759E37AA7F89.xml\",\n            \"mime\": null,\n            \"url\": \"/attachments/5db073b4caaf236a6a4c2eba\",\n            \"keywords\": [\n                \"001\",\n                \"002\",\n                \"3.3\",\n                \"i\",\n                \"impuestos\",\n                \"recibidas\",\n                \"retenciones\",\n                \"timbrefiscaldigital\",\n                \"traslados\",\n                \"vigente\"\n            ],\n            \"dt_refresh\": 1571844997\n        },\n        {\n            \"id_attachment\": \"5db073b4caaf236a6a4c2ebb\",\n            \"id_account\": \"5db073b1caaf236a6a4c2acc\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_external\": \"\",\n            \"id_attachment_type\": \"56bcdfca784806d1378b4567\",\n            \"id_transaction\": \"5db073b1caaf236a6a4c2ad3\",\n            \"is_valid\": 1,\n            \"file\": \"BF6EE76B-6AED-4E0A-81C1-DE38BA7ABC11.xml\",\n            \"mime\": null,\n            \"url\": \"/attachments/5db073b4caaf236a6a4c2ebb\",\n            \"keywords\": [\n                \"002\",\n                \"003\",\n                \"3.3\",\n                \"emitidas\",\n                \"i\",\n                \"impuestos\",\n                \"timbrefiscaldigital\",\n                \"traslados\",\n                \"vigente\"\n            ],\n            \"dt_refresh\": 1571844997\n        },\n        {\n            \"id_attachment\": \"5db073b4caaf236a6a4c2ebc\",\n            \"id_account\": \"5db073b1caaf236a6a4c2acc\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_external\": \"\",\n            \"id_attachment_type\": \"56bcdfca784806d1378b4567\",\n            \"id_transaction\": \"5db073b1caaf236a6a4c2ad4\",\n            \"is_valid\": 1,\n            \"file\": \"52D588AE-9E84-4CA8-8803-7CBBE784ECC3.xml\",\n            \"mime\": null,\n            \"url\": \"/attachments/5db073b4caaf236a6a4c2ebc\",\n            \"keywords\": [\n                \"002\",\n                \"3.3\",\n                \"i\",\n                \"impuestos\",\n                \"recibidas\",\n                \"timbrefiscaldigital\",\n                \"traslados\",\n                \"vigente\"\n            ],\n            \"dt_refresh\": 1571844997\n        },\n        {\n            \"id_attachment\": \"5db073b4caaf236a6a4c2ebd\",\n            \"id_account\": \"5db073b1caaf236a6a4c2acc\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_external\": \"\",\n            \"id_attachment_type\": \"56bcdfca784806d1378b4567\",\n            \"id_transaction\": \"5db073b1caaf236a6a4c2ad5\",\n            \"is_valid\": 1,\n            \"file\": \"CC1A484D-BE1B-4A34-9B58-86A1AD3A30CE.xml\",\n            \"mime\": null,\n            \"url\": \"/attachments/5db073b4caaf236a6a4c2ebd\",\n            \"keywords\": [\n                \"002\",\n                \"003\",\n                \"3.3\",\n                \"emitidas\",\n                \"i\",\n                \"impuestos\",\n                \"timbrefiscaldigital\",\n                \"traslados\",\n                \"vigente\"\n            ],\n            \"dt_refresh\": 1571844997\n        },\n        {\n            \"id_attachment\": \"5db073b4caaf236a6a4c2ebe\",\n            \"id_account\": \"5db073b1caaf236a6a4c2acc\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_external\": \"\",\n            \"id_attachment_type\": \"56bcdfca784806d1378b4567\",\n            \"id_transaction\": \"5db073b1caaf236a6a4c2ad6\",\n            \"is_valid\": 1,\n            \"file\": \"793453AD-FE81-4427-8E32-EF35EC5F0D49.xml\",\n            \"mime\": null,\n            \"url\": \"/attachments/5db073b4caaf236a6a4c2ebe\",\n            \"keywords\": [\n                \"3.3\",\n                \"i\",\n                \"recibidas\",\n                \"timbrefiscaldigital\",\n                \"vigente\"\n            ],\n            \"dt_refresh\": 1571844997\n        }\n    ]\n}"
 						}
-					},
-					"response": []
+					]
 				},
 				{
 					"name": "Returns the attachment",
@@ -5767,7 +6124,92 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://sync.paybook.com/v1/attachments/{{sync_id_attachment}}",
+									"protocol": "https",
+									"host": [
+										"sync",
+										"paybook",
+										"com"
+									],
+									"path": [
+										"v1",
+										"attachments",
+										"{{sync_id_attachment}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 18 Mar 2020 22:10:03 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/xml;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Disposition",
+									"value": "filename=\"4B2B511C-A29E-4CDF-8AD3-143515CF6152.xml\""
+								},
+								{
+									"key": "Request-ID",
+									"value": "f31bd663-9604-4d6e-a035-77acbb346732"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "57624812ccd6202e-DFW"
+								}
+							],
+							"cookie": [],
+							"body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<cfdi:Comprobante xmlns:cfdi=\"http://www.sat.gob.mx/cfd/3\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd\" Version=\"3.3\" Serie=\"C\" Folio=\"78\" Fecha=\"2019-01-24T06:15:49\" FormaPago=\"99\" NoCertificado=\"0000100000040090000\" Certificado=\"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\" SubTotal=\"810.18\" Descuento=\"0.00\" Moneda=\"MXN\" Total=\"810.18\" TipoDeComprobante=\"I\" MetodoPago=\"PUE\" LugarExpedicion=\"00000\" Sello=\"CjGJ6Uz6jWQ6wFyn8SEvRVCOCZq2sRtTAsUkLJjrs8vPSHfeEs+bMBhNnZ+7gLE5gSO+FU+IA64d+I9w98DEop24GRNDoWPxRGvX7SON4p47Ygna/rCWynyjCw8kYqRtBHxypwh0HGFLoNx+ulK+WcOXG7F3Nx2I+EPTg6jn1VvwBm1c1iat1Zgnhcna2ZJyZA3cRFOBhNONocr+qAF8zTtHSoJNYmolOlyIC9akyIPfrNl/ALgni4k1KwpEcr4HsyqVabUDW47vH5TqSNfFz+ZY3bZZZf7FLdTBn8So984+vbomWg/rP7OCBALI/u/+kIkgotm4TF/ImuGjUeKITw==\">\n    <cfdi:Emisor Rfc=\"ACM010101ABC\" Nombre=\"ACME CORP\" RegimenFiscal=\"601\"/>\n    <cfdi:Receptor Rfc=\"EKU9003173C9\" Nombre=\"ESCUELA KEMPER URGATE SA DE CV\" UsoCFDI=\"P01\"/>\n    <cfdi:Conceptos>\n        <cfdi:Concepto ClaveProdServ=\"00195316\" Cantidad=\"1\" ClaveUnidad=\"H87\" Unidad=\"PZA\" Descripcion=\"PRODUCTO 1\" ValorUnitario=\"810.18\" Importe=\"810.18\" Descuento=\"0\"></cfdi:Concepto>\n    </cfdi:Conceptos>\n    <cfdi:Complemento>\n        <tfd:TimbreFiscalDigital xmlns:tfd=\"http://www.sat.gob.mx/TimbreFiscalDigital\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/timbrefiscaldigital/TimbreFiscalDigitalv11.xsd\" Version=\"1.1\" UUID=\"4B2B511C-A29E-4CDF-8AD3-143515CF6152\" FechaTimbrado=\"2019-10-11T02:43:34\" SelloCFD=\"CjGJ6Uz6jWQ6wFyn8SEvRVCOCZq2sRtTAsUkLJjrs8vPSHfeEs+bMBhNnZ+7gLE5gSO+FUz6jWQ6wFyn8SEvRVCOCZq2sWPxRGvX7SON4p47Ygna/rCWynyjCw8kYqRtBHxypwh0HGFLoNx+ulK+WcOXG7F3Nx2I+EPTg6jn1Vvz6jWQ6wFyn8SEvRVCOCZq2s3cRFOBhNONocr+qAF8zTtHSoJNYmolOlyIC9akyIPfrNl/ALgni4k1KwpEcr4HsyqVabz6jWQ6wFyn8SEvRVCOCZq2sf7FLdTBn8So984+vbomWg/rP7OCBALI/u/+kIkgotm4TF/ImuGjUeKITw==\" NoCertificadoSAT=\"00001000000407657133\" SelloSAT=\"W82etl3ZwAEDP7qT705tkK7jryQU5WCFUIOw1nmDyy5/iaxsOVuDPVyhK7fQMRG6A6x9WHGYjkMDZ0DkOnq1vcClr2Sn5yOLdWd9VYf6hg6e/RiLTn1mSUni/47rWNbyODfcom3hmKasclgBEYZL6unymQD2bsUfMc0L5ODZ5/AfK36/bYVeakauL1NxXMZ2Zc4RrX5Zd5AkF04VB6UWqDL2/zuCGDccA6/MsJR2BeXnq/hQ1I8WNSNGcy1OzBukQqRbhe9hIRit58F/ZtTtFnzyeT3Tknu9MIZFq/7D+tw0TxUziC+g2n86iiKRXnRJQvlowqKmkPGO8jMefrx8pg==\" RfcProvCertif=\"ACM100625MC0\"/>\n    </cfdi:Complemento>\n</cfdi:Comprobante>"
+						}
+					]
 				},
 				{
 					"name": "Returns the extracted data from attachment",
@@ -5790,7 +6232,266 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://sync.paybook.com/v1/attachments/{{sync_id_attachment}}/extra",
+									"protocol": "https",
+									"host": [
+										"sync",
+										"paybook",
+										"com"
+									],
+									"path": [
+										"v1",
+										"attachments",
+										"{{sync_id_attachment}}",
+										"extra"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 18 Mar 2020 22:10:28 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Wed, 18 Mar 2020 22:10:28 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "af7d06b6-15b9-4c27-a457-fa0ff9e10d87"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "576248ad7a0b202e-DFW"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"af7d06b6-15b9-4c27-a457-fa0ff9e10d87\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_attachment\": \"5db073b4caaf236a6a4c2eb5\",\n        \"id_user\": \"5dde750d8c91e77a123e7013\",\n        \"id_external\": \"\",\n        \"is_valid\": 1,\n        \"file\": \"4B2B511C-A29E-4CDF-8AD3-143515CF6152.xml\",\n        \"mime\": null,\n        \"extra\": [\n            {\n                \"n\": \"CFDI:COMPROBANTE\",\n                \"a\": {\n                    \"XMLNS:CFDI\": \"http://www.sat.gob.mx/cfd/3\",\n                    \"XMLNS:XSI\": \"http://www.w3.org/2001/XMLSchema-instance\",\n                    \"XSI:SCHEMALOCATION\": \"http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd\",\n                    \"VERSION\": \"3.3\",\n                    \"SERIE\": \"C\",\n                    \"FOLIO\": \"78\",\n                    \"FECHA\": \"2019-01-24T06:15:49\",\n                    \"FORMAPAGO\": \"99\",\n                    \"NOCERTIFICADO\": \"0000100000040090000\",\n                    \"CERTIFICADO\": \"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\",\n                    \"SUBTOTAL\": \"810.18\",\n                    \"DESCUENTO\": \"0.00\",\n                    \"MONEDA\": \"MXN\",\n                    \"TOTAL\": \"810.18\",\n                    \"TIPODECOMPROBANTE\": \"I\",\n                    \"METODOPAGO\": \"PUE\",\n                    \"LUGAREXPEDICION\": \"00000\",\n                    \"SELLO\": \"CjGJ6Uz6jWQ6wFyn8SEvRVCOCZq2sRtTAsUkLJjrs8vPSHfeEs+bMBhNnZ+7gLE5gSO+FU+IA64d+I9w98DEop24GRNDoWPxRGvX7SON4p47Ygna/rCWynyjCw8kYqRtBHxypwh0HGFLoNx+ulK+WcOXG7F3Nx2I+EPTg6jn1VvwBm1c1iat1Zgnhcna2ZJyZA3cRFOBhNONocr+qAF8zTtHSoJNYmolOlyIC9akyIPfrNl/ALgni4k1KwpEcr4HsyqVabUDW47vH5TqSNfFz+ZY3bZZZf7FLdTBn8So984+vbomWg/rP7OCBALI/u/+kIkgotm4TF/ImuGjUeKITw==\"\n                },\n                \"c\": [\n                    {\n                        \"n\": \"CFDI:EMISOR\",\n                        \"a\": {\n                            \"RFC\": \"ACM010101ABC\",\n                            \"NOMBRE\": \"ACME CORP\",\n                            \"REGIMENFISCAL\": \"601\"\n                        }\n                    },\n                    {\n                        \"n\": \"CFDI:RECEPTOR\",\n                        \"a\": {\n                            \"RFC\": \"EKU9003173C9\",\n                            \"NOMBRE\": \"ESCUELA KEMPER URGATE SA DE CV\",\n                            \"USOCFDI\": \"P01\"\n                        }\n                    },\n                    {\n                        \"n\": \"CFDI:CONCEPTOS\",\n                        \"c\": [\n                            {\n                                \"n\": \"CFDI:CONCEPTO\",\n                                \"a\": {\n                                    \"CLAVEPRODSERV\": \"00195316\",\n                                    \"CANTIDAD\": \"1\",\n                                    \"CLAVEUNIDAD\": \"H87\",\n                                    \"UNIDAD\": \"PZA\",\n                                    \"DESCRIPCION\": \"PRODUCTO 1\",\n                                    \"VALORUNITARIO\": \"810.18\",\n                                    \"IMPORTE\": \"810.18\",\n                                    \"DESCUENTO\": \"0\"\n                                }\n                            }\n                        ]\n                    },\n                    {\n                        \"n\": \"CFDI:COMPLEMENTO\",\n                        \"c\": [\n                            {\n                                \"n\": \"TFD:TIMBREFISCALDIGITAL\",\n                                \"a\": {\n                                    \"XMLNS:TFD\": \"http://www.sat.gob.mx/TimbreFiscalDigital\",\n                                    \"XMLNS:XSI\": \"http://www.w3.org/2001/XMLSchema-instance\",\n                                    \"XSI:SCHEMALOCATION\": \"http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/timbrefiscaldigital/TimbreFiscalDigitalv11.xsd\",\n                                    \"VERSION\": \"1.1\",\n                                    \"UUID\": \"4B2B511C-A29E-4CDF-8AD3-143515CF6152\",\n                                    \"FECHATIMBRADO\": \"2019-10-11T02:43:34\",\n                                    \"SELLOCFD\": \"CjGJ6Uz6jWQ6wFyn8SEvRVCOCZq2sRtTAsUkLJjrs8vPSHfeEs+bMBhNnZ+7gLE5gSO+FUz6jWQ6wFyn8SEvRVCOCZq2sWPxRGvX7SON4p47Ygna/rCWynyjCw8kYqRtBHxypwh0HGFLoNx+ulK+WcOXG7F3Nx2I+EPTg6jn1Vvz6jWQ6wFyn8SEvRVCOCZq2s3cRFOBhNONocr+qAF8zTtHSoJNYmolOlyIC9akyIPfrNl/ALgni4k1KwpEcr4HsyqVabz6jWQ6wFyn8SEvRVCOCZq2sf7FLdTBn8So984+vbomWg/rP7OCBALI/u/+kIkgotm4TF/ImuGjUeKITw==\",\n                                    \"NOCERTIFICADOSAT\": \"00001000000407657133\",\n                                    \"SELLOSAT\": \"W82etl3ZwAEDP7qT705tkK7jryQU5WCFUIOw1nmDyy5/iaxsOVuDPVyhK7fQMRG6A6x9WHGYjkMDZ0DkOnq1vcClr2Sn5yOLdWd9VYf6hg6e/RiLTn1mSUni/47rWNbyODfcom3hmKasclgBEYZL6unymQD2bsUfMc0L5ODZ5/AfK36/bYVeakauL1NxXMZ2Zc4RrX5Zd5AkF04VB6UWqDL2/zuCGDccA6/MsJR2BeXnq/hQ1I8WNSNGcy1OzBukQqRbhe9hIRit58F/ZtTtFnzyeT3Tknu9MIZFq/7D+tw0TxUziC+g2n86iiKRXnRJQvlowqKmkPGO8jMefrx8pg==\",\n                                    \"RFCPROVCERTIF\": \"ACM100625MC0\"\n                                }\n                            }\n                        ]\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Returns the parsed data from attachment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://sync.paybook.com/v1/attachments/{{sync_id_attachment}}/json",
+							"protocol": "https",
+							"host": [
+								"sync",
+								"paybook",
+								"com"
+							],
+							"path": [
+								"v1",
+								"attachments",
+								"{{sync_id_attachment}}",
+								"json"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://sync.paybook.com/v1/attachments/{{sync_id_attachment}}/json",
+									"protocol": "https",
+									"host": [
+										"sync",
+										"paybook",
+										"com"
+									],
+									"path": [
+										"v1",
+										"attachments",
+										"{{sync_id_attachment}}",
+										"json"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 18 Mar 2020 22:13:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Wed, 18 Mar 2020 22:13:46 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "cdc1a80f-6d38-475c-8089-67c9ecc35e48"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "57624d840848202e-DFW"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"cdc1a80f-6d38-475c-8089-67c9ecc35e48\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_attachment\": \"5db073b4caaf236a6a4c2eb5\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_external\": \"\",\n            \"file\": \"4B2B511C-A29E-4CDF-8AD3-143515CF6152.xml\",\n            \"json\": {\n                \"CFDI:COMPROBANTE\": {\n                    \"XMLNS:CFDI\": \"http://www.sat.gob.mx/cfd/3\",\n                    \"XMLNS:XSI\": \"http://www.w3.org/2001/XMLSchema-instance\",\n                    \"XSI:SCHEMALOCATION\": \"http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd\",\n                    \"VERSION\": \"3.3\",\n                    \"SERIE\": \"C\",\n                    \"FOLIO\": \"78\",\n                    \"FECHA\": \"2019-01-24T06:15:49\",\n                    \"FORMAPAGO\": \"99\",\n                    \"NOCERTIFICADO\": \"0000100000040090000\",\n                    \"CERTIFICADO\": \"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\",\n                    \"SUBTOTAL\": \"810.18\",\n                    \"DESCUENTO\": \"0.00\",\n                    \"MONEDA\": \"MXN\",\n                    \"TOTAL\": \"810.18\",\n                    \"TIPODECOMPROBANTE\": \"I\",\n                    \"METODOPAGO\": \"PUE\",\n                    \"LUGAREXPEDICION\": \"00000\",\n                    \"SELLO\": \"CjGJ6Uz6jWQ6wFyn8SEvRVCOCZq2sRtTAsUkLJjrs8vPSHfeEs+bMBhNnZ+7gLE5gSO+FU+IA64d+I9w98DEop24GRNDoWPxRGvX7SON4p47Ygna/rCWynyjCw8kYqRtBHxypwh0HGFLoNx+ulK+WcOXG7F3Nx2I+EPTg6jn1VvwBm1c1iat1Zgnhcna2ZJyZA3cRFOBhNONocr+qAF8zTtHSoJNYmolOlyIC9akyIPfrNl/ALgni4k1KwpEcr4HsyqVabUDW47vH5TqSNfFz+ZY3bZZZf7FLdTBn8So984+vbomWg/rP7OCBALI/u/+kIkgotm4TF/ImuGjUeKITw==\",\n                    \"CFDI:EMISOR\": {\n                        \"RFC\": \"ACM010101ABC\",\n                        \"NOMBRE\": \"ACME CORP\",\n                        \"REGIMENFISCAL\": \"601\"\n                    },\n                    \"CFDI:RECEPTOR\": {\n                        \"RFC\": \"EKU9003173C9\",\n                        \"NOMBRE\": \"ESCUELA KEMPER URGATE SA DE CV\",\n                        \"USOCFDI\": \"P01\"\n                    },\n                    \"CFDI:CONCEPTOS\": {\n                        \"CFDI:CONCEPTO\": {\n                            \"CLAVEPRODSERV\": \"00195316\",\n                            \"CANTIDAD\": \"1\",\n                            \"CLAVEUNIDAD\": \"H87\",\n                            \"UNIDAD\": \"PZA\",\n                            \"DESCRIPCION\": \"PRODUCTO 1\",\n                            \"VALORUNITARIO\": \"810.18\",\n                            \"IMPORTE\": \"810.18\",\n                            \"DESCUENTO\": \"0\"\n                        }\n                    },\n                    \"CFDI:COMPLEMENTO\": {\n                        \"TFD:TIMBREFISCALDIGITAL\": {\n                            \"XMLNS:TFD\": \"http://www.sat.gob.mx/TimbreFiscalDigital\",\n                            \"XMLNS:XSI\": \"http://www.w3.org/2001/XMLSchema-instance\",\n                            \"XSI:SCHEMALOCATION\": \"http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/timbrefiscaldigital/TimbreFiscalDigitalv11.xsd\",\n                            \"VERSION\": \"1.1\",\n                            \"UUID\": \"4B2B511C-A29E-4CDF-8AD3-143515CF6152\",\n                            \"FECHATIMBRADO\": \"2019-10-11T02:43:34\",\n                            \"SELLOCFD\": \"CjGJ6Uz6jWQ6wFyn8SEvRVCOCZq2sRtTAsUkLJjrs8vPSHfeEs+bMBhNnZ+7gLE5gSO+FUz6jWQ6wFyn8SEvRVCOCZq2sWPxRGvX7SON4p47Ygna/rCWynyjCw8kYqRtBHxypwh0HGFLoNx+ulK+WcOXG7F3Nx2I+EPTg6jn1Vvz6jWQ6wFyn8SEvRVCOCZq2s3cRFOBhNONocr+qAF8zTtHSoJNYmolOlyIC9akyIPfrNl/ALgni4k1KwpEcr4HsyqVabz6jWQ6wFyn8SEvRVCOCZq2sf7FLdTBn8So984+vbomWg/rP7OCBALI/u/+kIkgotm4TF/ImuGjUeKITw==\",\n                            \"NOCERTIFICADOSAT\": \"00001000000407657133\",\n                            \"SELLOSAT\": \"W82etl3ZwAEDP7qT705tkK7jryQU5WCFUIOw1nmDyy5/iaxsOVuDPVyhK7fQMRG6A6x9WHGYjkMDZ0DkOnq1vcClr2Sn5yOLdWd9VYf6hg6e/RiLTn1mSUni/47rWNbyODfcom3hmKasclgBEYZL6unymQD2bsUfMc0L5ODZ5/AfK36/bYVeakauL1NxXMZ2Zc4RrX5Zd5AkF04VB6UWqDL2/zuCGDccA6/MsJR2BeXnq/hQ1I8WNSNGcy1OzBukQqRbhe9hIRit58F/ZtTtFnzyeT3Tknu9MIZFq/7D+tw0TxUziC+g2n86iiKRXnRJQvlowqKmkPGO8jMefrx8pg==\",\n                            \"RFCPROVCERTIF\": \"ACM100625MC0\"\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						}
+					]
 				}
 			],
 			"description": "Attachments are files that have a relation to accounts or transactions. The type of attachment will vary in its availability from its source.\n\n```json\n{\n    \"id_attachment\": \"5e714804ba81405d9e6f5684\",\n    \"id_account\": \"5e714804ba81405d9e6f567f\",\n    \"id_user\": \"5da7886d3cfb1f31df68bef5\",\n    \"id_external\": \"\",\n    \"id_attachment_type\": \"56bcdfca784806d1378b4567\",\n    \"id_transaction\": \"5e714804ba81405d9e6f5680\",\n    \"is_valid\": 1,\n    \"file\": \"1CBB3C15-AC9D-4A31-875B-2BD048E61EA6.xml\",\n    \"mime\": null,\n    \"url\": \"/attachments/5e714804ba81405d9e6f5684\",\n    \"keywords\": [\n        \"002\",\n        \"003\",\n        \"3.3\",\n        \"emitidas\",\n        \"i\",\n        \"impuestos\",\n        \"timbrefiscaldigital\",\n        \"traslados\",\n        \"vigente\"\n    ],\n    \"dt_refresh\": 1584482308\n}\n```",
