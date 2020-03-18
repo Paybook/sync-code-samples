@@ -1530,7 +1530,7 @@
 					},
 					"response": [
 						{
-							"name": "200 Success",
+							"name": "200",
 							"originalRequest": {
 								"method": "GET",
 								"header": [
@@ -1677,7 +1677,7 @@
 							"body": "{\n    \"rid\": \"a0d9be24-9749-42f8-98d5-899ff8becbb9\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_user\": \"5e6686d1a8fcf0761318739f\",\n            \"id_external\": \"ELSAN090909\",\n            \"name\": \"El Santo Jr\",\n            \"dt_create\": 1583777489,\n            \"dt_modify\": 1583777752\n        }\n    ]\n}"
 						},
 						{
-							"name": "401 Unauthorized",
+							"name": "401",
 							"originalRequest": {
 								"method": "GET",
 								"header": [
@@ -1865,7 +1865,7 @@
 					},
 					"response": [
 						{
-							"name": "Create a new user",
+							"name": "200",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -2067,7 +2067,7 @@
 					},
 					"response": [
 						{
-							"name": "Update a user",
+							"name": "200",
 							"originalRequest": {
 								"method": "PUT",
 								"header": [
@@ -2247,7 +2247,7 @@
 					},
 					"response": [
 						{
-							"name": "Delete user",
+							"name": "200",
 							"originalRequest": {
 								"method": "DELETE",
 								"header": [
@@ -2440,7 +2440,125 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://sync.paybook.com/v1/sessions/{{sync_token}}/verify",
+									"protocol": "https",
+									"host": [
+										"sync",
+										"paybook",
+										"com"
+									],
+									"path": [
+										"v1",
+										"sessions",
+										"{{sync_token}}",
+										"verify"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 18 Mar 2020 18:27:50 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Wed, 18 Mar 2020 18:27:50 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "3ebb8fdb-393f-48ce-892e-2166c7461d41"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "576102910c517f78-QRO"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"3ebb8fdb-393f-48ce-892e-2166c7461d41\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": true\n}"
+						}
+					]
 				},
 				{
 					"name": "Create a session token",
@@ -2472,7 +2590,134 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id_user\" : \"{{sync_id_user}}\"\n}"
+								},
+								"url": {
+									"raw": "https://sync.paybook.com/v1/sessions",
+									"protocol": "https",
+									"host": [
+										"sync",
+										"paybook",
+										"com"
+									],
+									"path": [
+										"v1",
+										"sessions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 18 Mar 2020 18:13:35 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Wed, 18 Mar 2020 18:13:35 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "b2feccd3-7776-43ed-a198-e94b64f07349"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "5760edb1ae107f78-QRO"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"b2feccd3-7776-43ed-a198-e94b64f07349\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"token\": \"ba477d90a30ed4ab7faaf60124dd0df99508fc7c8668ab714b63c089bada1b81\"\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Delete a session token",
@@ -2498,6 +2743,21 @@
 				}
 			],
 			"description": "Sessions are access tokens for the final user in order to consume Sync endpoints. Sessions expire after 5 minutes of inactivity and should be used for creating or updating credentials.\n\n```json\n{\n    \"token\": \"3a21dded8d451ee50b6f257ab4a09c66fbc807628f26f1a9519e92b4c7a38497\"\n}\n```",
+			"auth": {
+				"type": "apikey",
+				"apikey": [
+					{
+						"key": "value",
+						"value": "api_key api_key={{sync_api_key}}",
+						"type": "string"
+					},
+					{
+						"key": "key",
+						"value": "Authorization",
+						"type": "string"
+					}
+				]
+			},
 			"event": [
 				{
 					"listen": "prerequest",
@@ -3316,21 +3576,6 @@
 			"protocolProfileBehavior": {}
 		}
 	],
-	"auth": {
-		"type": "apikey",
-		"apikey": [
-			{
-				"key": "value",
-				"value": "api_key api_key={{sync_api_key}}",
-				"type": "string"
-			},
-			{
-				"key": "key",
-				"value": "Authorization",
-				"type": "string"
-			}
-		]
-	},
 	"event": [
 		{
 			"listen": "prerequest",
