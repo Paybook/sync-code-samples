@@ -4965,29 +4965,33 @@
 							"query": [
 								{
 									"key": "id_credential",
-									"value": "{{sync_id_credential}}"
+									"value": "{{sync_id_credential}}",
+									"description": "Filters by credential ID"
 								},
 								{
 									"key": "id_account",
-									"value": "{{sync_id_account}}"
+									"value": "{{sync_id_account}}",
+									"description": "(optional) Filters by account ID"
 								},
 								{
 									"key": "skip",
-									"value": "Number"
+									"value": "Number",
+									"description": "Skip rows to be returned"
 								},
 								{
 									"key": "limit",
-									"value": "Number"
+									"value": "Number",
+									"description": "Limit the number of rows to be returned"
 								},
 								{
 									"key": "attachment_content",
 									"value": "Number",
-									"description": "0 : False\n1 : True"
+									"description": "Attach Content"
 								},
 								{
 									"key": "attachment_content_parse",
 									"value": "Number",
-									"description": "0 : False\n1 : True"
+									"description": "Parse Content"
 								},
 								{
 									"key": "id_transaction",
