@@ -2656,7 +2656,123 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://sync.paybook.com/v1/credentials",
+									"protocol": "https",
+									"host": [
+										"sync",
+										"paybook",
+										"com"
+									],
+									"path": [
+										"v1",
+										"credentials"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 18 Mar 2020 19:01:09 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Wed, 18 Mar 2020 19:01:09 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "ce8fe28c-260f-40fc-b519-a46c673d3b8c"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "5761335e8d8e7f50-QRO"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"ce8fe28c-260f-40fc-b519-a46c673d3b8c\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_credential\": \"5dee8444dbf79573064af3e6\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_environment\": \"574894bf7848066d138b4570\",\n            \"id_external\": \"\",\n            \"id_site\": \"5da784f1f9de2a06483abec1\",\n            \"id_site_organization\": \"56cf4ff5784806152c8b4567\",\n            \"id_site_organization_type\": \"56cf4f5b784806cf028b4569\",\n            \"id_organization\": \"56cf4ff5784806152c8b4567\",\n            \"is_authorized\": 1,\n            \"is_locked\": 0,\n            \"is_twofa\": 0,\n            \"can_sync\": 1,\n            \"ready_in\": 0,\n            \"username\": \"A**********C\",\n            \"code\": 200,\n            \"keywords\": [\n                \"001\",\n                \"002\",\n                \"003\",\n                \"3.3\",\n                \"emitidas\",\n                \"i\",\n                \"impuestos\",\n                \"recibidas\",\n                \"retenciones\",\n                \"timbrefiscaldigital\",\n                \"traslados\",\n                \"vigente\"\n            ],\n            \"dt_authorized\": 1584427932,\n            \"dt_execute\": 1576707364,\n            \"dt_ready\": null,\n            \"dt_refresh\": 1584427932\n        },\n        {\n            \"id_credential\": \"5dfaa4eeb61aae73ca369515\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_environment\": \"574894bf7848066d138b4570\",\n            \"id_external\": \"\",\n            \"id_site\": \"56cf5728784806f72b8b4568\",\n            \"id_site_organization\": \"56cf4ff5784806152c8b4567\",\n            \"id_site_organization_type\": \"56cf4f5b784806cf028b4568\",\n            \"id_organization\": \"56cf4ff5784806152c8b4567\",\n            \"is_authorized\": 1,\n            \"is_locked\": 0,\n            \"is_twofa\": 0,\n            \"can_sync\": 0,\n            \"ready_in\": 77142,\n            \"username\": \"t**t\",\n            \"code\": 200,\n            \"keywords\": null,\n            \"dt_authorized\": 1584548811,\n            \"dt_execute\": 1576707336,\n            \"dt_ready\": 1584635211,\n            \"dt_refresh\": 1584548811\n        }\n    ]\n}"
+						}
+					]
 				},
 				{
 					"name": "Create credential",
@@ -2701,7 +2817,147 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id_site\" : \"{{sync_id_site}}\",\n\t\"credentials\" : {\n\t\t\"username\" : \"{{sync_credential_username}}\",\n\t\t\"password\" : \"{{sync_credential_password}}\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "https://sync.paybook.com/v1/credentials?",
+									"protocol": "https",
+									"host": [
+										"sync",
+										"paybook",
+										"com"
+									],
+									"path": [
+										"v1",
+										"credentials"
+									],
+									"query": [
+										{
+											"key": "id_site",
+											"value": "String",
+											"description": "Site ID",
+											"disabled": true
+										},
+										{
+											"key": "credentials",
+											"value": "String",
+											"description": "Credentials Object (this must be created using the credentials field of the Site ID provided).",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 18 Mar 2020 19:03:52 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Wed, 18 Mar 2020 19:03:52 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "ddbfce38-3474-42a1-a478-906d558170c3"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "576137515d857f50-QRO"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"ddbfce38-3474-42a1-a478-906d558170c3\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_credential\": \"5e727097db79ef1a0b3193a2\",\n        \"id_job_uuid\": \"5e72709769fd9b08e41bd583\",\n        \"id_job\": \"5e72709769fd9b08e41bd584\",\n        \"is_new\": 1,\n        \"username\": \"t**t\",\n        \"ws\": \"wss://sync.paybook.com/v1/status/5e72709769fd9b08e41bd584\",\n        \"status\": \"https://sync.paybook.com/v1/jobs/5e72709769fd9b08e41bd584/status\",\n        \"twofa\": \"https://sync.paybook.com/v1/jobs/5e72709769fd9b08e41bd584/twofa\"\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Delete credential",
@@ -2723,7 +2979,124 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://sync.paybook.com/v1/credentials/{{sync_id_credential}}",
+									"protocol": "https",
+									"host": [
+										"sync",
+										"paybook",
+										"com"
+									],
+									"path": [
+										"v1",
+										"credentials",
+										"{{sync_id_credential}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 18 Mar 2020 19:02:26 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Wed, 18 Mar 2020 19:02:26 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "2d749640-43a9-4de5-875f-878b3851fb6b"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "5761353e4fd47f50-QRO"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"2d749640-43a9-4de5-875f-878b3851fb6b\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": true\n}"
+						}
+					]
 				}
 			],
 			"description": "Credentials are the third-party data that is needed in order to authenticate with a third-party site. Credentials are encrypted upon arrival and won’t be available on any endpoint. Data pull from this endpoint is only complementary.\n\n```json\n{\n    \"id_credential\": \"5e7147e1e1ebe415cd6d7085\",\n    \"id_user\": \"5da7886d3cfb1f31df68bef5\",\n    \"id_environment\": \"574894bf7848066d138b4570\",\n    \"id_external\": \"\",\n    \"id_site\": \"5da784f1f9de2a06483abec1\",\n    \"id_site_organization\": \"56cf4ff5784806152c8b4567\",\n    \"id_site_organization_type\": \"56cf4f5b784806cf028b4569\",\n    \"id_organization\": \"56cf4ff5784806152c8b4567\",\n    \"is_authorized\": 1,\n    \"is_locked\": 0,\n    \"is_twofa\": 0,\n    \"can_sync\": 0,\n    \"ready_in\": 86288,\n    \"username\": \"A**********C\",\n    \"code\": 200,\n    \"keywords\": [\n        \"002\",\n        \"003\",\n        \"3.3\",\n        \"emitidas\",\n        \"i\",\n        \"impuestos\",\n        \"recibidas\",\n        \"timbrefiscaldigital\",\n        \"traslados\",\n        \"vigente\"\n    ],\n    \"dt_authorized\": 1584482308,\n    \"dt_execute\": 1584482273,\n    \"dt_ready\": 1584568708,\n    \"dt_refresh\": 1584482308\n}\n```",
@@ -2857,10 +3230,209 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://sync.paybook.com/v1/accounts?id_credential={{sync_id_credential}}",
+									"protocol": "https",
+									"host": [
+										"sync",
+										"paybook",
+										"com"
+									],
+									"path": [
+										"v1",
+										"accounts"
+									],
+									"query": [
+										{
+											"key": "id_account",
+											"value": "String",
+											"description": "(optional) Account ID",
+											"disabled": true
+										},
+										{
+											"key": "id_credential",
+											"value": "{{sync_id_credential}}",
+											"description": "(optional) Credential ID"
+										},
+										{
+											"key": "id_site",
+											"value": "String",
+											"description": "(optional) Site ID",
+											"disabled": true
+										},
+										{
+											"key": "id_site_organization",
+											"value": "String",
+											"description": "(optional) Site Organization ID",
+											"disabled": true
+										},
+										{
+											"key": "id_site_organization_type",
+											"value": "String",
+											"description": "(optional) Site Organization Type ID",
+											"disabled": true
+										},
+										{
+											"key": "is_disable",
+											"value": "Number",
+											"description": "(optional) Is disable, some sites can have the option to retreieve transactions that are not longer valid, active, etc.",
+											"disabled": true
+										},
+										{
+											"key": "fields",
+											"value": "String",
+											"description": "(optional) Select fields to be returned",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "Number",
+											"description": "(optional)Limit the number of rows to be returned",
+											"disabled": true
+										},
+										{
+											"key": "skip",
+											"value": "Number",
+											"description": "(optional) Skip rows to be returned",
+											"disabled": true
+										},
+										{
+											"key": "order",
+											"value": "String",
+											"description": "(optional) Order the rows to be returned",
+											"disabled": true
+										},
+										{
+											"key": "keywords",
+											"value": "String",
+											"description": "(optional) Filters by keywords (for multiple keywords concatenate a string using a comma as a separator)",
+											"disabled": true
+										},
+										{
+											"key": "skip_keywords",
+											"value": "String",
+											"description": "(optional) Filters by keywords (for multiple keywords concatenate a string using a comma as a separator)",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 18 Mar 2020 19:06:24 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Wed, 18 Mar 2020 19:06:24 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "225cefed-891b-4e3c-a319-8907b1622318"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "57613b0e28627f50-QRO"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"225cefed-891b-4e3c-a319-8907b1622318\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_account\": \"5db073b1caaf236a6a4c2acc\",\n            \"id_account_type\": \"546d4904df527d1844a2e18d\",\n            \"id_currency\": \"523a25953b8e77910e8b456c\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_external\": \"\",\n            \"id_credential\": \"5dee8444dbf79573064af3e6\",\n            \"id_site\": \"5da784f1f9de2a06483abec1\",\n            \"id_site_organization\": \"56cf4ff5784806152c8b4567\",\n            \"id_site_organization_type\": \"56cf4f5b784806cf028b4569\",\n            \"is_disable\": 0,\n            \"name\": \"Facturas CFDI ACM010101ABC\",\n            \"number\": null,\n            \"balance\": 0,\n            \"currency\": \"MXN\",\n            \"account_type\": \"IRS\",\n            \"site\": {\n                \"id_site\": \"5da784f1f9de2a06483abec1\",\n                \"id_site_organization\": \"56cf4ff5784806152c8b4567\",\n                \"id_site_organization_type\": \"56cf4f5b784806cf028b4569\",\n                \"name\": \"SAT\",\n                \"organization\": \"Acme Bank\",\n                \"avatar\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9sbFI3bEhOT0JEd2wyd2VsbjcrTWZYRzAxbzZEeUJqNGJuYnp6NUhjNG9nc1A4MlJXTENxVUlEdElaMVoreTlyNjlTSDFXaXBuckpqUGpFUytmcHU4dnhIQkt0QW81RHBKdz09\",\n                \"cover\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9sbFI3bEhOT0JEd2wyd2VsbjcrTWZYRzAxbzZEeUJqNGJxYXZVeEhjWWcxNTR0a25OMy9TV3dTMnE0VENlTmFzemVEYnZ2elhqWTVXa2JXU0lrclFtT3VteG8xN2sxeHN6QT09\",\n                \"small_cover\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9sbFI3bEhOT0JEd2wyd2VsbjcrTWZYRzAxbzZEeUJqNGJxYXZVeEhjWWcxNTR0a25OMy9TV3dTMnE0VENlTmFzemVEYnZ2elhqWTVXUTNZclN2TWF4YUJZNU9ib2crMWJpUUNyQ0NYRXVQWURpNmduU1JHTlRJZz0\",\n                \"time_zone\": \"America/Mexico_City\"\n            },\n            \"extra\": null,\n            \"keywords\": [\n                \"001\",\n                \"002\",\n                \"003\",\n                \"3.3\",\n                \"emitidas\",\n                \"i\",\n                \"impuestos\",\n                \"recibidas\",\n                \"retenciones\",\n                \"timbrefiscaldigital\",\n                \"traslados\",\n                \"vigente\"\n            ],\n            \"dt_refresh\": 1584427932\n        }\n    ]\n}"
+						}
+					]
 				}
 			],
 			"description": "Accounts are repositories for end-user transactions which are often segmented by some distinction, such as account type and/or account number. Account and transactional data can be retrieved from third-party sites (refreshed) up to three times a day.\n\n```json\n{\n    \"id_account\": \"5e714804ba81405d9e6f567f\",\n    \"id_account_type\": \"546d4904df527d1844a2e18d\",\n    \"id_currency\": \"523a25953b8e77910e8b456c\",\n    \"id_user\": \"5da7886d3cfb1f31df68bef5\",\n    \"id_external\": \"\",\n    \"id_credential\": \"5e7147e1e1ebe415cd6d7085\",\n    \"id_site\": \"5da784f1f9de2a06483abec1\",\n    \"id_site_organization\": \"56cf4ff5784806152c8b4567\",\n    \"id_site_organization_type\": \"56cf4f5b784806cf028b4569\",\n    \"is_disable\": 0,\n    \"name\": \"Facturas CFDI ACM010101ABC\",\n    \"number\": null,\n    \"balance\": 0,\n    \"currency\": \"MXN\",\n    \"account_type\": \"IRS\",\n    \"site\": {\n        \"id_site\": \"5da784f1f9de2a06483abec1\",\n        \"id_site_organization\": \"56cf4ff5784806152c8b4567\",\n        \"id_site_organization_type\": \"56cf4f5b784806cf028b4569\",\n        \"name\": \"SAT\",\n        \"organization\": \"Acme Bank\",\n        \"avatar\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9sbFI3bEhOT0JEd2wyd2VsbjcrTWZYRzAxbzZEeUJqNGJuYnp6NUhjNG9nc1A4MlJXTENxVUlEdElaMVoreTlyNjlTSDFXaXBuckpqUGpFUytmcHU4dnhIQkt0QW81RHBKdz09\",\n        \"cover\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9sbFI3bEhOT0JEd2wyd2VsbjcrTWZYRzAxbzZEeUJqNGJxYXZVeEhjWWcxNTR0a25OMy9TV3dTMnE0VENlTmFzemVEYnZ2elhqWTVXa2JXU0lrclFtT3VteG8xN2sxeHN6QT09\",\n        \"small_cover\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9sbFI3bEhOT0JEd2wyd2VsbjcrTWZYRzAxbzZEeUJqNGJxYXZVeEhjWWcxNTR0a25OMy9TV3dTMnE0VENlTmFzemVEYnZ2elhqWTVXUTNZclN2TWF4YUJZNU9ib2crMWJpUUNyQ0NYRXVQWURpNmduU1JHTlRJZz0\",\n        \"time_zone\": \"America/Mexico_City\"\n    },\n    \"extra\": null,\n    \"keywords\": [\n        \"002\",\n        \"003\",\n        \"3.3\",\n        \"emitidas\",\n        \"i\",\n        \"impuestos\",\n        \"recibidas\",\n        \"timbrefiscaldigital\",\n        \"traslados\",\n        \"vigente\"\n    ],\n    \"dt_refresh\": 1584482308\n}\n```",
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{sync_token}}",
+						"type": "string"
+					}
+				]
+			},
 			"event": [
 				{
 					"listen": "prerequest",
