@@ -2591,7 +2591,124 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://sync.paybook.com/v1/sessions/{{sync_token}}",
+									"protocol": "https",
+									"host": [
+										"sync",
+										"paybook",
+										"com"
+									],
+									"path": [
+										"v1",
+										"sessions",
+										"{{sync_token}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 19 Mar 2020 18:47:44 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Thu, 19 Mar 2020 18:47:44 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "343f2a66-bf41-4630-84ba-5b2ed1baa3e3"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "57695d137c11ecde-DFW"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"343f2a66-bf41-4630-84ba-5b2ed1baa3e3\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": true\n}"
+						}
+					]
 				}
 			],
 			"description": "Sessions are access tokens for the final user in order to consume Sync endpoints. Sessions expire after 5 minutes of inactivity and should be used for creating or updating credentials.\n\n```json\n{\n    \"token\": \"3a21dded8d451ee50b6f257ab4a09c66fbc807628f26f1a9519e92b4c7a38497\"\n}\n```",
@@ -3099,7 +3216,7 @@
 					]
 				}
 			],
-			"description": "Credentials are the third-party data that is needed in order to authenticate with a third-party site. Credentials are encrypted upon arrival and won’t be available on any endpoint. Data pull from this endpoint is only complementary.\n\n```json\n{\n    \"id_credential\": \"5e7147e1e1ebe415cd6d7085\",\n    \"id_user\": \"5da7886d3cfb1f31df68bef5\",\n    \"id_environment\": \"574894bf7848066d138b4570\",\n    \"id_external\": \"\",\n    \"id_site\": \"5da784f1f9de2a06483abec1\",\n    \"id_site_organization\": \"56cf4ff5784806152c8b4567\",\n    \"id_site_organization_type\": \"56cf4f5b784806cf028b4569\",\n    \"id_organization\": \"56cf4ff5784806152c8b4567\",\n    \"is_authorized\": 1,\n    \"is_locked\": 0,\n    \"is_twofa\": 0,\n    \"can_sync\": 0,\n    \"ready_in\": 86288,\n    \"username\": \"A**********C\",\n    \"code\": 200,\n    \"keywords\": [\n        \"002\",\n        \"003\",\n        \"3.3\",\n        \"emitidas\",\n        \"i\",\n        \"impuestos\",\n        \"recibidas\",\n        \"timbrefiscaldigital\",\n        \"traslados\",\n        \"vigente\"\n    ],\n    \"dt_authorized\": 1584482308,\n    \"dt_execute\": 1584482273,\n    \"dt_ready\": 1584568708,\n    \"dt_refresh\": 1584482308\n}\n```",
+			"description": "Credentials are the third-party data that is needed in order to authenticate with a third-party site. Credentials are encrypted upon arrival and won’t be available on any endpoint. Data pull from this endpoint is only complementary.\n\n```json\n{\n    \"id_credential\": \"5e727097db79ef1a0b3193a2\",\n    \"id_user\": \"5dde750d8c91e77a123e7013\",\n    \"id_environment\": \"574894bf7848066d138b4570\",\n    \"id_external\": \"\",\n    \"id_site\": \"56cf5728784806f72b8b4568\",\n    \"id_site_organization\": \"56cf4ff5784806152c8b4567\",\n    \"id_site_organization_type\": \"56cf4f5b784806cf028b4568\",\n    \"id_organization\": \"56cf4ff5784806152c8b4567\",\n    \"is_authorized\": 1,\n    \"is_locked\": 0,\n    \"is_twofa\": 0,\n    \"can_sync\": 0,\n    \"ready_in\": 15704,\n    \"username\": \"t**t\",\n    \"code\": 200,\n    \"keywords\": null,\n    \"dt_authorized\": 1584570942,\n    \"dt_execute\": 1584558231,\n    \"dt_ready\": 1584657342,\n    \"dt_refresh\": 1584570943\n}\n```",
 			"auth": {
 				"type": "bearer",
 				"bearer": [
