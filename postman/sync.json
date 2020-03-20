@@ -1678,11 +1678,6 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "Authorization",
-								"value": "api_key api_key={{sync_api_key}}",
-								"type": "text"
-							},
-							{
 								"key": "Content-Type",
 								"name": "Content-Type",
 								"value": "application/json",
@@ -1880,11 +1875,6 @@
 						"method": "PUT",
 						"header": [
 							{
-								"key": "Authorization",
-								"value": "api_key api_key={{sync_api_key}}",
-								"type": "text"
-							},
-							{
 								"key": "Content-Type",
 								"value": "application/json",
 								"type": "text"
@@ -1892,7 +1882,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\" : \"{{sync_user_name}}\",\n\t\"id_external\" : \"{{sync_user_id_external}}\"\n}"
+							"raw": "{\n\t\"id_external\" : \"{{sync_user_id_external}}\"\n}"
 						},
 						"url": {
 							"raw": "https://sync.paybook.com/v1/users/{{sync_id_user}}?",
@@ -1930,11 +1920,6 @@
 								"method": "PUT",
 								"header": [
 									{
-										"key": "Authorization",
-										"value": "api_key api_key={{sync_api_key}}",
-										"type": "text"
-									},
-									{
 										"key": "Content-Type",
 										"value": "application/json",
 										"type": "text"
@@ -1942,7 +1927,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"name\" : \"{{sync_user_name}}\",\n\t\"id_external\" : \"{{sync_user_id_external}}\"\n}"
+									"raw": "{\n\t\"id_external\" : \"{{sync_user_id_external}}\"\n}"
 								},
 								"url": {
 									"raw": "https://sync.paybook.com/v1/users/{{sync_id_user}}?",
@@ -1979,7 +1964,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Wed, 18 Mar 2020 18:40:04 GMT"
+									"value": "Fri, 20 Mar 2020 19:42:16 GMT"
 								},
 								{
 									"key": "Content-Type",
@@ -2027,7 +2012,7 @@
 								},
 								{
 									"key": "Last-Modified",
-									"value": "Wed, 18 Mar 2020 18:40:03 GMT"
+									"value": "Fri, 20 Mar 2020 19:42:16 GMT"
 								},
 								{
 									"key": "Pragma",
@@ -2035,7 +2020,7 @@
 								},
 								{
 									"key": "Request-ID",
-									"value": "f9a2a964-3eb4-438a-805a-e71962eb0100"
+									"value": "4c7d0530-ed4e-4667-9550-280d5addec95"
 								},
 								{
 									"key": "Content-Encoding",
@@ -2063,11 +2048,11 @@
 								},
 								{
 									"key": "CF-RAY",
-									"value": "57611476da017f78-QRO"
+									"value": "5771ea55e960e99e-DFW"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"rid\": \"f9a2a964-3eb4-438a-805a-e71962eb0100\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_user\": \"5dde750d8c91e77a123e7013\",\n        \"id_external\": \"ACM010101ABC\",\n        \"name\": \"ACME User\",\n        \"dt_create\": 1574860045,\n        \"dt_modify\": 1584556803\n    }\n}"
+							"body": "{\n    \"rid\": \"4c7d0530-ed4e-4667-9550-280d5addec95\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_user\": \"5e751c756c01f243610b9436\",\n        \"id_external\": \"IXS7607092R5\",\n        \"name\": \"INTERNACIONAL XIMBO Y SABORES SA DE CV\",\n        \"dt_create\": 1584733301,\n        \"dt_modify\": 1584733336\n    }\n}"
 						}
 					]
 				},
@@ -2075,13 +2060,7 @@
 					"name": "Delete user",
 					"request": {
 						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "api_key api_key={{sync_api_key}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"url": {
 							"raw": "https://sync.paybook.com/v1/users/{{sync_id_user}}",
 							"protocol": "https",
@@ -2102,13 +2081,7 @@
 							"name": "200",
 							"originalRequest": {
 								"method": "DELETE",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "api_key api_key={{sync_api_key}}",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "https://sync.paybook.com/v1/users/{{sync_id_user}}",
 									"protocol": "https",
@@ -2130,7 +2103,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Mon, 09 Mar 2020 18:07:05 GMT"
+									"value": "Fri, 20 Mar 2020 19:42:42 GMT"
 								},
 								{
 									"key": "Content-Type",
@@ -2178,7 +2151,7 @@
 								},
 								{
 									"key": "Last-Modified",
-									"value": "Mon, 09 Mar 2020 18:07:05 GMT"
+									"value": "Fri, 20 Mar 2020 19:42:42 GMT"
 								},
 								{
 									"key": "Pragma",
@@ -2186,7 +2159,7 @@
 								},
 								{
 									"key": "Request-ID",
-									"value": "0d85ea19-2b4d-4f01-b5db-ecd62fb4aa88"
+									"value": "272683b7-41c0-442a-a2d9-7372e2a70c4a"
 								},
 								{
 									"key": "Content-Encoding",
@@ -2214,11 +2187,11 @@
 								},
 								{
 									"key": "CF-RAY",
-									"value": "5716bbccca8dd292-DFW"
+									"value": "5771eafa1d7ce99e-DFW"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"rid\": \"0d85ea19-2b4d-4f01-b5db-ecd62fb4aa88\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": true\n}"
+							"body": "{\n    \"rid\": \"272683b7-41c0-442a-a2d9-7372e2a70c4a\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": true\n}"
 						}
 					]
 				}
@@ -2888,191 +2861,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"rid\": \"aa826706-240e-4996-9b7c-a26237c97a0c\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_credential\": \"5e727097db79ef1a0b3193a2\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_environment\": \"574894bf7848066d138b4570\",\n            \"id_external\": \"\",\n            \"id_site\": \"56cf5728784806f72b8b4568\",\n            \"id_site_organization\": \"56cf4ff5784806152c8b4567\",\n            \"id_site_organization_type\": \"56cf4f5b784806cf028b4568\",\n            \"id_organization\": \"56cf4ff5784806152c8b4567\",\n            \"is_authorized\": 1,\n            \"is_locked\": 0,\n            \"is_twofa\": 0,\n            \"can_sync\": 0,\n            \"ready_in\": 15704,\n            \"username\": \"t**t\",\n            \"code\": 200,\n            \"keywords\": null,\n            \"dt_authorized\": 1584570942,\n            \"dt_execute\": 1584558231,\n            \"dt_ready\": 1584657342,\n            \"dt_refresh\": 1584570943\n        }\n    ]\n}"
-						}
-					]
-				},
-				{
-					"name": "Create credential",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"id_site\" : \"{{sync_id_site}}\",\n\t\"credentials\" : {\n\t\t\"username\" : \"{{sync_credential_username}}\",\n\t\t\"password\" : \"{{sync_credential_password}}\"\n\t}\n}"
-						},
-						"url": {
-							"raw": "https://sync.paybook.com/v1/credentials?",
-							"protocol": "https",
-							"host": [
-								"sync",
-								"paybook",
-								"com"
-							],
-							"path": [
-								"v1",
-								"credentials"
-							],
-							"query": [
-								{
-									"key": "id_site",
-									"value": "String",
-									"description": "Site ID",
-									"disabled": true
-								},
-								{
-									"key": "credentials",
-									"value": "String",
-									"description": "Credentials Object (this must be created using the credentials field of the Site ID provided).",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "200",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"id_site\" : \"{{sync_id_site}}\",\n\t\"credentials\" : {\n\t\t\"username\" : \"{{sync_credential_username}}\",\n\t\t\"password\" : \"{{sync_credential_password}}\"\n\t}\n}"
-								},
-								"url": {
-									"raw": "https://sync.paybook.com/v1/credentials?",
-									"protocol": "https",
-									"host": [
-										"sync",
-										"paybook",
-										"com"
-									],
-									"path": [
-										"v1",
-										"credentials"
-									],
-									"query": [
-										{
-											"key": "id_site",
-											"value": "String",
-											"description": "Site ID",
-											"disabled": true
-										},
-										{
-											"key": "credentials",
-											"value": "String",
-											"description": "Credentials Object (this must be created using the credentials field of the Site ID provided).",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Thu, 19 Mar 2020 18:15:11 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Thu, 19 Mar 2020 18:15:11 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "eabaf586-195d-49f6-bca8-d8814af3c6b6"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "CF-Cache-Status",
-									"value": "DYNAMIC"
-								},
-								{
-									"key": "Expect-CT",
-									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains; preload"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Server",
-									"value": "cloudflare"
-								},
-								{
-									"key": "CF-RAY",
-									"value": "57692d657b41d262-DFW"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"eabaf586-195d-49f6-bca8-d8814af3c6b6\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_credential\": \"5e727097db79ef1a0b3193a2\",\n        \"id_job_uuid\": \"5e73b6af4ca4ec718a2147d4\",\n        \"id_job\": \"5e73b6af4ca4ec718a2147d5\",\n        \"is_new\": 0,\n        \"username\": \"t**t\",\n        \"ws\": \"wss://sync.paybook.com/v1/status/5e73b6af4ca4ec718a2147d5\",\n        \"status\": \"https://sync.paybook.com/v1/jobs/5e73b6af4ca4ec718a2147d5/status\",\n        \"twofa\": \"https://sync.paybook.com/v1/jobs/5e73b6af4ca4ec718a2147d5/twofa\"\n    }\n}"
 						}
 					]
 				},
