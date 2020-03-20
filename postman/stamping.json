@@ -1722,453 +1722,12 @@
 			"name": "Invoices",
 			"item": [
 				{
-					"name": "Invoice",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{sync_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{sync_token}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://sync.paybook.com/v1/invoicing/mx/invoices?",
-							"protocol": "https",
-							"host": [
-								"sync",
-								"paybook",
-								"com"
-							],
-							"path": [
-								"v1",
-								"invoicing",
-								"mx",
-								"invoices"
-							],
-							"query": [
-								{
-									"key": "invoice_data",
-									"value": "JSON",
-									"description": "JSON structure of the invoice",
-									"disabled": true
-								},
-								{
-									"key": "invoice_xml",
-									"value": "String",
-									"description": "XML string (base64 encoded)",
-									"disabled": true
-								},
-								{
-									"key": "id_provider",
-									"value": "String",
-									"description": "(optional) Id or name of the available providers in Sync",
-									"disabled": true
-								}
-							]
-						},
-						"description": "Stamp a new invoice, you can send the JSON structure or XML string"
-					},
-					"response": [
-						{
-							"name": "Stamp a new invoice, you can send the JSON structure or XML string",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Authorization",
-										"value": "Bearer {{sync_token}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"id_provider\": \"{{sync_invoices_id_provider}}\",\n  \"invoice_data\": {\n    \"Version\": \"3.3\",\n    \"Serie\": \"A\",\n    \"Folio\": \"36\",\n    \"Fecha\": \"2019-07-31T13:00:00\",\n    \"FormaPago\": \"99\",\n    \"CondicionesDePago\": \"3 meses\",\n    \"SubTotal\": \"50\",\n    \"Descuento\": \"0\",\n    \"Moneda\": \"MXN\",\n    \"Total\": \"58\",\n    \"TipoDeComprobante\": \"I\",\n    \"MetodoPago\": \"PUE\",\n    \"LugarExpedicion\": \"05000\",\n    \"Emisor\": {\n      \"Rfc\": \"AAA010101AAA\",\n      \"Nombre\": \"Manuel Alejandro\",\n      \"RegimenFiscal\": \"601\"\n    },\n    \"Receptor\": {\n      \"Rfc\": \"XAXX010101000\",\n      \"Nombre\": \"Pedro Perez Hernandez\",\n      \"UsoCFDI\": \"D01\"\n    },\n    \"Conceptos\": {\n      \"Concepto\": [\n        {\n          \"Concepto\": {\n            \"ClaveProdServ\": \"01010101\",\n            \"NoIdentificacion\": \"UT421510 \",\n            \"Cantidad\": \"1\",\n            \"ClaveUnidad\": \"H87\",\n            \"Unidad\": \"PZA\",\n            \"Descripcion\": \"ARTICULO\",\n            \"ValorUnitario\": \"50\",\n            \"Importe\": \"50\",\n            \"Descuento\": \"0\",\n            \"Impuestos\": {\n              \"Retenciones\": {\n                \"Retencion\": [\n                  {\n                    \"Retencion\": {\n                      \"Base\": \"50\",\n                      \"Impuesto\": \"002\",\n                      \"TipoFactor\": \"Tasa\",\n                      \"TasaOCuota\": \"0.160000\",\n                      \"Importe\": \"8\"\n                    }\n                  }\n                ]\n              }\n            },\n            \"InformacionAduanera\": {\n              \"NumeroPedimento\": \"15  48  3009  0001234\"\n            },\n            \"CuentaPredial\": {\n              \"Numero\": \"112212\"\n            },\n            \"ComplementoConcepto\": {},\n            \"Parte\": [\n              {\n                \"Parte\": {\n                  \"ClaveProdServ\": \"41116401\",\n                  \"NoIdentificacion\": \"3nn\",\n                  \"Cantidad\": \"1\",\n                  \"Unidad\": \"Piezas\",\n                  \"Descripcion\": \"Martillo\",\n                  \"ValorUnitario\": \"8\",\n                  \"Importe\": \"8\",\n                  \"InformacionAduanera\": {\n                    \"NumeroPedimento\": \"15  48  3009  0001234\"\n                  }\n                }\n              }\n            ]\n          }\n        }\n      ]\n    },\n    \"Impuestos\": {\n      \"TotalImpuestosRetenidos\": \"0\",\n      \"TotalImpuestosTrasladados\": \"8\",\n      \"Traslados\": {\n        \"Traslado\": [\n          {\n            \"Traslado\": {\n              \"Impuesto\": \"002\",\n              \"TipoFactor\": \"Tasa\",\n              \"TasaOCuota\": \"0.160000\",\n              \"Importe\": \"8\"\n            }\n          }\n        ]\n      }\n    }\n  }\n}"
-								},
-								"url": {
-									"raw": "https://sync.paybook.com/v1/invoicing/mx/invoices?",
-									"protocol": "https",
-									"host": [
-										"sync",
-										"paybook",
-										"com"
-									],
-									"path": [
-										"v1",
-										"invoicing",
-										"mx",
-										"invoices"
-									],
-									"query": [
-										{
-											"key": "invoice_data",
-											"value": "JSON",
-											"description": "JSON structure of the invoice",
-											"disabled": true
-										},
-										{
-											"key": "invoice_xml",
-											"value": "String",
-											"description": "XML string (base64 encoded)",
-											"disabled": true
-										},
-										{
-											"key": "id_provider",
-											"value": "String",
-											"description": "(optional) Id or name of the available providers in Sync",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Wed, 31 Jul 2019 17:42:49 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Wed, 31 Jul 2019 17:42:49 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "14292a0b-748b-4ffe-9ebc-f7a8cd398dd9"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains; preload"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Expect-CT",
-									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
-								},
-								{
-									"key": "Server",
-									"value": "cloudflare"
-								},
-								{
-									"key": "CF-RAY",
-									"value": "4ff15ee59c86d0b4-QRO"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"14292a0b-748b-4ffe-9ebc-f7a8cd398dd9\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"taxpayer\": \"AAA010101AAA\",\n        \"errors\": [],\n        \"xml\": \"<?xml version=\\\"1.0\\\" encoding=\\\"utf-8\\\"?>\\n<cfdi:Comprobante xmlns:cfdi=\\\"http://www.sat.gob.mx/cfd/3\\\" xmlns:implocal=\\\"http://www.sat.gob.mx/implocal\\\" xmlns:iedu=\\\"http://www.sat.gob.mx/iedu\\\" xmlns:tfd=\\\"http://www.sat.gob.mx/TimbreFiscalDigital\\\" xmlns:pago10=\\\"http://www.sat.gob.mx/Pagos\\\" xmlns:nomina12=\\\"http://www.sat.gob.mx/nomina12\\\" xmlns:cce11=\\\"http://www.sat.gob.mx/ComercioExterior11\\\" xmlns:xsi=\\\"http://www.w3.org/2001/XMLSchema-instance\\\" xsi:schemaLocation=\\\"http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd http://www.sat.gob.mx/implocal http://www.sat.gob.mx/sitio_internet/cfd/implocal/implocal.xsd\\\" Version=\\\"3.3\\\" Serie=\\\"A\\\" Folio=\\\"36\\\" Fecha=\\\"2019-07-31T13:00:00\\\" FormaPago=\\\"99\\\" NoCertificado=\\\"30001000000300023708\\\" Certificado=\\\"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\\\" CondicionesDePago=\\\"3 meses\\\" SubTotal=\\\"50\\\" Descuento=\\\"0\\\" Moneda=\\\"MXN\\\" Total=\\\"58\\\" TipoDeComprobante=\\\"I\\\" MetodoPago=\\\"PUE\\\" LugarExpedicion=\\\"05000\\\" Sello=\\\"NExweOZpll9/NeOZdGN+TtRPZfJKAntJD7WqsWC1b/1Ol3s3VLuQIh2SZsTcrfzUdwjNiRobJsu2BOYoOrUD5fTb29jscu3pRTtGNbF5bbB0y8zpY+3ZRHCQ8KGEq+TaRmh2+9a3QbEvXQdTmQTvCsCOrD1WUOtPYEDh+Xf6JM5IcUwgRtmx3tCnju4gEFQbes0/7KiSR2bBYKUtKW4ZCTON6m9tS39PKmNTCNzusEF74zMZOWvaVH3rF+V6OWFP96SrFV/ledVp9VSRmWqrF9UG6JI7axrRgdegZ07O6boWwSIDihLOPk0sl0Ey7ghRa8EQgulEWpOweKmq6w+Z9Q==\\\"><cfdi:Emisor Rfc=\\\"AAA010101AAA\\\" Nombre=\\\"Manuel Alejandro\\\" RegimenFiscal=\\\"601\\\"/><cfdi:Receptor Rfc=\\\"XAXX010101000\\\" Nombre=\\\"Pedro Perez Hernandez\\\" UsoCFDI=\\\"D01\\\"/><cfdi:Conceptos><cfdi:Concepto ClaveProdServ=\\\"01010101\\\" NoIdentificacion=\\\"UT421510 \\\" Cantidad=\\\"1\\\" ClaveUnidad=\\\"H87\\\" Unidad=\\\"PZA\\\" Descripcion=\\\"ARTICULO\\\" ValorUnitario=\\\"50\\\" Importe=\\\"50\\\" Descuento=\\\"0\\\"><cfdi:Impuestos><cfdi:Retenciones><cfdi:Retencion Base=\\\"50\\\" Impuesto=\\\"002\\\" TipoFactor=\\\"Tasa\\\" TasaOCuota=\\\"0.160000\\\" Importe=\\\"8\\\"/></cfdi:Retenciones></cfdi:Impuestos><cfdi:InformacionAduanera NumeroPedimento=\\\"15  48  3009  0001234\\\"/><cfdi:CuentaPredial Numero=\\\"112212\\\"/><cfdi:ComplementoConcepto/><cfdi:Parte ClaveProdServ=\\\"41116401\\\" NoIdentificacion=\\\"3nn\\\" Cantidad=\\\"1\\\" Unidad=\\\"Piezas\\\" Descripcion=\\\"Martillo\\\" ValorUnitario=\\\"8\\\" Importe=\\\"8\\\"/></cfdi:Concepto></cfdi:Conceptos><cfdi:Impuestos TotalImpuestosRetenidos=\\\"0\\\" TotalImpuestosTrasladados=\\\"8\\\"><cfdi:Traslados><cfdi:Traslado Impuesto=\\\"002\\\" TipoFactor=\\\"Tasa\\\" TasaOCuota=\\\"0.160000\\\" Importe=\\\"8\\\"/></cfdi:Traslados></cfdi:Impuestos><cfdi:Complemento><tfd:TimbreFiscalDigital xmlns:tfd=\\\"http://www.sat.gob.mx/TimbreFiscalDigital\\\" xmlns:xsi=\\\"http://www.w3.org/2001/XMLSchema-instance\\\" xsi:schemaLocation=\\\"http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/TimbreFiscalDigital/TimbreFiscalDigital.xsd\\\" version=\\\"1.0\\\" UUID=\\\"T1A5B85DC-E7B9-434F-9AF7-45AD334A417A\\\" FechaTimbrado=\\\"2019-07-31T13:00:00\\\" SelloCFD=\\\"HvSZ/+c6+aQAIsPjWztUCDAhkMkt39KzFJoYcaSY4L+dkp7so2/Ad9qG5xpX/in1vSdiGmTL1ojXXabgBNuZsDsvmvvPZdCdmbokG3n7dSfG3irse8G1PDn6rIvhcsR3tlDgbQ50SVvohuWv2+C9FXKd1Q7rZHPAjE3bm+JQj3M=\\\" NoCertificadoSAT=\\\"292233162870206001759766198425879490508935868472\\\" SelloSAT=\\\"SelloDummyE5xY7UJudSgA6jgKN0pVa6j6UdpxqP5pCBnGtsnrJltVCWzhZumvRsqnZnyyO0ZwMT9xZ/qbBfcDh8q0LtJ6OrmvcP83qQygLGhzoOEeH+7lJ9opcjIS2hnyZMrXOMbONK04dujr0xSO95paJ7VYVN03i4TdcmCu53uOS7WHGQs=\\\"/></cfdi:Complemento></cfdi:Comprobante>\",\n        \"uuid\": \"T1A5B85DC-E7B9-434F-9AF7-45AD334A417A\",\n        \"warnings\": false,\n        \"cadenaOriginal\": \"||3.3|A|36|2019-07-31T13:00:00|99|30001000000300023708|3 meses|50|0|MXN|58|I|PUE|05000|AAA010101AAA|Manuel Alejandro|601|XAXX010101000|Pedro Perez Hernandez|D01|01010101|UT421510|1|H87|PZA|ARTICULO|50|50|0|50|002|Tasa|0.160000|8|15 48 3009 0001234|112212|41116401|3nn|1|Piezas|Martillo|8|8|0|002|Tasa|0.160000|8|8||\",\n        \"QRString\": \"?re=AAA010101AAA&rr=XAXX010101000&tt=0000000058.000000&id=T1A5B85DC-E7B9-434F-9AF7-45AD334A417A\",\n        \"emailError\": false,\n        \"pdf\": false,\n        \"count\": 22774\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Check Invoices",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{sync_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-								"key": "Authorization",
-								"value": "Bearer {{sync_token}}",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://sync.paybook.com/v1/invoicing/mx/invoices/check?",
-							"protocol": "https",
-							"host": [
-								"sync",
-								"paybook",
-								"com"
-							],
-							"path": [
-								"v1",
-								"invoicing",
-								"mx",
-								"invoices",
-								"check"
-							],
-							"query": [
-								{
-									"key": "invoice_data",
-									"value": "JSON",
-									"description": "JSON structure of the invoice",
-									"disabled": true
-								},
-								{
-									"key": "invoice_xml",
-									"value": "String",
-									"description": "XML string (base64 encoded).\n",
-									"disabled": true
-								}
-							]
-						},
-						"description": "Check for errors and warning in JSON structure or XML invoice"
-					},
-					"response": [
-						{
-							"name": "Check Invoices",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-										"key": "Authorization",
-										"value": "Bearer {{sync_token}}",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"invoice_data\": {\n    \"Version\": \"3.3\",\n    \"Serie\": \"A\",\n    \"Folio\": \"36\",\n    \"Fecha\": \"{{sync_invoices_invoice_date}}\",\n    \"FormaPago\": \"99\",\n    \"CondicionesDePago\": \"3 meses\",\n    \"SubTotal\": \"50\",\n    \"Descuento\": \"0\",\n    \"Moneda\": \"MXN\",\n    \"Total\": \"58\",\n    \"TipoDeComprobante\": \"I\",\n    \"MetodoPago\": \"PUE\",\n    \"LugarExpedicion\": \"05000\",\n    \"Emisor\": {\n      \"Rfc\": \"AAA010101AAA\",\n      \"Nombre\": \"Manuel Alejandro\",\n      \"RegimenFiscal\": \"601\"\n    },\n    \"Receptor\": {\n      \"Rfc\": \"XAXX010101000\",\n      \"Nombre\": \"Pedro Perez Hernandez\",\n      \"UsoCFDI\": \"D01\"\n    },\n    \"Conceptos\": {\n      \"Concepto\": [\n        {\n          \"Concepto\": {\n            \"ClaveProdServ\": \"01010101\",\n            \"NoIdentificacion\": \"UT421510 \",\n            \"Cantidad\": \"1\",\n            \"ClaveUnidad\": \"H87\",\n            \"Unidad\": \"PZA\",\n            \"Descripcion\": \"ARTICULO\",\n            \"ValorUnitario\": \"50\",\n            \"Importe\": \"50\",\n            \"Descuento\": \"0\",\n            \"Impuestos\": {\n              \"Retenciones\": {\n                \"Retencion\": [\n                  {\n                    \"Retencion\": {\n                      \"Base\": \"50\",\n                      \"Impuesto\": \"002\",\n                      \"TipoFactor\": \"Tasa\",\n                      \"TasaOCuota\": \"0.160000\",\n                      \"Importe\": \"8\"\n                    }\n                  }\n                ]\n              }\n            },\n            \"InformacionAduanera\": {\n              \"NumeroPedimento\": \"15  48  3009  0001234\"\n            },\n            \"CuentaPredial\": {\n              \"Numero\": \"112212\"\n            },\n            \"ComplementoConcepto\": {},\n            \"Parte\": [\n              {\n                \"Parte\": {\n                  \"ClaveProdServ\": \"41116401\",\n                  \"NoIdentificacion\": \"3nn\",\n                  \"Cantidad\": \"1\",\n                  \"Unidad\": \"Piezas\",\n                  \"Descripcion\": \"Martillo\",\n                  \"ValorUnitario\": \"8\",\n                  \"Importe\": \"8\",\n                  \"InformacionAduanera\": {\n                    \"NumeroPedimento\": \"15  48  3009  0001234\"\n                  }\n                }\n              }\n            ]\n          }\n        }\n      ]\n    },\n    \"Impuestos\": {\n      \"TotalImpuestosRetenidos\": \"0\",\n      \"TotalImpuestosTrasladados\": \"8\",\n      \"Traslados\": {\n        \"Traslado\": [\n          {\n            \"Traslado\": {\n              \"Impuesto\": \"002\",\n              \"TipoFactor\": \"Tasa\",\n              \"TasaOCuota\": \"0.160000\",\n              \"Importe\": \"8\"\n            }\n          }\n        ]\n      }\n    }\n  }\n}"
-								},
-								"url": {
-									"raw": "https://sync.paybook.com/v1/invoicing/mx/invoices/check?",
-									"protocol": "https",
-									"host": [
-										"sync",
-										"paybook",
-										"com"
-									],
-									"path": [
-										"v1",
-										"invoicing",
-										"mx",
-										"invoices",
-										"check"
-									],
-									"query": [
-										{
-											"key": "invoice_data",
-											"value": "JSON",
-											"description": "JSON structure of the invoice",
-											"disabled": true
-										},
-										{
-											"key": "invoice_xml",
-											"value": "String",
-											"description": "XML string (base64 encoded).\n",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Wed, 31 Jul 2019 18:55:58 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Wed, 31 Jul 2019 18:55:58 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "a8f77d90-6436-4804-a11c-03383eca0b3b"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains; preload"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Expect-CT",
-									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
-								},
-								{
-									"key": "Server",
-									"value": "cloudflare"
-								},
-								{
-									"key": "CF-RAY",
-									"value": "4ff1ca072dd4d0b0-QRO"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"a8f77d90-6436-4804-a11c-03383eca0b3b\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"warnings\": [],\n        \"errors\": [],\n        \"xml\": \"<?xml version=\\\"1.0\\\" encoding=\\\"utf-8\\\"?>\\n<cfdi:Comprobante xmlns:cfdi=\\\"http://www.sat.gob.mx/cfd/3\\\" xmlns:implocal=\\\"http://www.sat.gob.mx/implocal\\\" xmlns:iedu=\\\"http://www.sat.gob.mx/iedu\\\" xmlns:tfd=\\\"http://www.sat.gob.mx/TimbreFiscalDigital\\\" xmlns:pago10=\\\"http://www.sat.gob.mx/Pagos\\\" xmlns:nomina12=\\\"http://www.sat.gob.mx/nomina12\\\" xmlns:cce11=\\\"http://www.sat.gob.mx/ComercioExterior11\\\" xmlns:xsi=\\\"http://www.w3.org/2001/XMLSchema-instance\\\" xsi:schemaLocation=\\\"http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd http://www.sat.gob.mx/implocal http://www.sat.gob.mx/sitio_internet/cfd/implocal/implocal.xsd\\\" Version=\\\"3.3\\\" Serie=\\\"A\\\" Folio=\\\"36\\\" Fecha=\\\"2019-07-31T13:00:00\\\" FormaPago=\\\"99\\\" NoCertificado=\\\"30001000000300023708\\\" Certificado=\\\"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\\\" CondicionesDePago=\\\"3 meses\\\" SubTotal=\\\"50\\\" Descuento=\\\"0\\\" Moneda=\\\"MXN\\\" Total=\\\"58\\\" TipoDeComprobante=\\\"I\\\" MetodoPago=\\\"PUE\\\" LugarExpedicion=\\\"05000\\\" Sello=\\\"NExweOZpll9/NeOZdGN+TtRPZfJKAntJD7WqsWC1b/1Ol3s3VLuQIh2SZsTcrfzUdwjNiRobJsu2BOYoOrUD5fTb29jscu3pRTtGNbF5bbB0y8zpY+3ZRHCQ8KGEq+TaRmh2+9a3QbEvXQdTmQTvCsCOrD1WUOtPYEDh+Xf6JM5IcUwgRtmx3tCnju4gEFQbes0/7KiSR2bBYKUtKW4ZCTON6m9tS39PKmNTCNzusEF74zMZOWvaVH3rF+V6OWFP96SrFV/ledVp9VSRmWqrF9UG6JI7axrRgdegZ07O6boWwSIDihLOPk0sl0Ey7ghRa8EQgulEWpOweKmq6w+Z9Q==\\\"><cfdi:Emisor Rfc=\\\"AAA010101AAA\\\" Nombre=\\\"Manuel Alejandro\\\" RegimenFiscal=\\\"601\\\"/><cfdi:Receptor Rfc=\\\"XAXX010101000\\\" Nombre=\\\"Pedro Perez Hernandez\\\" UsoCFDI=\\\"D01\\\"/><cfdi:Conceptos><cfdi:Concepto ClaveProdServ=\\\"01010101\\\" NoIdentificacion=\\\"UT421510 \\\" Cantidad=\\\"1\\\" ClaveUnidad=\\\"H87\\\" Unidad=\\\"PZA\\\" Descripcion=\\\"ARTICULO\\\" ValorUnitario=\\\"50\\\" Importe=\\\"50\\\" Descuento=\\\"0\\\"><cfdi:Impuestos><cfdi:Retenciones><cfdi:Retencion Base=\\\"50\\\" Impuesto=\\\"002\\\" TipoFactor=\\\"Tasa\\\" TasaOCuota=\\\"0.160000\\\" Importe=\\\"8\\\"/></cfdi:Retenciones></cfdi:Impuestos><cfdi:InformacionAduanera NumeroPedimento=\\\"15  48  3009  0001234\\\"/><cfdi:CuentaPredial Numero=\\\"112212\\\"/><cfdi:ComplementoConcepto/><cfdi:Parte ClaveProdServ=\\\"41116401\\\" NoIdentificacion=\\\"3nn\\\" Cantidad=\\\"1\\\" Unidad=\\\"Piezas\\\" Descripcion=\\\"Martillo\\\" ValorUnitario=\\\"8\\\" Importe=\\\"8\\\"/></cfdi:Concepto></cfdi:Conceptos><cfdi:Impuestos TotalImpuestosRetenidos=\\\"0\\\" TotalImpuestosTrasladados=\\\"8\\\"><cfdi:Traslados><cfdi:Traslado Impuesto=\\\"002\\\" TipoFactor=\\\"Tasa\\\" TasaOCuota=\\\"0.160000\\\" Importe=\\\"8\\\"/></cfdi:Traslados></cfdi:Impuestos></cfdi:Comprobante>\",\n        \"cadenaOriginal\": \"||3.3|A|36|2019-07-31T13:00:00|99|30001000000300023708|3 meses|50|0|MXN|58|I|PUE|05000|AAA010101AAA|Manuel Alejandro|601|XAXX010101000|Pedro Perez Hernandez|D01|01010101|UT421510|1|H87|PZA|ARTICULO|50|50|0|50|002|Tasa|0.160000|8|15 48 3009 0001234|112212|41116401|3nn|1|Piezas|Martillo|8|8|0|002|Tasa|0.160000|8|8||\"\n    }\n}"
-						}
-					]
-				},
-				{
 					"name": "Invoices",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{sync_token}}",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
-						"header": [
-							{
-								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-								"key": "Authorization",
-								"value": "Bearer {{sync_token}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/invoicing/mx/invoices?",
+							"raw": "https://sync.paybook.com/v1/invoicing/mx/invoices",
 							"protocol": "https",
 							"host": [
 								"sync",
@@ -2228,21 +1787,80 @@
 						},
 						"description": "Get all the stamped invoices for the user"
 					},
+					"response": []
+				},
+				{
+					"name": "Invoice",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id_provider\" : \"acme\",\n\t\"invoice_data\" : {\n\t\t\"Version\": \"3.3\",\n\t\t\"Serie\": \"A\",\n\t\t\"Folio\": \"1\",\n\t\t\"Fecha\": \"2020-03-20T12:09:14\",\n\t\t\"FormaPago\": \"99\",\n\t\t\"CondicionesDePago\":\"3 meses\",\n\t\t\"SubTotal\": \"50\",\n\t\t\"Descuento\": \"0\",\n\t\t\"Moneda\":\"MXN\",\n\t\t\"Total\":\"58\",\n\t\t\"TipoDeComprobante\": \"I\",\n\t\t\"MetodoPago\":\"PUE\",\n\t\t\"LugarExpedicion\": \"05000\",\n\t\t\"Emisor\": {\n\t\t\t\"Rfc\": \t\"IXS7607092R5\",\n\t\t\t\"Nombre\": \"INTERNACIONAL XIMBO Y SABORES SA DE CV\",\n\t\t\t\"RegimenFiscal\": \"603\"\n\t\t},\n\n\t\t\"Receptor\":{\n\t\t\t\"Rfc\": \"CACX7605101P8\",\n\t\t\t\"Nombre\":\"XOCHILT CASAS CHAVEZ\",\n\t\t\t\"UsoCFDI\": \"D01\"\n\t\t},\n\t\t\"Conceptos\" : {\n\t\t\t\"Concepto\" : [\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"Concepto\" : {\n\t\t\t\t\t            \"ClaveProdServ\": \"01010101\",\n\t\t\t\t\t            \"NoIdentificacion\": \"UT421510 \",\n\t\t\t\t\t            \"Cantidad\": \"1\",\n\t\t\t\t\t            \"ClaveUnidad\": \"H87\",\n\t\t\t\t\t            \"Unidad\": \"PZA\",\n\t\t\t\t\t            \"Descripcion\": \"ARTICULO\",\n\t\t\t\t\t            \"ValorUnitario\": \"50\",\n\t\t\t\t\t            \"Importe\": \"50\",\n\t\t\t\t\t            \"Descuento\": \"0\",\n\t\t\t\t\t            \"Impuestos\": {\n\t\t\t\t\t                \"Retenciones\": {\n\t\t\t\t\t                    \"Retencion\": [{\n\t\t\t\t\t                        \"Retencion\": {\n\t\t\t\t\t                            \"Base\": \"50\",\n\t\t\t\t\t                            \"Impuesto\": \"002\",\n\t\t\t\t\t                            \"TipoFactor\": \"Tasa\",\n\t\t\t\t\t                            \"TasaOCuota\": \"0.160000\",\n\t\t\t\t\t                            \"Importe\": \"8\"\n\t\t\t\t\t                        }\n\t\t\t\t\t                    }]\n\t\t\t\t\t                }\n\t\t\t\t\t            }\n\t\t\t\t\t        }\n\t\t\t\t\t    }\n\t\t\t]\n\t\t},\n\t    \"Impuestos\": {\n\t        \"TotalImpuestosRetenidos\": \"0\",\n\t        \"TotalImpuestosTrasladados\": \"8\",\n\t        \"Traslados\": {\n\t            \"Traslado\": [\n\t            \t{\n\t\t                \"Traslado\": {\n\t\t                    \"Impuesto\": \"002\",\n\t\t                \t\"TipoFactor\": \"Tasa\",\n                    \t\t\"TasaOCuota\": \"0.160000\",\n\t\t                    \"Importe\": \"8\"\n\t\t                }\n\t\t            }\n\t        \t]\n\t        }    \n\t    }\n\t} \t\n}"
+						},
+						"url": {
+							"raw": "https://sync.paybook.com/v1/invoicing/mx/invoices",
+							"protocol": "https",
+							"host": [
+								"sync",
+								"paybook",
+								"com"
+							],
+							"path": [
+								"v1",
+								"invoicing",
+								"mx",
+								"invoices"
+							],
+							"query": [
+								{
+									"key": "invoice_data",
+									"value": "JSON",
+									"description": "JSON structure of the invoice",
+									"disabled": true
+								},
+								{
+									"key": "invoice_xml",
+									"value": "String",
+									"description": "XML string (base64 encoded)",
+									"disabled": true
+								},
+								{
+									"key": "id_provider",
+									"value": "String",
+									"description": "(optional) Id or name of the available providers in Sync",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Stamp a new invoice, you can send the JSON structure or XML string"
+					},
 					"response": [
 						{
-							"name": "Invoices",
+							"name": "200",
 							"originalRequest": {
-								"method": "GET",
+								"method": "POST",
 								"header": [
 									{
-										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
-										"key": "Authorization",
-										"value": "Bearer {{sync_token}}",
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
 										"type": "text"
 									}
 								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id_provider\" : \"acme\",\n\t\"invoice_data\" : {\n\t\t\"Version\": \"3.3\",\n\t\t\"Serie\": \"A\",\n\t\t\"Folio\": \"1\",\n\t\t\"Fecha\": \"2020-03-20T12:09:14\",\n\t\t\"FormaPago\": \"99\",\n\t\t\"CondicionesDePago\":\"3 meses\",\n\t\t\"SubTotal\": \"50\",\n\t\t\"Descuento\": \"0\",\n\t\t\"Moneda\":\"MXN\",\n\t\t\"Total\":\"58\",\n\t\t\"TipoDeComprobante\": \"I\",\n\t\t\"MetodoPago\":\"PUE\",\n\t\t\"LugarExpedicion\": \"05000\",\n\t\t\"Emisor\": {\n\t\t\t\"Rfc\": \t\"IXS7607092R5\",\n\t\t\t\"Nombre\": \"INTERNACIONAL XIMBO Y SABORES SA DE CV\",\n\t\t\t\"RegimenFiscal\": \"603\"\n\t\t},\n\n\t\t\"Receptor\":{\n\t\t\t\"Rfc\": \"CACX7605101P8\",\n\t\t\t\"Nombre\":\"XOCHILT CASAS CHAVEZ\",\n\t\t\t\"UsoCFDI\": \"D01\"\n\t\t},\n\t\t\"Conceptos\" : {\n\t\t\t\"Concepto\" : [\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"Concepto\" : {\n\t\t\t\t\t            \"ClaveProdServ\": \"01010101\",\n\t\t\t\t\t            \"NoIdentificacion\": \"UT421510 \",\n\t\t\t\t\t            \"Cantidad\": \"1\",\n\t\t\t\t\t            \"ClaveUnidad\": \"H87\",\n\t\t\t\t\t            \"Unidad\": \"PZA\",\n\t\t\t\t\t            \"Descripcion\": \"ARTICULO\",\n\t\t\t\t\t            \"ValorUnitario\": \"50\",\n\t\t\t\t\t            \"Importe\": \"50\",\n\t\t\t\t\t            \"Descuento\": \"0\",\n\t\t\t\t\t            \"Impuestos\": {\n\t\t\t\t\t                \"Retenciones\": {\n\t\t\t\t\t                    \"Retencion\": [{\n\t\t\t\t\t                        \"Retencion\": {\n\t\t\t\t\t                            \"Base\": \"50\",\n\t\t\t\t\t                            \"Impuesto\": \"002\",\n\t\t\t\t\t                            \"TipoFactor\": \"Tasa\",\n\t\t\t\t\t                            \"TasaOCuota\": \"0.160000\",\n\t\t\t\t\t                            \"Importe\": \"8\"\n\t\t\t\t\t                        }\n\t\t\t\t\t                    }]\n\t\t\t\t\t                }\n\t\t\t\t\t            }\n\t\t\t\t\t        }\n\t\t\t\t\t    }\n\t\t\t]\n\t\t},\n\t    \"Impuestos\": {\n\t        \"TotalImpuestosRetenidos\": \"0\",\n\t        \"TotalImpuestosTrasladados\": \"8\",\n\t        \"Traslados\": {\n\t            \"Traslado\": [\n\t            \t{\n\t\t                \"Traslado\": {\n\t\t                    \"Impuesto\": \"002\",\n\t\t                \t\"TipoFactor\": \"Tasa\",\n                    \t\t\"TasaOCuota\": \"0.160000\",\n\t\t                    \"Importe\": \"8\"\n\t\t                }\n\t\t            }\n\t        \t]\n\t        }    \n\t    }\n\t} \t\n}"
+								},
 								"url": {
-									"raw": "https://sync.paybook.com/v1/invoicing/mx/invoices?uuid={{sync_invoices_invoice_uuid}}",
+									"raw": "https://sync.paybook.com/v1/invoicing/mx/invoices",
 									"protocol": "https",
 									"host": [
 										"sync",
@@ -2257,44 +1875,21 @@
 									],
 									"query": [
 										{
-											"key": "uuid",
-											"value": "{{sync_invoices_invoice_uuid}}",
-											"description": "(optional) UUID of the invoice"
+											"key": "invoice_data",
+											"value": "JSON",
+											"description": "JSON structure of the invoice",
+											"disabled": true
 										},
 										{
-											"key": "issuer",
+											"key": "invoice_xml",
 											"value": "String",
-											"description": "(optional) Filter by the RFC of the issue",
+											"description": "XML string (base64 encoded)",
 											"disabled": true
 										},
 										{
-											"key": "recipient",
+											"key": "id_provider",
 											"value": "String",
-											"description": "(optional) Filter by the RFC of the recipient.\n",
-											"disabled": true
-										},
-										{
-											"key": "dt_create_from",
-											"value": "Timestamp",
-											"description": "(optional) Filter from the date when the invoice was stamped, expected UNIX timestamp.\n",
-											"disabled": true
-										},
-										{
-											"key": "dt_create_to",
-											"value": "Timestamp",
-											"description": "(optional) Filter to the date when the invoice was stamped.\n",
-											"disabled": true
-										},
-										{
-											"key": "dt_register_from",
-											"value": "Timestamp",
-											"description": "(optional) Filter by the start of the register date, expected UNIX timestamp.\n",
-											"disabled": true
-										},
-										{
-											"key": "dt_register_to",
-											"value": "Timestamp",
-											"description": "(optional) Filter by the end of the register date, expected UNIX timestamp.\n",
+											"description": "(optional) Id or name of the available providers in Sync",
 											"disabled": true
 										}
 									]
@@ -2306,7 +1901,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Wed, 31 Jul 2019 18:24:36 GMT"
+									"value": "Fri, 20 Mar 2020 21:41:41 GMT"
 								},
 								{
 									"key": "Content-Type",
@@ -2325,16 +1920,20 @@
 									"value": "Accept-Encoding"
 								},
 								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
 									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, X-App-Version, X-Requested-With"
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
 								},
 								{
 									"key": "Access-Control-Allow-Methods",
 									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
 								},
 								{
 									"key": "Access-Control-Max-Age",
@@ -2350,7 +1949,7 @@
 								},
 								{
 									"key": "Last-Modified",
-									"value": "Wed, 31 Jul 2019 18:24:36 GMT"
+									"value": "Fri, 20 Mar 2020 21:41:41 GMT"
 								},
 								{
 									"key": "Pragma",
@@ -2358,11 +1957,19 @@
 								},
 								{
 									"key": "Request-ID",
-									"value": "2482f89a-abbf-4478-b6e0-d4eb752cf743"
+									"value": "b5e23964-29bf-4bd0-840f-098de08e066d"
 								},
 								{
 									"key": "Content-Encoding",
 									"value": "gzip"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
 								},
 								{
 									"key": "Strict-Transport-Security",
@@ -2373,44 +1980,24 @@
 									"value": "nosniff"
 								},
 								{
-									"key": "Expect-CT",
-									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
-								},
-								{
 									"key": "Server",
 									"value": "cloudflare"
 								},
 								{
 									"key": "CF-RAY",
-									"value": "4ff19c22efabd0ac-QRO"
+									"value": "5772992bf89e9b4e-DFW"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"rid\": \"2482f89a-abbf-4478-b6e0-d4eb752cf743\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"uuid\": \"T1A5B85DC-E7B9-434F-9AF7-45AD334A417A\",\n            \"xml\": \"<?xml version=\\\"1.0\\\" encoding=\\\"utf-8\\\"?>\\n<cfdi:Comprobante xmlns:cfdi=\\\"http://www.sat.gob.mx/cfd/3\\\" xmlns:implocal=\\\"http://www.sat.gob.mx/implocal\\\" xmlns:iedu=\\\"http://www.sat.gob.mx/iedu\\\" xmlns:tfd=\\\"http://www.sat.gob.mx/TimbreFiscalDigital\\\" xmlns:pago10=\\\"http://www.sat.gob.mx/Pagos\\\" xmlns:nomina12=\\\"http://www.sat.gob.mx/nomina12\\\" xmlns:cce11=\\\"http://www.sat.gob.mx/ComercioExterior11\\\" xmlns:xsi=\\\"http://www.w3.org/2001/XMLSchema-instance\\\" xsi:schemaLocation=\\\"http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd http://www.sat.gob.mx/implocal http://www.sat.gob.mx/sitio_internet/cfd/implocal/implocal.xsd\\\" Version=\\\"3.3\\\" Serie=\\\"A\\\" Folio=\\\"36\\\" Fecha=\\\"2019-07-31T13:00:00\\\" FormaPago=\\\"99\\\" NoCertificado=\\\"30001000000300023708\\\" Certificado=\\\"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\\\" CondicionesDePago=\\\"3 meses\\\" SubTotal=\\\"50\\\" Descuento=\\\"0\\\" Moneda=\\\"MXN\\\" Total=\\\"58\\\" TipoDeComprobante=\\\"I\\\" MetodoPago=\\\"PUE\\\" LugarExpedicion=\\\"05000\\\" Sello=\\\"NExweOZpll9/NeOZdGN+TtRPZfJKAntJD7WqsWC1b/1Ol3s3VLuQIh2SZsTcrfzUdwjNiRobJsu2BOYoOrUD5fTb29jscu3pRTtGNbF5bbB0y8zpY+3ZRHCQ8KGEq+TaRmh2+9a3QbEvXQdTmQTvCsCOrD1WUOtPYEDh+Xf6JM5IcUwgRtmx3tCnju4gEFQbes0/7KiSR2bBYKUtKW4ZCTON6m9tS39PKmNTCNzusEF74zMZOWvaVH3rF+V6OWFP96SrFV/ledVp9VSRmWqrF9UG6JI7axrRgdegZ07O6boWwSIDihLOPk0sl0Ey7ghRa8EQgulEWpOweKmq6w+Z9Q==\\\"><cfdi:Emisor Rfc=\\\"AAA010101AAA\\\" Nombre=\\\"Manuel Alejandro\\\" RegimenFiscal=\\\"601\\\"/><cfdi:Receptor Rfc=\\\"XAXX010101000\\\" Nombre=\\\"Pedro Perez Hernandez\\\" UsoCFDI=\\\"D01\\\"/><cfdi:Conceptos><cfdi:Concepto ClaveProdServ=\\\"01010101\\\" NoIdentificacion=\\\"UT421510 \\\" Cantidad=\\\"1\\\" ClaveUnidad=\\\"H87\\\" Unidad=\\\"PZA\\\" Descripcion=\\\"ARTICULO\\\" ValorUnitario=\\\"50\\\" Importe=\\\"50\\\" Descuento=\\\"0\\\"><cfdi:Impuestos><cfdi:Retenciones><cfdi:Retencion Base=\\\"50\\\" Impuesto=\\\"002\\\" TipoFactor=\\\"Tasa\\\" TasaOCuota=\\\"0.160000\\\" Importe=\\\"8\\\"/></cfdi:Retenciones></cfdi:Impuestos><cfdi:InformacionAduanera NumeroPedimento=\\\"15  48  3009  0001234\\\"/><cfdi:CuentaPredial Numero=\\\"112212\\\"/><cfdi:ComplementoConcepto/><cfdi:Parte ClaveProdServ=\\\"41116401\\\" NoIdentificacion=\\\"3nn\\\" Cantidad=\\\"1\\\" Unidad=\\\"Piezas\\\" Descripcion=\\\"Martillo\\\" ValorUnitario=\\\"8\\\" Importe=\\\"8\\\"/></cfdi:Concepto></cfdi:Conceptos><cfdi:Impuestos TotalImpuestosRetenidos=\\\"0\\\" TotalImpuestosTrasladados=\\\"8\\\"><cfdi:Traslados><cfdi:Traslado Impuesto=\\\"002\\\" TipoFactor=\\\"Tasa\\\" TasaOCuota=\\\"0.160000\\\" Importe=\\\"8\\\"/></cfdi:Traslados></cfdi:Impuestos><cfdi:Complemento><tfd:TimbreFiscalDigital xmlns:tfd=\\\"http://www.sat.gob.mx/TimbreFiscalDigital\\\" xmlns:xsi=\\\"http://www.w3.org/2001/XMLSchema-instance\\\" xsi:schemaLocation=\\\"http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/TimbreFiscalDigital/TimbreFiscalDigital.xsd\\\" version=\\\"1.0\\\" UUID=\\\"T1A5B85DC-E7B9-434F-9AF7-45AD334A417A\\\" FechaTimbrado=\\\"2019-07-31T13:00:00\\\" SelloCFD=\\\"HvSZ/+c6+aQAIsPjWztUCDAhkMkt39KzFJoYcaSY4L+dkp7so2/Ad9qG5xpX/in1vSdiGmTL1ojXXabgBNuZsDsvmvvPZdCdmbokG3n7dSfG3irse8G1PDn6rIvhcsR3tlDgbQ50SVvohuWv2+C9FXKd1Q7rZHPAjE3bm+JQj3M=\\\" NoCertificadoSAT=\\\"292233162870206001759766198425879490508935868472\\\" SelloSAT=\\\"SelloDummyE5xY7UJudSgA6jgKN0pVa6j6UdpxqP5pCBnGtsnrJltVCWzhZumvRsqnZnyyO0ZwMT9xZ/qbBfcDh8q0LtJ6OrmvcP83qQygLGhzoOEeH+7lJ9opcjIS2hnyZMrXOMbONK04dujr0xSO95paJ7VYVN03i4TdcmCu53uOS7WHGQs=\\\"/></cfdi:Complemento></cfdi:Comprobante>\",\n            \"status\": 1,\n            \"recipient\": \"XAXX010101000\",\n            \"issuer\": \"AAA010101AAA\",\n            \"date\": \"2019-07-31T13:00:00\",\n            \"dt_register\": 1564596000,\n            \"dt_create\": 1564594969,\n            \"version\": \"3.3\"\n        }\n    ]\n}"
+							"body": "{\n    \"rid\": \"b5e23964-29bf-4bd0-840f-098de08e066d\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"taxpayer\": \"IXS7607092R5\",\n        \"errors\": [],\n        \"success\": true,\n        \"stamp_code\": \"200\",\n        \"xml\": \"<?xml version=\\\"1.0\\\" encoding=\\\"utf-8\\\"?>\\n<cfdi:Comprobante xmlns:cfdi=\\\"http://www.sat.gob.mx/cfd/3\\\" xmlns:implocal=\\\"http://www.sat.gob.mx/implocal\\\" xmlns:iedu=\\\"http://www.sat.gob.mx/iedu\\\" xmlns:tfd=\\\"http://www.sat.gob.mx/TimbreFiscalDigital\\\" xmlns:pago10=\\\"http://www.sat.gob.mx/Pagos\\\" xmlns:nomina12=\\\"http://www.sat.gob.mx/nomina12\\\" xmlns:donat=\\\"http://www.sat.gob.mx/donat\\\" xmlns:cce11=\\\"http://www.sat.gob.mx/ComercioExterior11\\\" xmlns:xsi=\\\"http://www.w3.org/2001/XMLSchema-instance\\\" xsi:schemaLocation=\\\"http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd\\\" Version=\\\"3.3\\\" Serie=\\\"A\\\" Folio=\\\"1\\\" Fecha=\\\"2020-03-20T12:09:14\\\" FormaPago=\\\"99\\\" NoCertificado=\\\"30001000000400002445\\\" Certificado=\\\"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\\\" CondicionesDePago=\\\"3 meses\\\" SubTotal=\\\"50\\\" Descuento=\\\"0\\\" Moneda=\\\"MXN\\\" Total=\\\"58\\\" TipoDeComprobante=\\\"I\\\" MetodoPago=\\\"PUE\\\" LugarExpedicion=\\\"05000\\\" Sello=\\\"jl00XEsqkcpFsjATLRVwVO8aEprq+mYJPqCzvj0ikJrCBoY4v3M8uo2bd9POnz1pnZ+gZqyJ+hEYrNlAncBjV7aTdV8rcnWqNbqAqTl868X4wLpkRhG+AkQIQRRv0JfFXrGgB4ejRNSszaTHjG4t1PSzvAhAYo361QuRosQypYK+m6QCyElyvFkYk69mA8P6a5Wv4TA7GprNPIVB6roJxTWqvaNboc1hSlfXSD8mgVU6sorXlXduCfaPEMnpBM+QSDqvQsvBt8LwBtZHUrA2EF5RMIOo1hQ2qEbSMtx1CHalS2iFrV6d+B8eASG1Mwd1/FGmQGoh1DzmTTylYwDqYQ==\\\"><cfdi:Emisor Rfc=\\\"IXS7607092R5\\\" Nombre=\\\"INTERNACIONAL XIMBO Y SABORES SA DE CV\\\" RegimenFiscal=\\\"603\\\"/><cfdi:Receptor Rfc=\\\"CACX7605101P8\\\" Nombre=\\\"XOCHILT CASAS CHAVEZ\\\" UsoCFDI=\\\"D01\\\"/><cfdi:Conceptos><cfdi:Concepto ClaveProdServ=\\\"01010101\\\" NoIdentificacion=\\\"UT421510 \\\" Cantidad=\\\"1\\\" ClaveUnidad=\\\"H87\\\" Unidad=\\\"PZA\\\" Descripcion=\\\"ARTICULO\\\" ValorUnitario=\\\"50\\\" Importe=\\\"50\\\" Descuento=\\\"0\\\"><cfdi:Impuestos><cfdi:Retenciones><cfdi:Retencion Base=\\\"50\\\" Impuesto=\\\"002\\\" TipoFactor=\\\"Tasa\\\" TasaOCuota=\\\"0.160000\\\" Importe=\\\"8\\\"/></cfdi:Retenciones></cfdi:Impuestos></cfdi:Concepto></cfdi:Conceptos><cfdi:Impuestos TotalImpuestosRetenidos=\\\"0\\\" TotalImpuestosTrasladados=\\\"8\\\"><cfdi:Traslados><cfdi:Traslado Impuesto=\\\"002\\\" TipoFactor=\\\"Tasa\\\" TasaOCuota=\\\"0.160000\\\" Importe=\\\"8\\\"/></cfdi:Traslados></cfdi:Impuestos><cfdi:Complemento><tfd:TimbreFiscalDigital xmlns:tfd=\\\"http://www.sat.gob.mx/TimbreFiscalDigital\\\" xmlns:xsi=\\\"http://www.w3.org/2001/XMLSchema-instance\\\" xsi:schemaLocation=\\\"http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/TimbreFiscalDigital/TimbreFiscalDigital.xsd\\\" version=\\\"1.0\\\" UUID=\\\"TCBE9B51F-3953-4595-9F91-24AA7D5D47A9\\\" FechaTimbrado=\\\"2020-03-20T12:09:14\\\" SelloCFD=\\\"HvSZ/+c6+aQAIsPjWztUCDAhkMkt39KzFJoYcaSY4L+dkp7so2/Ad9qG5xpX/in1vSdiGmTL1ojXXabgBNuZsDsvmvvPZdCdmbokG3n7dSfG3irse8G1PDn6rIvhcsR3tlDgbQ50SVvohuWv2+C9FXKd1Q7rZHPAjE3bm+JQj3M=\\\" NoCertificadoSAT=\\\"292233162870206001759766198444326234574038512693\\\" SelloSAT=\\\"SelloDummyE5xY7UJudSgA6jgKN0pVa6j6UdpxqP5pCBnGtsnrJltVCWzhZumvRsqnZnyyO0ZwMT9xZ/qbBfcDh8q0LtJ6OrmvcP83qQygLGhzoOEeH+7lJ9opcjIS2hnyZMrXOMbONK04dujr0xSO95paJ7VYVN03i4TdcmCu53uOS7WHGQs=\\\"/></cfdi:Complemento></cfdi:Comprobante>\",\n        \"uuid\": \"TCBE9B51F-3953-4595-9F91-24AA7D5D47A9\",\n        \"warnings\": false,\n        \"cadenaOriginal\": \"||3.3|A|1|2020-03-20T12:09:14|99|30001000000400002445|3 meses|50|0|MXN|58|I|PUE|05000|IXS7607092R5|INTERNACIONAL XIMBO Y SABORES SA DE CV|603|CACX7605101P8|XOCHILT CASAS CHAVEZ|D01|01010101|UT421510|1|H87|PZA|ARTICULO|50|50|0|50|002|Tasa|0.160000|8|0|002|Tasa|0.160000|8|8||\",\n        \"selloSAT\": \"SelloDummyE5xY7UJudSgA6jgKN0pVa6j6UdpxqP5pCBnGtsnrJltVCWzhZumvRsqnZnyyO0ZwMT9xZ/qbBfcDh8q0LtJ6OrmvcP83qQygLGhzoOEeH+7lJ9opcjIS2hnyZMrXOMbONK04dujr0xSO95paJ7VYVN03i4TdcmCu53uOS7WHGQs=\",\n        \"selloCFD\": \"HvSZ/+c6+aQAIsPjWztUCDAhkMkt39KzFJoYcaSY4L+dkp7so2/Ad9qG5xpX/in1vSdiGmTL1ojXXabgBNuZsDsvmvvPZdCdmbokG3n7dSfG3irse8G1PDn6rIvhcsR3tlDgbQ50SVvohuWv2+C9FXKd1Q7rZHPAjE3bm+JQj3M=\",\n        \"QRString\": \"?re=IXS7607092R5&rr=CACX7605101P8&tt=0000000058.000000&id=TCBE9B51F-3953-4595-9F91-24AA7D5D47A9\",\n        \"emailError\": false,\n        \"pdf\": false,\n        \"count\": 25396\n    }\n}"
 						}
 					]
 				},
 				{
 					"name": "Invoices",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{sync_token}}",
-									"type": "string"
-								}
-							]
-						},
 						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{sync_token}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"url": {
 							"raw": "https://sync.paybook.com/v1/invoicing/mx/invoices/{{sync_invoices_invoice_uuid}}/cancel",
 							"protocol": "https",
@@ -2432,16 +2019,10 @@
 					},
 					"response": [
 						{
-							"name": "Invoices",
+							"name": "200",
 							"originalRequest": {
 								"method": "PUT",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer {{sync_token}}",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "https://sync.paybook.com/v1/invoicing/mx/invoices/{{sync_invoices_invoice_uuid}}/cancel",
 									"protocol": "https",
@@ -2466,7 +2047,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Wed, 31 Jul 2019 18:32:47 GMT"
+									"value": "Fri, 20 Mar 2020 21:43:57 GMT"
 								},
 								{
 									"key": "Content-Type",
@@ -2485,16 +2066,20 @@
 									"value": "Accept-Encoding"
 								},
 								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
 									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, X-App-Version, X-Requested-With"
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
 								},
 								{
 									"key": "Access-Control-Allow-Methods",
 									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
 								},
 								{
 									"key": "Access-Control-Max-Age",
@@ -2510,7 +2095,7 @@
 								},
 								{
 									"key": "Last-Modified",
-									"value": "Wed, 31 Jul 2019 18:32:47 GMT"
+									"value": "Fri, 20 Mar 2020 21:43:57 GMT"
 								},
 								{
 									"key": "Pragma",
@@ -2518,11 +2103,19 @@
 								},
 								{
 									"key": "Request-ID",
-									"value": "e8c7d44f-3b7b-4559-a1b8-5cb092a9afdd"
+									"value": "f62d3a21-4ebd-4444-bb0c-70d5bc00847e"
 								},
 								{
 									"key": "Content-Encoding",
 									"value": "gzip"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
 								},
 								{
 									"key": "Strict-Transport-Security",
@@ -2533,22 +2126,50 @@
 									"value": "nosniff"
 								},
 								{
-									"key": "Expect-CT",
-									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
-								},
-								{
 									"key": "Server",
 									"value": "cloudflare"
 								},
 								{
 									"key": "CF-RAY",
-									"value": "4ff1a8206af6d0c4-QRO"
+									"value": "57729c992b679b4e-DFW"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"rid\": \"e8c7d44f-3b7b-4559-a1b8-5cb092a9afdd\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"success\": true,\n        \"cancel_receipt\": \"<s:Envelope xmlns:s=\\\"http://schemas.xmlsoap.org/soap/envelope/\\\"><s:Body xmlns:xsi=\\\"http://www.w3.org/2001/XMLSchema-instance\\\" xmlns:xsd=\\\"http://www.w3.org/2001/XMLSchema\\\"><CancelaCFDResponse xmlns=\\\"http://cancelacfd.sat.gob.mx\\\"><CancelaCFDResult Fecha=\\\"2019-07-31 13:32:47\\\" RfcEmisor=\\\"AAA010101AAA\\\"><Folios><UUID>T1A5B85DC-E7B9-434F-9AF7-45AD334A417A</UUID><EstatusUUID>201</EstatusUUID></Folios><Signature Id=\\\"SelloSAT\\\" xmlns=\\\"http://www.w3.org/2000/09/xmldsig#\\\"><SignedInfo><CanonicalizationMethod Algorithm=\\\"http://www.w3.org/TR/2001/REC-xml-c14n-20010315\\\"/><SignatureMethod Algorithm=\\\"http://www.w3.org/2001/04/xmldsig-more#hmac-sha512\\\"/><Reference URI=\\\"\\\"><Transforms><Transform Algorithm=\\\"http://www.w3.org/TR/1999/REC-xpath-19991116\\\"><XPath>not(ancestor-or-self::*[local-name()=\\\"Signature\\\"])</XPath></Transform></Transforms><DigestMethod Algorithm=\\\"http://www.w3.org/2001/04/xmlenc#sha512\\\"/><DigestValue>P2lENAhvzEBJuAS1aIPcpZVjYN2A73ckFc0wkj+XPA2rp6NrIVGFEPq3qCSAwlsR2+xx1ZaItMkSuv+f5t3ZGA==</DigestValue></Reference></SignedInfo><SignatureValue>EeXPV2EIrQtZzERdWgvrVOkl5HVcBVwZChX2Q/q9W2KzliiVWTznzVNVPqzaAvGkaZqAdv6KzbPeD9fUXTpB5g==</SignatureValue><KeyInfo><KeyName>00001088888800111093</KeyName><KeyValue><RSAKeyValue><Modulus>yxMvUucuS+s3aeWTFZvJrrFWIdes7kIDJmO7DA5DP+ZTapofNt37ageIHlTUdAVvd/fDKhfiwNSh+vbrNbD58X3UEdQor3ngb6zpjrDjgYsedckPLv6fro4DO0NXLCdALFqhN8ARyX77kYBfvIj1fOSVp401Vc3gfUtiEm16Kle3tOyWddzdK3oAIXF8oeei/GburWbJnpP+NeGaHVE5bkxLCBp5757nKVonXwzpfpEGuBp204NGkI2/jyA2EH8wyRuyUvzjT47IJYrHng23klRDlJoRYwa98QQPdQSTpcrgeu8nLhpQdI/zMTLoNF2NiBCkQNuAMacKhnvlVw==</Modulus><Exponent>AQAC</Exponent></RSAKeyValue></KeyValue></KeyInfo></Signature></CancelaCFDResult></CancelaCFDResponse></s:Body></s:Envelope>\",\n        \"uuid\": \"T1A5B85DC-E7B9-434F-9AF7-45AD334A417A\"\n    }\n}"
+							"body": "{\n    \"rid\": \"f62d3a21-4ebd-4444-bb0c-70d5bc00847e\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"success\": true,\n        \"cancel_receipt\": \"<s:Envelope xmlns:s=\\\"http://schemas.xmlsoap.org/soap/envelope/\\\"><s:Body xmlns:xsi=\\\"http://www.w3.org/2001/XMLSchema-instance\\\" xmlns:xsd=\\\"http://www.w3.org/2001/XMLSchema\\\"><CancelaCFDResponse xmlns=\\\"http://cancelacfd.sat.gob.mx\\\"><CancelaCFDResult Fecha=\\\"2020-03-20 16:43:57\\\" RfcEmisor=\\\"IXS7607092R5\\\"><Folios><UUID>TCBE9B51F-3953-4595-9F91-24AA7D5D47A9</UUID><EstatusUUID>201</EstatusUUID></Folios><Signature Id=\\\"SelloSAT\\\" xmlns=\\\"http://www.w3.org/2000/09/xmldsig#\\\"><SignedInfo><CanonicalizationMethod Algorithm=\\\"http://www.w3.org/TR/2001/REC-xml-c14n-20010315\\\"/><SignatureMethod Algorithm=\\\"http://www.w3.org/2001/04/xmldsig-more#hmac-sha512\\\"/><Reference URI=\\\"\\\"><Transforms><Transform Algorithm=\\\"http://www.w3.org/TR/1999/REC-xpath-19991116\\\"><XPath>not(ancestor-or-self::*[local-name()=\\\"Signature\\\"])</XPath></Transform></Transforms><DigestMethod Algorithm=\\\"http://www.w3.org/2001/04/xmlenc#sha512\\\"/><DigestValue>P2lENAhvzEBJuAS1aIPcpZVjYN2A73ckFc0wkj+XPA2rp6NrIVGFEPq3qCSAwlsR2+xx1ZaItMkSuv+f5t3ZGA==</DigestValue></Reference></SignedInfo><SignatureValue>EeXPV2EIrQtZzERdWgvrVOkl5HVcBVwZChX2Q/q9W2KzliiVWTznzVNVPqzaAvGkaZqAdv6KzbPeD9fUXTpB5g==</SignatureValue><KeyInfo><KeyName>00001088888800111093</KeyName><KeyValue><RSAKeyValue><Modulus>yxMvUucuS+s3aeWTFZvJrrFWIdes7kIDJmO7DA5DP+ZTapofNt37ageIHlTUdAVvd/fDKhfiwNSh+vbrNbD58X3UEdQor3ngb6zpjrDjgYsedckPLv6fro4DO0NXLCdALFqhN8ARyX77kYBfvIj1fOSVp401Vc3gfUtiEm16Kle3tOyWddzdK3oAIXF8oeei/GburWbJnpP+NeGaHVE5bkxLCBp5757nKVonXwzpfpEGuBp204NGkI2/jyA2EH8wyRuyUvzjT47IJYrHng23klRDlJoRYwa98QQPdQSTpcrgeu8nLhpQdI/zMTLoNF2NiBCkQNuAMacKhnvlVw==</Modulus><Exponent>AQAC</Exponent></RSAKeyValue></KeyValue></KeyInfo></Signature></CancelaCFDResult></CancelaCFDResponse></s:Body></s:Envelope>\",\n        \"uuid\": \"TCBE9B51F-3953-4595-9F91-24AA7D5D47A9\"\n    }\n}"
 						}
 					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{sync_token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "777a49f5-64da-472a-9940-1d8169ba4204",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "a3283418-4d4d-4563-b3a6-a70b981614e7",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
 			],
 			"protocolProfileBehavior": {}
