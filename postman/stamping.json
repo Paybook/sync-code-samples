@@ -53,7 +53,149 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://sync.paybook.com/v1/users?",
+									"protocol": "https",
+									"host": [
+										"sync",
+										"paybook",
+										"com"
+									],
+									"path": [
+										"v1",
+										"users"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "String",
+											"description": "(optional) Select fields to be returned.",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "Number",
+											"description": "(optional) Limit the number of rows to be returned.",
+											"disabled": true
+										},
+										{
+											"key": "skip",
+											"value": "Number",
+											"description": "(optional) Skip rows to be returned.",
+											"disabled": true
+										},
+										{
+											"key": "order",
+											"value": "String",
+											"description": "(optional) Order the rows to be returned.",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 23 Mar 2020 23:47:21 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Mon, 23 Mar 2020 23:47:21 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "262bd942-5409-4197-8176-ab0339d9ea2a"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "578c097a58d4d26e-DFW"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"262bd942-5409-4197-8176-ab0339d9ea2a\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_user\": \"5e751d54d0510472295413b3\",\n            \"id_external\": \"IXS7607092R5\",\n            \"name\": \"INTERNACIONAL XIMBO Y SABORES SA DE CV\",\n            \"dt_create\": 1584733524,\n            \"dt_modify\": 1584733564\n        }\n    ]\n}"
+						}
+					]
 				},
 				{
 					"name": "Create a new user",
@@ -575,7 +717,7 @@
 					]
 				}
 			],
-			"description": "Users are logical segmentations for end-users. It's a best practice to register users in order to have their information grouped and have control on both ends. It is required to have at least one user registered to create credentials\n\n\n|Property   \t|Type  \t\t|Description\t\t\t\t\t\t\t|\n|---\t\t\t|---\t\t|---\t\t\t\t\t\t\t\t\t|\n|id_user   \t\t| String\t| User ID, this is the actual subtoken that is needed in other resources  \t|\n|id_external   \t| String\t| External ID, this field can be <code>null</code> and be used to keep track \t\t\t\t\t\t\t\tof that user with an external ID\t\t\t\t\t\t\t\t\t\t|\n|name\t\t\t| String\t| User name\t\t\t\t\t\t\t\t|\n|dt_create\t\t| String\t| Date when the user was created\t\t\t\t\t\t\t\t|\n|dt_modify\t\t| String\t| Date modify\t\t\t\t\t\t\t\t|",
+			"description": "Users are logical segmentations for end-users. It's a best practice to register users in order to have their information grouped and have control on both ends. It is required to have at least one user registered to create credentials\n\n\n```json\n{\n    \"id_user\": \"5e751d54d0510472295413b3\",\n    \"id_external\": null,\n    \"name\": \"INTERNACIONAL XIMBO Y SABORES SA DE CV\",\n    \"dt_create\": 1584733524,\n    \"dt_modify\": null\n}\n```",
 			"auth": {
 				"type": "apikey",
 				"apikey": [
