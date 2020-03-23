@@ -24,7 +24,9 @@ A webhook is a HTTP callback to a specified URL. They are triggered each time da
 
 ## Events
 
-### credential_create
+------
+
+`credential_create`
 
 New credential was created
 
@@ -48,9 +50,9 @@ New credential was created
 }
 ```
 
+------
 
-
-### credential_update
+`credential_update`
 
 Existing credential was updated
 
@@ -74,9 +76,9 @@ Existing credential was updated
 }
 ```
 
+------
 
-
-### refresh 
+`refresh` 
 
 For a Existing credentials, the follow actions can be detected:
 
@@ -124,7 +126,11 @@ For a Existing credentials, the follow actions can be detected:
 
 ## Methods
 
-### Return webhooks register on API KEY
+------
+
+`GET`
+
+Return webhooks register on API KEY
 
 ```bash
 curl "https://sync.paybook.com/v1/webhooks" \
@@ -132,9 +138,11 @@ curl "https://sync.paybook.com/v1/webhooks" \
 -X GET
 ```
 
+------
 
+`POST`
 
-### Creates a new Webhook on API KEY
+Creates a new Webhook on API KEY
 
 ```bash
 curl "https://sync.paybook.com/v1/webhooks" \
@@ -144,9 +152,11 @@ curl "https://sync.paybook.com/v1/webhooks" \
 -X POST
 ```
 
+------
 
+`DELETE`
 
-### Delete a Webhook
+Delete a Webhook
 
 ```bash
 curl "https://sync.paybook.com/v1/webhooks/ID_WEBHOOK" \
