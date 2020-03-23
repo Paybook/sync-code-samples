@@ -1,4 +1,6 @@
 # Webhooks
+------
+<br />
 
 A webhook is a HTTP callback to a specified URL. They are triggered each time data is updated in Sync to help you stay up to date with the latest changes.
 
