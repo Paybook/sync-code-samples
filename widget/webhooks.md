@@ -12,7 +12,7 @@ A webhook is a HTTP callback to a specified URL. They are triggered each time da
         "credential_update",
         "refresh"
     ],
-    "url": "https://be5ce5a1.ngrok.io/my_webhook",
+    "url": "https://webhook_domain/my_webhook",
     "delay": 0,
     "ct_failed": 1001,
     "dt_created": "2019-10-07T21:17:15+00:00",
@@ -153,7 +153,7 @@ Creates a new Webhook on API KEY
 curl "https://sync.paybook.com/v1/webhooks" \
 -H "Authorization: api_key api_key=YOUR_API_KEY" \
 -H "Content-Type: application/json" \
--d '{"id_environment":"ID_ENVIRONMENT","url":"https://WEBHOOK_DOMAIN/my_webhook","events":["credential_create","credential_update","refresh"]}' \
+-d '{"url":"https://webhook_domain/my_webhook","events":["credential_create","credential_update","refresh"]}' \
 -X POST
 ```
 
