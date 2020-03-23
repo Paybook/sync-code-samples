@@ -120,3 +120,41 @@ A webhook is a HTTP callback to a specified URL. They are triggered each time da
 }
 ```
 
+
+
+## Methods
+
+### Return webhooks register on API KEY
+
+```bash
+curl "https://sync.paybook.com/v1/webhooks" \
+-H "Authorization: api_key api_key=YOUR_API_KEY" \
+-X GET
+```
+
+
+
+### Creates a new Webhook on API KEY
+
+```bash
+curl "https://sync.paybook.com/v1/webhooks" \
+-H "Authorization: api_key api_key=YOUR_API_KEY" \
+-H "Content-Type: application/json" \
+-d '{"id_environment":"ID_ENVIRONMENT","url":"https://WEBHOOK_DOMAIN/my_webhook","events":["credential_create","credential_update","refresh"]}' \
+-X POST
+```
+
+
+
+### Delete a Webhook
+
+```bash
+curl "https://sync.paybook.com/v1/webhooks/ID_WEBHOOK" \
+-H "Authorization: api_key api_key=YOUR_API_KEY" \
+-X DELETE
+```
+
+
+
+
+
