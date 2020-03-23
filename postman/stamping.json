@@ -717,7 +717,7 @@
 					]
 				}
 			],
-			"description": "Users are logical segmentations for end-users. It's a best practice to register users in order to have their information grouped and have control on both ends. It is required to have at least one user registered to create credentials\n\n\n```json\n{\n    \"id_user\": \"5e751d54d0510472295413b3\",\n    \"id_external\": null,\n    \"name\": \"INTERNACIONAL XIMBO Y SABORES SA DE CV\",\n    \"dt_create\": 1584733524,\n    \"dt_modify\": null\n}\n```",
+			"description": "Users are logical segmentations for end-users. It's a best practice to register users in order to have their information grouped and have control on both ends. It is required to have at least one user registered to create credentials\n\n\n```json\n{\n    \"id_user\": \"5e751d54d0510472295413b3\",\n    \"id_external\": \"IXS7607092R5\",\n    \"name\": \"INTERNACIONAL XIMBO Y SABORES SA DE CV\",\n    \"dt_create\": 1584733524,\n    \"dt_modify\": 1584733564\n}\n```",
 			"auth": {
 				"type": "apikey",
 				"apikey": [
