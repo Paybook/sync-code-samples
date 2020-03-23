@@ -80,10 +80,13 @@ A webhook is a HTTP callback to a specified URL. They are triggered each time da
 
    For a Existing credentials, the follow actions can be detected:
 
-   * New account was added
-   * New transactions wass added
-   * An existing accounts was updated
-   * An existing transactions was updated
+   1. New account was added
+
+   2. New transactions wass added
+
+   3. An existing accounts was updated
+
+   4. An existing transactions was updated
 
 ```json
 {
