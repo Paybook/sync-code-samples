@@ -3,7 +3,7 @@
 ------
 <br />
 
-### New credential was create 
+### New credential was created 
 
  `credential_create`
 
@@ -61,7 +61,7 @@ Message:
 ------
 <br />
 
-###Credential data was added or updated
+### Data for an existing credential was added or updated
 
 `refresh` 
 
@@ -105,3 +105,4 @@ Message:
     "id_user": "5e751d54d0510472295413b3"
 }
 ```
+

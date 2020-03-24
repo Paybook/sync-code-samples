@@ -4,7 +4,17 @@
 
 A webhook is a HTTP callback to a specified URL. They are triggered each time data is updated in Sync to help you stay up to date with the latest changes.
 
-Webhook Object:
+Paybook Sync API requires that you setting up a Webhook to your API KEY in order to send these events notification:
+
+1. New credential was created `credential_create`
+2. Existing credential was updated `credential_update`
+3. Data for an existing credential was added or updated `refresh`
+
+------
+
+<br/>
+
+### Sync Webhook Object
 
 ```json
 {
@@ -23,3 +33,30 @@ Webhook Object:
     "dt_modified": "2020-03-20T05:37:43+00:00"
 }
 ```
+
+------
+
+<br/>
+
+### Sync Webhook Notification 
+
+```json
+{
+    "endpoints": {
+        "credential": [
+            "/v1/credentials/5e793889ea4c5165d46f9811"
+        ]
+    }, 
+    "event": "credential_create", 
+    "id_credential": "5e793889ea4c5165d46f9811", 
+    "id_external": "IXS7607092R5", 
+    "id_job": "5e793889b783081dd61de29c", 
+    "id_job_uuid": "5e793889b783081dd61de29b", 
+    "id_site": "5da784f1f9de2a06483abec1", 
+    "id_site_organization": "56cf4ff5784806152c8b4567", 
+    "id_site_organization_type": "56cf4f5b784806cf028b4569", 
+    "id_user": "5e751d54d0510472295413b3", 
+    "is_executing": 1
+}
+```
+
