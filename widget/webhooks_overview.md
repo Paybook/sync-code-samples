@@ -6,9 +6,9 @@ A webhook is a HTTP callback to a specified URL. They are triggered each time da
 
 Paybook Sync API requires that you setting up a Webhook to your API KEY in order to send these events notification:
 
-1. New credential was created `credential_create`
-2. Existing credential was updated `credential_update`
-3. Data for an existing credential was added or updated `refresh`
+1.  `credential_create` : New credential was created
+2. `credential_update` : Existing credential was updated 
+3. `refresh` : Data for an existing credential was added or updated
 
 ------
 

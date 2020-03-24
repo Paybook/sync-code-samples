@@ -3,7 +3,7 @@
 ------
 <br />
 
-#### Return webhooks register on API KEY
+#### Return Webhooks register on API KEY
 
 `GET`
 
