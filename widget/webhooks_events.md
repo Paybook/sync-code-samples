@@ -3,9 +3,11 @@
 ------
 <br />
 
-`credential_create`
+### New credential was create 
 
-New credential was created
+ `credential_create`
+
+Message:
 
 ```json
 {
@@ -30,9 +32,11 @@ New credential was created
 ------
 <br />
 
+### Existing credential was updated
+
 `credential_update`
 
-Existing credential was updated
+Message:
 
 ```json
 {
@@ -57,17 +61,18 @@ Existing credential was updated
 ------
 <br />
 
+###Credential data was added or updated
+
 `refresh` 
 
 For a Existing credentials, the follow actions can be detected:
 
 1. New account was added
-
 2. New transactions wass added
-
 3. An existing accounts was updated
-
 4. An existing transactions was updated
+
+Message:
 
 ```json
 {

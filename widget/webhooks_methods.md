@@ -3,9 +3,9 @@
 ------
 <br />
 
-`GET`
+###Return webhooks register on API KEY
 
-Return webhooks register on API KEY
+`GET`
 
 ```bash
 curl "https://sync.paybook.com/v1/webhooks" \
@@ -16,9 +16,9 @@ curl "https://sync.paybook.com/v1/webhooks" \
 ------
 <br />
 
-`POST`
+###Creates a new Webhook on API KEY
 
-Creates a new Webhook on API KEY
+`POST`
 
 ```bash
 curl "https://sync.paybook.com/v1/webhooks" \
@@ -31,9 +31,9 @@ curl "https://sync.paybook.com/v1/webhooks" \
 ------
 <br />
 
-`DELETE`
+###Delete a Webhook
 
-Delete a Webhook
+`DELETE`
 
 ```bash
 curl "https://sync.paybook.com/v1/webhooks/ID_WEBHOOK" \
