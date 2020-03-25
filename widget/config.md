@@ -180,7 +180,11 @@ The **WidgetConfig** object is described below:
     // It specifies, the location in the screen where the status toast is to be displayed.
     // Default='top-right'. Alowed values: 'top-left', 'top-center', 'top-right',
     // 'bottom-left', 'bottom-center', 'bottom-right'
-    "toastPosition": "string"
+    "toastPosition": "string",
+    // If true, success message will be send when the credentials complete login step 
+    // in the site. Otherwise, the widget will wait to complete all download process. 
+    // Default=false
+    "quickAnswer": "bool",
   }
 }
 ```
