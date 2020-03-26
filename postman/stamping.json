@@ -2685,6 +2685,48 @@
 									"value": "String",
 									"description": "(optional) Id or name of the available providers in Sync",
 									"disabled": true
+								},
+								{
+									"key": "email_data",
+									"value": "JSON",
+									"description": "(optional) Information to email the invoice",
+									"disabled": true
+								},
+								{
+									"key": "email_data.email",
+									"value": "String",
+									"description": "Email address",
+									"disabled": true
+								},
+								{
+									"key": "email_data.reply",
+									"value": "String",
+									"description": "Reply address ",
+									"disabled": true
+								},
+								{
+									"key": "email_data.body",
+									"value": "String",
+									"description": "Content of the Email",
+									"disabled": true
+								},
+								{
+									"key": "email_data.subject",
+									"value": "String",
+									"description": "Subject of the Email",
+									"disabled": true
+								},
+								{
+									"key": "pdf",
+									"value": "Boolean",
+									"description": "(optional) PDF File of the invoice is required",
+									"disabled": true
+								},
+								{
+									"key": "pdf_comments",
+									"value": "String",
+									"description": "(optional) Commets for PDF File of the invoice",
+									"disabled": true
 								}
 							]
 						},
