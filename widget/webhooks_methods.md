@@ -32,7 +32,7 @@ curl "https://sync.paybook.com/v1/webhooks" \
 
 | parameter          |                                                              |
 | ------------------ | ------------------------------------------------------------ |
-| events             | Array to set the events from which you require receive notification, can be: `["credential_create","credential_update","refresh","document_downloaded"]` |
+| events             | Array to set the events from which you require receive notification, can be: `["credential_create","credential_update","refresh","documents_completed"]` |
 | url                | Your Webhook URL                                             |
 | (optional) id_user | When you require recive notification for an specific User    |
 
