@@ -25,22 +25,22 @@ Credential Status Codes
         <tr>
             <td>100</td>
             <td>Register</td>
-            <td>-</td>
+            <td>The API registers a new process (through a REST request)</td>
         </tr>
         <tr>
             <td>101</td>
             <td>Starting</td>
-            <td>-</td>
+            <td>The process information was obtained to start operating</td>
         </tr>
       	<tr>
             <td>102</td>
             <td>Running</td>
-            <td>-</td>
+            <td>The process is running (login successful)</td>
         </tr>
       	<tr>
             <td>103</td>
             <td>TokenReceived</td>
-            <td>-</td>
+            <td>The process received the token</td>
         </tr>
     </tbody>
 </table> 
@@ -66,27 +66,27 @@ Credential Status Codes
         <tr>
             <td>200</td>
             <td>Finish</td>
-            <td>-</td>
+            <td>The data was obtained correctly</td>
         </tr>
         <tr>
             <td>201</td>
             <td>Pending</td>
-            <td>-</td>
+            <td>The data was processed correctly, pending data will continue to download in the background</td>
         </tr>
       	<tr>
             <td>202</td>
             <td>NoTransactions</td>
-            <td>-</td>
+            <td>The process ends successfully, but no transactions were found</td>
         </tr>
       	<tr>
             <td>203</td>
             <td>PartialTransactions</td>
-            <td>-</td>
+            <td>The process ends successfully, but one or more accounts have no transactions</td>
         </tr>
       	<tr>
             <td>204</td>
             <td>Incomplete</td>
-            <td>-</td>
+            <td>The job completed successfully, but the information is incomplete</td>
         </tr>
       	<tr>
             <td>205</td>
@@ -96,7 +96,7 @@ Credential Status Codes
       	<tr>
             <td>206</td>
             <td>NoAccounts</td>
-            <td>-</td>
+            <td>The process ends successfully, but no Accounts were found</td>
         </tr>
     </tbody>
 </table> 
