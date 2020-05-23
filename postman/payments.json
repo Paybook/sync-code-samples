@@ -1,447 +1,489 @@
 {
-    "info": {
-      "_postman_id": "cce64113-c9a2-40e6-966f-ea5d00c55242",
-      "name": "Paybook Sync",
-      "description": "# Payments Processing API\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\n\n\n| Code |                       | Description |\n| ---- | --------------------- | ----------- |\n| 400  | Bad Request           |             |\n| 401  | Unauthorized          |             |\n| 402  | Payment Required      |             |\n| 403  | Forbidden             |             |\n| 404  | Not Found             |             |\n| 429  | Too Many Requests     |             |\n| 500  | Internal Server Error |             |\n| 503  | Service Unavailable   |             |\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
-      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-    },
-    "item": [
-      {
-        "name": "auto",
-        "item": [
-          {
-            "name": "Get the list of the registered taxpayers for the user",
-            "request": {
-              "method": "GET",
-              "header": [
-                {
-                  "key": "Authorization",
-                  "value": "Bearer {{sync_token}}",
-                  "type": "text"
-                }
-              ],
-              "url": {
-                "raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers",
-                "protocol": "https",
-                "host": ["sync", "paybook", "com"],
-                "path": ["v1", "invoicing", "mx", "taxpayers"]
-              }
-            },
-            "response": []
-          },
-          {
-            "name": "Create a new taxpayer",
-            "request": {
-              "method": "POST",
-              "header": [
-                {
-                  "key": "Authorization",
-                  "value": "Bearer {{sync_token}}",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Type",
-                  "name": "Content-Type",
-                  "value": "application/json",
-                  "type": "text"
-                }
-              ],
-              "url": {
-                "raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers?",
-                "protocol": "https",
-                "host": ["sync", "paybook", "com"],
-                "path": ["v1", "invoicing", "mx", "taxpayers"],
-                "query": [
-                  {
-                    "key": "taxpayer",
-                    "value": "String",
-                    "description": "The RFC of the taxpayer e.g.(AAA010101AAA)",
-                    "disabled": true
-                  },
-                  {
-                    "key": "cer",
-                    "value": "String",
-                    "description": "Certificate of the taxpayer (string encoded in base64)",
-                    "disabled": true
-                  },
-                  {
-                    "key": "key",
-                    "value": "String",
-                    "description": "Key of the certificate (string encoded in base64)",
-                    "disabled": true
-                  },
-                  {
-                    "key": "password",
-                    "value": "String",
-                    "description": "Password of the cer and key",
-                    "disabled": true
-                  }
-                ]
-              }
-            },
-            "response": [
-              {
-                "name": "Create a new taxpayer",
-                "originalRequest": {
-                  "method": "POST",
-                  "header": [
-                    {
-                      "key": "Authorization",
-                      "value": "Bearer {{sync_token}}",
-                      "type": "text"
-                    },
-                    {
-                      "key": "Content-Type",
-                      "name": "Content-Type",
-                      "value": "application/json",
-                      "type": "text"
-                    }
-                  ],
-                  "body": {
-                    "mode": "raw",
-                    "raw": "{\n\t\"taxpayer\" : \"{{sync_taxpayer_identifier}}\",\n    \"password\" : \"{{sync_taxpayer_password}}\",\n\t\"cer\": \"{{sync_taxpayer_cer}}\",\n\t\"key\": \"{{sync_taxpayer_key}}\"\n}"
-                  },
-                  "url": {
-                    "raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers?",
-                    "protocol": "https",
-                    "host": ["sync", "paybook", "com"],
-                    "path": ["v1", "invoicing", "mx", "taxpayers"],
-                    "query": [
-                      {
-                        "key": "taxpayer",
-                        "value": "String",
-                        "description": "The RFC of the taxpayer e.g.(AAA010101AAA)",
-                        "disabled": true
-                      },
-                      {
-                        "key": "cer",
-                        "value": "String",
-                        "description": "Certificate of the taxpayer (string encoded in base64)",
-                        "disabled": true
-                      },
-                      {
-                        "key": "key",
-                        "value": "String",
-                        "description": "Key of the certificate (string encoded in base64)",
-                        "disabled": true
-                      },
-                      {
-                        "key": "password",
-                        "value": "String",
-                        "description": "Password of the cer and key",
-                        "disabled": true
-                      }
-                    ]
-                  }
-                },
-                "status": "OK",
-                "code": 200,
-                "_postman_previewlanguage": "json",
-                "header": [
-                  {
-                    "key": "Date",
-                    "value": "Tue, 16 Jul 2019 20:29:37 GMT"
-                  },
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json; charset=utf-8"
-                  },
-                  {
-                    "key": "Transfer-Encoding",
-                    "value": "chunked"
-                  },
-                  {
-                    "key": "Connection",
-                    "value": "keep-alive"
-                  },
-                  {
-                    "key": "Vary",
-                    "value": "Accept-Encoding"
-                  },
-                  {
-                    "key": "Access-Control-Allow-Origin",
-                    "value": "*"
-                  },
-                  {
-                    "key": "Access-Control-Allow-Headers",
-                    "value": "Authorization, Content-Type, X-App-Version, X-Requested-With"
-                  },
-                  {
-                    "key": "Access-Control-Allow-Methods",
-                    "value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-                  },
-                  {
-                    "key": "Access-Control-Max-Age",
-                    "value": "86400"
-                  },
-                  {
-                    "key": "Cache-Control",
-                    "value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-                  },
-                  {
-                    "key": "Expires",
-                    "value": "Mon, 26 Jul 1997 05:00:00 GMT"
-                  },
-                  {
-                    "key": "Last-Modified",
-                    "value": "Tue, 16 Jul 2019 20:29:37 GMT"
-                  },
-                  {
-                    "key": "Pragma",
-                    "value": "no-cache"
-                  },
-                  {
-                    "key": "Request-ID",
-                    "value": "f9737d84-f082-4949-9ab8-d0b44f7a42b1"
-                  },
-                  {
-                    "key": "Content-Encoding",
-                    "value": "gzip"
-                  },
-                  {
-                    "key": "Strict-Transport-Security",
-                    "value": "max-age=15552000; includeSubDomains; preload"
-                  },
-                  {
-                    "key": "X-Content-Type-Options",
-                    "value": "nosniff"
-                  },
-                  {
-                    "key": "Expect-CT",
-                    "value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
-                  },
-                  {
-                    "key": "Server",
-                    "value": "cloudflare"
-                  },
-                  {
-                    "key": "CF-RAY",
-                    "value": "4f76bab07b64d0b8-QRO"
-                  }
-                ],
-                "cookie": [],
-                "body": "{\n    \"rid\": \"f9737d84-f082-4949-9ab8-d0b44f7a42b1\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_taxpayer\": \"5d2e33b18c91e726ba694a4b\",\n        \"taxpayer\": \"AAA010101AAA\",\n        \"s_id\": \"paybook1.0\"\n    }\n}"
-              }
-            ]
-          },
-          {
-            "name": "Update the credentials of taxpayer",
-            "request": {
-              "method": "PUT",
-              "header": [
-                {
-                  "key": "Authorization",
-                  "type": "text",
-                  "value": "Bearer {{sync_token}}"
-                },
-                {
-                  "key": "Content-Type",
-                  "name": "Content-Type",
-                  "type": "text",
-                  "value": "application/json"
-                }
-              ],
-              "url": {
-                "raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers?",
-                "protocol": "https",
-                "host": ["sync", "paybook", "com"],
-                "path": ["v1", "invoicing", "mx", "taxpayers"],
-                "query": [
-                  {
-                    "key": "taxpayer",
-                    "value": "String",
-                    "description": "The RFC of the taxpayer e.g.(AAA010101AAA)",
-                    "disabled": true
-                  },
-                  {
-                    "key": "cer",
-                    "value": "String",
-                    "description": "Certificate of the taxpayer (string encoded in base64)",
-                    "disabled": true
-                  },
-                  {
-                    "key": "key",
-                    "value": "String",
-                    "description": "Key of the certificate (string encoded in base64)",
-                    "disabled": true
-                  },
-                  {
-                    "key": "password",
-                    "value": "String",
-                    "description": "Password of the cer and key",
-                    "disabled": true
-                  }
-                ]
-              }
-            },
-            "response": [
-              {
-                "name": "Create a new taxpayer",
-                "originalRequest": {
-                  "method": "POST",
-                  "header": [
-                    {
-                      "key": "Authorization",
-                      "value": "Bearer {{sync_token}}",
-                      "type": "text"
-                    },
-                    {
-                      "key": "Content-Type",
-                      "name": "Content-Type",
-                      "value": "application/json",
-                      "type": "text"
-                    }
-                  ],
-                  "body": {
-                    "mode": "raw",
-                    "raw": "{\n\t\"taxpayer\" : \"{{sync_taxpayer_identifier}}\",\n    \"password\" : \"{{sync_taxpayer_password}}\",\n\t\"cer\": \"{{sync_taxpayer_cer}}\",\n\t\"key\": \"{{sync_taxpayer_key}}\"\n}"
-                  },
-                  "url": {
-                    "raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers?",
-                    "protocol": "https",
-                    "host": ["sync", "paybook", "com"],
-                    "path": ["v1", "invoicing", "mx", "taxpayers"],
-                    "query": [
-                      {
-                        "key": "taxpayer",
-                        "value": "String",
-                        "description": "The RFC of the taxpayer e.g.(AAA010101AAA)",
-                        "disabled": true
-                      },
-                      {
-                        "key": "cer",
-                        "value": "String",
-                        "description": "Certificate of the taxpayer (string encoded in base64)",
-                        "disabled": true
-                      },
-                      {
-                        "key": "key",
-                        "value": "String",
-                        "description": "Key of the certificate (string encoded in base64)",
-                        "disabled": true
-                      },
-                      {
-                        "key": "password",
-                        "value": "String",
-                        "description": "Password of the cer and key",
-                        "disabled": true
-                      }
-                    ]
-                  }
-                },
-                "status": "OK",
-                "code": 200,
-                "_postman_previewlanguage": "json",
-                "header": [
-                  {
-                    "key": "Date",
-                    "value": "Tue, 16 Jul 2019 20:29:37 GMT"
-                  },
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json; charset=utf-8"
-                  },
-                  {
-                    "key": "Transfer-Encoding",
-                    "value": "chunked"
-                  },
-                  {
-                    "key": "Connection",
-                    "value": "keep-alive"
-                  },
-                  {
-                    "key": "Vary",
-                    "value": "Accept-Encoding"
-                  },
-                  {
-                    "key": "Access-Control-Allow-Origin",
-                    "value": "*"
-                  },
-                  {
-                    "key": "Access-Control-Allow-Headers",
-                    "value": "Authorization, Content-Type, X-App-Version, X-Requested-With"
-                  },
-                  {
-                    "key": "Access-Control-Allow-Methods",
-                    "value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-                  },
-                  {
-                    "key": "Access-Control-Max-Age",
-                    "value": "86400"
-                  },
-                  {
-                    "key": "Cache-Control",
-                    "value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-                  },
-                  {
-                    "key": "Expires",
-                    "value": "Mon, 26 Jul 1997 05:00:00 GMT"
-                  },
-                  {
-                    "key": "Last-Modified",
-                    "value": "Tue, 16 Jul 2019 20:29:37 GMT"
-                  },
-                  {
-                    "key": "Pragma",
-                    "value": "no-cache"
-                  },
-                  {
-                    "key": "Request-ID",
-                    "value": "f9737d84-f082-4949-9ab8-d0b44f7a42b1"
-                  },
-                  {
-                    "key": "Content-Encoding",
-                    "value": "gzip"
-                  },
-                  {
-                    "key": "Strict-Transport-Security",
-                    "value": "max-age=15552000; includeSubDomains; preload"
-                  },
-                  {
-                    "key": "X-Content-Type-Options",
-                    "value": "nosniff"
-                  },
-                  {
-                    "key": "Expect-CT",
-                    "value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
-                  },
-                  {
-                    "key": "Server",
-                    "value": "cloudflare"
-                  },
-                  {
-                    "key": "CF-RAY",
-                    "value": "4f76bab07b64d0b8-QRO"
-                  }
-                ],
-                "cookie": [],
-                "body": "{\n    \"rid\": \"f9737d84-f082-4949-9ab8-d0b44f7a42b1\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_taxpayer\": \"5d2e33b18c91e726ba694a4b\",\n        \"taxpayer\": \"AAA010101AAA\",\n        \"s_id\": \"paybook1.0\"\n    }\n}"
-              }
-            ]
-          }
-        ],
-        "description": "With these endpoint you can add or edit taxpayers that will be able to emit invoices",
-        "protocolProfileBehavior": {}
-      }
-    ],
-    "event": [
-      {
-        "listen": "prerequest",
-        "script": {
-          "id": "f82ef5c2-bc85-45bf-8edd-f3187a384ce1",
-          "type": "text/javascript",
-          "exec": [""]
-        }
-      },
-      {
-        "listen": "test",
-        "script": {
-          "id": "1084c0a0-b9f8-4e9e-be22-bdac1a61fff6",
-          "type": "text/javascript",
-          "exec": [""]
-        }
-      }
-    ],
-    "protocolProfileBehavior": {}
-  }
-  
+	"info": {
+		"_postman_id": "5881296a-8346-433a-b26c-9d3c425f83d4",
+		"name": "Paybook Sync",
+		"description": "# Payments Processing API\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\n\n\n| Code |                       | Description |\n| ---- | --------------------- | ----------- |\n| 400  | Bad Request           |             |\n| 401  | Unauthorized          |             |\n| 402  | Payment Required      |             |\n| 403  | Forbidden             |             |\n| 404  | Not Found             |             |\n| 429  | Too Many Requests     |             |\n| 500  | Internal Server Error |             |\n| 503  | Service Unavailable   |             |\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "payments",
+			"item": [
+				{
+					"name": "Get the list of the registered payments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{sync_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://sync.paybook.com/v1/payments",
+							"protocol": "https",
+							"host": [
+								"sync",
+								"paybook",
+								"com"
+							],
+							"path": [
+								"v1",
+								"payments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a new payment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{sync_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://sync.paybook.com/v1/payments",
+							"protocol": "https",
+							"host": [
+								"sync",
+								"paybook",
+								"com"
+							],
+							"path": [
+								"v1",
+								"payments"
+							],
+							"query": [
+								{
+									"key": "taxpayer",
+									"value": "String",
+									"description": "The RFC of the taxpayer e.g.(AAA010101AAA)",
+									"disabled": true
+								},
+								{
+									"key": "cer",
+									"value": "String",
+									"description": "Certificate of the taxpayer (string encoded in base64)",
+									"disabled": true
+								},
+								{
+									"key": "key",
+									"value": "String",
+									"description": "Key of the certificate (string encoded in base64)",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "String",
+									"description": "Password of the cer and key",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create a new taxpayer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{sync_token}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"taxpayer\" : \"{{sync_taxpayer_identifier}}\",\n    \"password\" : \"{{sync_taxpayer_password}}\",\n\t\"cer\": \"{{sync_taxpayer_cer}}\",\n\t\"key\": \"{{sync_taxpayer_key}}\"\n}"
+								},
+								"url": {
+									"raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers",
+									"protocol": "https",
+									"host": [
+										"sync",
+										"paybook",
+										"com"
+									],
+									"path": [
+										"v1",
+										"invoicing",
+										"mx",
+										"taxpayers"
+									],
+									"query": [
+										{
+											"key": "taxpayer",
+											"value": "String",
+											"description": "The RFC of the taxpayer e.g.(AAA010101AAA)",
+											"disabled": true
+										},
+										{
+											"key": "cer",
+											"value": "String",
+											"description": "Certificate of the taxpayer (string encoded in base64)",
+											"disabled": true
+										},
+										{
+											"key": "key",
+											"value": "String",
+											"description": "Key of the certificate (string encoded in base64)",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "String",
+											"description": "Password of the cer and key",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 16 Jul 2019 20:29:37 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Tue, 16 Jul 2019 20:29:37 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "f9737d84-f082-4949-9ab8-d0b44f7a42b1"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "4f76bab07b64d0b8-QRO"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"f9737d84-f082-4949-9ab8-d0b44f7a42b1\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_taxpayer\": \"5d2e33b18c91e726ba694a4b\",\n        \"taxpayer\": \"AAA010101AAA\",\n        \"s_id\": \"paybook1.0\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update a payment",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{sync_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://sync.paybook.com/v1/payments",
+							"protocol": "https",
+							"host": [
+								"sync",
+								"paybook",
+								"com"
+							],
+							"path": [
+								"v1",
+								"payments"
+							],
+							"query": [
+								{
+									"key": "taxpayer",
+									"value": "String",
+									"description": "The RFC of the taxpayer e.g.(AAA010101AAA)",
+									"disabled": true
+								},
+								{
+									"key": "cer",
+									"value": "String",
+									"description": "Certificate of the taxpayer (string encoded in base64)",
+									"disabled": true
+								},
+								{
+									"key": "key",
+									"value": "String",
+									"description": "Key of the certificate (string encoded in base64)",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "String",
+									"description": "Password of the cer and key",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create a new taxpayer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{sync_token}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"taxpayer\" : \"{{sync_taxpayer_identifier}}\",\n    \"password\" : \"{{sync_taxpayer_password}}\",\n\t\"cer\": \"{{sync_taxpayer_cer}}\",\n\t\"key\": \"{{sync_taxpayer_key}}\"\n}"
+								},
+								"url": {
+									"raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers",
+									"protocol": "https",
+									"host": [
+										"sync",
+										"paybook",
+										"com"
+									],
+									"path": [
+										"v1",
+										"invoicing",
+										"mx",
+										"taxpayers"
+									],
+									"query": [
+										{
+											"key": "taxpayer",
+											"value": "String",
+											"description": "The RFC of the taxpayer e.g.(AAA010101AAA)",
+											"disabled": true
+										},
+										{
+											"key": "cer",
+											"value": "String",
+											"description": "Certificate of the taxpayer (string encoded in base64)",
+											"disabled": true
+										},
+										{
+											"key": "key",
+											"value": "String",
+											"description": "Key of the certificate (string encoded in base64)",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "String",
+											"description": "Password of the cer and key",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 16 Jul 2019 20:29:37 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Tue, 16 Jul 2019 20:29:37 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "f9737d84-f082-4949-9ab8-d0b44f7a42b1"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "4f76bab07b64d0b8-QRO"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"f9737d84-f082-4949-9ab8-d0b44f7a42b1\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_taxpayer\": \"5d2e33b18c91e726ba694a4b\",\n        \"taxpayer\": \"AAA010101AAA\",\n        \"s_id\": \"paybook1.0\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "With these endpoint you can add or edit taxpayers that will be able to emit invoices",
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "4ba2384b-e471-4d42-a1d5-f21ee7ee2f60",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "2d07ca54-5ebf-467a-9478-17d5f54d3669",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
