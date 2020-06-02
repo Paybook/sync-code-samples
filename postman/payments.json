@@ -1758,6 +1758,29 @@
 					]
 				}
 			],
+			"description": "Operations allow customers to reimburse users, in order to refund a charge, the transaction date needs to be no longer than 48 hours.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "860a32c6-ff10-40eb-a18f-9a50e76f6f00",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b87f6e7f-56bb-43ff-a358-63149aeb4541",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
 			"protocolProfileBehavior": {}
 		}
 	],
