@@ -88,7 +88,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{baseSyncUrl}}/payments/customers/{{id_pymnt_customer}}/cards/5ecd9a3ded5559396e7fe3b6",
+							"raw": "{{baseSyncUrl}}/payments/customers/{{id_pymnt_customer}}/cards/{{id_pymnt_card}}",
 							"host": [
 								"{{baseSyncUrl}}"
 							],
@@ -97,7 +97,7 @@
 								"customers",
 								"{{id_pymnt_customer}}",
 								"cards",
-								"5ecd9a3ded5559396e7fe3b6"
+								"{{id_pymnt_card}}"
 							]
 						}
 					},
@@ -213,7 +213,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseSyncUrl}}/payments/customers/{{id_pymnt_customer}}/charges/5e1d9be0af63581aff212f57",
+							"raw": "{{baseSyncUrl}}/payments/customers/{{id_pymnt_customer}}/charges/{{id_pymnt_charge}}",
 							"host": [
 								"{{baseSyncUrl}}"
 							],
@@ -222,7 +222,7 @@
 								"customers",
 								"{{id_pymnt_customer}}",
 								"charges",
-								"5e1d9be0af63581aff212f57"
+								"{{id_pymnt_charge}}"
 							]
 						}
 					},
@@ -378,14 +378,14 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{baseSyncUrl}}/payments/customers/5ecffa5f3d2e707a1067d3b4",
+							"raw": "{{baseSyncUrl}}/payments/customers/{{id_pymnt_customer}}",
 							"host": [
 								"{{baseSyncUrl}}"
 							],
 							"path": [
 								"payments",
 								"customers",
-								"5ecffa5f3d2e707a1067d3b4"
+								"{{id_pymnt_customer}}"
 							]
 						}
 					},
@@ -460,14 +460,14 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{baseSyncUrl}}/payments/operations/5ed5089b28ad6d54a56255b0/reimburse",
+							"raw": "{{baseSyncUrl}}/payments/operations/{{id_pymnt_charge}}/reimburse",
 							"host": [
 								"{{baseSyncUrl}}"
 							],
 							"path": [
 								"payments",
 								"operations",
-								"5ed5089b28ad6d54a56255b0",
+								"{{id_pymnt_charge}}",
 								"reimburse"
 							],
 							"query": [
