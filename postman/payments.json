@@ -56,13 +56,6 @@
 								"customers",
 								"{{id_pymnt_customer}}",
 								"cards"
-							],
-							"query": [
-								{
-									"key": "pass_through",
-									"value": "1",
-									"disabled": true
-								}
 							]
 						}
 					},
@@ -105,13 +98,6 @@
 								"{{id_pymnt_customer}}",
 								"cards",
 								"5ecd9a3ded5559396e7fe3b6"
-							],
-							"query": [
-								{
-									"key": "pass_through",
-									"value": "0",
-									"disabled": true
-								}
 							]
 						}
 					},
@@ -149,18 +135,6 @@
 								"customers",
 								"{{id_pymnt_customer}}",
 								"cards"
-							],
-							"query": [
-								{
-									"key": "pass_through",
-									"value": "1",
-									"disabled": true
-								},
-								{
-									"key": "id_currency",
-									"value": "523a25953b8e77910e8b456c",
-									"disabled": true
-								}
 							]
 						}
 					},
@@ -208,13 +182,6 @@
 								"customers",
 								"{{id_pymnt_customer}}",
 								"charges"
-							],
-							"query": [
-								{
-									"key": "api_key",
-									"value": "{{apiSyncKey}}",
-									"disabled": true
-								}
 							]
 						}
 					},
@@ -246,7 +213,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseSyncUrl}}/payments/customers/{{id_pymnt_customer}}/charges/5e1d9be0af63581aff212f57?api_key={{apiSyncKey}}&id_profile={{id_profile}}",
+							"raw": "{{baseSyncUrl}}/payments/customers/{{id_pymnt_customer}}/charges/5e1d9be0af63581aff212f57",
 							"host": [
 								"{{baseSyncUrl}}"
 							],
@@ -256,16 +223,6 @@
 								"{{id_pymnt_customer}}",
 								"charges",
 								"5e1d9be0af63581aff212f57"
-							],
-							"query": [
-								{
-									"key": "api_key",
-									"value": "{{apiSyncKey}}"
-								},
-								{
-									"key": "id_profile",
-									"value": "{{id_profile}}"
-								}
 							]
 						}
 					},
@@ -278,10 +235,10 @@
 							"listen": "test",
 							"script": {
 								"id": "abf3df5d-1257-4544-80db-554b850e69c4",
-								"type": "text/javascript",
 								"exec": [
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -294,21 +251,15 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseSyncUrl}}/payments/customers/5b0afe40056f29508d3ad693/charges?pass_through=0",
+							"raw": "{{baseSyncUrl}}/payments/customers/{{id_pymnt_customer}}/charges",
 							"host": [
 								"{{baseSyncUrl}}"
 							],
 							"path": [
 								"payments",
 								"customers",
-								"5b0afe40056f29508d3ad693",
+								"{{id_pymnt_customer}}",
 								"charges"
-							],
-							"query": [
-								{
-									"key": "pass_through",
-									"value": "0"
-								}
 							]
 						}
 					},
@@ -350,7 +301,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"full_name\": \"Jorge Muza\",\n\t\"email_address\": \"j+test1@paybook.com\",\n    \"id_currency\": \"523a25953b8e77910e8b456c\"\n}"
+							"raw": "{\n\t\"full_name\": \"Jorge Muza\",\n\t\"email_address\": \"j+test3@paybook.com\",\n    \"id_currency\": \"523a25953b8e77910e8b456c\"\n}"
 						},
 						"url": {
 							"raw": "{{baseSyncUrl}}/payments/customers",
@@ -360,13 +311,6 @@
 							"path": [
 								"payments",
 								"customers"
-							],
-							"query": [
-								{
-									"key": "id_profile",
-									"value": "5ecc250ff9de2a1eb451c8d3",
-									"disabled": true
-								}
 							]
 						}
 					},
@@ -402,18 +346,6 @@
 							"path": [
 								"payments",
 								"customers"
-							],
-							"query": [
-								{
-									"key": "pass_through",
-									"value": "1",
-									"disabled": true
-								},
-								{
-									"key": "id_currency",
-									"value": "523a25953b8e77910e8b456c",
-									"disabled": true
-								}
 							]
 						}
 					},
@@ -482,7 +414,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseSyncUrl}}/payments/customers/{{id_pymnt_customer}}?id_profile={{id_profile}}&pass_trough=1",
+							"raw": "{{baseSyncUrl}}/payments/customers/{{id_pymnt_customer}}",
 							"host": [
 								"{{baseSyncUrl}}"
 							],
@@ -490,16 +422,6 @@
 								"payments",
 								"customers",
 								"{{id_pymnt_customer}}"
-							],
-							"query": [
-								{
-									"key": "id_profile",
-									"value": "{{id_profile}}"
-								},
-								{
-									"key": "pass_trough",
-									"value": "1"
-								}
 							]
 						}
 					},
