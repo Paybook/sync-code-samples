@@ -39,7 +39,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"full_name\": \"Pedro Perez\",\n\t\"email_address\": \"j+test4@paybook.com\",\n    \"id_currency\": \"523a25953b8e77910e8b456c\"\n}"
+							"raw": "{\n\t\"full_name\": \"Pedro Perez\",\n\t\"email_address\": \"j+test3@paybook.com\",\n    \"id_currency\": \"523a25953b8e77910e8b456c\"\n}"
 						},
 						"url": {
 							"raw": "{{baseSyncUrl}}/v1/payments/customers",
@@ -809,7 +809,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"rid\": \"24155993-d9a4-4611-82b8-96688314898d\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_card\": \"5ed67012c6254b0c30251715\",\n        \"id_profile\": \"5ecda7cb81bbac0bbd1d5fb4\",\n        \"holder_name\": \"Pedro Perez\",\n        \"type\": \"VISA\",\n        \"number\": \"471622XXXXXX4622\",\n        \"bank_name\": \"VISA TEST\",\n        \"country_code\": \"MX\",\n        \"expiration\": \"2007\",\n        \"card_token\": \"crd_dev_5ed6701003419\",\n        \"funding\": \"CREDIT\",\n        \"billing\": {\n            \"emailAddress\": \"jorge.muza@gmail.com\",\n            \"firstName\": \"Pedro\",\n            \"middleName\": \"\",\n            \"lastName\": \"Perez\",\n            \"address\": \"`123 Main Street\",\n            \"address2\": \"Apt 123\",\n            \"city\": \"Dallas\",\n            \"state\": \"TX\",\n            \"postalCode\": \"75208\"\n        },\n        \"is_default\": true,\n        \"dt_create\": 1591111698,\n        \"dt_modify\": null\n    }\n}"
+							"body": "{\n    \"rid\": \"24155993-d9a4-4611-82b8-96688314898d\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_card\": \"5ed67012c6254b0c30251715\",\n        \"id_profile\": \"5ecda7cb81bbac0bbd1d5fb4\",\n        \"holder_name\": \"Pedro Perez\",\n        \"type\": \"VISA\",\n        \"number\": \"471622XXXXXX4622\",\n        \"bank_name\": \"VISA TEST\",\n        \"country_code\": \"MX\",\n        \"expiration\": \"2007\",\n        \"card_token\": \"crd_dev_5ed6701003419\",\n        \"funding\": \"CREDIT\",\n        \"billing\": {\n            \"emailAddress\": \"pedro.perez@gmail.com\",\n            \"firstName\": \"Pedro\",\n            \"middleName\": \"\",\n            \"lastName\": \"Perez\",\n            \"address\": \"`123 Main Street\",\n            \"address2\": \"Apt 123\",\n            \"city\": \"Dallas\",\n            \"state\": \"TX\",\n            \"postalCode\": \"75208\"\n        },\n        \"is_default\": true,\n        \"dt_create\": 1591111698,\n        \"dt_modify\": null\n    }\n}"
 						}
 					]
 				},
@@ -1105,7 +1105,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"rid\": \"fc5d1e7a-ce1b-4f1a-8b8b-365df66145c9\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_pymnt_card\": \"5ed67012c6254b0c30251715\",\n            \"holder_name\": \"Pedro Perez\",\n            \"type\": \"VISA\",\n            \"number\": \"471622XXXXXX4622\",\n            \"bank_name\": \"VISA TEST\",\n            \"expiration\": \"2007\",\n            \"card_token\": \"crd_dev_5ed6701003419\",\n            \"funding\": \"CREDIT\",\n            \"billing\": {\n                \"emailAddress\": \"jorge.muza@gmail.com\",\n                \"firstName\": \"Pedro\",\n                \"middleName\": \"\",\n                \"lastName\": \"Perez\",\n                \"address\": \"`123 Main Street\",\n                \"address2\": \"Apt 123\",\n                \"city\": \"Dallas\",\n                \"state\": \"TX\",\n                \"postalCode\": \"75208\"\n            },\n            \"is_default\": true,\n            \"dt_create\": 1591111698,\n            \"dt_modify\": null\n        }\n    ]\n}"
+							"body": "{\n    \"rid\": \"fc5d1e7a-ce1b-4f1a-8b8b-365df66145c9\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_pymnt_card\": \"5ed67012c6254b0c30251715\",\n            \"holder_name\": \"Pedro Perez\",\n            \"type\": \"VISA\",\n            \"number\": \"471622XXXXXX4622\",\n            \"bank_name\": \"VISA TEST\",\n            \"expiration\": \"2007\",\n            \"card_token\": \"crd_dev_5ed6701003419\",\n            \"funding\": \"CREDIT\",\n            \"billing\": {\n                \"emailAddress\": \"pedro.perez@gmail.com\",\n                \"firstName\": \"Pedro\",\n                \"middleName\": \"\",\n                \"lastName\": \"Perez\",\n                \"address\": \"`123 Main Street\",\n                \"address2\": \"Apt 123\",\n                \"city\": \"Dallas\",\n                \"state\": \"TX\",\n                \"postalCode\": \"75208\"\n            },\n            \"is_default\": true,\n            \"dt_create\": 1591111698,\n            \"dt_modify\": null\n        }\n    ]\n}"
 						}
 					]
 				}
@@ -1785,16 +1785,21 @@
 		}
 	],
 	"auth": {
-		"type": "basic",
-		"basic": [
+		"type": "apikey",
+		"apikey": [
 			{
-				"key": "username",
-				"value": "{{id_contract}}",
+				"key": "value",
+				"value": "api_key api_key={{apiSyncKey}}",
 				"type": "string"
 			},
 			{
-				"key": "password",
-				"value": "{{apiSyncKey}}",
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			},
+			{
+				"key": "in",
+				"value": "header",
 				"type": "string"
 			}
 		]
