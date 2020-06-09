@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f79a8980-b4ee-4164-8607-6d276bc0dc94",
+		"_postman_id": "31c3e4eb-d61a-4239-a2e2-05f0d207a40e",
 		"name": "SyncPayments",
 		"description": "\n\n# Table of Content\n\n- Overview\n- Authentication\n- Request\n- Error Codes\n- Rate limit\n\n# Overview\n\n------\n\nSrPago allows our customers to process payments in different FIAT and Crypto currencies, simplifying how payments are managed and processed.\n\nSrPago’s API has an architectural style of a RESTful design pattern. It uses HTTP as its underlying protocol, where standard HTTP verbs and HTTP response codes are used. Communication travels via HTTPS to ensure a secure data exchange. Almost every response body is JSON encoded, unless stated on the endpoint description. Since RESTful services and JSON are highly popular and most major development languages include a form to interact with these technologies, it's quite easy to integrate with Sync's API.\n\n# Authentication\n\n------\n\nSrPago API has two types of authentication:\n\n#### API KEY\n\n```bash\ncurl URL \\\n-H \"Authorization: api_key api_key={API_KEY}\" \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS \n```\n\n#### Bearer Token\n\n```bash\ncurl URL \\\n-H \"Authorization: Bearer {TOKEN}\" \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS \n```\n\nType of Authentication required is defined by Resource\n\n| Resource     | Auth Type      |\n| ------------ | -------------- |\n| Customers    | `API KEY`      |\n| Cards        | `API KEY`      |\n| Charges      | `API KEY`      |\n| Operations   | `API KEY`      |\n\n# Environments\n\n------\n\n#### Sandbox\n\nACME Organization with these Sites:\n\n1. Normal\n2. Token\n3. Captcha\n4. Multiple Image\n5. Select\n\n#### Production\n\nLive Organizations\n\n# Request\n\n------\n\n#### Structure\n\n```bash\ncurl URL \\\n-H AUTH \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS\n```\n\n# Error Codes\n\n------\n\nTable of Error Codes defined in Paybook Sync API\n\n| Code | Message               |\n| ---- | --------------------- |\n| 400  | Bad Request           |\n| 401  | Unauthorized          |\n| 402  | Payment Required      |\n| 403  | Forbidden             |\n| 404  | Not Found             |\n| 429  | Too Many Requests     |\n| 500  | Internal Server Error |\n| 503  | Service Unavailable   |\n\n# Rate limit\n\n------\n\nThere are two types of rate-limit:\n\n#### Rate limit by server\n\n5 request per second \n\n#### Limit by credential\n\n1 pull request per day",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -15,7 +15,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9145e99d-d099-4fed-8281-a8cd92b518d2",
+								"id": "c47ce8ca-97de-4eed-8624-28c36413a5ec",
 								"exec": [
 									""
 								],
@@ -174,7 +174,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ec2eca3e-f371-41bc-a24f-8855c81eae11",
+								"id": "ebbbe3cc-696d-49a1-b7cf-a523d41ddd7f",
 								"exec": [
 									""
 								],
@@ -326,7 +326,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "16d9582e-03ef-487e-a0ae-576f6c325cf6",
+								"id": "d7e712d1-27fb-4a99-97a1-56345f395696",
 								"exec": [
 									""
 								],
@@ -475,7 +475,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9f9aa3ef-03bd-4ff0-907a-f122806bf2c9",
+								"id": "8e95344f-a0a3-469b-8d9a-d5a905df24e5",
 								"exec": [
 									""
 								],
@@ -616,7 +616,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "ffa45b64-59ec-4e08-a53b-ad833b1975b3",
+						"id": "86056864-6ec1-4d3d-a5c3-20b5019e74f8",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -626,7 +626,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "cd417219-d086-40ed-af70-51d65e4a6e14",
+						"id": "f170eea5-621e-41e3-af66-b02e2cef602f",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -645,7 +645,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "24ebf557-1756-4912-8b95-5eae403c8110",
+								"id": "01208e9b-5442-42a6-9436-39b7af3ddbfd",
 								"exec": [
 									""
 								],
@@ -820,7 +820,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "64377774-34f0-49ef-8d68-157245e9fde3",
+								"id": "1697d2e9-6444-4d20-b500-3b58a7bd942f",
 								"exec": [
 									""
 								],
@@ -865,13 +865,6 @@
 								"cards",
 								"{{id_pymnt_card}}",
 								"default"
-							],
-							"query": [
-								{
-									"key": "pass_through",
-									"value": "1",
-									"disabled": true
-								}
 							]
 						}
 					},
@@ -883,7 +876,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7d4ebd3f-07fe-493c-a18a-63bc6a2f8a33",
+								"id": "42a8f443-d699-4e63-b720-fc43654b5e91",
 								"exec": [
 									""
 								],
@@ -1036,7 +1029,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "649dc971-dca1-4bdc-a157-6b0be8bae66a",
+								"id": "a936569f-661b-487f-b73b-16cc434b07ce",
 								"exec": [
 									""
 								],
@@ -1179,7 +1172,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "5898d59c-697e-47b9-ac82-cac3cad1ab50",
+						"id": "2797fcea-1ff7-4a77-943a-e9dd585d259d",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1189,7 +1182,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "0f629882-eee6-416e-9dc8-d6d77ec7e043",
+						"id": "bbaa438c-751a-43b7-9c21-51e581cb794e",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1208,7 +1201,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "50264209-47c5-4a41-8fc6-ba0f891db201",
+								"id": "1fe8b27b-6528-4939-9975-fe61ffef7e4d",
 								"exec": [
 									""
 								],
@@ -1359,7 +1352,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ddc3699e-92a2-4e80-8b4f-fb41562b6ea8",
+								"id": "29ace426-f82d-406d-ac53-bed114c205e8",
 								"exec": [
 									""
 								],
@@ -1504,7 +1497,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "abf3df5d-1257-4544-80db-554b850e69c4",
+								"id": "cffe7d7f-5fd7-41df-bd0a-6730e7abc458",
 								"exec": [
 									""
 								],
@@ -1647,7 +1640,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "f228a43c-58fb-483f-9517-535ee4a9f78e",
+						"id": "81de66b9-bd83-4291-a92e-ed3441be720a",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1657,7 +1650,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "344d983e-c6f5-43eb-9118-22a34e194c51",
+						"id": "d3028358-f254-40a3-b2af-7b02b5809b4c",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1676,7 +1669,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "386a1cea-5c95-4451-a75b-a2759f0bb733",
+								"id": "2b122a29-ac37-42e4-ab72-80710914e202",
 								"exec": [
 									""
 								],
@@ -1827,7 +1820,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "860a32c6-ff10-40eb-a18f-9a50e76f6f00",
+						"id": "32aba4fe-1c40-4714-824c-94dbcda842a7",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1837,7 +1830,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b87f6e7f-56bb-43ff-a358-63149aeb4541",
+						"id": "426e1669-f6f1-4667-a61f-e1e0172001aa",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1872,7 +1865,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "efae3ccc-d7fb-41f2-aa38-2c2c31717d0a",
+				"id": "73348705-3e61-43f2-9152-36eec4299a07",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -1882,7 +1875,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "2e9aee35-8174-448e-a00b-af13c4f1aad2",
+				"id": "5309aeeb-c441-4619-bae0-b4c219a8b5a2",
 				"type": "text/javascript",
 				"exec": [
 					""
