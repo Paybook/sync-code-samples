@@ -2050,23 +2050,6 @@
 									"value": null,
 									"description": "The ID of the customer assigned by SrPago",
 									"disabled": true
-								},
-								{
-									"key": "reference",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "description",
-									"value": null,
-									"description": "Statement descriptor for the charge",
-									"disabled": true
-								},
-								{
-									"key": "amount",
-									"value": null,
-									"description": "Total amount of the charge",
-									"disabled": true
 								}
 							]
 						}
