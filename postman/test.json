@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "2351dd15-871a-4fdd-affd-efe5f494d7b3",
+		"_postman_id": "d48c8139-ed7d-4047-bf58-537522e675fa",
 		"name": "Test",
 		"description": "\n\n# Table of Content\n\n- Overview\n- Authentication\n- Request\n- Error Codes\n- Rate limit\n\n# Overview\n\n------\n\nSrPago allows our customers to process payments in different FIAT and Crypto currencies, simplifying how payments are managed and processed.\n\nSrPago’s API has an architectural style of a RESTful design pattern. It uses HTTP as its underlying protocol, where standard HTTP verbs and HTTP response codes are used. Communication travels via HTTPS to ensure a secure data exchange. Almost every response body is JSON encoded, unless stated on the endpoint description. Since RESTful services and JSON are highly popular and most major development languages include a form to interact with these technologies, it's quite easy to integrate with Sync's API.\n\n# Authentication\n\n------\n\nSrPago API has two types of authentication:\n\n#### API KEY\n\n```bash\ncurl URL \\\n-H \"Authorization: api_key api_key={API_KEY}\" \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS \n```\n\n#### Bearer Token\n\n```bash\ncurl URL \\\n-H \"Authorization: Bearer {TOKEN}\" \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS \n```\n\nType of Authentication required is defined by Resource\n\n| Resource     | Auth Type      |\n| ------------ | -------------- |\n| Customers    | `API KEY`      |\n| Cards        | `API KEY`      |\n| Charges      | `API KEY`      |\n| Operations   | `API KEY`      |\n\n# Environments\n\n------\n\n#### Sandbox\n\nACME Organization with these Sites:\n\n1. Normal\n2. Token\n3. Captcha\n4. Multiple Image\n5. Select\n\n#### Production\n\nLive Organizations\n\n# Request\n\n------\n\n#### Structure\n\n```bash\ncurl URL \\\n-H AUTH \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS\n```\n\n# Error Codes\n\n------\n\nTable of Error Codes defined in Paybook Sync API\n\n| Code | Message               |\n| ---- | --------------------- |\n| 400  | Bad Request           |\n| 401  | Unauthorized          |\n| 402  | Payment Required      |\n| 403  | Forbidden             |\n| 404  | Not Found             |\n| 429  | Too Many Requests     |\n| 500  | Internal Server Error |\n| 503  | Service Unavailable   |\n\n# Rate limit\n\n------\n\nThere are two types of rate-limit:\n\n#### Rate limit by server\n\n5 request per second \n\n#### Limit by credential\n\n1 pull request per day",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -18,7 +18,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "78ea9873-e784-43e0-865f-6db7b29a87ff",
+										"id": "0063016b-7f42-499f-8d60-3e2943d0b38d",
 										"exec": [
 											""
 										],
@@ -31,24 +31,13 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json; charset=ISO-8859-1"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer 70909517dd70047e80b9ad69b861a7d1",
-										"disabled": true
-									},
-									{
-										"key": "Accept-Charset",
-										"type": "text",
-										"value": "",
-										"disabled": true
+										"value": "application/json",
+										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"id_currency\": \"523a25953b8e77910e8b456c\",\n    \"number\": \"4716222791264622\",\n    \"cvv\": \"123\",\n    \"expiration\": \"2207\",\n    \"holder_name\": \"Pedro Perez\",\n    \"billing\": {\n        \"emailAddress\": \"pedro.perez@gmail.com\",\n        \"firstName\": \"Pedro\",\n        \"middleName\": \"\",\n        \"lastName\": \"Perez\",\n        \"address\": \"1234 Main Street\",\n        \"address2\": \"Apt 891\",\n        \"city\": \"Dallas\",\n        \"state\": \"TX\",\n        \"postalCode\": \"75208\"\n    }\n}"
+									"raw": "{\n    \"number\": \"5175680047225740\",\n    \"cvv\": \"123\",\n    \"expiration\": \"2207\",\n    \"holder_name\": \"Pedro Perez\",\n    \"billing\": {\n        \"emailAddress\": \"pedro.perez@gmail.com\",\n        \"firstName\": \"Pedro\",\n        \"middleName\": \"\",\n        \"lastName\": \"Perez\",\n        \"address\": \"1234 Main Street\",\n        \"address2\": \"Apt 891\",\n        \"city\": \"Dallas\",\n        \"state\": \"TX\",\n        \"postalCode\": \"75208\"\n    }\n}"
 								},
 								"url": {
 									"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/cards",
@@ -61,6 +50,44 @@
 										"customers",
 										"{{id_pymnt_customer}}",
 										"cards"
+									],
+									"query": [
+										{
+											"key": "id_pymnt_customer",
+											"value": null,
+											"description": "The ID of the customer assigned by SrPago",
+											"disabled": true
+										},
+										{
+											"key": "number",
+											"value": null,
+											"description": "Card number",
+											"disabled": true
+										},
+										{
+											"key": "cvv",
+											"value": null,
+											"description": "Credit Card CVV",
+											"disabled": true
+										},
+										{
+											"key": "expiration",
+											"value": null,
+											"description": "Expiration date (YY/MM)",
+											"disabled": true
+										},
+										{
+											"key": "holder_name",
+											"value": null,
+											"description": "Credit Card Holder Name",
+											"disabled": true
+										},
+										{
+											"key": "billing",
+											"value": null,
+											"description": "(optional) Billing object",
+											"disabled": true
+										}
 									]
 								}
 							},
@@ -75,18 +102,6 @@
 												"name": "Content-Type",
 												"value": "application/json",
 												"type": "text"
-											},
-											{
-												"key": "Authorization",
-												"type": "text",
-												"value": "Bearer 70909517dd70047e80b9ad69b861a7d1",
-												"disabled": true
-											},
-											{
-												"key": "Accept-Charset",
-												"type": "text",
-												"value": "",
-												"disabled": true
 											}
 										],
 										"body": {
@@ -229,13 +244,11 @@
 											},
 											{
 												"key": "Authorization",
-												"type": "text",
 												"value": "Bearer 70909517dd70047e80b9ad69b861a7d1",
 												"disabled": true
 											},
 											{
 												"key": "Accept-Charset",
-												"type": "text",
 												"value": "",
 												"disabled": true
 											}
@@ -351,7 +364,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "5e4872d0-b7a0-4bac-9763-3582278af05a",
+										"id": "fa6a3fd7-4e1c-4671-9626-cd415956a9ee",
 										"exec": [
 											""
 										],
@@ -364,19 +377,8 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json; charset=ISO-8859-1"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer 70909517dd70047e80b9ad69b861a7d1",
-										"disabled": true
-									},
-									{
-										"key": "Accept-Charset",
-										"type": "text",
-										"value": "",
-										"disabled": true
+										"value": "application/json",
+										"type": "text"
 									}
 								],
 								"url": {
@@ -392,6 +394,20 @@
 										"cards",
 										"{{id_pymnt_card}}",
 										"default"
+									],
+									"query": [
+										{
+											"key": "id_pymnt_customer",
+											"value": null,
+											"description": "The ID of the customer assigned by SrPago",
+											"disabled": true
+										},
+										{
+											"key": "id_pymnt_card",
+											"value": null,
+											"description": "The ID of the credit card assigned by SrPago",
+											"disabled": true
+										}
 									]
 								}
 							},
@@ -403,19 +419,7 @@
 										"header": [
 											{
 												"key": "Content-Type",
-												"value": "application/json; charset=ISO-8859-1"
-											},
-											{
-												"key": "Authorization",
-												"type": "text",
-												"value": "Bearer 70909517dd70047e80b9ad69b861a7d1",
-												"disabled": true
-											},
-											{
-												"key": "Accept-Charset",
-												"type": "text",
-												"value": "",
-												"disabled": true
+												"value": "application/json"
 											}
 										],
 										"url": {
@@ -546,7 +550,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "46d80fff-f235-47cb-8591-f411a69b14ac",
+										"id": "ca1e2aa4-cba2-43cb-90de-6a73ffabd9ac",
 										"exec": [
 											""
 										],
@@ -578,6 +582,20 @@
 										"{{id_pymnt_customer}}",
 										"cards",
 										"{{id_pymnt_card}}"
+									],
+									"query": [
+										{
+											"key": "id_pymnt_customer",
+											"value": null,
+											"description": "The ID of the customer assigned by SrPago",
+											"disabled": true
+										},
+										{
+											"key": "id_pymnt_card",
+											"value": null,
+											"description": "The ID of the credit card assigned by SrPago",
+											"disabled": true
+										}
 									]
 								}
 							},
@@ -699,7 +717,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "73f686cd-8f04-4b3d-8e81-5303168d9e2d",
+										"id": "0524a9c1-0c62-4a26-b6cc-ebe7a78ee67d",
 										"exec": [
 											""
 										],
@@ -726,6 +744,14 @@
 										"customers",
 										"{{id_pymnt_customer}}",
 										"cards"
+									],
+									"query": [
+										{
+											"key": "id_pymnt_customer",
+											"value": null,
+											"description": "The ID of the customer assigned by SrPago",
+											"disabled": true
+										}
 									]
 								}
 							},
@@ -842,7 +868,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "6d5f346f-fcec-4940-9356-4189dcb738d2",
+								"id": "4d01667b-47b5-4ff8-b1be-71252acd42dc",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -852,7 +878,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "407c7448-550d-4b9f-86cd-cda37ae28ebe",
+								"id": "6a9abc85-8b56-454b-b77e-979ad18ae115",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -869,7 +895,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5e9a1c07-e81c-466b-af25-b62f743c7cd6",
+								"id": "a4b8c9bf-97f3-4f31-8362-c38991f0d7ac",
 								"exec": [
 									""
 								],
@@ -882,18 +908,13 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "api_key {{apySyncKey}}",
-								"disabled": true
+								"value": "application/json",
+								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"full_name\": \"Pedro Perez\",\n\t\"email_address\": \"j+test4@paybook.com\",\n    \"id_external\": \"869d56f0-555e-4c8c-847a-2e1ef53f6ef6\"\n}"
+							"raw": "{\n\t\"full_name\": \"Pedro Perez\",\n\t\"email_address\": \"pedro.perez@test.com\",\n    \"id_external\": \"869d56f0-555e-4c8c-847a-2e1ef53f6ef6\"\n}"
 						},
 						"url": {
 							"raw": "{{baseSyncUrl}}/v1/payments/customers",
@@ -904,130 +925,31 @@
 								"v1",
 								"payments",
 								"customers"
+							],
+							"query": [
+								{
+									"key": "full_name",
+									"value": null,
+									"description": "Customer Full Name",
+									"disabled": true
+								},
+								{
+									"key": "email_address",
+									"value": null,
+									"description": "Customer Email Address",
+									"disabled": true
+								},
+								{
+									"key": "id_external",
+									"value": null,
+									"description": "(optional) External ID, can be used to keep track of that user with an external ID",
+									"disabled": true
+								}
 							]
 						},
 						"description": "This service allows the creation of new customers"
 					},
 					"response": [
-						{
-							"name": "Add Customer ( Simple )",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "api_key {{apySyncKey}}",
-										"disabled": true
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"full_name\": \"Pedro Perez\",\n    \"email_address\": \"j+test4@paybook.com\",\n    \"id_currency\": \"523a25953b8e77910e8b456c\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/customers",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"v1",
-										"payments",
-										"customers"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "nginx"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 02 Jun 2020 15:05:50 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Tue, 02 Jun 2020 15:05:50 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "dda31ea5-4303-4a21-93be-42870c83448f"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15768000"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"4de84d23-dd59-4d3d-a865-fc907cb7c5f2\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_user\": \"5edfd8034be92c22563265f6\",\n        \"id_pymnt_customer\": \"5edfd8044be92c22563265f7\",\n        \"id_pymnt_provider\": \"38dc9e9308898644058b4563\",\n        \"id_external\": \"pedro.perez2@gmail.com\",\n        \"name\": \"Pedro Perez\",\n        \"customer_key\": \"cus_dev_5edfd803f319f\",\n        \"email_address\": \"pedro.perez2@gmail.com\",\n        \"dt_create\": 1591728132,\n        \"dt_modify\": null\n    }\n}"
-						},
 						{
 							"name": "Add Customer  ( Extended )",
 							"originalRequest": {
@@ -1038,12 +960,6 @@
 										"name": "Content-Type",
 										"value": "application/json",
 										"type": "text"
-									},
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "api_key {{apySyncKey}}",
-										"disabled": true
 									}
 								],
 								"body": {
@@ -1170,6 +1086,124 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"rid\": \"cd7cdd32-e994-4cfb-bb29-25ebd7737750\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_user\": \"5ed72b8fa21c26277c58411b\",\n        \"id_pymnt_customer\": \"5ed72aaa208409137172417f\",\n        \"id_pymnt_provider\": \"38dc9e9308898644058b4563\",\n        \"id_external\": \"869d56f0-555e-4c8c-847a-2e1ef53f6ef6\",\n        \"name\": \"Pedro Perez\",\n        \"customer_key\": \"cus_dev_5ed72aaa84d25\",\n        \"dt_create\": 1591159466,\n        \"dt_modify\": 1591159715\n    }\n}"
+						},
+						{
+							"name": "Add Customer ( Simple )",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "api_key {{apySyncKey}}",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"full_name\": \"Pedro Perez\",\n    \"email_address\": \"j+test4@paybook.com\",\n    \"id_currency\": \"523a25953b8e77910e8b456c\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseSyncUrl}}/v1/payments/customers",
+									"host": [
+										"{{baseSyncUrl}}"
+									],
+									"path": [
+										"v1",
+										"payments",
+										"customers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 02 Jun 2020 15:05:50 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Tue, 02 Jun 2020 15:05:50 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "dda31ea5-4303-4a21-93be-42870c83448f"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"4de84d23-dd59-4d3d-a865-fc907cb7c5f2\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_user\": \"5edfd8034be92c22563265f6\",\n        \"id_pymnt_customer\": \"5edfd8044be92c22563265f7\",\n        \"id_pymnt_provider\": \"38dc9e9308898644058b4563\",\n        \"id_external\": \"pedro.perez2@gmail.com\",\n        \"name\": \"Pedro Perez\",\n        \"customer_key\": \"cus_dev_5edfd803f319f\",\n        \"email_address\": \"pedro.perez2@gmail.com\",\n        \"dt_create\": 1591728132,\n        \"dt_modify\": null\n    }\n}"
 						}
 					]
 				},
@@ -1179,7 +1213,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a88fb46d-aca6-41dd-88e6-9e732c843866",
+								"id": "ca2ddf95-f5a9-4117-9d38-ff59cbbbdf50",
 								"exec": [
 									""
 								],
@@ -1219,7 +1253,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/customers?id_currency=523a25953b8e77910e8b456c",
+									"raw": "{{baseSyncUrl}}/v1/payments/customers",
 									"host": [
 										"{{baseSyncUrl}}"
 									],
@@ -1227,12 +1261,6 @@
 										"v1",
 										"payments",
 										"customers"
-									],
-									"query": [
-										{
-											"key": "id_currency",
-											"value": "523a25953b8e77910e8b456c"
-										}
 									]
 								}
 							},
@@ -1324,7 +1352,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4f50d61f-adc6-42a4-a647-738f19e63a84",
+								"id": "e29a4a8c-af29-4c7f-b475-517c958b5204",
 								"exec": [
 									""
 								],
@@ -1354,6 +1382,14 @@
 								"payments",
 								"customers",
 								"{{id_pymnt_customer}}"
+							],
+							"query": [
+								{
+									"key": "id_pymnt_customer",
+									"value": null,
+									"description": "The ID of the customer assigned by SrPago",
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -1473,7 +1509,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ce1de88e-9042-4782-aeeb-493985e3b23f",
+								"id": "c5a87a7b-b259-4055-bea3-a42d723f650b",
 								"exec": [
 									""
 								],
@@ -1499,6 +1535,14 @@
 								"payments",
 								"customers",
 								"{{id_pymnt_customer}}"
+							],
+							"query": [
+								{
+									"key": "id_pymnt_customer",
+									"value": null,
+									"description": "The ID of the customer assigned by SrPago",
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -1609,12 +1653,12 @@
 					]
 				}
 			],
-			"description": "Customers are logical segmentations for end-users. It's a best practice to register customers in order to have their information grouped and have control on both ends. It is required to have at least one customer registered to add cards and create charges\n\n\n```json\n{\n    \"id_user\": \"5ed72b8fa21c26277c58411b\",\n    // SyncID, The ID of the user assignated by SrPago ( you should store this on your system )\n    \"id_pymnt_customer\": \"5ed66ace6b7d274f245b7685\",\n    // SyncID, The ID of the customer assignated by SrPago ( you should store this on your system )\n    \"id_pymnt_provider\": \"38dc9e9308898644058b4563\",\n    // SyncID, The ID of the payment provider assignated by SrPago\n    \"id_external\": \"869d56f0-555e-4c8c-847a-2e1ef53f6ef6\",\n    // String, The external id for this customer ( this identifies the customer on your system )\n    \"name\": \"Pedro Perez\",\n    // String, The customer full name\n    \"customer_key\": \"cus_dev_5ed66acf6758d\",\n    // String, The customer key\n    \"is_active\": true,\n    // Boolean, status of the customer\n    \"dt_create\": 1591110350,\n    // Integer; a Unix timestamp of the time when the user was created\n    \"dt_modify\": null\n    // Integer; a Unix timestamp of the time when the user was modified\n}\n```",
+			"description": "Customers are logical segmentations for end-users. It's a best practice to register customers in order to have their information grouped and have control on both ends. It is required to have at least one customer registered to add cards and create charges\n\n\n```json\n{\n    \"id_user\": \"5ed72b8fa21c26277c58411b\",\n    // The ID of the user assigned by SrPago\n    \"id_pymnt_customer\": \"5ed72b8fa21c26277c58411b\",\n    // The ID of the customer assigned by SrPago\n    \"id_external\": \"869d56f0-555e-4c8c-847a-2e1ef53f6ef6\",\n    // String, The external id for this customer ( this identifies the customer on your system )\n    \"name\": \"Pedro Perez\",\n    // String, The customer full name\n    \"customer_key\": \"cus_dev_5ed66acf6758d\",\n    // String, The customer key\n    \"dt_create\": 1591110350,\n    // Integer; a Unix timestamp of the time when the user was created\n    \"dt_modify\": null\n    // Integer; a Unix timestamp of the time when the user was modified\n}\n```",
 			"event": [
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "a718b907-5d9e-41ee-ac0a-742621d63435",
+						"id": "f94f0c6d-71fa-4b9e-bec2-2bbdd9b89e76",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1624,7 +1668,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "de8a5701-35ed-4b30-955f-68aaaf550d16",
+						"id": "42dc3396-cd98-4b90-9c38-8bf6fb18f77e",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1643,7 +1687,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d6afa221-4b55-49c1-808c-a83fde31d235",
+								"id": "38c9f91c-3ca5-46db-bcba-6dec59bb3734",
 								"exec": [
 									""
 								],
@@ -1661,7 +1705,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id_pymnt_card\": \"523a25953b8e77910e8b456c\",\n    \"reference\": \"20190814/0GZXXG81\",\n    \"description\": \"Sample Charge\",\n    \"amount\": 50\n}"
+							"raw": "{\n\t\"id_pymnt_card\": \"5ee103c14d592c4ac75eb9bb\",\n    \"reference\": \"20190814/0GZXXG81\",\n    \"description\": \"Sample Charge\",\n    \"amount\": 50\n}"
 						},
 						"url": {
 							"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/charges",
@@ -1674,9 +1718,40 @@
 								"customers",
 								"{{id_pymnt_customer}}",
 								"charges"
+							],
+							"query": [
+								{
+									"key": "id_pymnt_customer",
+									"value": null,
+									"description": "The ID of the customer assigned by SrPago",
+									"disabled": true
+								},
+								{
+									"key": "id_pymnt_card",
+									"value": null,
+									"description": "(optional) The ID of the credit card assigned by SrPago, if passed, this card wil be used instead of the default one (the last one registered for the given customer)",
+									"disabled": true
+								},
+								{
+									"key": "reference",
+									"value": null,
+									"description": "Reference number (random generated on the client system)",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": null,
+									"description": "Statement descriptor for the charge",
+									"disabled": true
+								},
+								{
+									"key": "amount",
+									"value": null,
+									"description": "Total amount of the charge",
+									"disabled": true
+								}
 							]
-						},
-						"description": "Sample test for add charge\n\n### This is a sample title\n\nText within subtitle"
+						}
 					},
 					"response": [
 						{
@@ -1941,7 +2016,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c18cad3f-a8f5-4b52-9b18-89037cf9edbd",
+								"id": "9cf694d5-621a-4a19-9202-a2c996315722",
 								"exec": [
 									""
 								],
@@ -1969,6 +2044,14 @@
 								"{{id_pymnt_customer}}",
 								"charges",
 								"{{id_pymnt_charge}}"
+							],
+							"query": [
+								{
+									"key": "id_pymnt_customer",
+									"value": null,
+									"description": "The ID of the customer assigned by SrPago",
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -2086,7 +2169,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b85ad006-0260-4112-8632-b86a7467b7ba",
+								"id": "f0ce8d82-cd1c-4c42-a3f2-b7c3d2df72db",
 								"exec": [
 									""
 								],
@@ -2113,6 +2196,14 @@
 								"customers",
 								"{{id_pymnt_customer}}",
 								"charges"
+							],
+							"query": [
+								{
+									"key": "id_pymnt_customer",
+									"value": null,
+									"description": "The ID of the customer assigned by SrPago",
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -2229,7 +2320,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "bf93ff18-e5ec-4c0a-8572-b68d86cca030",
+						"id": "9bdce16f-84e7-4d3d-93e8-b11fe2334375",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2239,7 +2330,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "9b03e10b-0679-4311-9436-1ccb9525cecd",
+						"id": "3b0d37e1-97a7-483c-8ffa-ed7574b6ac6f",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2258,7 +2349,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ddd669b1-3cb8-4d2b-a9e0-428a93326903",
+								"id": "ae3f4fb4-1478-48ff-bab2-bb4707ee9144",
 								"exec": [
 									""
 								],
@@ -2289,6 +2380,14 @@
 								"operations",
 								"{{id_pymnt_charge}}",
 								"reimburse"
+							],
+							"query": [
+								{
+									"key": "id_pymnt_charge",
+									"value": null,
+									"description": "The ID of the charge assigned by SrPago",
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -2409,7 +2508,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "10756bb0-a265-4a41-9615-87b7a15e60c9",
+						"id": "ad0150c2-daa3-4dd1-b492-9e25f10b5b19",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2419,7 +2518,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b771da8c-1ce2-488a-97c3-f5a0ebc1282e",
+						"id": "6b9a053a-ce56-4f2a-acb6-166497f8890e",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2454,7 +2553,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "068477b6-4778-43fc-8112-6cb637440b68",
+				"id": "0aef76da-b7b0-4b60-a1f5-9a1ac18035e8",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -2464,7 +2563,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "5969f149-1636-44bc-900f-fd049510bc15",
+				"id": "38992307-18aa-4491-a15e-b1291223eb19",
 				"type": "text/javascript",
 				"exec": [
 					""
