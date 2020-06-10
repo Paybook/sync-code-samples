@@ -1675,7 +1675,8 @@
 								"{{id_pymnt_customer}}",
 								"charges"
 							]
-						}
+						},
+						"description": "Sample test for add charge\n\n### This is a sample title\n\nText within subtitle"
 					},
 					"response": [
 						{
