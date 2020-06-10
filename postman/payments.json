@@ -34,10 +34,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"full_name\": \"Pedro Perez\",\n\t\"email_address\": \"j+test4@paybook.com\",\n    \"id_external\": \"869d56f0-555e-4c8c-847a-2e1ef53f6ef6\"\n}"
+							"raw": "{\n\t\"full_name\": \"Pedro Perez\",\n\t\"email_address\": \"pedro.perez@test.com\",\n    \"id_external\": \"869d56f0-555e-4c8c-847a-2e1ef53f6ef6\"\n}"
 						},
 						"url": {
-							"raw": "{{baseSyncUrl}}/v1/payments/customers",
+							"raw": "{{baseSyncUrl}}/v1/payments/customers?full_name&email_address&id_external",
 							"host": [
 								"{{baseSyncUrl}}"
 							],
@@ -45,6 +45,23 @@
 								"v1",
 								"payments",
 								"customers"
+							],
+							"query": [
+								{
+									"key": "full_name",
+									"value": null,
+									"description": "Customer Full Name"
+								},
+								{
+									"key": "email_address",
+									"value": null,
+									"description": "Customer Email Address"
+								},
+								{
+									"key": "id_external",
+									"value": null,
+									"description": "(optional) External ID, this field can be <code>null</code> and be used to keep track of that user with an external ID"
+								}
 							]
 						},
 						"description": "This service allows the creation of new customers"
