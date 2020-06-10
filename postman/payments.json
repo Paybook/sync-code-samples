@@ -37,7 +37,7 @@
 							"raw": "{\n\t\"full_name\": \"Pedro Perez\",\n\t\"email_address\": \"pedro.perez@test.com\",\n    \"id_external\": \"869d56f0-555e-4c8c-847a-2e1ef53f6ef6\"\n}"
 						},
 						"url": {
-							"raw": "{{baseSyncUrl}}/v1/payments/customers?full_name&email_address&id_external",
+							"raw": "{{baseSyncUrl}}/v1/payments/customers",
 							"host": [
 								"{{baseSyncUrl}}"
 							],
@@ -50,17 +50,20 @@
 								{
 									"key": "full_name",
 									"value": null,
-									"description": "Customer Full Name"
+									"description": "Customer Full Name",
+									"disabled": true
 								},
 								{
 									"key": "email_address",
 									"value": null,
-									"description": "Customer Email Address"
+									"description": "Customer Email Address",
+									"disabled": true
 								},
 								{
 									"key": "id_external",
 									"value": null,
-									"description": "(optional) External ID, can be used to keep track of that user with an external ID"
+									"description": "(optional) External ID, can be used to keep track of that user with an external ID",
+									"disabled": true
 								}
 							]
 						},
@@ -2366,7 +2369,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{baseSyncUrl}}/v1/payments/operations/{{id_pymnt_charge}}/reimburse?id_pymnt_charge",
+							"raw": "{{baseSyncUrl}}/v1/payments/operations/{{id_pymnt_charge}}/reimburse",
 							"host": [
 								"{{baseSyncUrl}}"
 							],
@@ -2381,7 +2384,8 @@
 								{
 									"key": "id_pymnt_charge",
 									"value": null,
-									"description": "The ID of the charge assigned by SrPago"
+									"description": "The ID of the charge assigned by SrPago",
+									"disabled": true
 								}
 							]
 						}
