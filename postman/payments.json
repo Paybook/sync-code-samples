@@ -1724,6 +1724,30 @@
 									"value": null,
 									"description": "The ID of the customer assigned by SrPago",
 									"disabled": true
+								},
+								{
+									"key": "id_pymnt_card",
+									"value": null,
+									"description": "(optional) The ID of the credit card assigned by SrPago, if passed, this card wil be used instead of the default one (the last one registered for the given customer)",
+									"disabled": true
+								},
+								{
+									"key": "reference",
+									"value": null,
+									"description": "Reference number (random generated on the client system)",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": null,
+									"description": "Statement descriptor for the charge",
+									"disabled": true
+								},
+								{
+									"key": "amount",
+									"value": null,
+									"description": "Total amount of the charge",
+									"disabled": true
 								}
 							]
 						}
@@ -2028,15 +2052,8 @@
 									"disabled": true
 								},
 								{
-									"key": "id_pymnt_card",
-									"value": null,
-									"description": "(optional) The ID of the credit card assigned by SrPago, if passed, this card wil be used instead of the default one (the last one registered for the given customer)",
-									"disabled": true
-								},
-								{
 									"key": "reference",
 									"value": null,
-									"description": "Reference number (random generated on the client system)",
 									"disabled": true
 								},
 								{
