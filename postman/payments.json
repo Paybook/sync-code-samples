@@ -2397,7 +2397,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"rid\": \"66c18bbf-cc21-4d7b-8735-20dab55033e6\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_charge\": \"5eed0d0df23be1111a3af080\",\n        \"id_pymnt_affiliate\": \"5eecf65fd2192b48f22aefa3\",\n        \"transaction\": \"MjczNzA1OA==\",\n        \"payment_method\": \"POS\",\n        \"authorization_code\": \"728923\",\n        \"status\": \"N\",\n        \"transaction_type\": \"E\",\n        \"receipt_url\": \"https://sandbox-connect.srpago.com/recipe/MTUxYzQ5YTMtMzFhNi00NWY3LWE0NGQtMTcyZWI3YjVkYWNm\",\n        \"has_devolution\": \"0\",\n        \"affiliation\": \"7865096\",\n        \"affiliation_name\": \"\",\n        \"reference\": {\n            \"number\": \"20190814/0GZXXG81\",\n            \"description\": \"Pago de prueba\"\n        },\n        \"card\": {\n            \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n            \"holder_name\": \"Pedro Perez\",\n            \"type\": \"VISA\",\n            \"number\": \"471622XXXXXX4622\"\n        },\n        \"amount\": 20,\n        \"net_amount\": 19.16,\n        \"tip\": 0,\n        \"commission\": 0,\n        \"fee\": 0.84,\n        \"fee_details\": [\n            {\n                \"type\": \"fee\",\n                \"percentage\": 3.6,\n                \"amount\": 0.84,\n                \"description\": \"\"\n            }\n        ],\n        \"origin\": {\n            \"location\": {\n                \"latitude\": 32.896423,\n                \"longitude\": -96.966841\n            }\n        },\n        \"dt_create\": 1592593677,\n        \"dt_modify\": 1592593677\n    }\n}"
+							"body": "{\n    \"rid\": \"66c18bbf-cc21-4d7b-8735-20dab55033e6\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_charge\": \"5eed0d0df23be1111a3af080\",\n        \"id_pymnt_affiliate\": null,\n        \"transaction\": \"MjczNzA1OA==\",\n        \"payment_method\": \"POS\",\n        \"authorization_code\": \"728923\",\n        \"status\": \"N\",\n        \"transaction_type\": \"E\",\n        \"receipt_url\": \"https://sandbox-connect.srpago.com/recipe/MTUxYzQ5YTMtMzFhNi00NWY3LWE0NGQtMTcyZWI3YjVkYWNm\",\n        \"has_devolution\": \"0\",\n        \"affiliation\": \"7865096\",\n        \"affiliation_name\": \"\",\n        \"reference\": {\n            \"number\": \"20190814/0GZXXG81\",\n            \"description\": \"Pago de prueba\"\n        },\n        \"card\": {\n            \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n            \"holder_name\": \"Pedro Perez\",\n            \"type\": \"VISA\",\n            \"number\": \"471622XXXXXX4622\"\n        },\n        \"amount\": 20,\n        \"net_amount\": 19.16,\n        \"tip\": 0,\n        \"commission\": 0,\n        \"fee\": 0.84,\n        \"fee_details\": [\n            {\n                \"type\": \"fee\",\n                \"percentage\": 3.6,\n                \"amount\": 0.84,\n                \"description\": \"\"\n            }\n        ],\n        \"origin\": {\n            \"location\": {\n                \"latitude\": 32.896423,\n                \"longitude\": -96.966841\n            }\n        },\n        \"dt_create\": 1592593677,\n        \"dt_modify\": 1592593677\n    }\n}"
 						},
 						{
 							"name": "Add Charge (Existing Card)",
@@ -2536,23 +2536,23 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"rid\": \"66c18bbf-cc21-4d7b-8735-20dab55033e6\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_charge\": \"5eed0d0df23be1111a3af080\",\n        \"id_pymnt_affiliate\": \"5eecf65fd2192b48f22aefa3\",\n        \"transaction\": \"MjczNzA1OA==\",\n        \"payment_method\": \"POS\",\n        \"authorization_code\": \"728923\",\n        \"status\": \"N\",\n        \"transaction_type\": \"E\",\n        \"receipt_url\": \"https://sandbox-connect.srpago.com/recipe/MTUxYzQ5YTMtMzFhNi00NWY3LWE0NGQtMTcyZWI3YjVkYWNm\",\n        \"has_devolution\": \"0\",\n        \"affiliation\": \"7865096\",\n        \"affiliation_name\": \"\",\n        \"reference\": {\n            \"number\": \"20190814/0GZXXG81\",\n            \"description\": \"Pago de prueba\"\n        },\n        \"card\": {\n            \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n            \"holder_name\": \"Pedro Perez\",\n            \"type\": \"VISA\",\n            \"number\": \"471622XXXXXX4622\"\n        },\n        \"amount\": 20,\n        \"net_amount\": 19.16,\n        \"tip\": 0,\n        \"commission\": 0,\n        \"fee\": 0.84,\n        \"fee_details\": [\n            {\n                \"type\": \"fee\",\n                \"percentage\": 3.6,\n                \"amount\": 0.84,\n                \"description\": \"\"\n            }\n        ],\n        \"origin\": {\n            \"location\": {\n                \"latitude\": 32.896423,\n                \"longitude\": -96.966841\n            }\n        },\n        \"dt_create\": 1592593677,\n        \"dt_modify\": 1592593677\n    }\n}"
+							"body": "{\n    \"rid\": \"66c18bbf-cc21-4d7b-8735-20dab55033e6\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_charge\": \"5eed0d0df23be1111a3af080\",\n        \"id_pymnt_affiliate\": null,\n        \"transaction\": \"MjczNzA1OA==\",\n        \"payment_method\": \"POS\",\n        \"authorization_code\": \"728923\",\n        \"status\": \"N\",\n        \"transaction_type\": \"E\",\n        \"receipt_url\": \"https://sandbox-connect.srpago.com/recipe/MTUxYzQ5YTMtMzFhNi00NWY3LWE0NGQtMTcyZWI3YjVkYWNm\",\n        \"has_devolution\": \"0\",\n        \"affiliation\": \"7865096\",\n        \"affiliation_name\": \"\",\n        \"reference\": {\n            \"number\": \"20190814/0GZXXG81\",\n            \"description\": \"Pago de prueba\"\n        },\n        \"card\": {\n            \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n            \"holder_name\": \"Pedro Perez\",\n            \"type\": \"VISA\",\n            \"number\": \"471622XXXXXX4622\"\n        },\n        \"amount\": 20,\n        \"net_amount\": 19.16,\n        \"tip\": 0,\n        \"commission\": 0,\n        \"fee\": 0.84,\n        \"fee_details\": [\n            {\n                \"type\": \"fee\",\n                \"percentage\": 3.6,\n                \"amount\": 0.84,\n                \"description\": \"\"\n            }\n        ],\n        \"origin\": {\n            \"location\": {\n                \"latitude\": 32.896423,\n                \"longitude\": -96.966841\n            }\n        },\n        \"dt_create\": 1592593677,\n        \"dt_modify\": 1592593677\n    }\n}"
 						},
 						{
-							"name": "Add Charge",
+							"name": "Add Charge ( Affiliate fee )",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
 									{
 										"key": "Content-Type",
 										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
+										"type": "text",
+										"value": "application/json"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"id_pymnt_card\": \"{{id_pymnt_card}}\",\n    \"reference\": \"20190814/0GZXXG81\",\n    \"description\": \"Pago de prueba\",\n    \"amount\": 100,\n    \"affiliate_details\": {\n        \"total_fee\": 70,\n        \"id_pymnt_affiliate\": \"{{id_pymnt_affiliate}}\"\n    }\n}",
+									"raw": "{\n    \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n    \"reference\": \"20190814/0GZXXG81\",\n    \"description\": \"Pago de prueba\",\n    \"amount\": 100,\n    \"affiliate_details\": {\n        \"total_fee\": 70,\n        \"id_pymnt_affiliate\": \"5eecf65fd2192b48f22aefa3\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2605,83 +2605,8 @@
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
 							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "nginx"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 19 Jun 2020 19:54:56 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Fri, 19 Jun 2020 19:54:56 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "ea99b1a0-bc57-437f-81b4-a353af8565f7"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15768000"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
+							"header": null,
 							"cookie": [],
 							"body": "{\n    \"rid\": \"ea99b1a0-bc57-437f-81b4-a353af8565f7\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_charge\": \"5eed180f869a260fe30e2209\",\n        \"id_pymnt_affiliate\": \"5eecf65fd2192b48f22aefa3\",\n        \"transaction\": \"MjczNzA2NQ==\",\n        \"payment_method\": \"POS\",\n        \"authorization_code\": \"586884\",\n        \"status\": \"N\",\n        \"transaction_type\": \"E\",\n        \"receipt_url\": \"https://sandbox-connect.srpago.com/recipe/NTI3NjIyYzUtMDFkOC00MjFiLThkOTQtNzgzZjgyNDFkNjcy\",\n        \"has_devolution\": \"0\",\n        \"affiliation\": \"7865096\",\n        \"affiliation_name\": \"\",\n        \"reference\": {\n            \"number\": \"20190814/0GZXXG81\",\n            \"description\": \"Pago de prueba\"\n        },\n        \"card\": {\n            \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n            \"holder_name\": \"Pedro Perez\",\n            \"type\": \"VISA\",\n            \"number\": \"471622XXXXXX4622\"\n        },\n        \"amount\": 100,\n        \"net_amount\": 95.82,\n        \"tip\": 0,\n        \"commission\": 0,\n        \"fee\": 4.18,\n        \"fee_details\": [\n            {\n                \"type\": \"fee\",\n                \"percentage\": 3.6,\n                \"amount\": 4.18,\n                \"description\": \"\"\n            }\n        ],\n        \"origin\": {\n            \"location\": {\n                \"latitude\": 32.896423,\n                \"longitude\": -96.966841\n            }\n        },\n        \"dt_create\": 1592596495,\n        \"dt_modify\": 1592596496\n    }\n}"
 						}
