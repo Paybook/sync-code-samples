@@ -3,106 +3,62 @@
 ------
 <br />
 
-#### New credential was created 
+#### New chargeback was created 
 
- `credential_create`
-
-Message:
-
-```json
-{
-    "endpoints": {
-        "credential": [
-            "/v1/credentials/5e793889ea4c5165d46f9811"
-        ]
-    }, 
-    "event": "credential_create", 
-    "id_credential": "5e793889ea4c5165d46f9811", 
-    "id_external": "IXS7607092R5", 
-    "id_job": "5e793889b783081dd61de29c", 
-    "id_job_uuid": "5e793889b783081dd61de29b", 
-    "id_site": "5da784f1f9de2a06483abec1", 
-    "id_site_organization": "56cf4ff5784806152c8b4567", 
-    "id_site_organization_type": "56cf4f5b784806cf028b4569", 
-    "id_user": "5e751d54d0510472295413b3", 
-    "is_executing": 1
-}
-```
-
-------
-<br />
-
-#### Existing credential was updated
-
-`credential_update`
+ `payments.chargeback_created`
 
 Message:
 
 ```json
 {
-    "endpoints": {
-        "credential": [
-            "/v1/credentials/5e793889ea4c5165d46f9811"
-        ]
-    }, 
-    "event": "credential_update", 
-    "id_credential": "5e793889ea4c5165d46f9811", 
-    "id_external": "IXS7607092R5", 
-    "id_job": "5e793889b783081dd61de29c", 
-    "id_job_uuid": "5e793889b783081dd61de29b", 
-    "id_site": "5da784f1f9de2a06483abec1", 
-    "id_site_organization": "56cf4ff5784806152c8b4567", 
-    "id_site_organization_type": "56cf4f5b784806cf028b4569", 
-    "id_user": "5e751d54d0510472295413b3", 
-    "is_executing": 1
+    "rid": "8df2a899-fb8e-4034-82ca-233ab3030d59",
+    "events": [
+        {
+            "header": {
+                "event": {
+                    "eid": "4217d889-a6da-477c-be25-17ed6646baa1",
+                    "name": "payments.chargeback_created",
+                    "version": "3.1"
+                },
+                "user": {
+                    "id_user": "5ef5130b553ab949f13cf0e1",
+                    "id_external": "j+test18@paybook.com",
+                    "id_environment": "574894bf7848066d138b4570"
+                }
+            },
+            "payload": {
+                "id_pymnt_charge": "5ef6267be9dfcf1e1919a414",
+                "id_pymnt_affiliate": null,
+                "transaction": "MjczODMzNw==",
+                "payment_method": "POS",
+                "authorization_code": "",
+                "status": "",
+                "transaction_type": "C",
+                "receipt_url": "https://sandbox-connect.srpago.com/recipe/",
+                "has_devolution": "0",
+                "reference": {
+                    "description": "CONTRACARGO POR: Autorizacion [136282] - Transaccion [2738336]"
+                },
+                "card": [],
+                "linked": [
+                    "5ef621b35beebd4808151162"
+                ],
+                "amount": -150,
+                "net_amount": -150,
+                "tip": 0,
+                "commission": 0,
+                "fee": 0,
+                "fee_details": null,
+                "origin": {
+                    "location": {
+                        "latitude": "0.000000",
+                        "longitude": "0.000000"
+                    }
+                },
+                "dt_create": 1593190011,
+                "dt_modify": null
+            }
+        }
+    ]
 }
 ```
-
-------
-<br />
-
-#### Data for an existing credential was added or updated
-
-`refresh` 
-
-For a Existing credentials, the follow actions can be detected:
-
-1. New account was added
-2. New transactions wass added
-3. An existing accounts was updated
-4. An existing transactions was updated
-
-Message:
-
-```json
-{
-    "endpoints": {
-        "accounts": [
-            "/v1/accounts?id_credential=5e793889ea4c5165d46f9811&limit=5000&skip=0&wbhk=1"
-        ], 
-        "attachments": [
-            "/v1/attachments/export?id_credential=5e793889ea4c5165d46f9811&limit=5000&skip=0&wbhk=1", 
-            "/v1/attachments/export?id_credential=5e793889ea4c5165d46f9811&limit=5000&skip=5000&wbhk=1", 
-            "/v1/attachments/export?id_credential=5e793889ea4c5165d46f9811&limit=5000&skip=10000&wbhk=1"
-        ], 
-        "credential": [
-            "/v1/credentials/5e793889ea4c5165d46f9811"
-        ], 
-        "transactions": [
-            "/v1/transactions?id_credential=5e793889ea4c5165d46f9811&limit=5000&skip=0&wbhk=1", 
-            "/v1/transactions?id_credential=5e793889ea4c5165d46f9811&limit=5000&skip=5000&wbhk=1", 
-            "/v1/transactions?id_credential=5e793889ea4c5165d46f9811&limit=5000&skip=10000&wbhk=1"
-        ]
-    }, 
-    "event": "refresh", 
-    "id_credential": "5e793889ea4c5165d46f9811", 
-    "id_external": "IXS7607092R5", 
-    "id_job": "5e793889b783081dd61de29c", 
-    "id_job_uuid": "5e793889b783081dd61de29b", 
-    "id_site": "5da784f1f9de2a06483abec1", 
-    "id_site_organization": "56cf4ff5784806152c8b4567", 
-    "id_site_organization_type": "56cf4f5b784806cf028b4569", 
-    "id_user": "5e751d54d0510472295413b3"
-}
-```
-
