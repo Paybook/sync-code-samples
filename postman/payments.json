@@ -5,38 +5,32 @@
 		"description": "\n\n# Table of Content\n\n- Overview\n- Authentication\n- Request\n- Error Codes\n- Rate limit\n\n# Overview\n\n------\n\nSrPago allows our customers to process payments in different FIAT and Crypto currencies, simplifying how payments are managed and processed.\n\nSrPago’s API has an architectural style of a RESTful design pattern. It uses HTTP as its underlying protocol, where standard HTTP verbs and HTTP response codes are used. Communication travels via HTTPS to ensure a secure data exchange. Almost every response body is JSON encoded, unless stated on the endpoint description. Since RESTful services and JSON are highly popular and most major development languages include a form to interact with these technologies, it's quite easy to integrate with Sync's API.\n\n# Authentication\n\n------\n\nSrPago API has two types of authentication:\n\n#### API KEY\n\n```bash\ncurl URL \\\n-H \"Authorization: api_key api_key={API_KEY}\" \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS \n```\n\n#### Bearer Token\n\n```bash\ncurl URL \\\n-H \"Authorization: Bearer {TOKEN}\" \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS \n```\n\nType of Authentication required is defined by Resource\n\n| Resource     | Auth Type      |\n| ------------ | -------------- |\n| Customers    | `API KEY`      |\n| Cards        | `API KEY`      |\n| Charges      | `API KEY`      |\n| Operations   | `API KEY`      |\n\n# Environments\n\n------\n\n#### Sandbox\n\nACME Organization with these Sites:\n\n1. Normal\n2. Token\n3. Captcha\n4. Multiple Image\n5. Select\n\n#### Production\n\nLive Organizations\n\n# Request\n\n------\n\n#### Structure\n\n```bash\ncurl URL \\\n-H AUTH \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS\n```\n\n# Error Codes\n\n------\n\nTable of Error Codes defined in Paybook Sync API\n\n| Code | Message               |\n| ---- | --------------------- |\n| 400  | Bad Request           |\n| 401  | Unauthorized          |\n| 402  | Payment Required      |\n| 403  | Forbidden             |\n| 404  | Not Found             |\n| 429  | Too Many Requests     |\n| 500  | Internal Server Error |\n| 503  | Service Unavailable   |\n\n# Rate limit\n\n------\n\nThere are two types of rate-limit:\n\n#### Rate limit by server\n\n5 request per second \n\n#### Limit by credential\n\n1 pull request per day",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
-	"item": [
-		{
+	"item": [{
 			"name": "Customers",
-			"item": [
-				{
+			"item": [{
 					"name": "Add Customer",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "500628b8-5323-4066-ad2b-4909b78fe3a8",
-								"exec": [
-									"var json = JSON.parse(responseBody);",
-									"postman.setEnvironmentVariable(\"id_pymnt_customer\", json.response.id_pymnt_customer);",
-									""
-								],
-								"type": "text/javascript"
-							}
+					"event": [{
+						"listen": "test",
+						"script": {
+							"id": "500628b8-5323-4066-ad2b-4909b78fe3a8",
+							"exec": [
+								"var json = JSON.parse(responseBody);",
+								"postman.setEnvironmentVariable(\"id_pymnt_customer\", json.response.id_pymnt_customer);",
+								""
+							],
+							"type": "text/javascript"
 						}
-					],
+					}],
 					"request": {
 						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
+						"header": [{
+							"key": "Content-Type",
+							"type": "text",
+							"value": "application/json"
+						}],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"full_name\": \"Pedro Perez\",\n\t\"email_address\": \"pedro.perez@test.com\",\n    \"id_external\": \"869d56f0-555e-4c8c-847a-2e1ef53f6ef6\"\n}",
+							"raw": "{\n\t\"full_name\": \"John Doe\",\n\t\"email_address\": \"john.doe@test.com\",\n    \"id_external\": \"869d56f0-555e-4c8c-847a-2e1ef53f6ef6\"\n}",
 							"options": {
 								"raw": {}
 							}
@@ -51,8 +45,7 @@
 								"payments",
 								"customers"
 							],
-							"query": [
-								{
+							"query": [{
 									"key": "full_name",
 									"value": "",
 									"description": "Customer Full Name",
@@ -74,13 +67,11 @@
 						},
 						"description": "This service allows the creation of new customers"
 					},
-					"response": [
-						{
+					"response": [{
 							"name": "Add Customer ( Simple )",
 							"originalRequest": {
 								"method": "POST",
-								"header": [
-									{
+								"header": [{
 										"key": "Content-Type",
 										"name": "Content-Type",
 										"type": "text",
@@ -94,7 +85,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"full_name\": \"Pedro Perez\",\n    \"email_address\": \"pedro.perez@gmail.com\"\n}",
+									"raw": "{\n    \"full_name\": \"John Doe\",\n    \"email_address\": \"john.doe@test.com\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -116,8 +107,7 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"header": [
-								{
+							"header": [{
 									"key": "Server",
 									"value": "nginx"
 								},
@@ -191,23 +181,21 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"rid\": \"4de84d23-dd59-4d3d-a865-fc907cb7c5f2\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_user\": \"5edfd8034be92c22563265f6\",\n        \"id_pymnt_customer\": \"5edfd8044be92c22563265f7\",\n        \"full_name\": \"Pedro Perez\",\n        \"email_address\": \"pedro.perez@gmail.com\",\n        \"id_external\": \"pedro.perez@gmail.com\",\n        \"dt_create\": 1592585991,\n        \"dt_modify\": 1592586128\n    }\n}"
+							"body": "{\n    \"rid\": \"4de84d23-dd59-4d3d-a865-fc907cb7c5f2\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_user\": \"5edfd8034be92c22563265f6\",\n        \"id_pymnt_customer\": \"5edfd8044be92c22563265f7\",\n        \"full_name\": \"John Doe\",\n        \"email_address\": \"john.doe@test.com\",\n        \"id_external\": \"john.doe@test.com\",\n        \"dt_create\": 1592585991,\n        \"dt_modify\": 1592586128\n    }\n}"
 						},
 						{
 							"name": "Add Customer  ( Extended )",
 							"originalRequest": {
 								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
+								"header": [{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"type": "text",
+									"value": "application/json"
+								}],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"full_name\": \"Pedro Perez\",\n\t\"email_address\": \"pedro.perez@gmail.com\",\n    \"id_external\": \"869d56f0-555e-4c8c-847a-2e1ef53f6ef6\"\n}",
+									"raw": "{\n\t\"full_name\": \"John Doe\",\n\t\"email_address\": \"john.doe@test.com\",\n    \"id_external\": \"869d56f0-555e-4c8c-847a-2e1ef53f6ef6\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -229,8 +217,7 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"header": [
-								{
+							"header": [{
 									"key": "Date",
 									"value": "Tue, 09 Jun 2020 18:42:12 GMT"
 								},
@@ -328,32 +315,28 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"rid\": \"cd7cdd32-e994-4cfb-bb29-25ebd7737750\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_user\": \"5ed72b8fa21c26277c58411b\",\n        \"id_pymnt_customer\": \"5ed72aaa208409137172417f\",\n        \"full_name\": \"Pedro Perez\",\n\t    \"email_address\": \"pedro.perez@gmail.com\",\n        \"id_external\": \"869d56f0-555e-4c8c-847a-2e1ef53f6ef6\",\n        \"dt_create\": 1592585991,\n        \"dt_modify\": 1592586128\n    }\n}"
+							"body": "{\n    \"rid\": \"cd7cdd32-e994-4cfb-bb29-25ebd7737750\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_user\": \"5ed72b8fa21c26277c58411b\",\n        \"id_pymnt_customer\": \"5ed72aaa208409137172417f\",\n        \"full_name\": \"John Doe\",\n\t    \"email_address\": \"john.doe@test.com\",\n        \"id_external\": \"869d56f0-555e-4c8c-847a-2e1ef53f6ef6\",\n        \"dt_create\": 1592585991,\n        \"dt_modify\": 1592586128\n    }\n}"
 						}
 					]
 				},
 				{
 					"name": "Get Customer",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "9a6425c1-2de6-4d26-ae02-fb44e056e81f",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
+					"event": [{
+						"listen": "test",
+						"script": {
+							"id": "9a6425c1-2de6-4d26-ae02-fb44e056e81f",
+							"exec": [
+								""
+							],
+							"type": "text/javascript"
 						}
-					],
+					}],
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
+						"header": [{
+							"key": "Content-Type",
+							"value": "application/json"
+						}],
 						"url": {
 							"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}",
 							"host": [
@@ -365,144 +348,133 @@
 								"customers",
 								"{{id_pymnt_customer}}"
 							],
-							"query": [
-								{
-									"key": "id_pymnt_customer",
-									"value": "",
-									"description": "The ID of the customer assigned by SrPago",
-									"disabled": true
-								}
-							]
+							"query": [{
+								"key": "id_pymnt_customer",
+								"value": "",
+								"description": "The ID of the customer assigned by SrPago",
+								"disabled": true
+							}]
 						}
 					},
-					"response": [
-						{
-							"name": "Get Customer",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
+					"response": [{
+						"name": "Get Customer",
+						"originalRequest": {
+							"method": "GET",
+							"header": [{
+								"key": "Content-Type",
+								"value": "application/json"
+							}],
+							"url": {
+								"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}",
+								"host": [
+									"{{baseSyncUrl}}"
 								],
-								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"v1",
-										"payments",
-										"customers",
-										"{{id_pymnt_customer}}"
-									]
-								}
+								"path": [
+									"v1",
+									"payments",
+									"customers",
+									"{{id_pymnt_customer}}"
+								]
+							}
+						},
+						"status": "OK",
+						"code": 200,
+						"_postman_previewlanguage": "json",
+						"header": [{
+								"key": "Server",
+								"value": "nginx"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "nginx"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 02 Jun 2020 15:26:26 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Tue, 02 Jun 2020 15:26:26 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "55e24671-7b4c-4f8e-9d5f-6a97161839b5"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15768000"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"55e24671-7b4c-4f8e-9d5f-6a97161839b5\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_pymnt_customer\": \"5ecd9976c78d8b5f1f2aff84\",\n            \"id_pymnt_provider\": \"38dc9e9308898644058b4563\",\n            \"customer_key\": \"cus_dev_5ecd99785952c\",\n            \"default_card\": {\n                \"id_pymnt_card\": \"5ecfef409cfb8c52ab73239e\",\n                \"holder_name\": \"Pedro Perez\",\n                \"type\": \"VISA\",\n                \"number\": \"471622XXXXXX4622\",\n                \"expiration\": \"2007\",\n                \"card_token\": \"crd_dev_5ecfef3e7cffd\",\n                \"is_default\": true,\n                \"funding\": true\n            },\n            \"cards\": [\n                {\n                    \"id_pymnt_card\": \"5ecfef409cfb8c52ab73239e\",\n                    \"holder_name\": \"Pedro Perez\",\n                    \"type\": \"VISA\",\n                    \"number\": \"471622XXXXXX4622\",\n                    \"expiration\": \"2007\",\n                    \"card_token\": \"crd_dev_5ecfef3e7cffd\",\n                    \"is_default\": true,\n                    \"funding\": true\n                }\n            ],\n            \"dt_create\": 1590532470,\n            \"dt_modify\": 1590685504\n        }\n    ]\n}"
-						}
-					]
+							{
+								"key": "Date",
+								"value": "Tue, 02 Jun 2020 15:26:26 GMT"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=utf-8"
+							},
+							{
+								"key": "Transfer-Encoding",
+								"value": "chunked"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Vary",
+								"value": "Accept-Encoding"
+							},
+							{
+								"key": "Access-Control-Allow-Headers",
+								"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*"
+							},
+							{
+								"key": "Access-Control-Expose-Headers",
+								"value": "*"
+							},
+							{
+								"key": "Access-Control-Max-Age",
+								"value": "86400"
+							},
+							{
+								"key": "Cache-Control",
+								"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+							},
+							{
+								"key": "Expires",
+								"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+							},
+							{
+								"key": "Last-Modified",
+								"value": "Tue, 02 Jun 2020 15:26:26 GMT"
+							},
+							{
+								"key": "Pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "Request-ID",
+								"value": "55e24671-7b4c-4f8e-9d5f-6a97161839b5"
+							},
+							{
+								"key": "Strict-Transport-Security",
+								"value": "max-age=15768000"
+							},
+							{
+								"key": "Content-Encoding",
+								"value": "gzip"
+							}
+						],
+						"cookie": [],
+						"body": "{\n    \"rid\": \"55e24671-7b4c-4f8e-9d5f-6a97161839b5\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_pymnt_customer\": \"5ecd9976c78d8b5f1f2aff84\",\n            \"id_pymnt_provider\": \"38dc9e9308898644058b4563\",\n            \"customer_key\": \"cus_dev_5ecd99785952c\",\n            \"default_card\": {\n                \"id_pymnt_card\": \"5ecfef409cfb8c52ab73239e\",\n                \"holder_name\": \"John Doe\",\n                \"type\": \"VISA\",\n                \"number\": \"471622XXXXXX4622\",\n                \"expiration\": \"2007\",\n                \"card_token\": \"crd_dev_5ecfef3e7cffd\",\n                \"is_default\": true,\n                \"funding\": true\n            },\n            \"cards\": [\n                {\n                    \"id_pymnt_card\": \"5ecfef409cfb8c52ab73239e\",\n                    \"holder_name\": \"John Doe\",\n                    \"type\": \"VISA\",\n                    \"number\": \"471622XXXXXX4622\",\n                    \"expiration\": \"2007\",\n                    \"card_token\": \"crd_dev_5ecfef3e7cffd\",\n                    \"is_default\": true,\n                    \"funding\": true\n                }\n            ],\n            \"dt_create\": 1590532470,\n            \"dt_modify\": 1590685504\n        }\n    ]\n}"
+					}]
 				},
 				{
 					"name": "List Customers",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "3e61da1f-e989-4db1-8d3a-1b5384fe722c",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
+					"event": [{
+						"listen": "test",
+						"script": {
+							"id": "3e61da1f-e989-4db1-8d3a-1b5384fe722c",
+							"exec": [
+								""
+							],
+							"type": "text/javascript"
 						}
-					],
+					}],
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
+						"header": [{
+							"key": "Content-Type",
+							"value": "application/json"
+						}],
 						"url": {
 							"raw": "{{baseSyncUrl}}/v1/payments/customers",
 							"host": [
@@ -515,133 +487,124 @@
 							]
 						}
 					},
-					"response": [
-						{
-							"name": "List Customers",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
+					"response": [{
+						"name": "List Customers",
+						"originalRequest": {
+							"method": "GET",
+							"header": [{
+								"key": "Content-Type",
+								"value": "application/json"
+							}],
+							"url": {
+								"raw": "{{baseSyncUrl}}/v1/payments/customers",
+								"host": [
+									"{{baseSyncUrl}}"
 								],
-								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/customers",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"v1",
-										"payments",
-										"customers"
-									]
-								}
+								"path": [
+									"v1",
+									"payments",
+									"customers"
+								]
+							}
+						},
+						"status": "OK",
+						"code": 200,
+						"_postman_previewlanguage": "json",
+						"header": [{
+								"key": "Server",
+								"value": "nginx"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "nginx"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 02 Jun 2020 15:24:39 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Tue, 02 Jun 2020 15:24:39 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "b1521153-f28b-40a5-a246-34c2d57453ce"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15768000"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"7c263699-846a-422d-b274-92f488691741\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_pymnt_customer\": \"5edc2d8c581f0d1c243bd143\",\n            \"id_user\": \"5eea6df9e125cb00c25b8723\",\n            \"full_name\": \"Pedro Perez\",\n            \"email_address\": \"pedro.perez@gmail.com\",\n            \"default_card\": {\n                \"id_pymnt_card\": \"5ee3d676eff7c8506124a451\",\n                \"holder_name\": \"Pedro Perez García\",\n                \"type\": \"VISA\",\n                \"number\": \"415231XXXXXX4474\"\n            },\n            \"cards\": [\n                {\n                    \"id_pymnt_card\": \"5ee3d676eff7c8506124a451\",\n                    \"holder_name\": \"Pedro Perez García\",\n                    \"type\": \"VISA\",\n                    \"number\": \"415231XXXXXX4474\"\n                }\n            ],\n            \"dt_create\": 1591487884,\n            \"dt_modify\": 1592421881\n        }\n    ]\n}"
-						}
-					]
+							{
+								"key": "Date",
+								"value": "Tue, 02 Jun 2020 15:24:39 GMT"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=utf-8"
+							},
+							{
+								"key": "Transfer-Encoding",
+								"value": "chunked"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Vary",
+								"value": "Accept-Encoding"
+							},
+							{
+								"key": "Access-Control-Allow-Headers",
+								"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*"
+							},
+							{
+								"key": "Access-Control-Expose-Headers",
+								"value": "*"
+							},
+							{
+								"key": "Access-Control-Max-Age",
+								"value": "86400"
+							},
+							{
+								"key": "Cache-Control",
+								"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+							},
+							{
+								"key": "Expires",
+								"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+							},
+							{
+								"key": "Last-Modified",
+								"value": "Tue, 02 Jun 2020 15:24:39 GMT"
+							},
+							{
+								"key": "Pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "Request-ID",
+								"value": "b1521153-f28b-40a5-a246-34c2d57453ce"
+							},
+							{
+								"key": "Strict-Transport-Security",
+								"value": "max-age=15768000"
+							},
+							{
+								"key": "Content-Encoding",
+								"value": "gzip"
+							}
+						],
+						"cookie": [],
+						"body": "{\n    \"rid\": \"7c263699-846a-422d-b274-92f488691741\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_pymnt_customer\": \"5edc2d8c581f0d1c243bd143\",\n            \"id_user\": \"5eea6df9e125cb00c25b8723\",\n            \"full_name\": \"John Doe\",\n            \"email_address\": \"john.doe@test.com\",\n            \"default_card\": {\n                \"id_pymnt_card\": \"5ee3d676eff7c8506124a451\",\n                \"holder_name\": \"John Doe García\",\n                \"type\": \"VISA\",\n                \"number\": \"415231XXXXXX4474\"\n            },\n            \"cards\": [\n                {\n                    \"id_pymnt_card\": \"5ee3d676eff7c8506124a451\",\n                    \"holder_name\": \"John Doe García\",\n                    \"type\": \"VISA\",\n                    \"number\": \"415231XXXXXX4474\"\n                }\n            ],\n            \"dt_create\": 1591487884,\n            \"dt_modify\": 1592421881\n        }\n    ]\n}"
+					}]
 				},
 				{
 					"name": "Delete Customer",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "c81c3fd7-c5a0-4de1-9f4f-c9be8400f86a",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
+					"event": [{
+						"listen": "test",
+						"script": {
+							"id": "c81c3fd7-c5a0-4de1-9f4f-c9be8400f86a",
+							"exec": [
+								""
+							],
+							"type": "text/javascript"
 						}
-					],
+					}],
 					"request": {
 						"method": "DELETE",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
+						"header": [{
+							"key": "Content-Type",
+							"value": "application/json"
+						}],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -660,130 +623,122 @@
 								"customers",
 								"{{id_pymnt_customer}}"
 							],
-							"query": [
-								{
-									"key": "id_pymnt_customer",
-									"value": "",
-									"description": "The ID of the customer assigned by SrPago",
-									"disabled": true
-								}
-							]
+							"query": [{
+								"key": "id_pymnt_customer",
+								"value": "",
+								"description": "The ID of the customer assigned by SrPago",
+								"disabled": true
+							}]
 						}
 					},
-					"response": [
-						{
-							"name": "Delete Customer",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"v1",
-										"payments",
-										"customers",
-										"{{id_pymnt_customer}}"
-									]
-								}
+					"response": [{
+						"name": "Delete Customer",
+						"originalRequest": {
+							"method": "DELETE",
+							"header": [{
+								"key": "Content-Type",
+								"value": "application/json"
+							}],
+							"body": {
+								"mode": "raw",
+								"raw": ""
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "nginx"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 02 Jun 2020 15:34:44 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Tue, 02 Jun 2020 15:34:44 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "4bbde1a5-95b6-4776-bdbc-ddf441665ad6"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15768000"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"4bbde1a5-95b6-4776-bdbc-ddf441665ad6\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": true\n}"
-						}
-					]
+							"url": {
+								"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}",
+								"host": [
+									"{{baseSyncUrl}}"
+								],
+								"path": [
+									"v1",
+									"payments",
+									"customers",
+									"{{id_pymnt_customer}}"
+								]
+							}
+						},
+						"status": "OK",
+						"code": 200,
+						"_postman_previewlanguage": "json",
+						"header": [{
+								"key": "Server",
+								"value": "nginx"
+							},
+							{
+								"key": "Date",
+								"value": "Tue, 02 Jun 2020 15:34:44 GMT"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=utf-8"
+							},
+							{
+								"key": "Transfer-Encoding",
+								"value": "chunked"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Vary",
+								"value": "Accept-Encoding"
+							},
+							{
+								"key": "Access-Control-Allow-Headers",
+								"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*"
+							},
+							{
+								"key": "Access-Control-Expose-Headers",
+								"value": "*"
+							},
+							{
+								"key": "Access-Control-Max-Age",
+								"value": "86400"
+							},
+							{
+								"key": "Cache-Control",
+								"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+							},
+							{
+								"key": "Expires",
+								"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+							},
+							{
+								"key": "Last-Modified",
+								"value": "Tue, 02 Jun 2020 15:34:44 GMT"
+							},
+							{
+								"key": "Pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "Request-ID",
+								"value": "4bbde1a5-95b6-4776-bdbc-ddf441665ad6"
+							},
+							{
+								"key": "Strict-Transport-Security",
+								"value": "max-age=15768000"
+							},
+							{
+								"key": "Content-Encoding",
+								"value": "gzip"
+							}
+						],
+						"cookie": [],
+						"body": "{\n    \"rid\": \"4bbde1a5-95b6-4776-bdbc-ddf441665ad6\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": true\n}"
+					}]
 				}
 			],
-			"description": "Customers are logical segmentations for end-users. It's a best practice to register customers in order to have their information grouped and have control on both ends. It is required to have at least one customer registered to add cards and create charges\n\n\n```json\n{\n    \"id_user\": \"5ed72b8fa21c26277c58411b\",\n    // The ID of the user assigned by SrPago\n    \"id_pymnt_customer\": \"5ed72b8fa21c26277c58411b\",\n    // The ID of the customer assigned by SrPago\n    \"id_external\": \"869d56f0-555e-4c8c-847a-2e1ef53f6ef6\",\n    // String, The external id for this customer ( this identifies the customer on your system )\n    \"name\": \"Pedro Perez\",\n    // String, The customer key\n    \"dt_create\": 1591110350,\n    // Integer; a Unix timestamp of the time when the user was created\n    \"dt_modify\": null\n    // Integer; a Unix timestamp of the time when the user was modified\n}\n```",
-			"event": [
-				{
+			"description": "Customers are logical segmentations for end-users. It's a best practice to register customers in order to have their information grouped and have control on both ends. It is required to have at least one customer registered to add cards and create charges\n\n\n```json\n{\n    \"id_user\": \"5ed72b8fa21c26277c58411b\",\n    // The ID of the user assigned by SrPago\n    \"id_pymnt_customer\": \"5ed72b8fa21c26277c58411b\",\n    // The ID of the customer assigned by SrPago\n    \"id_external\": \"869d56f0-555e-4c8c-847a-2e1ef53f6ef6\",\n    // String, The external id for this customer ( this identifies the customer on your system )\n    \"name\": \"John Doe\",\n    // String, The customer full name\n    \"dt_create\": 1591110350,\n    // Integer; a Unix timestamp of the time when the user was created\n    \"dt_modify\": null\n    // Integer; a Unix timestamp of the time when the user was modified\n}\n```",
+			"event": [{
 					"listen": "prerequest",
 					"script": {
 						"id": "15079233-fe0a-4635-8bf2-3f64ab3a3a39",
@@ -808,25 +763,21 @@
 		},
 		{
 			"name": "Affiliates",
-			"item": [
-				{
+			"item": [{
 					"name": "List Affiliates",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "7942401a-94c0-4f16-acce-26d20ca1b52d",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
+					"event": [{
+						"listen": "test",
+						"script": {
+							"id": "7942401a-94c0-4f16-acce-26d20ca1b52d",
+							"exec": [
+								""
+							],
+							"type": "text/javascript"
 						}
-					],
+					}],
 					"request": {
 						"method": "GET",
-						"header": [
-							{
+						"header": [{
 								"key": "Content-Type",
 								"value": "application/json"
 							},
@@ -849,131 +800,123 @@
 							]
 						}
 					},
-					"response": [
-						{
-							"name": "List Affiliates",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
+					"response": [{
+						"name": "List Affiliates",
+						"originalRequest": {
+							"method": "GET",
+							"header": [{
+								"key": "Content-Type",
+								"value": "application/json"
+							}],
+							"url": {
+								"raw": "{{baseSyncUrl}}/v1/payments/affiliates",
+								"host": [
+									"{{baseSyncUrl}}"
 								],
-								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/affiliates",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"v1",
-										"payments",
-										"affiliates"
-									]
-								}
+								"path": [
+									"v1",
+									"payments",
+									"affiliates"
+								]
+							}
+						},
+						"status": "OK",
+						"code": 200,
+						"_postman_previewlanguage": "json",
+						"header": [{
+								"key": "Server",
+								"value": "nginx"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "nginx"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 19 Jun 2020 17:33:34 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Fri, 19 Jun 2020 17:33:34 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "7054598d-5391-411c-ba13-8fcd2701a644"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15768000"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"7054598d-5391-411c-ba13-8fcd2701a644\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_pymnt_affiliate\": \"5eecf65fd2192b48f22aefa3\",\n            \"email_address\": \"juan.perez@gmail.com\",\n            \"first_name\": \"Juan\",\n            \"last_name\": \"Perez\",\n            \"second_last_name\": \"Gonzalez\",\n            \"phone\": \"+525572582036\",\n            \"street\": \"Reforma 1234\",\n            \"area\": \"San Angel\",\n            \"city\": \"CDMX\",\n            \"state\": \"Edo de Mexico\",\n            \"zip_code\": \"01000\",\n            \"birth_date\": 373916347,\n            \"company_name\": \"MY COMPANY\",\n            \"company_url\": \"https://www.mycompany.com\",\n            \"tax_id\": \"CUPU800825569\",\n            \"id_front\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9saDlaMWhKUWRIcmJwUGhzN05HaUlIeE5QQW9OK2tIU2JYRHNJYUlnOGt4akpHUTBzdXVSNnAzelpGTVIzQ3J0aVMzdHU0ZlViYW4wMERWVmZPRFlMRSt0ZmxIMlE3OGFWZ1RyOGlaVSs2VCtlTEo2cVYxd2p5ST0\",\n            \"id_back\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9saDlaMWhKUWRIcmJwUGhzN05HaUlIeE5QQW9OK2tIU2JZNUJvclJoTklLZTd1RG55S2tFeXIxNUpVcktSQ0w3emFNUm9YLzk3SUZZaXFLVEVIY1dTOHNnMmhjVXBFYmlhK1FVc1VTQUNNWkVWdXczeS9Ec2s0az0\",\n            \"default_bank_account\": null,\n            \"other_accounts\": [],\n            \"dt_create\": 1592587871,\n            \"dt_modify\": 1592587873\n        }\n    ]\n}"
-						}
-					]
+							{
+								"key": "Date",
+								"value": "Fri, 19 Jun 2020 17:33:34 GMT"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=utf-8"
+							},
+							{
+								"key": "Transfer-Encoding",
+								"value": "chunked"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Vary",
+								"value": "Accept-Encoding"
+							},
+							{
+								"key": "Access-Control-Allow-Headers",
+								"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*"
+							},
+							{
+								"key": "Access-Control-Expose-Headers",
+								"value": "*"
+							},
+							{
+								"key": "Access-Control-Max-Age",
+								"value": "86400"
+							},
+							{
+								"key": "Cache-Control",
+								"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+							},
+							{
+								"key": "Expires",
+								"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+							},
+							{
+								"key": "Last-Modified",
+								"value": "Fri, 19 Jun 2020 17:33:34 GMT"
+							},
+							{
+								"key": "Pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "Request-ID",
+								"value": "7054598d-5391-411c-ba13-8fcd2701a644"
+							},
+							{
+								"key": "Strict-Transport-Security",
+								"value": "max-age=15768000"
+							},
+							{
+								"key": "Content-Encoding",
+								"value": "gzip"
+							}
+						],
+						"cookie": [],
+						"body": "{\n    \"rid\": \"7054598d-5391-411c-ba13-8fcd2701a644\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_pymnt_affiliate\": \"5eecf65fd2192b48f22aefa3\",\n            \"email_address\": \"john.doe@test.com\",\n            \"first_name\": \"John\",\n            \"last_name\": \"Doe\",\n            \"second_last_name\": \"Gonzalez\",\n            \"phone\": \"+525572582036\",\n            \"street\": \"Reforma 1234\",\n            \"area\": \"San Angel\",\n            \"city\": \"CDMX\",\n            \"state\": \"Edo de Mexico\",\n            \"zip_code\": \"01000\",\n            \"birth_date\": 373916347,\n            \"company_name\": \"MY COMPANY\",\n            \"company_url\": \"https://www.mycompany.com\",\n            \"tax_id\": \"CUPU800825569\",\n            \"id_front\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9saDlaMWhKUWRIcmJwUGhzN05HaUlIeE5QQW9OK2tIU2JYRHNJYUlnOGt4akpHUTBzdXVSNnAzelpGTVIzQ3J0aVMzdHU0ZlViYW4wMERWVmZPRFlMRSt0ZmxIMlE3OGFWZ1RyOGlaVSs2VCtlTEo2cVYxd2p5ST0\",\n            \"id_back\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9saDlaMWhKUWRIcmJwUGhzN05HaUlIeE5QQW9OK2tIU2JZNUJvclJoTklLZTd1RG55S2tFeXIxNUpVcktSQ0w3emFNUm9YLzk3SUZZaXFLVEVIY1dTOHNnMmhjVXBFYmlhK1FVc1VTQUNNWkVWdXczeS9Ec2s0az0\",\n            \"default_bank_account\": null,\n            \"other_accounts\": [],\n            \"dt_create\": 1592587871,\n            \"dt_modify\": 1592587873\n        }\n    ]\n}"
+					}]
 				},
 				{
 					"name": "Add Affiliate",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "717b25c5-8860-4147-99d5-5b49896136c2",
-								"exec": [
-									"var json = JSON.parse(responseBody);",
-									"postman.setEnvironmentVariable(\"id_pymnt_affiliate\", json.response.id_pymnt_affiliate);",
-									""
-								],
-								"type": "text/javascript"
-							}
+					"event": [{
+						"listen": "test",
+						"script": {
+							"id": "717b25c5-8860-4147-99d5-5b49896136c2",
+							"exec": [
+								"var json = JSON.parse(responseBody);",
+								"postman.setEnvironmentVariable(\"id_pymnt_affiliate\", json.response.id_pymnt_affiliate);",
+								""
+							],
+							"type": "text/javascript"
 						}
-					],
+					}],
 					"request": {
 						"method": "POST",
-						"header": [
-							{
+						"header": [{
 								"key": "Content-Type",
 								"value": "application/json"
 							},
@@ -986,7 +929,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"juan.perez@gmail.com\",\n    \"first_name\": \"Juan\",\n    \"last_name\": \"Perez\",\n    \"second_last_name\": \"Gonzalez\",\n    \"phone\": \"+525572582036\",\n    \"street\": \"Reforma 1234\",\n    \"area\": \"San Angel\",\n    \"city\": \"CDMX\",\n    \"state\": \"Edo de Mexico\",\n    \"zip_code\": \"01000\",\n    \"birth_date\": 373916347,\n    \"company_name\": \"MY COMPANY\",\n    \"company_url\": \"https://www.mycompany.com\",\n    \"tax_id\": \"CUPU800825569\",\n    \"id_front\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACv0lEQVQ4T3WTXYiUVRjHf+e8O+vqKnYtYdFVGSGUVBS54EWSxAZeiF6ICLqxQRr0sRJBkohIXmTS4LajqRdK0IJDLHqhgmRsg1CrLLap6O67Na0z7HzsfLzzznnPeWKWZnozOzfnPJxzfs/H/3kUf6+j6R/MY8uWWWMj0zQWJ0IltATGMpvPL79xd+76z8f2vNh+395V+3Dm8nXZvmHdohk0DA/KdeaKRXLFkMnfHzA+dY8o0jcvfrZjbRzSAYxczMiujS0HlmoIC5UGC9UyxcAxMZ2jUi3y7OpVHPju2lTmyMAz/4lgeOwnGdj0ErgIh6bWDCmUAqzVZG77VE3E7tef58ylCc5evTkxnZ1b/9vJoUonguTYuAxuehnnQpzTiFaUmwbXtMzMlcjcyfLG2qfI1euMXrvFWOb2H1Nf7328A/gi/aPs7X8F5yxR5OjSYLWi3nRUgyYz2RzZXEDdRczmC5y+8ot/Z+T9JzqAQ+cuy76tG7DiiKylS0ArMGjKQYiNDJVqSEuh6UKJ94Yv+HdTMcAnJ9NyYGc/oVgaxrJUaTwRxFMoJ8wHIdVqgKc1+XKTLZ+f8++fiAHe/eq8fPnOWxRqDcRalNIk8NA9Cu0pPKsW7xKttEJD39AJ//43McBAMi3Dg/2UagHOCSICAt1eArdEkxBwBvAUpUqF1z5K+dOnPvynBm8n03I8BmjrrLs0YoTuRDfOOnp7uvALZdYPpfzZOGAw+b0kB9/sRNBplFaZhcWUnDhW9PaQzS/Qty/lz8QBu46OysiezYsAnPyr5Z2nMGLREaxcvpQ/5yv0DT0E2HLwrHz78Tbma3Ui62jr2xqqoGHRStBa0duzhFqjyasfjPizp2M12Lz/lIx+uuPhYftf+7ndR/zJVAywaut+88LTT9pyPTSd7nrEd+1EPKVWjE/e+7V24fCavwDOv4ogbMx1DgAAAABJRU5ErkJggg==\",\n    \"id_back\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACv0lEQVQ4T3WTXYiUVRjHf+e8O+vqKnYtYdFVGSGUVBS54EWSxAZeiF6ICLqxQRr0sRJBkohIXmTS4LajqRdK0IJDLHqhgmRsg1CrLLap6O67Na0z7HzsfLzzznnPeWKWZnozOzfnPJxzfs/H/3kUf6+j6R/MY8uWWWMj0zQWJ0IltATGMpvPL79xd+76z8f2vNh+395V+3Dm8nXZvmHdohk0DA/KdeaKRXLFkMnfHzA+dY8o0jcvfrZjbRzSAYxczMiujS0HlmoIC5UGC9UyxcAxMZ2jUi3y7OpVHPju2lTmyMAz/4lgeOwnGdj0ErgIh6bWDCmUAqzVZG77VE3E7tef58ylCc5evTkxnZ1b/9vJoUonguTYuAxuehnnQpzTiFaUmwbXtMzMlcjcyfLG2qfI1euMXrvFWOb2H1Nf7328A/gi/aPs7X8F5yxR5OjSYLWi3nRUgyYz2RzZXEDdRczmC5y+8ot/Z+T9JzqAQ+cuy76tG7DiiKylS0ArMGjKQYiNDJVqSEuh6UKJ94Yv+HdTMcAnJ9NyYGc/oVgaxrJUaTwRxFMoJ8wHIdVqgKc1+XKTLZ+f8++fiAHe/eq8fPnOWxRqDcRalNIk8NA9Cu0pPKsW7xKttEJD39AJ//43McBAMi3Dg/2UagHOCSICAt1eArdEkxBwBvAUpUqF1z5K+dOnPvynBm8n03I8BmjrrLs0YoTuRDfOOnp7uvALZdYPpfzZOGAw+b0kB9/sRNBplFaZhcWUnDhW9PaQzS/Qty/lz8QBu46OysiezYsAnPyr5Z2nMGLREaxcvpQ/5yv0DT0E2HLwrHz78Tbma3Ui62jr2xqqoGHRStBa0duzhFqjyasfjPizp2M12Lz/lIx+uuPhYftf+7ndR/zJVAywaut+88LTT9pyPTSd7nrEd+1EPKVWjE/e+7V24fCavwDOv4ogbMx1DgAAAABJRU5ErkJggg==\"\n}",
+							"raw": "{\n    \"email\": \"john.doe@test.com\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Doe\",\n    \"second_last_name\": \"Gonzalez\",\n    \"phone\": \"+525572582036\",\n    \"street\": \"Reforma 1234\",\n    \"area\": \"San Angel\",\n    \"city\": \"CDMX\",\n    \"state\": \"Edo de Mexico\",\n    \"zip_code\": \"01000\",\n    \"birth_date\": 373916347,\n    \"company_name\": \"MY COMPANY\",\n    \"company_url\": \"https://www.mycompany.com\",\n    \"tax_id\": \"CUPU800825569\",\n    \"id_front\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACv0lEQVQ4T3WTXYiUVRjHf+e8O+vqKnYtYdFVGSGUVBS54EWSxAZeiF6ICLqxQRr0sRJBkohIXmTS4LajqRdK0IJDLHqhgmRsg1CrLLap6O67Na0z7HzsfLzzznnPeWKWZnozOzfnPJxzfs/H/3kUf6+j6R/MY8uWWWMj0zQWJ0IltATGMpvPL79xd+76z8f2vNh+395V+3Dm8nXZvmHdohk0DA/KdeaKRXLFkMnfHzA+dY8o0jcvfrZjbRzSAYxczMiujS0HlmoIC5UGC9UyxcAxMZ2jUi3y7OpVHPju2lTmyMAz/4lgeOwnGdj0ErgIh6bWDCmUAqzVZG77VE3E7tef58ylCc5evTkxnZ1b/9vJoUonguTYuAxuehnnQpzTiFaUmwbXtMzMlcjcyfLG2qfI1euMXrvFWOb2H1Nf7328A/gi/aPs7X8F5yxR5OjSYLWi3nRUgyYz2RzZXEDdRczmC5y+8ot/Z+T9JzqAQ+cuy76tG7DiiKylS0ArMGjKQYiNDJVqSEuh6UKJ94Yv+HdTMcAnJ9NyYGc/oVgaxrJUaTwRxFMoJ8wHIdVqgKc1+XKTLZ+f8++fiAHe/eq8fPnOWxRqDcRalNIk8NA9Cu0pPKsW7xKttEJD39AJ//43McBAMi3Dg/2UagHOCSICAt1eArdEkxBwBvAUpUqF1z5K+dOnPvynBm8n03I8BmjrrLs0YoTuRDfOOnp7uvALZdYPpfzZOGAw+b0kB9/sRNBplFaZhcWUnDhW9PaQzS/Qty/lz8QBu46OysiezYsAnPyr5Z2nMGLREaxcvpQ/5yv0DT0E2HLwrHz78Tbma3Ui62jr2xqqoGHRStBa0duzhFqjyasfjPizp2M12Lz/lIx+uuPhYftf+7ndR/zJVAywaut+88LTT9pyPTSd7nrEd+1EPKVWjE/e+7V24fCavwDOv4ogbMx1DgAAAABJRU5ErkJggg==\",\n    \"id_back\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACv0lEQVQ4T3WTXYiUVRjHf+e8O+vqKnYtYdFVGSGUVBS54EWSxAZeiF6ICLqxQRr0sRJBkohIXmTS4LajqRdK0IJDLHqhgmRsg1CrLLap6O67Na0z7HzsfLzzznnPeWKWZnozOzfnPJxzfs/H/3kUf6+j6R/MY8uWWWMj0zQWJ0IltATGMpvPL79xd+76z8f2vNh+395V+3Dm8nXZvmHdohk0DA/KdeaKRXLFkMnfHzA+dY8o0jcvfrZjbRzSAYxczMiujS0HlmoIC5UGC9UyxcAxMZ2jUi3y7OpVHPju2lTmyMAz/4lgeOwnGdj0ErgIh6bWDCmUAqzVZG77VE3E7tef58ylCc5evTkxnZ1b/9vJoUonguTYuAxuehnnQpzTiFaUmwbXtMzMlcjcyfLG2qfI1euMXrvFWOb2H1Nf7328A/gi/aPs7X8F5yxR5OjSYLWi3nRUgyYz2RzZXEDdRczmC5y+8ot/Z+T9JzqAQ+cuy76tG7DiiKylS0ArMGjKQYiNDJVqSEuh6UKJ94Yv+HdTMcAnJ9NyYGc/oVgaxrJUaTwRxFMoJ8wHIdVqgKc1+XKTLZ+f8++fiAHe/eq8fPnOWxRqDcRalNIk8NA9Cu0pPKsW7xKttEJD39AJ//43McBAMi3Dg/2UagHOCSICAt1eArdEkxBwBvAUpUqF1z5K+dOnPvynBm8n03I8BmjrrLs0YoTuRDfOOnp7uvALZdYPpfzZOGAw+b0kB9/sRNBplFaZhcWUnDhW9PaQzS/Qty/lz8QBu46OysiezYsAnPyr5Z2nMGLREaxcvpQ/5yv0DT0E2HLwrHz78Tbma3Ui62jr2xqqoGHRStBa0duzhFqjyasfjPizp2M12Lz/lIx+uuPhYftf+7ndR/zJVAywaut+88LTT9pyPTSd7nrEd+1EPKVWjE/e+7V24fCavwDOv4ogbMx1DgAAAABJRU5ErkJggg==\"\n}",
 							"options": {
 								"raw": {}
 							}
@@ -1001,8 +944,7 @@
 								"payments",
 								"affiliates"
 							],
-							"query": [
-								{
+							"query": [{
 									"key": "email",
 									"value": "",
 									"description": "Email Address",
@@ -1089,211 +1031,204 @@
 							]
 						}
 					},
-					"response": [
-						{
-							"name": "Add Affiliate",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
+					"response": [{
+						"name": "Add Affiliate",
+						"originalRequest": {
+							"method": "POST",
+							"header": [{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}],
+							"body": {
+								"mode": "raw",
+								"raw": "{\n    \"email\": \"john.doe@test.com\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Doe\",\n    \"second_last_name\": \"Gonzalez\",\n    \"phone\": \"+525572582036\",\n    \"street\": \"Reforma 1234\",\n    \"area\": \"San Angel\",\n    \"city\": \"CDMX\",\n    \"state\": \"Edo de Mexico\",\n    \"zip_code\": \"01000\",\n    \"birth_date\": 373916347,\n    \"company_name\": \"MY COMPANY\",\n    \"company_url\": \"https://www.mycompany.com\",\n    \"tax_id\": \"CUPU800825569\",\n    \"id_front\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACv0lEQVQ4T3WTXYiUVRjHf+e8O+vqKnYtYdFVGSGUVBS54EWSxAZeiF6ICLqxQRr0sRJBkohIXmTS4LajqRdK0IJDLHqhgmRsg1CrLLap6O67Na0z7HzsfLzzznnPeWKWZnozOzfnPJxzfs/H/3kUf6+j6R/MY8uWWWMj0zQWJ0IltATGMpvPL79xd+76z8f2vNh+395V+3Dm8nXZvmHdohk0DA/KdeaKRXLFkMnfHzA+dY8o0jcvfrZjbRzSAYxczMiujS0HlmoIC5UGC9UyxcAxMZ2jUi3y7OpVHPju2lTmyMAz/4lgeOwnGdj0ErgIh6bWDCmUAqzVZG77VE3E7tef58ylCc5evTkxnZ1b/9vJoUonguTYuAxuehnnQpzTiFaUmwbXtMzMlcjcyfLG2qfI1euMXrvFWOb2H1Nf7328A/gi/aPs7X8F5yxR5OjSYLWi3nRUgyYz2RzZXEDdRczmC5y+8ot/Z+T9JzqAQ+cuy76tG7DiiKylS0ArMGjKQYiNDJVqSEuh6UKJ94Yv+HdTMcAnJ9NyYGc/oVgaxrJUaTwRxFMoJ8wHIdVqgKc1+XKTLZ+f8++fiAHe/eq8fPnOWxRqDcRalNIk8NA9Cu0pPKsW7xKttEJD39AJ//43McBAMi3Dg/2UagHOCSICAt1eArdEkxBwBvAUpUqF1z5K+dOnPvynBm8n03I8BmjrrLs0YoTuRDfOOnp7uvALZdYPpfzZOGAw+b0kB9/sRNBplFaZhcWUnDhW9PaQzS/Qty/lz8QBu46OysiezYsAnPyr5Z2nMGLREaxcvpQ/5yv0DT0E2HLwrHz78Tbma3Ui62jr2xqqoGHRStBa0duzhFqjyasfjPizp2M12Lz/lIx+uuPhYftf+7ndR/zJVAywaut+88LTT9pyPTSd7nrEd+1EPKVWjE/e+7V24fCavwDOv4ogbMx1DgAAAABJRU5ErkJggg==\",\n    \"id_back\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACv0lEQVQ4T3WTXYiUVRjHf+e8O+vqKnYtYdFVGSGUVBS54EWSxAZeiF6ICLqxQRr0sRJBkohIXmTS4LajqRdK0IJDLHqhgmRsg1CrLLap6O67Na0z7HzsfLzzznnPeWKWZnozOzfnPJxzfs/H/3kUf6+j6R/MY8uWWWMj0zQWJ0IltATGMpvPL79xd+76z8f2vNh+395V+3Dm8nXZvmHdohk0DA/KdeaKRXLFkMnfHzA+dY8o0jcvfrZjbRzSAYxczMiujS0HlmoIC5UGC9UyxcAxMZ2jUi3y7OpVHPju2lTmyMAz/4lgeOwnGdj0ErgIh6bWDCmUAqzVZG77VE3E7tef58ylCc5evTkxnZ1b/9vJoUonguTYuAxuehnnQpzTiFaUmwbXtMzMlcjcyfLG2qfI1euMXrvFWOb2H1Nf7328A/gi/aPs7X8F5yxR5OjSYLWi3nRUgyYz2RzZXEDdRczmC5y+8ot/Z+T9JzqAQ+cuy76tG7DiiKylS0ArMGjKQYiNDJVqSEuh6UKJ94Yv+HdTMcAnJ9NyYGc/oVgaxrJUaTwRxFMoJ8wHIdVqgKc1+XKTLZ+f8++fiAHe/eq8fPnOWxRqDcRalNIk8NA9Cu0pPKsW7xKttEJD39AJ//43McBAMi3Dg/2UagHOCSICAt1eArdEkxBwBvAUpUqF1z5K+dOnPvynBm8n03I8BmjrrLs0YoTuRDfOOnp7uvALZdYPpfzZOGAw+b0kB9/sRNBplFaZhcWUnDhW9PaQzS/Qty/lz8QBu46OysiezYsAnPyr5Z2nMGLREaxcvpQ/5yv0DT0E2HLwrHz78Tbma3Ui62jr2xqqoGHRStBa0duzhFqjyasfjPizp2M12Lz/lIx+uuPhYftf+7ndR/zJVAywaut+88LTT9pyPTSd7nrEd+1EPKVWjE/e+7V24fCavwDOv4ogbMx1DgAAAABJRU5ErkJggg==\"\n}",
+								"options": {
+									"raw": {
+										"language": "json"
 									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"email\": \"juan.perez@gmail.com\",\n    \"first_name\": \"Juan\",\n    \"last_name\": \"Perez\",\n    \"second_last_name\": \"Gonzalez\",\n    \"phone\": \"+525572582036\",\n    \"street\": \"Reforma 1234\",\n    \"area\": \"San Angel\",\n    \"city\": \"CDMX\",\n    \"state\": \"Edo de Mexico\",\n    \"zip_code\": \"01000\",\n    \"birth_date\": 373916347,\n    \"company_name\": \"MY COMPANY\",\n    \"company_url\": \"https://www.mycompany.com\",\n    \"tax_id\": \"CUPU800825569\",\n    \"id_front\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACv0lEQVQ4T3WTXYiUVRjHf+e8O+vqKnYtYdFVGSGUVBS54EWSxAZeiF6ICLqxQRr0sRJBkohIXmTS4LajqRdK0IJDLHqhgmRsg1CrLLap6O67Na0z7HzsfLzzznnPeWKWZnozOzfnPJxzfs/H/3kUf6+j6R/MY8uWWWMj0zQWJ0IltATGMpvPL79xd+76z8f2vNh+395V+3Dm8nXZvmHdohk0DA/KdeaKRXLFkMnfHzA+dY8o0jcvfrZjbRzSAYxczMiujS0HlmoIC5UGC9UyxcAxMZ2jUi3y7OpVHPju2lTmyMAz/4lgeOwnGdj0ErgIh6bWDCmUAqzVZG77VE3E7tef58ylCc5evTkxnZ1b/9vJoUonguTYuAxuehnnQpzTiFaUmwbXtMzMlcjcyfLG2qfI1euMXrvFWOb2H1Nf7328A/gi/aPs7X8F5yxR5OjSYLWi3nRUgyYz2RzZXEDdRczmC5y+8ot/Z+T9JzqAQ+cuy76tG7DiiKylS0ArMGjKQYiNDJVqSEuh6UKJ94Yv+HdTMcAnJ9NyYGc/oVgaxrJUaTwRxFMoJ8wHIdVqgKc1+XKTLZ+f8++fiAHe/eq8fPnOWxRqDcRalNIk8NA9Cu0pPKsW7xKttEJD39AJ//43McBAMi3Dg/2UagHOCSICAt1eArdEkxBwBvAUpUqF1z5K+dOnPvynBm8n03I8BmjrrLs0YoTuRDfOOnp7uvALZdYPpfzZOGAw+b0kB9/sRNBplFaZhcWUnDhW9PaQzS/Qty/lz8QBu46OysiezYsAnPyr5Z2nMGLREaxcvpQ/5yv0DT0E2HLwrHz78Tbma3Ui62jr2xqqoGHRStBa0duzhFqjyasfjPizp2M12Lz/lIx+uuPhYftf+7ndR/zJVAywaut+88LTT9pyPTSd7nrEd+1EPKVWjE/e+7V24fCavwDOv4ogbMx1DgAAAABJRU5ErkJggg==\",\n    \"id_back\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACv0lEQVQ4T3WTXYiUVRjHf+e8O+vqKnYtYdFVGSGUVBS54EWSxAZeiF6ICLqxQRr0sRJBkohIXmTS4LajqRdK0IJDLHqhgmRsg1CrLLap6O67Na0z7HzsfLzzznnPeWKWZnozOzfnPJxzfs/H/3kUf6+j6R/MY8uWWWMj0zQWJ0IltATGMpvPL79xd+76z8f2vNh+395V+3Dm8nXZvmHdohk0DA/KdeaKRXLFkMnfHzA+dY8o0jcvfrZjbRzSAYxczMiujS0HlmoIC5UGC9UyxcAxMZ2jUi3y7OpVHPju2lTmyMAz/4lgeOwnGdj0ErgIh6bWDCmUAqzVZG77VE3E7tef58ylCc5evTkxnZ1b/9vJoUonguTYuAxuehnnQpzTiFaUmwbXtMzMlcjcyfLG2qfI1euMXrvFWOb2H1Nf7328A/gi/aPs7X8F5yxR5OjSYLWi3nRUgyYz2RzZXEDdRczmC5y+8ot/Z+T9JzqAQ+cuy76tG7DiiKylS0ArMGjKQYiNDJVqSEuh6UKJ94Yv+HdTMcAnJ9NyYGc/oVgaxrJUaTwRxFMoJ8wHIdVqgKc1+XKTLZ+f8++fiAHe/eq8fPnOWxRqDcRalNIk8NA9Cu0pPKsW7xKttEJD39AJ//43McBAMi3Dg/2UagHOCSICAt1eArdEkxBwBvAUpUqF1z5K+dOnPvynBm8n03I8BmjrrLs0YoTuRDfOOnp7uvALZdYPpfzZOGAw+b0kB9/sRNBplFaZhcWUnDhW9PaQzS/Qty/lz8QBu46OysiezYsAnPyr5Z2nMGLREaxcvpQ/5yv0DT0E2HLwrHz78Tbma3Ui62jr2xqqoGHRStBa0duzhFqjyasfjPizp2M12Lz/lIx+uuPhYftf+7ndR/zJVAywaut+88LTT9pyPTSd7nrEd+1EPKVWjE/e+7V24fCavwDOv4ogbMx1DgAAAABJRU5ErkJggg==\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseSyncUrl}}/payments/affiliates",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"payments",
-										"affiliates"
-									],
-									"query": [
-										{
-											"key": "email",
-											"value": null,
-											"description": "Email Address",
-											"disabled": true
-										},
-										{
-											"key": "first_name",
-											"value": null,
-											"description": "First Name",
-											"disabled": true
-										},
-										{
-											"key": "last_name",
-											"value": null,
-											"description": "Last Name",
-											"disabled": true
-										},
-										{
-											"key": "second_last_name",
-											"value": null,
-											"description": "Second Last Name",
-											"disabled": true
-										},
-										{
-											"key": "phone",
-											"value": null,
-											"description": "Phone",
-											"disabled": true
-										},
-										{
-											"key": "street",
-											"value": null,
-											"description": "Street",
-											"disabled": true
-										},
-										{
-											"key": "area",
-											"value": null,
-											"description": "Area",
-											"disabled": true
-										},
-										{
-											"key": "city",
-											"value": null,
-											"description": "City",
-											"disabled": true
-										},
-										{
-											"key": "State",
-											"value": null,
-											"description": "State",
-											"disabled": true
-										},
-										{
-											"key": "zip_code",
-											"value": null,
-											"description": "ZipCode",
-											"disabled": true
-										},
-										{
-											"key": "company_name",
-											"value": null,
-											"description": "Company Name",
-											"disabled": true
-										},
-										{
-											"key": "tax_id",
-											"value": null,
-											"description": "Tax ID (Mexico: RFC)",
-											"disabled": true
-										},
-										{
-											"key": "id_front",
-											"value": null,
-											"description": "ID Front Image (base64/string image)",
-											"disabled": true
-										},
-										{
-											"key": "id_back",
-											"value": null,
-											"description": "ID Back Image (base64/string image)",
-											"disabled": true
-										}
-									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "nginx"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 12 Jun 2020 21:46:30 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Fri, 12 Jun 2020 21:46:30 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "fd3d9e81-339f-468e-8bef-fdc99e8680f1"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15768000"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"13b775ee-35ea-4ce9-bb81-62849840405e\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_affiliate\": \"5eecf65fd2192b48f22aefa3\",\n        \"first_name\": \"Juan\",\n        \"last_name\": \"Perez\",\n        \"second_last_name\": \"Gonzalez\",\n        \"email_address\": \"juan.perez@gmail.com\",\n        \"phone\": \"+525572582036\",\n        \"street\": \"Reforma 1234\",\n        \"area\": \"San Angel\",\n        \"city\": \"CDMX\",\n        \"state\": \"Edo de Mexico\",\n        \"zip_code\": \"01000\",\n        \"birth_date\": 373916347,\n        \"company_name\": \"MY COMPANY\",\n        \"tax_id\": \"CUPU800825569\",\n        \"id_front\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9saDlaMWhKUWRIcmJwUGhzN05HaUlIeE5QQW9OK2tIU2JYRHNJYUlnOGt4akpHUTBzdXVSNnAzelpGTVIzQ3J0aVMzdHU0ZlViYW4wMERWVmZPRFlMRSt0ZmxIMlE3OGFWZ1RyOGlaVSs2VCtlTEo2cVYxd2p5ST0\",\n        \"id_back\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9saDlaMWhKUWRIcmJwUGhzN05HaUlIeE5QQW9OK2tIU2JZNUJvclJoTklLZTd1RG55S2tFeXIxNUpVcktSQ0w3emFNUm9YLzk3SUZZaXFLVEVIY1dTOHNnMmhjVXBFYmlhK1FVc1VTQUNNWkVWdXczeS9Ec2s0az0\",\n        \"dt_create\": 1592587871,\n        \"dt_modify\": 1592587873\n    }\n}"
-						}
-					]
+							"url": {
+								"raw": "{{baseSyncUrl}}/payments/affiliates",
+								"host": [
+									"{{baseSyncUrl}}"
+								],
+								"path": [
+									"payments",
+									"affiliates"
+								],
+								"query": [{
+										"key": "email",
+										"value": null,
+										"description": "Email Address",
+										"disabled": true
+									},
+									{
+										"key": "first_name",
+										"value": null,
+										"description": "First Name",
+										"disabled": true
+									},
+									{
+										"key": "last_name",
+										"value": null,
+										"description": "Last Name",
+										"disabled": true
+									},
+									{
+										"key": "second_last_name",
+										"value": null,
+										"description": "Second Last Name",
+										"disabled": true
+									},
+									{
+										"key": "phone",
+										"value": null,
+										"description": "Phone",
+										"disabled": true
+									},
+									{
+										"key": "street",
+										"value": null,
+										"description": "Street",
+										"disabled": true
+									},
+									{
+										"key": "area",
+										"value": null,
+										"description": "Area",
+										"disabled": true
+									},
+									{
+										"key": "city",
+										"value": null,
+										"description": "City",
+										"disabled": true
+									},
+									{
+										"key": "State",
+										"value": null,
+										"description": "State",
+										"disabled": true
+									},
+									{
+										"key": "zip_code",
+										"value": null,
+										"description": "ZipCode",
+										"disabled": true
+									},
+									{
+										"key": "company_name",
+										"value": null,
+										"description": "Company Name",
+										"disabled": true
+									},
+									{
+										"key": "tax_id",
+										"value": null,
+										"description": "Tax ID (Mexico: RFC)",
+										"disabled": true
+									},
+									{
+										"key": "id_front",
+										"value": null,
+										"description": "ID Front Image (base64/string image)",
+										"disabled": true
+									},
+									{
+										"key": "id_back",
+										"value": null,
+										"description": "ID Back Image (base64/string image)",
+										"disabled": true
+									}
+								]
+							}
+						},
+						"status": "OK",
+						"code": 200,
+						"_postman_previewlanguage": "json",
+						"header": [{
+								"key": "Server",
+								"value": "nginx"
+							},
+							{
+								"key": "Date",
+								"value": "Fri, 12 Jun 2020 21:46:30 GMT"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=utf-8"
+							},
+							{
+								"key": "Transfer-Encoding",
+								"value": "chunked"
+							},
+							{
+								"key": "Vary",
+								"value": "Accept-Encoding"
+							},
+							{
+								"key": "Access-Control-Allow-Headers",
+								"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*"
+							},
+							{
+								"key": "Access-Control-Expose-Headers",
+								"value": "*"
+							},
+							{
+								"key": "Access-Control-Max-Age",
+								"value": "86400"
+							},
+							{
+								"key": "Cache-Control",
+								"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+							},
+							{
+								"key": "Expires",
+								"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+							},
+							{
+								"key": "Last-Modified",
+								"value": "Fri, 12 Jun 2020 21:46:30 GMT"
+							},
+							{
+								"key": "Pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "Request-ID",
+								"value": "fd3d9e81-339f-468e-8bef-fdc99e8680f1"
+							},
+							{
+								"key": "Strict-Transport-Security",
+								"value": "max-age=15768000"
+							},
+							{
+								"key": "Content-Encoding",
+								"value": "gzip"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							}
+						],
+						"cookie": [],
+						"body": "{\n    \"rid\": \"13b775ee-35ea-4ce9-bb81-62849840405e\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_affiliate\": \"5eecf65fd2192b48f22aefa3\",\n        \"first_name\": \"John\",\n        \"last_name\": \"Doe\",\n        \"second_last_name\": \"Gonzalez\",\n        \"email_address\": \"john.doe@test.com\",\n        \"phone\": \"+525572582036\",\n        \"street\": \"Reforma 1234\",\n        \"area\": \"San Angel\",\n        \"city\": \"CDMX\",\n        \"state\": \"Edo de Mexico\",\n        \"zip_code\": \"01000\",\n        \"birth_date\": 373916347,\n        \"company_name\": \"MY COMPANY\",\n        \"tax_id\": \"CUPU800825569\",\n        \"id_front\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9saDlaMWhKUWRIcmJwUGhzN05HaUlIeE5QQW9OK2tIU2JYRHNJYUlnOGt4akpHUTBzdXVSNnAzelpGTVIzQ3J0aVMzdHU0ZlViYW4wMERWVmZPRFlMRSt0ZmxIMlE3OGFWZ1RyOGlaVSs2VCtlTEo2cVYxd2p5ST0\",\n        \"id_back\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9saDlaMWhKUWRIcmJwUGhzN05HaUlIeE5QQW9OK2tIU2JZNUJvclJoTklLZTd1RG55S2tFeXIxNUpVcktSQ0w3emFNUm9YLzk3SUZZaXFLVEVIY1dTOHNnMmhjVXBFYmlhK1FVc1VTQUNNWkVWdXczeS9Ec2s0az0\",\n        \"dt_create\": 1592587871,\n        \"dt_modify\": 1592587873\n    }\n}"
+					}]
 				}
 			],
 			"description": "Affiliates are accounts of businesses associated to your main merchant account, once on-boarded, you will be able to make charges to end consumers on their behalf.\n\n",
-			"event": [
-				{
+			"event": [{
 					"listen": "prerequest",
 					"script": {
 						"id": "a08b3935-dd21-46c2-b5cb-5b863506b533",
@@ -1318,35 +1253,30 @@
 		},
 		{
 			"name": "Cards",
-			"item": [
-				{
+			"item": [{
 					"name": "Add Card",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "309a7baf-baa3-4e39-a21d-682bde3f06fe",
-								"exec": [
-									"var json = JSON.parse(responseBody);",
-									"postman.setEnvironmentVariable(\"id_pymnt_card\", json.response.id_pymnt_card);",
-									""
-								],
-								"type": "text/javascript"
-							}
+					"event": [{
+						"listen": "test",
+						"script": {
+							"id": "309a7baf-baa3-4e39-a21d-682bde3f06fe",
+							"exec": [
+								"var json = JSON.parse(responseBody);",
+								"postman.setEnvironmentVariable(\"id_pymnt_card\", json.response.id_pymnt_card);",
+								""
+							],
+							"type": "text/javascript"
 						}
-					],
+					}],
 					"request": {
 						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
+						"header": [{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						}],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"number\": \"4716222791264622\",\n    \"cvv\": \"123\",\n    \"expiration\": \"2207\",\n    \"holder_name\": \"Pedro Perez\",\n    \"billing\": {\n        \"emailAddress\": \"pedro.perez@gmail.com\",\n        \"firstName\": \"Pedro\",\n        \"middleName\": \"\",\n        \"lastName\": \"Perez\",\n        \"address\": \"1234 Main Street\",\n        \"address2\": \"Apt 891\",\n        \"city\": \"Dallas\",\n        \"state\": \"TX\",\n        \"postalCode\": \"75208\"\n    }\n}",
+							"raw": "{\n    \"number\": \"4716222791264622\",\n    \"cvv\": \"123\",\n    \"expiration\": \"2207\",\n    \"holder_name\": \"John Doe\",\n    \"billing\": {\n        \"emailAddress\": \"john.doe@test.com\",\n        \"firstName\": \"John\",\n        \"middleName\": \"\",\n        \"lastName\": \"Doe\",\n        \"address\": \"1234 Main Street\",\n        \"address2\": \"Apt 891\",\n        \"city\": \"Dallas\",\n        \"state\": \"TX\",\n        \"postalCode\": \"75208\"\n    }\n}",
 							"options": {
 								"raw": {}
 							}
@@ -1363,8 +1293,7 @@
 								"{{id_pymnt_customer}}",
 								"cards"
 							],
-							"query": [
-								{
+							"query": [{
 									"key": "id_pymnt_customer",
 									"value": "",
 									"description": "The ID of the customer assigned by SrPago",
@@ -1403,22 +1332,19 @@
 							]
 						}
 					},
-					"response": [
-						{
+					"response": [{
 							"name": "Add Card ( Billing )",
 							"originalRequest": {
 								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
+								"header": [{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"value": "application/json",
+									"type": "text"
+								}],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"number\": \"4716222791264622\",\n    \"cvv\": \"123\",\n    \"expiration\": \"2207\",\n    \"holder_name\": \"Pedro Perez\",\n    \"billing\": {\n        \"emailAddress\": \"pedro.perez@gmail.com\",\n        \"firstName\": \"Pedro\",\n        \"middleName\": \"\",\n        \"lastName\": \"Perez\",\n        \"address\": \"1234 Main Street\",\n        \"address2\": \"Apt 891\",\n        \"city\": \"Dallas\",\n        \"state\": \"TX\",\n        \"postalCode\": \"75208\"\n    }\n}",
+									"raw": "{\n    \"number\": \"4716222791264622\",\n    \"cvv\": \"123\",\n    \"expiration\": \"2207\",\n    \"holder_name\": \"John Doe\",\n    \"billing\": {\n        \"emailAddress\": \"john.doe@test.com\",\n        \"firstName\": \"John\",\n        \"middleName\": \"\",\n        \"lastName\": \"Doe\",\n        \"address\": \"1234 Main Street\",\n        \"address2\": \"Apt 891\",\n        \"city\": \"Dallas\",\n        \"state\": \"TX\",\n        \"postalCode\": \"75208\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1442,8 +1368,7 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"header": [
-								{
+							"header": [{
 									"key": "Date",
 									"value": "Wed, 10 Jun 2020 16:01:05 GMT"
 								},
@@ -1541,14 +1466,13 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"rid\": \"69cf8c32-d759-4670-95dc-a839e9e7699d\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n        \"holder_name\": \"Pedro Perez\",\n        \"type\": \"VISA\",\n        \"number\": \"471622XXXXXX4622\",\n        \"bank_name\": \"VISA TEST\",\n        \"country_code\": \"MX\",\n        \"billing\": {\n            \"emailAddress\": \"pedro.perez@gmail.com\",\n            \"firstName\": \"Pedro\",\n            \"middleName\": \"\",\n            \"lastName\": \"Perez\",\n            \"address\": \"1234 Main Street\",\n            \"address2\": \"Apt 891\",\n            \"city\": \"Dallas\",\n            \"state\": \"TX\",\n            \"postalCode\": \"75208\"\n        },\n        \"is_default\": true,\n        \"dt_create\": 1592588182,\n        \"dt_modify\": null\n    }\n}"
+							"body": "{\n    \"rid\": \"69cf8c32-d759-4670-95dc-a839e9e7699d\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n        \"holder_name\": \"John Doe\",\n        \"type\": \"VISA\",\n        \"number\": \"471622XXXXXX4622\",\n        \"bank_name\": \"VISA TEST\",\n        \"country_code\": \"MX\",\n        \"billing\": {\n            \"emailAddress\": \"john.doe@test.com\",\n            \"firstName\": \"John\",\n            \"middleName\": \"\",\n            \"lastName\": \"Doe\",\n            \"address\": \"1234 Main Street\",\n            \"address2\": \"Apt 891\",\n            \"city\": \"Dallas\",\n            \"state\": \"TX\",\n            \"postalCode\": \"75208\"\n        },\n        \"is_default\": true,\n        \"dt_create\": 1592588182,\n        \"dt_modify\": null\n    }\n}"
 						},
 						{
 							"name": "Add Card ( No Billing )",
 							"originalRequest": {
 								"method": "POST",
-								"header": [
-									{
+								"header": [{
 										"key": "Content-Type",
 										"name": "Content-Type",
 										"value": "application/json",
@@ -1567,7 +1491,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"number\": \"4716222791264622\",\n    \"cvv\": \"852\",\n    \"expiration\": \"2007\",\n    \"holder_name\": \"Pedro Perez\"\n}",
+									"raw": "{\n    \"number\": \"4716222791264622\",\n    \"cvv\": \"852\",\n    \"expiration\": \"2007\",\n    \"holder_name\": \"John Doe\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1591,8 +1515,7 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"header": [
-								{
+							"header": [{
 									"key": "Server",
 									"value": "nginx"
 								},
@@ -1666,33 +1589,29 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"rid\": \"69cf8c32-d759-4670-95dc-a839e9e7699d\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n        \"holder_name\": \"Pedro Perez\",\n        \"type\": \"VISA\",\n        \"number\": \"471622XXXXXX4622\",\n        \"bank_name\": \"VISA TEST\",\n        \"country_code\": \"MX\",\n        \"billing\": null,\n        \"is_default\": true,\n        \"dt_create\": 1592588182,\n        \"dt_modify\": null\n    }\n}"
+							"body": "{\n    \"rid\": \"69cf8c32-d759-4670-95dc-a839e9e7699d\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n        \"holder_name\": \"John Doe\",\n        \"type\": \"VISA\",\n        \"number\": \"471622XXXXXX4622\",\n        \"bank_name\": \"VISA TEST\",\n        \"country_code\": \"MX\",\n        \"billing\": null,\n        \"is_default\": true,\n        \"dt_create\": 1592588182,\n        \"dt_modify\": null\n    }\n}"
 						}
 					]
 				},
 				{
 					"name": "Set Default Card",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "e83b5f7c-0f6f-44f4-9049-362c4ab4f924",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
+					"event": [{
+						"listen": "test",
+						"script": {
+							"id": "e83b5f7c-0f6f-44f4-9049-362c4ab4f924",
+							"exec": [
+								""
+							],
+							"type": "text/javascript"
 						}
-					],
+					}],
 					"request": {
 						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
+						"header": [{
+							"key": "Content-Type",
+							"value": "application/json",
+							"type": "text"
+						}],
 						"url": {
 							"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/cards/{{id_pymnt_card}}/default",
 							"host": [
@@ -1707,8 +1626,7 @@
 								"{{id_pymnt_card}}",
 								"default"
 							],
-							"query": [
-								{
+							"query": [{
 									"key": "id_pymnt_customer",
 									"value": "",
 									"description": "The ID of the customer assigned by SrPago",
@@ -1723,161 +1641,152 @@
 							]
 						}
 					},
-					"response": [
-						{
-							"name": "Set Default Card",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
+					"response": [{
+						"name": "Set Default Card",
+						"originalRequest": {
+							"method": "PUT",
+							"header": [{
+								"key": "Content-Type",
+								"value": "application/json"
+							}],
+							"url": {
+								"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/cards/{{id_pymnt_card}}/default",
+								"host": [
+									"{{baseSyncUrl}}"
 								],
-								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/cards/{{id_pymnt_card}}/default",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"v1",
-										"payments",
-										"customers",
-										"{{id_pymnt_customer}}",
-										"cards",
-										"{{id_pymnt_card}}",
-										"default"
-									]
-								}
+								"path": [
+									"v1",
+									"payments",
+									"customers",
+									"{{id_pymnt_customer}}",
+									"cards",
+									"{{id_pymnt_card}}",
+									"default"
+								]
+							}
+						},
+						"status": "OK",
+						"code": 200,
+						"_postman_previewlanguage": "json",
+						"header": [{
+								"key": "Date",
+								"value": "Wed, 10 Jun 2020 16:03:05 GMT"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Wed, 10 Jun 2020 16:03:05 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Wed, 10 Jun 2020 16:03:05 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "50d2bbf7-341e-45b0-8e01-11177adf1f09"
-								},
-								{
-									"key": "CF-Cache-Status",
-									"value": "DYNAMIC"
-								},
-								{
-									"key": "cf-request-id",
-									"value": "03409197fd0000d25a5c128200000001"
-								},
-								{
-									"key": "Expect-CT",
-									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
-								},
-								{
-									"key": "Server",
-									"value": "cloudflare"
-								},
-								{
-									"key": "CF-RAY",
-									"value": "5a1452066e8ad25a-DFW"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "br"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"50d2bbf7-341e-45b0-8e01-11177adf1f09\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_card\": \"5edfc1c79a42f336493279bd\",\n        \"holder_name\": \"Pedro Perez\",\n        \"type\": \"VISA\",\n        \"number\": \"471622XXXXXX4622\",\n        \"bank_name\": \"VISA TEST\",\n        \"country_code\": \"MX\",\n        \"billing\": null,\n        \"is_default\": true,\n        \"dt_create\": 1591722439,\n        \"dt_modify\": 1591804985\n    }\n}"
-						}
-					]
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=utf-8"
+							},
+							{
+								"key": "Transfer-Encoding",
+								"value": "chunked"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Vary",
+								"value": "Accept-Encoding"
+							},
+							{
+								"key": "Access-Control-Allow-Headers",
+								"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+							},
+							{
+								"key": "Access-Control-Allow-Headers",
+								"value": "Authorization, Content-Type, X-App-Version, X-Requested-With"
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*"
+							},
+							{
+								"key": "Access-Control-Expose-Headers",
+								"value": "*"
+							},
+							{
+								"key": "Access-Control-Max-Age",
+								"value": "86400"
+							},
+							{
+								"key": "Cache-Control",
+								"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+							},
+							{
+								"key": "Expires",
+								"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+							},
+							{
+								"key": "Last-Modified",
+								"value": "Wed, 10 Jun 2020 16:03:05 GMT"
+							},
+							{
+								"key": "Pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "Request-ID",
+								"value": "50d2bbf7-341e-45b0-8e01-11177adf1f09"
+							},
+							{
+								"key": "CF-Cache-Status",
+								"value": "DYNAMIC"
+							},
+							{
+								"key": "cf-request-id",
+								"value": "03409197fd0000d25a5c128200000001"
+							},
+							{
+								"key": "Expect-CT",
+								"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+							},
+							{
+								"key": "Server",
+								"value": "cloudflare"
+							},
+							{
+								"key": "CF-RAY",
+								"value": "5a1452066e8ad25a-DFW"
+							},
+							{
+								"key": "Content-Encoding",
+								"value": "br"
+							}
+						],
+						"cookie": [],
+						"body": "{\n    \"rid\": \"50d2bbf7-341e-45b0-8e01-11177adf1f09\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_card\": \"5edfc1c79a42f336493279bd\",\n        \"holder_name\": \"John Doe\",\n        \"type\": \"VISA\",\n        \"number\": \"471622XXXXXX4622\",\n        \"bank_name\": \"VISA TEST\",\n        \"country_code\": \"MX\",\n        \"billing\": null,\n        \"is_default\": true,\n        \"dt_create\": 1591722439,\n        \"dt_modify\": 1591804985\n    }\n}"
+					}]
 				},
 				{
 					"name": "Delete Card",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "51eb32ba-75f1-4717-a99f-d65f1586668a",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
+					"event": [{
+						"listen": "test",
+						"script": {
+							"id": "51eb32ba-75f1-4717-a99f-d65f1586668a",
+							"exec": [
+								""
+							],
+							"type": "text/javascript"
 						}
-					],
+					}],
 					"request": {
 						"method": "DELETE",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
+						"header": [{
+							"key": "Content-Type",
+							"value": "application/json"
+						}],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -1898,8 +1807,7 @@
 								"cards",
 								"{{id_pymnt_card}}"
 							],
-							"query": [
-								{
+							"query": [{
 									"key": "id_pymnt_customer",
 									"value": "",
 									"description": "The ID of the customer assigned by SrPago",
@@ -1914,140 +1822,131 @@
 							]
 						}
 					},
-					"response": [
-						{
-							"name": "DeleteCard",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/cards/{{id_pymnt_card}}",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"v1",
-										"payments",
-										"customers",
-										"{{id_pymnt_customer}}",
-										"cards",
-										"{{id_pymnt_card}}"
-									]
-								}
+					"response": [{
+						"name": "DeleteCard",
+						"originalRequest": {
+							"method": "DELETE",
+							"header": [{
+								"key": "Content-Type",
+								"value": "application/json"
+							}],
+							"body": {
+								"mode": "raw",
+								"raw": ""
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "nginx"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 02 Jun 2020 15:30:01 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Tue, 02 Jun 2020 15:30:01 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "420ca3b6-a13e-4592-b08d-b223b20568ef"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15768000"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"420ca3b6-a13e-4592-b08d-b223b20568ef\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": true\n}"
-						}
-					]
+							"url": {
+								"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/cards/{{id_pymnt_card}}",
+								"host": [
+									"{{baseSyncUrl}}"
+								],
+								"path": [
+									"v1",
+									"payments",
+									"customers",
+									"{{id_pymnt_customer}}",
+									"cards",
+									"{{id_pymnt_card}}"
+								]
+							}
+						},
+						"status": "OK",
+						"code": 200,
+						"_postman_previewlanguage": "json",
+						"header": [{
+								"key": "Server",
+								"value": "nginx"
+							},
+							{
+								"key": "Date",
+								"value": "Tue, 02 Jun 2020 15:30:01 GMT"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=utf-8"
+							},
+							{
+								"key": "Transfer-Encoding",
+								"value": "chunked"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Vary",
+								"value": "Accept-Encoding"
+							},
+							{
+								"key": "Access-Control-Allow-Headers",
+								"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*"
+							},
+							{
+								"key": "Access-Control-Expose-Headers",
+								"value": "*"
+							},
+							{
+								"key": "Access-Control-Max-Age",
+								"value": "86400"
+							},
+							{
+								"key": "Cache-Control",
+								"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+							},
+							{
+								"key": "Expires",
+								"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+							},
+							{
+								"key": "Last-Modified",
+								"value": "Tue, 02 Jun 2020 15:30:01 GMT"
+							},
+							{
+								"key": "Pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "Request-ID",
+								"value": "420ca3b6-a13e-4592-b08d-b223b20568ef"
+							},
+							{
+								"key": "Strict-Transport-Security",
+								"value": "max-age=15768000"
+							},
+							{
+								"key": "Content-Encoding",
+								"value": "gzip"
+							}
+						],
+						"cookie": [],
+						"body": "{\n    \"rid\": \"420ca3b6-a13e-4592-b08d-b223b20568ef\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": true\n}"
+					}]
 				},
 				{
 					"name": "List Cards Per Customer",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "4c06695f-e15e-4e3f-9ea1-e57ef082b501",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
+					"event": [{
+						"listen": "test",
+						"script": {
+							"id": "4c06695f-e15e-4e3f-9ea1-e57ef082b501",
+							"exec": [
+								""
+							],
+							"type": "text/javascript"
 						}
-					],
+					}],
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
+						"header": [{
+							"key": "Content-Type",
+							"value": "application/json"
+						}],
 						"url": {
 							"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/cards",
 							"host": [
@@ -2060,127 +1959,119 @@
 								"{{id_pymnt_customer}}",
 								"cards"
 							],
-							"query": [
-								{
-									"key": "id_pymnt_customer",
-									"value": "",
-									"description": "The ID of the customer assigned by SrPago",
-									"disabled": true
-								}
-							]
+							"query": [{
+								"key": "id_pymnt_customer",
+								"value": "",
+								"description": "The ID of the customer assigned by SrPago",
+								"disabled": true
+							}]
 						}
 					},
-					"response": [
-						{
-							"name": "ListCardsPerCustomer",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
+					"response": [{
+						"name": "ListCardsPerCustomer",
+						"originalRequest": {
+							"method": "GET",
+							"header": [{
+								"key": "Content-Type",
+								"value": "application/json"
+							}],
+							"url": {
+								"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/cards",
+								"host": [
+									"{{baseSyncUrl}}"
 								],
-								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/cards",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"v1",
-										"payments",
-										"customers",
-										"{{id_pymnt_customer}}",
-										"cards"
-									]
-								}
+								"path": [
+									"v1",
+									"payments",
+									"customers",
+									"{{id_pymnt_customer}}",
+									"cards"
+								]
+							}
+						},
+						"status": "OK",
+						"code": 200,
+						"_postman_previewlanguage": "json",
+						"header": [{
+								"key": "Server",
+								"value": "nginx"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "nginx"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 02 Jun 2020 15:28:44 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Tue, 02 Jun 2020 15:28:44 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "fc5d1e7a-ce1b-4f1a-8b8b-365df66145c9"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15768000"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"fc5d1e7a-ce1b-4f1a-8b8b-365df66145c9\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_pymnt_card\": \"5ed67012c6254b0c30251715\",\n            \"holder_name\": \"Pedro Perez\",\n            \"type\": \"VISA\",\n            \"number\": \"471622XXXXXX4622\",\n            \"bank_name\": \"VISA TEST\",\n            \"billing\": null,\n            \"is_default\": true,\n            \"dt_create\": 1591111698,\n            \"dt_modify\": null\n        }\n    ]\n}"
-						}
-					]
+							{
+								"key": "Date",
+								"value": "Tue, 02 Jun 2020 15:28:44 GMT"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=utf-8"
+							},
+							{
+								"key": "Transfer-Encoding",
+								"value": "chunked"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Vary",
+								"value": "Accept-Encoding"
+							},
+							{
+								"key": "Access-Control-Allow-Headers",
+								"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*"
+							},
+							{
+								"key": "Access-Control-Expose-Headers",
+								"value": "*"
+							},
+							{
+								"key": "Access-Control-Max-Age",
+								"value": "86400"
+							},
+							{
+								"key": "Cache-Control",
+								"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+							},
+							{
+								"key": "Expires",
+								"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+							},
+							{
+								"key": "Last-Modified",
+								"value": "Tue, 02 Jun 2020 15:28:44 GMT"
+							},
+							{
+								"key": "Pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "Request-ID",
+								"value": "fc5d1e7a-ce1b-4f1a-8b8b-365df66145c9"
+							},
+							{
+								"key": "Strict-Transport-Security",
+								"value": "max-age=15768000"
+							},
+							{
+								"key": "Content-Encoding",
+								"value": "gzip"
+							}
+						],
+						"cookie": [],
+						"body": "{\n    \"rid\": \"fc5d1e7a-ce1b-4f1a-8b8b-365df66145c9\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_pymnt_card\": \"5ed67012c6254b0c30251715\",\n            \"holder_name\": \"John Doe\",\n            \"type\": \"VISA\",\n            \"number\": \"471622XXXXXX4622\",\n            \"bank_name\": \"VISA TEST\",\n            \"billing\": null,\n            \"is_default\": true,\n            \"dt_create\": 1591111698,\n            \"dt_modify\": null\n        }\n    ]\n}"
+					}]
 				}
 			],
-			"description": "Credit cards associated to a given customer, with the information below, this payment method will be use to process charges.\n\n```json\n{\n    \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n    \"holder_name\": \"Pedro Perez\",\n    \"type\": \"VISA\",\n    \"number\": \"471622XXXXXX4622\",\n    \"bank_name\": \"VISA TEST\",\n    \"country_code\": \"MX\",\n    \"billing\": {\n        \"emailAddress\": \"pedro.perez@gmail.com\",\n        \"firstName\": \"Pedro\",\n        \"middleName\": \"\",\n        \"lastName\": \"Perez\",\n        \"address\": \"1234 Main Street\",\n        \"address2\": \"Apt 891\",\n        \"city\": \"Dallas\",\n        \"state\": \"TX\",\n        \"postalCode\": \"75208\"\n    }\n}\n```\n\nYou can simulate transaction results in sandbox mode using the following cards:\n\n#### Valid TEST credit card numbers with SUCCESSFUL charges\n\n| VISA\t            | MASTERCARD       |\n| ----------------  | ---------------- |\n| 4485531263748329\t| 5175680047225740 |\n| 4716222791264622\t| 5125252423995626 |\n| 4929464181360031\t| 5353145032081148 |\n| 4688063477474448\t| 5216010618470403 |\n| 4532446651358792\t| 5356291927355838 |\n\n\n#### Valid TEST credit card numbers with ERROR charges\n\n| Card\t            | Error                       |\n| ----------------  | --------------------------- |\n| 5335584458144100\t| Bank authorization issue    |\n| 5504174401458735\t| Bank authorization issue    |\n| 5529267979203458\t| Payment Gateway restriction |\n| 4916263460461980\t| Payment Gateway restriction |\n\n",
-			"event": [
-				{
+			"description": "Credit cards associated to a given customer, with the information below, this payment method will be use to process charges.\n\n```json\n{\n    \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n    \"holder_name\": \"John Doe\",\n    \"type\": \"VISA\",\n    \"number\": \"471622XXXXXX4622\",\n    \"bank_name\": \"VISA TEST\",\n    \"country_code\": \"MX\",\n    \"billing\": {\n        \"emailAddress\": \"john.doe@test.com\",\n        \"firstName\": \"John\",\n        \"middleName\": \"\",\n        \"lastName\": \"Doe\",\n        \"address\": \"1234 Main Street\",\n        \"address2\": \"Apt 891\",\n        \"city\": \"Dallas\",\n        \"state\": \"TX\",\n        \"postalCode\": \"75208\"\n    }\n}\n```\n\nYou can simulate transaction results in sandbox mode using the following cards:\n\n#### Valid TEST credit card numbers with SUCCESSFUL charges\n\n| VISA\t            | MASTERCARD       |\n| ----------------  | ---------------- |\n| 4485531263748329\t| 5175680047225740 |\n| 4716222791264622\t| 5125252423995626 |\n| 4929464181360031\t| 5353145032081148 |\n| 4688063477474448\t| 5216010618470403 |\n| 4532446651358792\t| 5356291927355838 |\n\n\n#### Valid TEST credit card numbers with ERROR charges\n\n| Card\t            | Error                                                  |\n| ----------------  | ------------------------------------------------------ |\n| 5335584458144100\t| Bank authorization issue (Unable to complete charge)   |\n| 5504174401458735\t| Bank authorization issue (Invalid Card)                |\n| 5529267979203458\t| Payment Gateway restriction (1)                        |\n| 4916263460461980\t| Payment Gateway restriction (2)                        |\n| 5063115139979008\t| Chargeback issue                                       |\n\n",
+			"event": [{
 					"listen": "prerequest",
 					"script": {
 						"id": "ec720171-a79f-4295-8ba8-b3677673debe",
@@ -2205,34 +2096,29 @@
 		},
 		{
 			"name": "Charges",
-			"item": [
-				{
+			"item": [{
 					"name": "Add Charge",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "d5291215-273b-47f0-ac9d-03e0ca653ce5",
-								"exec": [
-									"var json = JSON.parse(responseBody);",
-									"postman.setEnvironmentVariable(\"id_pymnt_charge\", json.response.id_pymnt_charge);",
-									""
-								],
-								"type": "text/javascript"
-							}
+					"event": [{
+						"listen": "test",
+						"script": {
+							"id": "d5291215-273b-47f0-ac9d-03e0ca653ce5",
+							"exec": [
+								"var json = JSON.parse(responseBody);",
+								"postman.setEnvironmentVariable(\"id_pymnt_charge\", json.response.id_pymnt_charge);",
+								""
+							],
+							"type": "text/javascript"
 						}
-					],
+					}],
 					"request": {
 						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
+						"header": [{
+							"key": "Content-Type",
+							"value": "application/json"
+						}],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id_pymnt_card\": \"{{id_pymnt_card}}\",\n    \"reference\": \"20190814/0GZXXG81\",\n    \"description\": \"Pago de prueba\",\n    \"amount\": 100,\n    \"affiliate_details\": {\n        \"total_fee\": 70,\n        \"id_pymnt_affiliate\": \"{{id_pymnt_affiliate}}\"\n    }\n}",
+							"raw": "{\n    \"id_pymnt_card\": \"{{id_pymnt_card}}\",\n    \"reference\": \"20190814/0GZXXG81\",\n    \"description\": \"Sample charge\",\n    \"amount\": 100,\n    \"affiliate_details\": {\n        \"total_fee\": 70,\n        \"id_pymnt_affiliate\": \"{{id_pymnt_affiliate}}\"\n    }\n}",
 							"options": {
 								"raw": {}
 							}
@@ -2249,8 +2135,7 @@
 								"{{id_pymnt_customer}}",
 								"charges"
 							],
-							"query": [
-								{
+							"query": [{
 									"key": "id_pymnt_customer",
 									"value": "",
 									"description": "The ID of the customer assigned by SrPago",
@@ -2283,19 +2168,16 @@
 							]
 						}
 					},
-					"response": [
-						{
+					"response": [{
 							"name": "Add Charge (Default Card)",
 							"originalRequest": {
 								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
+								"header": [{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"type": "text",
+									"value": "application/json"
+								}],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n    \"reference\": \"20190814/0GZXXG81\",\n    \"description\": \"Sample Charge\",\n    \"amount\": 50\n}",
@@ -2322,8 +2204,7 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"header": [
-								{
+							"header": [{
 									"key": "Server",
 									"value": "nginx"
 								},
@@ -2397,20 +2278,18 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"rid\": \"66c18bbf-cc21-4d7b-8735-20dab55033e6\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_charge\": \"5eed0d0df23be1111a3af080\",\n        \"id_pymnt_affiliate\": null,\n        \"transaction\": \"MjczNzA1OA==\",\n        \"payment_method\": \"POS\",\n        \"authorization_code\": \"728923\",\n        \"status\": \"N\",\n        \"transaction_type\": \"E\",\n        \"receipt_url\": \"https://sandbox-connect.srpago.com/recipe/MTUxYzQ5YTMtMzFhNi00NWY3LWE0NGQtMTcyZWI3YjVkYWNm\",\n        \"has_devolution\": \"0\",\n        \"affiliation\": \"7865096\",\n        \"affiliation_name\": \"\",\n        \"reference\": {\n            \"number\": \"20190814/0GZXXG81\",\n            \"description\": \"Pago de prueba\"\n        },\n        \"card\": {\n            \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n            \"holder_name\": \"Pedro Perez\",\n            \"type\": \"VISA\",\n            \"number\": \"471622XXXXXX4622\"\n        },\n        \"amount\": 20,\n        \"net_amount\": 19.16,\n        \"tip\": 0,\n        \"commission\": 0,\n        \"fee\": 0.84,\n        \"fee_details\": [\n            {\n                \"type\": \"fee\",\n                \"percentage\": 3.6,\n                \"amount\": 0.84,\n                \"description\": \"\"\n            }\n        ],\n        \"origin\": {\n            \"location\": {\n                \"latitude\": 32.896423,\n                \"longitude\": -96.966841\n            }\n        },\n        \"dt_create\": 1592593677,\n        \"dt_modify\": 1592593677\n    }\n}"
+							"body": "{\n    \"rid\": \"66c18bbf-cc21-4d7b-8735-20dab55033e6\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_charge\": \"5eed0d0df23be1111a3af080\",\n        \"id_pymnt_affiliate\": null,\n        \"transaction\": \"MjczNzA1OA==\",\n        \"payment_method\": \"POS\",\n        \"authorization_code\": \"728923\",\n        \"status\": \"N\",\n        \"transaction_type\": \"E\",\n        \"receipt_url\": \"https://sandbox-connect.srpago.com/recipe/MTUxYzQ5YTMtMzFhNi00NWY3LWE0NGQtMTcyZWI3YjVkYWNm\",\n        \"has_devolution\": \"0\",\n        \"reference\": {\n            \"number\": \"20190814/0GZXXG81\",\n            \"description\": \"Sample charge\"\n        },\n        \"card\": {\n            \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n            \"holder_name\": \"John Doe\",\n            \"type\": \"VISA\",\n            \"number\": \"471622XXXXXX4622\"\n        },\n        \"amount\": 20,\n        \"net_amount\": 19.16,\n        \"tip\": 0,\n        \"commission\": 0,\n        \"fee\": 0.84,\n        \"fee_details\": [\n            {\n                \"type\": \"fee\",\n                \"percentage\": 3.6,\n                \"amount\": 0.84,\n                \"description\": \"\"\n            }\n        ],\n        \"origin\": {\n            \"location\": {\n                \"latitude\": 32.896423,\n                \"longitude\": -96.966841\n            }\n        },\n        \"dt_create\": 1592593677,\n        \"dt_modify\": 1592593677\n    }\n}"
 						},
 						{
 							"name": "Add Charge (Existing Card)",
 							"originalRequest": {
 								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
+								"header": [{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"type": "text",
+									"value": "application/json"
+								}],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n\t\"id_pymnt_card\": \"523a25953b8e77910e8b456c\",\n    \"reference\": \"20190814/0GZXXG81\",\n    \"description\": \"Sample Charge\",\n    \"amount\": 50\n}",
@@ -2437,8 +2316,7 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"header": [
-								{
+							"header": [{
 									"key": "Date",
 									"value": "Wed, 10 Jun 2020 16:05:22 GMT"
 								},
@@ -2536,23 +2414,21 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"rid\": \"66c18bbf-cc21-4d7b-8735-20dab55033e6\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_charge\": \"5eed0d0df23be1111a3af080\",\n        \"id_pymnt_affiliate\": null,\n        \"transaction\": \"MjczNzA1OA==\",\n        \"payment_method\": \"POS\",\n        \"authorization_code\": \"728923\",\n        \"status\": \"N\",\n        \"transaction_type\": \"E\",\n        \"receipt_url\": \"https://sandbox-connect.srpago.com/recipe/MTUxYzQ5YTMtMzFhNi00NWY3LWE0NGQtMTcyZWI3YjVkYWNm\",\n        \"has_devolution\": \"0\",\n        \"affiliation\": \"7865096\",\n        \"affiliation_name\": \"\",\n        \"reference\": {\n            \"number\": \"20190814/0GZXXG81\",\n            \"description\": \"Pago de prueba\"\n        },\n        \"card\": {\n            \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n            \"holder_name\": \"Pedro Perez\",\n            \"type\": \"VISA\",\n            \"number\": \"471622XXXXXX4622\"\n        },\n        \"amount\": 20,\n        \"net_amount\": 19.16,\n        \"tip\": 0,\n        \"commission\": 0,\n        \"fee\": 0.84,\n        \"fee_details\": [\n            {\n                \"type\": \"fee\",\n                \"percentage\": 3.6,\n                \"amount\": 0.84,\n                \"description\": \"\"\n            }\n        ],\n        \"origin\": {\n            \"location\": {\n                \"latitude\": 32.896423,\n                \"longitude\": -96.966841\n            }\n        },\n        \"dt_create\": 1592593677,\n        \"dt_modify\": 1592593677\n    }\n}"
+							"body": "{\n    \"rid\": \"66c18bbf-cc21-4d7b-8735-20dab55033e6\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_charge\": \"5eed0d0df23be1111a3af080\",\n        \"id_pymnt_affiliate\": null,\n        \"transaction\": \"MjczNzA1OA==\",\n        \"payment_method\": \"POS\",\n        \"authorization_code\": \"728923\",\n        \"status\": \"N\",\n        \"transaction_type\": \"E\",\n        \"receipt_url\": \"https://sandbox-connect.srpago.com/recipe/MTUxYzQ5YTMtMzFhNi00NWY3LWE0NGQtMTcyZWI3YjVkYWNm\",\n        \"has_devolution\": \"0\",\n        \"reference\": {\n            \"number\": \"20190814/0GZXXG81\",\n            \"description\": \"Sample charge\"\n        },\n        \"card\": {\n            \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n            \"holder_name\": \"John Doe\",\n            \"type\": \"VISA\",\n            \"number\": \"471622XXXXXX4622\"\n        },\n        \"amount\": 20,\n        \"net_amount\": 19.16,\n        \"tip\": 0,\n        \"commission\": 0,\n        \"fee\": 0.84,\n        \"fee_details\": [\n            {\n                \"type\": \"fee\",\n                \"percentage\": 3.6,\n                \"amount\": 0.84,\n                \"description\": \"\"\n            }\n        ],\n        \"origin\": {\n            \"location\": {\n                \"latitude\": 32.896423,\n                \"longitude\": -96.966841\n            }\n        },\n        \"dt_create\": 1592593677,\n        \"dt_modify\": 1592593677\n    }\n}"
 						},
 						{
 							"name": "Add Charge ( Affiliate fee )",
 							"originalRequest": {
 								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
+								"header": [{
+									"key": "Content-Type",
+									"name": "Content-Type",
+									"type": "text",
+									"value": "application/json"
+								}],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n    \"reference\": \"20190814/0GZXXG81\",\n    \"description\": \"Pago de prueba\",\n    \"amount\": 100,\n    \"affiliate_details\": {\n        \"total_fee\": 70,\n        \"id_pymnt_affiliate\": \"5eecf65fd2192b48f22aefa3\"\n    }\n}",
+									"raw": "{\n    \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n    \"reference\": \"20190814/0GZXXG81\",\n    \"description\": \"Sample charge\",\n    \"amount\": 100,\n    \"affiliate_details\": {\n        \"total_fee\": 70,\n        \"id_pymnt_affiliate\": \"5eecf65fd2192b48f22aefa3\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2571,8 +2447,7 @@
 										"{{id_pymnt_customer}}",
 										"charges"
 									],
-									"query": [
-										{
+									"query": [{
 											"key": "id_pymnt_customer",
 											"value": "",
 											"description": "The ID of the customer assigned by SrPago",
@@ -2608,32 +2483,28 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"rid\": \"ea99b1a0-bc57-437f-81b4-a353af8565f7\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_charge\": \"5eed180f869a260fe30e2209\",\n        \"id_pymnt_affiliate\": \"5eecf65fd2192b48f22aefa3\",\n        \"transaction\": \"MjczNzA2NQ==\",\n        \"payment_method\": \"POS\",\n        \"authorization_code\": \"586884\",\n        \"status\": \"N\",\n        \"transaction_type\": \"E\",\n        \"receipt_url\": \"https://sandbox-connect.srpago.com/recipe/NTI3NjIyYzUtMDFkOC00MjFiLThkOTQtNzgzZjgyNDFkNjcy\",\n        \"has_devolution\": \"0\",\n        \"affiliation\": \"7865096\",\n        \"affiliation_name\": \"\",\n        \"reference\": {\n            \"number\": \"20190814/0GZXXG81\",\n            \"description\": \"Pago de prueba\"\n        },\n        \"card\": {\n            \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n            \"holder_name\": \"Pedro Perez\",\n            \"type\": \"VISA\",\n            \"number\": \"471622XXXXXX4622\"\n        },\n        \"amount\": 100,\n        \"net_amount\": 95.82,\n        \"tip\": 0,\n        \"commission\": 0,\n        \"fee\": 4.18,\n        \"fee_details\": [\n            {\n                \"type\": \"fee\",\n                \"percentage\": 3.6,\n                \"amount\": 4.18,\n                \"description\": \"\"\n            }\n        ],\n        \"origin\": {\n            \"location\": {\n                \"latitude\": 32.896423,\n                \"longitude\": -96.966841\n            }\n        },\n        \"dt_create\": 1592596495,\n        \"dt_modify\": 1592596496\n    }\n}"
+							"body": "{\n    \"rid\": \"ea99b1a0-bc57-437f-81b4-a353af8565f7\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_charge\": \"5eed180f869a260fe30e2209\",\n        \"id_pymnt_affiliate\": \"5eecf65fd2192b48f22aefa3\",\n        \"transaction\": \"MjczNzA2NQ==\",\n        \"payment_method\": \"POS\",\n        \"authorization_code\": \"586884\",\n        \"status\": \"N\",\n        \"transaction_type\": \"E\",\n        \"receipt_url\": \"https://sandbox-connect.srpago.com/recipe/NTI3NjIyYzUtMDFkOC00MjFiLThkOTQtNzgzZjgyNDFkNjcy\",\n        \"has_devolution\": \"0\",\n        \"reference\": {\n            \"number\": \"20190814/0GZXXG81\",\n            \"description\": \"Sample charge\"\n        },\n        \"card\": {\n            \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n            \"holder_name\": \"John Doe\",\n            \"type\": \"VISA\",\n            \"number\": \"471622XXXXXX4622\"\n        },\n        \"amount\": 100,\n        \"net_amount\": 95.82,\n        \"tip\": 0,\n        \"commission\": 0,\n        \"fee\": 4.18,\n        \"fee_details\": [\n            {\n                \"type\": \"fee\",\n                \"percentage\": 3.6,\n                \"amount\": 4.18,\n                \"description\": \"\"\n            }\n        ],\n        \"origin\": {\n            \"location\": {\n                \"latitude\": 32.896423,\n                \"longitude\": -96.966841\n            }\n        },\n        \"dt_create\": 1592596495,\n        \"dt_modify\": 1592596496\n    }\n}"
 						}
 					]
 				},
 				{
 					"name": "Get Charge",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "ce1d6dd1-c92b-426e-bf60-f44c7a4c6a84",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
+					"event": [{
+						"listen": "test",
+						"script": {
+							"id": "ce1d6dd1-c92b-426e-bf60-f44c7a4c6a84",
+							"exec": [
+								""
+							],
+							"type": "text/javascript"
 						}
-					],
+					}],
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
+						"header": [{
+							"key": "Content-Type",
+							"value": "application/json"
+						}],
 						"url": {
 							"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/charges/{{id_pymnt_charge}}",
 							"host": [
@@ -2647,146 +2518,135 @@
 								"charges",
 								"{{id_pymnt_charge}}"
 							],
-							"query": [
-								{
-									"key": "id_pymnt_customer",
-									"value": "",
-									"description": "The ID of the customer assigned by SrPago",
-									"disabled": true
-								}
-							]
+							"query": [{
+								"key": "id_pymnt_customer",
+								"value": "",
+								"description": "The ID of the customer assigned by SrPago",
+								"disabled": true
+							}]
 						}
 					},
-					"response": [
-						{
-							"name": "GetCharge",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
+					"response": [{
+						"name": "GetCharge",
+						"originalRequest": {
+							"method": "GET",
+							"header": [{
+								"key": "Content-Type",
+								"value": "application/json"
+							}],
+							"url": {
+								"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/charges/{{id_pymnt_charge}}",
+								"host": [
+									"{{baseSyncUrl}}"
 								],
-								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/charges/{{id_pymnt_charge}}",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"v1",
-										"payments",
-										"customers",
-										"{{id_pymnt_customer}}",
-										"charges",
-										"{{id_pymnt_charge}}"
-									]
-								}
+								"path": [
+									"v1",
+									"payments",
+									"customers",
+									"{{id_pymnt_customer}}",
+									"charges",
+									"{{id_pymnt_charge}}"
+								]
+							}
+						},
+						"status": "OK",
+						"code": 200,
+						"_postman_previewlanguage": "json",
+						"header": [{
+								"key": "Server",
+								"value": "nginx"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "nginx"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 02 Jun 2020 15:32:40 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Tue, 02 Jun 2020 15:32:40 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "04f9c171-0beb-40b6-be30-e246dbc61ea0"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15768000"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"04f9c171-0beb-40b6-be30-e246dbc61ea0\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_pymnt_charge\": \"5ed670b9035fc25c920b38f4\",\n            \"id_pymnt_affiliate\": \"5eecf65fd2192b48f22aefa3\",\n            \"transaction\": \"MjczNDA0Mw==\",\n            \"payment_method\": \"POS\",\n            \"authorization_code\": \"338389\",\n            \"status\": \"N\",\n            \"transaction_type\": \"E\",\n            \"receipt_url\": \"https://sandbox-connect.srpago.com/recipe/NWU3MzhiNDQtMDcwNS00ZDRlLTkxYjktM2ZkMjJkYjUzZTZk\",\n            \"has_devolution\": \"0\",\n            \"affiliation\": \"7865096\",\n            \"affiliation_name\": \"\",\n            \"reference\": {\n                \"number\": \"20190814/0GZXXG81\",\n                \"description\": \"Descripcion de Cargo\"\n            },\n            \"card\": {\n                \"id_pymnt_card\": \"5ed67012c6254b0c30251715\",\n                \"card_token\": \"crd_dev_5ed6701003419\",\n                \"number\": \"471622XXXXXX4622\",\n            },\n            \"amount\": 50,\n            \"origin\": {\n                \"location\": {\n                    \"latitude\": 32.896423,\n                    \"longitude\": -96.966841\n                }\n            },\n            \"async\": null,\n            \"dt_create\": 1591111865,\n            \"dt_modify\": 1591111866\n        }\n    ]\n}"
-						}
-					]
+							{
+								"key": "Date",
+								"value": "Tue, 02 Jun 2020 15:32:40 GMT"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=utf-8"
+							},
+							{
+								"key": "Transfer-Encoding",
+								"value": "chunked"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Vary",
+								"value": "Accept-Encoding"
+							},
+							{
+								"key": "Access-Control-Allow-Headers",
+								"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*"
+							},
+							{
+								"key": "Access-Control-Expose-Headers",
+								"value": "*"
+							},
+							{
+								"key": "Access-Control-Max-Age",
+								"value": "86400"
+							},
+							{
+								"key": "Cache-Control",
+								"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+							},
+							{
+								"key": "Expires",
+								"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+							},
+							{
+								"key": "Last-Modified",
+								"value": "Tue, 02 Jun 2020 15:32:40 GMT"
+							},
+							{
+								"key": "Pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "Request-ID",
+								"value": "04f9c171-0beb-40b6-be30-e246dbc61ea0"
+							},
+							{
+								"key": "Strict-Transport-Security",
+								"value": "max-age=15768000"
+							},
+							{
+								"key": "Content-Encoding",
+								"value": "gzip"
+							}
+						],
+						"cookie": [],
+						"body": "{\n    \"rid\": \"04f9c171-0beb-40b6-be30-e246dbc61ea0\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_pymnt_charge\": \"5ed670b9035fc25c920b38f4\",\n            \"id_pymnt_affiliate\": \"5eecf65fd2192b48f22aefa3\",\n            \"transaction\": \"MjczNDA0Mw==\",\n            \"payment_method\": \"POS\",\n            \"authorization_code\": \"338389\",\n            \"status\": \"N\",\n            \"transaction_type\": \"E\",\n            \"receipt_url\": \"https://sandbox-connect.srpago.com/recipe/NWU3MzhiNDQtMDcwNS00ZDRlLTkxYjktM2ZkMjJkYjUzZTZk\",\n            \"has_devolution\": \"0\",\n            \"reference\": {\n                \"number\": \"20190814/0GZXXG81\",\n                \"description\": \"Descripcion de Cargo\"\n            },\n            \"card\": {\n                \"id_pymnt_card\": \"5ed67012c6254b0c30251715\",\n                \"card_token\": \"crd_dev_5ed6701003419\",\n                \"number\": \"471622XXXXXX4622\"\n            },\n            \"amount\": 50,\n            \"origin\": {\n                \"location\": {\n                    \"latitude\": 32.896423,\n                    \"longitude\": -96.966841\n                }\n            },\n            \"dt_create\": 1591111865,\n            \"dt_modify\": 1591111866\n        }\n    ]\n}"
+					}]
 				},
 				{
 					"name": "List Charges Per Customer",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "902e5efb-969c-4561-ae3a-5689119846d3",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
+					"event": [{
+						"listen": "test",
+						"script": {
+							"id": "902e5efb-969c-4561-ae3a-5689119846d3",
+							"exec": [
+								""
+							],
+							"type": "text/javascript"
 						}
-					],
+					}],
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
+						"header": [{
+							"key": "Content-Type",
+							"value": "application/json"
+						}],
 						"url": {
 							"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/charges",
 							"host": [
@@ -2799,127 +2659,119 @@
 								"{{id_pymnt_customer}}",
 								"charges"
 							],
-							"query": [
-								{
-									"key": "id_pymnt_customer",
-									"value": "",
-									"description": "The ID of the customer assigned by SrPago",
-									"disabled": true
-								}
-							]
+							"query": [{
+								"key": "id_pymnt_customer",
+								"value": "",
+								"description": "The ID of the customer assigned by SrPago",
+								"disabled": true
+							}]
 						}
 					},
-					"response": [
-						{
-							"name": "List Charges Per Customer",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
+					"response": [{
+						"name": "List Charges Per Customer",
+						"originalRequest": {
+							"method": "GET",
+							"header": [{
+								"key": "Content-Type",
+								"value": "application/json"
+							}],
+							"url": {
+								"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/charges",
+								"host": [
+									"{{baseSyncUrl}}"
 								],
-								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/charges",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"v1",
-										"payments",
-										"customers",
-										"{{id_pymnt_customer}}",
-										"charges"
-									]
-								}
+								"path": [
+									"v1",
+									"payments",
+									"customers",
+									"{{id_pymnt_customer}}",
+									"charges"
+								]
+							}
+						},
+						"status": "OK",
+						"code": 200,
+						"_postman_previewlanguage": "json",
+						"header": [{
+								"key": "Server",
+								"value": "nginx"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "nginx"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 02 Jun 2020 15:32:56 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Tue, 02 Jun 2020 15:32:56 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "d3d1719e-998c-49e3-a5ac-05db997e98b1"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15768000"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"2262b5c7-e1b7-4ad6-a317-7138162a9bc2\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_pymnt_charge\": \"5eed083b90737b307a118ce6\",\n            \"id_pymnt_affiliate\": \"5eecf65fd2192b48f22aefa3\",\n            \"transaction\": \"MjczNzA0Nw==\",\n            \"payment_method\": \"POS\",\n            \"authorization_code\": \"312429\",\n            \"status\": \"N\",\n            \"transaction_type\": \"E\",\n            \"receipt_url\": \"https://sandbox-connect.srpago.com/recipe/YzA3YjBlYzItZmU1ZS00Y2QxLTg2NTctZDZlNWYyMzFjY2U0\",\n            \"has_devolution\": \"1\",\n            \"affiliation\": \"7865096\",\n            \"affiliation_name\": \"\",\n            \"reference\": {\n                \"number\": \"20190814/0GZXXG81\",\n                \"description\": \"Pago de prueba\"\n            },\n            \"card\": {\n                \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n                \"holder_name\": \"Pedro Perez\",\n                \"type\": \"VISA\",\n                \"number\": \"471622XXXXXX4622\"\n            },\n            \"amount\": 20,\n            \"tip\": 0,\n            \"fee\": 0.84,\n            \"fee_details\": [\n                {\n                    \"type\": \"fee\",\n                    \"percentage\": 3.6,\n                    \"amount\": 0.84,\n                    \"description\": \"\"\n                }\n            ],\n            \"commission\": 0,\n            \"origin\": {\n                \"location\": {\n                    \"latitude\": 32.896423,\n                    \"longitude\": -96.966841\n                }\n            },\n            \"dt_create\": 1592592443,\n            \"dt_modify\": 1592592594\n        }\n    ]\n}"
-						}
-					]
+							{
+								"key": "Date",
+								"value": "Tue, 02 Jun 2020 15:32:56 GMT"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=utf-8"
+							},
+							{
+								"key": "Transfer-Encoding",
+								"value": "chunked"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Vary",
+								"value": "Accept-Encoding"
+							},
+							{
+								"key": "Access-Control-Allow-Headers",
+								"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*"
+							},
+							{
+								"key": "Access-Control-Expose-Headers",
+								"value": "*"
+							},
+							{
+								"key": "Access-Control-Max-Age",
+								"value": "86400"
+							},
+							{
+								"key": "Cache-Control",
+								"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+							},
+							{
+								"key": "Expires",
+								"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+							},
+							{
+								"key": "Last-Modified",
+								"value": "Tue, 02 Jun 2020 15:32:56 GMT"
+							},
+							{
+								"key": "Pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "Request-ID",
+								"value": "d3d1719e-998c-49e3-a5ac-05db997e98b1"
+							},
+							{
+								"key": "Strict-Transport-Security",
+								"value": "max-age=15768000"
+							},
+							{
+								"key": "Content-Encoding",
+								"value": "gzip"
+							}
+						],
+						"cookie": [],
+						"body": "{\n    \"rid\": \"2262b5c7-e1b7-4ad6-a317-7138162a9bc2\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_pymnt_charge\": \"5eed083b90737b307a118ce6\",\n            \"id_pymnt_affiliate\": \"5eecf65fd2192b48f22aefa3\",\n            \"transaction\": \"MjczNzA0Nw==\",\n            \"payment_method\": \"POS\",\n            \"authorization_code\": \"312429\",\n            \"status\": \"N\",\n            \"transaction_type\": \"E\",\n            \"receipt_url\": \"https://sandbox-connect.srpago.com/recipe/YzA3YjBlYzItZmU1ZS00Y2QxLTg2NTctZDZlNWYyMzFjY2U0\",\n            \"has_devolution\": \"1\",\n            \"reference\": {\n                \"number\": \"20190814/0GZXXG81\",\n                \"description\": \"Sample charge\"\n            },\n            \"card\": {\n                \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n                \"holder_name\": \"John Doe\",\n                \"type\": \"VISA\",\n                \"number\": \"471622XXXXXX4622\"\n            },\n            \"linked\": [],\n            \"amount\": 20,\n            \"tip\": 0,\n            \"fee\": 0.84,\n            \"fee_details\": [\n                {\n                    \"type\": \"fee\",\n                    \"percentage\": 3.6,\n                    \"amount\": 0.84,\n                    \"description\": \"\"\n                }\n            ],\n            \"commission\": 0,\n            \"origin\": {\n                \"location\": {\n                    \"latitude\": 32.896423,\n                    \"longitude\": -96.966841\n                }\n            },\n            \"dt_create\": 1592592443,\n            \"dt_modify\": 1592592594\n        }\n    ]\n}"
+					}]
 				}
 			],
 			"description": "Charges require the infomation below in order to successfully complete a charge.\n\n```json\n{\n\t\"id_currency\": \"523a25953b8e77910e8b456c\",\n    // String, ID currency corresponding to MXN\n    \"transaction\": \"ff9d8b219b468317bc63ca29196e0fb4701fbbfc\",\n    // String, ID of transaction\n    \"internal_reference\": \"ff9d8b219b468317bc63ca29196e0fb4701fbbfc\",\n    // String, internal reference\n    \"reference\": \"20190814/0GZXXG81\",\n    // String, transaction reference\n    \"description\": \"Descripcion de Cargo\",\n    // String, description of charge\n    \"amount\": 50\n    // Float, charge amount\n}\n```",
-			"event": [
-				{
+			"event": [{
 					"listen": "prerequest",
 					"script": {
 						"id": "8cbbccde-9d44-49de-885f-3a8209e73fff",
@@ -2944,29 +2796,24 @@
 		},
 		{
 			"name": "Operations",
-			"item": [
-				{
+			"item": [{
 					"name": "Reimburse Charge",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "d3fff9b4-c885-422f-9b3d-4407e184fb75",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
+					"event": [{
+						"listen": "test",
+						"script": {
+							"id": "d3fff9b4-c885-422f-9b3d-4407e184fb75",
+							"exec": [
+								""
+							],
+							"type": "text/javascript"
 						}
-					],
+					}],
 					"request": {
 						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
+						"header": [{
+							"key": "Content-Type",
+							"value": "application/json"
+						}],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -2986,151 +2833,140 @@
 								"{{id_pymnt_charge}}",
 								"reimburse"
 							],
-							"query": [
-								{
-									"key": "id_pymnt_charge",
-									"value": "",
-									"description": "The ID of the charge assigned by SrPago",
-									"disabled": true
-								}
-							]
+							"query": [{
+								"key": "id_pymnt_charge",
+								"value": "",
+								"description": "The ID of the charge assigned by SrPago",
+								"disabled": true
+							}]
 						}
 					},
-					"response": [
-						{
-							"name": "Reimburse Charge",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/operations/{{id_pymnt_charge}}/reimburse",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"v1",
-										"payments",
-										"operations",
-										"{{id_pymnt_charge}}",
-										"reimburse"
-									]
-								}
+					"response": [{
+						"name": "Reimburse Charge",
+						"originalRequest": {
+							"method": "PUT",
+							"header": [{
+								"key": "Content-Type",
+								"value": "application/json"
+							}],
+							"body": {
+								"mode": "raw",
+								"raw": ""
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "nginx"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 02 Jun 2020 15:34:07 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Tue, 02 Jun 2020 15:34:07 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "417e15a4-f9ce-4a5c-a538-4a24fb20efc2"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15768000"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"1ef35358-b95f-469d-b337-c635167d972b\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_charge\": \"5eed08d244198b78696e5f54\",\n        \"id_pymnt_affiliate\": \"5eecf65fd2192b48f22aefa3\",\n        \"transaction\": \"\",\n        \"payment_method\": \"POS\",\n        \"authorization_code\": \"261677\",\n        \"status\": \"N\",\n        \"transaction_type\": \"E\",\n        \"receipt_url\": \"\",\n        \"has_devolution\": \"0\",\n        \"affiliation\": \"7865096\",\n        \"affiliation_name\": \"\",\n        \"reference\": {\n            \"number\": \"20190814/0GZXXG81\",\n            \"description\": \"Pago de prueba\"\n        },\n        \"card\": {\n            \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n            \"holder_name\": \"Pedro Perez\",\n            \"type\": \"VISA\",\n            \"number\": \"471622XXXXXX4622\"\n        },\n        \"amount\": -20,\n        \"tip\": 0,\n        \"origin\": {\n            \"location\": {\n                \"latitude\": 32.896423,\n                \"longitude\": -96.966841\n            }\n        },\n        \"dt_create\": 1592592594,\n        \"dt_modify\": null\n    }\n}"
-						}
-					]
+							"url": {
+								"raw": "{{baseSyncUrl}}/v1/payments/operations/{{id_pymnt_charge}}/reimburse",
+								"host": [
+									"{{baseSyncUrl}}"
+								],
+								"path": [
+									"v1",
+									"payments",
+									"operations",
+									"{{id_pymnt_charge}}",
+									"reimburse"
+								]
+							}
+						},
+						"status": "OK",
+						"code": 200,
+						"_postman_previewlanguage": "json",
+						"header": [{
+								"key": "Server",
+								"value": "nginx"
+							},
+							{
+								"key": "Date",
+								"value": "Tue, 02 Jun 2020 15:34:07 GMT"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=utf-8"
+							},
+							{
+								"key": "Transfer-Encoding",
+								"value": "chunked"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Vary",
+								"value": "Accept-Encoding"
+							},
+							{
+								"key": "Access-Control-Allow-Headers",
+								"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*"
+							},
+							{
+								"key": "Access-Control-Expose-Headers",
+								"value": "*"
+							},
+							{
+								"key": "Access-Control-Max-Age",
+								"value": "86400"
+							},
+							{
+								"key": "Cache-Control",
+								"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+							},
+							{
+								"key": "Expires",
+								"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+							},
+							{
+								"key": "Last-Modified",
+								"value": "Tue, 02 Jun 2020 15:34:07 GMT"
+							},
+							{
+								"key": "Pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "Request-ID",
+								"value": "417e15a4-f9ce-4a5c-a538-4a24fb20efc2"
+							},
+							{
+								"key": "Strict-Transport-Security",
+								"value": "max-age=15768000"
+							},
+							{
+								"key": "Content-Encoding",
+								"value": "gzip"
+							}
+						],
+						"cookie": [],
+						"body": "{\n    \"rid\": \"1ef35358-b95f-469d-b337-c635167d972b\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_charge\": \"5eed08d244198b78696e5f54\",\n        \"id_pymnt_affiliate\": \"5eecf65fd2192b48f22aefa3\",\n        \"transaction\": \"\",\n        \"payment_method\": \"POS\",\n        \"authorization_code\": \"261677\",\n        \"status\": \"N\",\n        \"transaction_type\": \"E\",\n        \"receipt_url\": \"\",\n        \"has_devolution\": \"0\",\n        \"affiliation\": \"7865096\",\n        \"affiliation_name\": \"\",\n        \"reference\": {\n            \"number\": \"20190814/0GZXXG81\",\n            \"description\": \"Sample charge\"\n        },\n        \"card\": {\n            \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n            \"holder_name\": \"John Doe\",\n            \"type\": \"VISA\",\n            \"number\": \"471622XXXXXX4622\"\n        },\n        \"amount\": -20,\n        \"tip\": 0,\n        \"origin\": {\n            \"location\": {\n                \"latitude\": 32.896423,\n                \"longitude\": -96.966841\n            }\n        },\n        \"dt_create\": 1592592594,\n        \"dt_modify\": null\n    }\n}"
+					}]
 				},
 				{
 					"name": "List Operations",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "4e6390ad-d8f7-4da0-a831-d534252733d9",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
+					"event": [{
+						"listen": "test",
+						"script": {
+							"id": "4e6390ad-d8f7-4da0-a831-d534252733d9",
+							"exec": [
+								""
+							],
+							"type": "text/javascript"
 						}
-					],
+					}],
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
+						"header": [{
+							"key": "Content-Type",
+							"value": "application/json"
+						}],
 						"url": {
-							"raw": "{{baseSyncUrl}}/v1/payments/operations",
+							"raw": "{{baseSyncUrl}}/v1/payments/operations?id_pymnt_affiliate={{id_pymnt_affiliate}}",
 							"host": [
 								"{{baseSyncUrl}}"
 							],
@@ -3139,12 +2975,10 @@
 								"payments",
 								"operations"
 							],
-							"query": [
-								{
+							"query": [{
 									"key": "id_pymnt_affiliate",
-									"value": "",
-									"description": "(optional) Filters by ID affiliate",
-									"disabled": true
+									"value": "{{id_pymnt_affiliate}}",
+									"description": "(optional) Filters by ID affiliate"
 								},
 								{
 									"key": "dt_from",
@@ -3154,178 +2988,171 @@
 								},
 								{
 									"key": "dt_to",
-									"value": null,
+									"value": "",
 									"description": "(optional) Filters by operation's creation date, expected UNIX timestamp",
 									"disabled": true
 								},
 								{
 									"key": "skip",
-									"value": null,
+									"value": "",
 									"description": "(optional) Limit the number of rows to be returned",
 									"disabled": true
 								},
 								{
 									"key": "limit",
-									"value": null,
+									"value": "",
 									"description": "(optional) Skip rows to be returned",
 									"disabled": true
 								},
 								{
 									"key": "order",
-									"value": null,
+									"value": "",
 									"description": "(optional) Order the rows to be returned",
 									"disabled": true
 								}
 							]
 						}
 					},
-					"response": [
-						{
-							"name": "List Operations",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
+					"response": [{
+						"name": "List Operations",
+						"originalRequest": {
+							"method": "GET",
+							"header": [{
+								"key": "Content-Type",
+								"value": "application/json"
+							}],
+							"url": {
+								"raw": "{{baseSyncUrl}}/v1/payments/operations",
+								"host": [
+									"{{baseSyncUrl}}"
 								],
-								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/operations",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"v1",
-										"payments",
-										"operations"
-									],
-									"query": [
-										{
-											"key": "id_pymnt_affiliate",
-											"value": "",
-											"description": "(optional) Filters by ID affiliate",
-											"disabled": true
-										},
-										{
-											"key": "dt_from",
-											"value": "",
-											"description": "(optional) Filters by operation's creation date, expected UNIX timestamp",
-											"disabled": true
-										},
-										{
-											"key": "dt_to",
-											"value": null,
-											"description": "(optional) Filters by operation's creation date, expected UNIX timestamp",
-											"disabled": true
-										},
-										{
-											"key": "skip",
-											"value": null,
-											"description": "(optional) Limit the number of rows to be returned",
-											"disabled": true
-										},
-										{
-											"key": "limit",
-											"value": null,
-											"description": "(optional) Skip rows to be returned",
-											"disabled": true
-										},
-										{
-											"key": "order",
-											"value": null,
-											"description": "(optional) Order the rows to be returned",
-											"disabled": true
-										}
-									]
-								}
+								"path": [
+									"v1",
+									"payments",
+									"operations"
+								],
+								"query": [{
+										"key": "id_pymnt_affiliate",
+										"value": "",
+										"description": "(optional) Filters by ID affiliate",
+										"disabled": true
+									},
+									{
+										"key": "dt_from",
+										"value": "",
+										"description": "(optional) Filters by operation's creation date, expected UNIX timestamp",
+										"disabled": true
+									},
+									{
+										"key": "dt_to",
+										"value": null,
+										"description": "(optional) Filters by operation's creation date, expected UNIX timestamp",
+										"disabled": true
+									},
+									{
+										"key": "skip",
+										"value": null,
+										"description": "(optional) Limit the number of rows to be returned",
+										"disabled": true
+									},
+									{
+										"key": "limit",
+										"value": null,
+										"description": "(optional) Skip rows to be returned",
+										"disabled": true
+									},
+									{
+										"key": "order",
+										"value": null,
+										"description": "(optional) Order the rows to be returned",
+										"disabled": true
+									}
+								]
+							}
+						},
+						"status": "OK",
+						"code": 200,
+						"_postman_previewlanguage": "json",
+						"header": [{
+								"key": "Server",
+								"value": "nginx"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "nginx"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 19 Jun 2020 17:57:54 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Fri, 19 Jun 2020 17:57:54 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "89d9e29a-0069-469a-9233-d678e1ddc790"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15768000"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"89d9e29a-0069-469a-9233-d678e1ddc790\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"total\": 1,\n        \"items\": [\n            {\n                \"id_pymnt_charge\": \"5eed0d0df23be1111a3af080\",\n                \"id_pymnt_affiliate\": null,\n                \"id_currency\": \"523a25953b8e77910e8b456c\",\n                \"transaction\": \"MjczNzA1OA==\",\n                \"payment_method\": \"POS\",\n                \"authorization_code\": \"728923\",\n                \"status\": \"N\",\n                \"transaction_type\": \"E\",\n                \"receipt_url\": \"https://sandbox-connect.srpago.com/recipe/MTUxYzQ5YTMtMzFhNi00NWY3LWE0NGQtMTcyZWI3YjVkYWNm\",\n                \"has_devolution\": \"0\",\n                \"affiliation\": \"7865096\",\n                \"affiliation_name\": \"\",\n                \"reference\": {\n                    \"number\": \"20190814/0GZXXG81\",\n                    \"description\": \"Pago de prueba\"\n                },\n                \"card\": {\n                    \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n                    \"holder_name\": \"Pedro Perez\",\n                    \"type\": \"VISA\",\n                    \"number\": \"471622XXXXXX4622\"\n                },\n                \"amount\": 20,\n                \"tip\": 0,\n                \"fee\": 0.84,\n                \"fee_details\": [\n                    {\n                        \"type\": \"fee\",\n                        \"percentage\": 3.6,\n                        \"amount\": 0.84,\n                        \"description\": \"\"\n                    }\n                ],\n                \"commission\": 0,\n                \"origin\": {\n                    \"location\": {\n                        \"latitude\": 32.896423,\n                        \"longitude\": -96.966841\n                    }\n                },\n                \"dt_create\": 1592593677,\n                \"dt_modify\": 1592593677\n            }\n        ]\n    }\n}"
-						}
-					]
+							{
+								"key": "Date",
+								"value": "Fri, 19 Jun 2020 17:57:54 GMT"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json; charset=utf-8"
+							},
+							{
+								"key": "Transfer-Encoding",
+								"value": "chunked"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							},
+							{
+								"key": "Vary",
+								"value": "Accept-Encoding"
+							},
+							{
+								"key": "Access-Control-Allow-Headers",
+								"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+							},
+							{
+								"key": "Access-Control-Allow-Methods",
+								"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*"
+							},
+							{
+								"key": "Access-Control-Expose-Headers",
+								"value": "*"
+							},
+							{
+								"key": "Access-Control-Max-Age",
+								"value": "86400"
+							},
+							{
+								"key": "Cache-Control",
+								"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+							},
+							{
+								"key": "Expires",
+								"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+							},
+							{
+								"key": "Last-Modified",
+								"value": "Fri, 19 Jun 2020 17:57:54 GMT"
+							},
+							{
+								"key": "Pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "Request-ID",
+								"value": "89d9e29a-0069-469a-9233-d678e1ddc790"
+							},
+							{
+								"key": "Strict-Transport-Security",
+								"value": "max-age=15768000"
+							},
+							{
+								"key": "Content-Encoding",
+								"value": "gzip"
+							}
+						],
+						"cookie": [],
+						"body": "{\n    \"rid\": \"89d9e29a-0069-469a-9233-d678e1ddc790\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"total\": 1,\n        \"items\": [\n            {\n                \"id_pymnt_charge\": \"5eed0d0df23be1111a3af080\",\n                \"id_pymnt_affiliate\": null,\n                \"id_currency\": \"523a25953b8e77910e8b456c\",\n                \"transaction\": \"MjczNzA1OA==\",\n                \"payment_method\": \"POS\",\n                \"authorization_code\": \"728923\",\n                \"status\": \"N\",\n                \"transaction_type\": \"E\",\n                \"receipt_url\": \"https://sandbox-connect.srpago.com/recipe/MTUxYzQ5YTMtMzFhNi00NWY3LWE0NGQtMTcyZWI3YjVkYWNm\",\n                \"has_devolution\": \"0\",\n                \"reference\": {\n                    \"number\": \"20190814/0GZXXG81\",\n                    \"description\": \"Sample charge\"\n                },\n                \"card\": {\n                    \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n                    \"holder_name\": \"John Doe\",\n                    \"type\": \"VISA\",\n                    \"number\": \"471622XXXXXX4622\"\n                },\n                \"amount\": 20,\n                \"tip\": 0,\n                \"fee\": 0.84,\n                \"fee_details\": [\n                    {\n                        \"type\": \"fee\",\n                        \"percentage\": 3.6,\n                        \"amount\": 0.84,\n                        \"description\": \"\"\n                    }\n                ],\n                \"commission\": 0,\n                \"origin\": {\n                    \"location\": {\n                        \"latitude\": 32.896423,\n                        \"longitude\": -96.966841\n                    }\n                },\n                \"dt_create\": 1592593677,\n                \"dt_modify\": 1592593677\n            }\n        ]\n    }\n}"
+					}]
 				}
 			],
 			"description": "Operations allow customers to reimburse users, in order to refund a charge, the transaction date needs to be no longer than 48 hours.",
-			"event": [
-				{
+			"event": [{
 					"listen": "prerequest",
 					"script": {
 						"id": "32476dc1-4c9c-4b4b-b090-0de8588438a1",
@@ -3351,8 +3178,7 @@
 	],
 	"auth": {
 		"type": "apikey",
-		"apikey": [
-			{
+		"apikey": [{
 				"key": "value",
 				"value": "api_key api_key={{apiSyncKey}}",
 				"type": "string"
@@ -3369,8 +3195,7 @@
 			}
 		]
 	},
-	"event": [
-		{
+	"event": [{
 			"listen": "prerequest",
 			"script": {
 				"id": "bade4b47-321e-4847-b336-b272b2bd07dc",
