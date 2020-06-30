@@ -22,7 +22,7 @@ Message:
                 },
                 "user": {
                     "id_user": "5ef5130b553ab949f13cf0e1",
-                    "id_external": "j+test18@paybook.com",
+                    "id_external": "john.doe@test.com",
                     "id_environment": "574894bf7848066d138b4570"
                 }
             },
