@@ -2743,6 +2743,50 @@
 							"path": [
 								"v1",
 								"credentials"
+							],
+							"query": [
+								{
+									"key": "id_credential",
+									"value": "ID",
+									"description": "(optional) Credential ID.",
+									"disabled": true
+								},
+								{
+									"key": "id_site_organization",
+									"value": "ID",
+									"description": "(optional)  Site Organization ID.",
+									"disabled": true
+								},
+								{
+									"key": "id_site_organization_type",
+									"value": "ID",
+									"description": "(optional) Site Organization Type ID.",
+									"disabled": true
+								},
+								{
+									"key": "fields",
+									"value": "String",
+									"description": "(optional) Select fields to be returned.",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "Number",
+									"description": "(optional) Limit the number of rows to be returned.",
+									"disabled": true
+								},
+								{
+									"key": "skip",
+									"value": "Number",
+									"description": "(optional) Skip rows to be returned.",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "String",
+									"description": "(optional) Order the rows to be returned.",
+									"disabled": true
+								}
 							]
 						}
 					},
