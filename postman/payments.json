@@ -896,6 +896,12 @@
 									"value": null,
 									"description": "(optional) Order the rows to be returned",
 									"disabled": true
+								},
+								{
+									"key": "is_paginated",
+									"value": "1",
+									"description": "(optional) Enable pagination",
+									"disabled": true
 								}
 							]
 						}
@@ -3893,7 +3899,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Mon, 27 Jul 2020 20:11:57 GMT"
+									"value": "Mon, 27 Jul 2020 21:41:12 GMT"
 								},
 								{
 									"key": "Content-Type",
@@ -3941,7 +3947,7 @@
 								},
 								{
 									"key": "Last-Modified",
-									"value": "Mon, 27 Jul 2020 20:11:57 GMT"
+									"value": "Mon, 27 Jul 2020 21:41:12 GMT"
 								},
 								{
 									"key": "Pragma",
@@ -3949,7 +3955,7 @@
 								},
 								{
 									"key": "Request-ID",
-									"value": "4f232706-5f6d-4ab1-9954-58543e472a0d"
+									"value": "c2ac189f-7712-4ad2-af31-245ccb9c5032"
 								},
 								{
 									"key": "Strict-Transport-Security",
@@ -3961,7 +3967,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"rid\": \"4f232706-5f6d-4ab1-9954-58543e472a0d\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_webhook\": \"5f1f34f81a05175d365a2dc3\",\n            \"id_client\": \"58904209984806de178b456e\",\n            \"id_subscription_status\": \"5ee8027df6a38001a8001731\",\n            \"id_date_format\": \"5e961923bebbce48bd7601aa\",\n            \"description\": \"Sample Webhook\",\n            \"events\": [\n                \"payments.payments.chargeback_created \"\n            ],\n            \"url\": \"https://webhooks.test.com/process\",\n            \"method\": \"POST\",\n            \"ct_fail\": 0,\n            \"dt_fail\": null,\n            \"dt_modified\": 1595880713,\n            \"dt_created\": 1595880696\n        }\n    ]\n}"
+							"body": "{\n    \"rid\": \"c2ac189f-7712-4ad2-af31-245ccb9c5032\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"skip\": 0,\n        \"limit\": 10,\n        \"total\": 1,\n        \"items\": [\n            {\n                \"id_webhook\": \"5f1f34f81a05175d365a2dc3\",\n                \"id_client\": \"58904209984806de178b456e\",\n                \"id_subscription_status\": \"5ee8027df6a38001a8001731\",\n                \"id_date_format\": \"5e961923bebbce48bd7601aa\",\n                \"description\": \"Sample Webhook\",\n                \"events\": [\n                    \"payments.transaction_created\"\n                ],\n                \"url\": \"https://webhooks.test.com/process\",\n                \"method\": \"POST\",\n                \"ct_fail\": 0,\n                \"dt_fail\": null,\n                \"dt_modified\": 1595880764,\n                \"dt_created\": 1595880696\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
