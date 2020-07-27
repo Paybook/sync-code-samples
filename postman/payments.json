@@ -1,11 +1,336 @@
 {
 	"info": {
-		"_postman_id": "eff91a8b-f443-4e00-a24e-d19a26a53ab4",
+		"_postman_id": "4db24858-1758-447f-b10b-17b41d010aaf",
 		"name": "SrPago",
 		"description": "\n\n# Table of Content\n\n- Overview\n- Authentication\n- Request\n- Error Codes\n- Rate limit\n\n# Overview\n\n------\n\nSrPago allows our customers to process payments in different FIAT and Crypto currencies, simplifying how payments are managed and processed.\n\nSrPago’s API has an architectural style of a RESTful design pattern. It uses HTTP as its underlying protocol, where standard HTTP verbs and HTTP response codes are used. Communication travels via HTTPS to ensure a secure data exchange. Almost every response body is JSON encoded, unless stated on the endpoint description. Since RESTful services and JSON are highly popular and most major development languages include a form to interact with these technologies, it's quite easy to integrate with Sync's API.\n\n# Authentication\n\n------\n\nSrPago API has two types of authentication:\n\n#### API KEY\n\n```bash\ncurl URL \\\n-H \"Authorization: api_key api_key={API_KEY}\" \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS \n```\n\n#### Bearer Token\n\n```bash\ncurl URL \\\n-H \"Authorization: Bearer {TOKEN}\" \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS \n```\n\nType of Authentication required is defined by Resource\n\n| Resource     | Auth Type      |\n| ------------ | -------------- |\n| Customers    | `API KEY`      |\n| Cards        | `API KEY`      |\n| Charges      | `API KEY`      |\n| Operations   | `API KEY`      |\n\n# Environments\n\n------\n\n#### Sandbox\n\nACME Organization with these Sites:\n\n1. Normal\n2. Token\n3. Captcha\n4. Multiple Image\n5. Select\n\n#### Production\n\nLive Organizations\n\n# Request\n\n------\n\n#### Structure\n\n```bash\ncurl URL \\\n-H AUTH \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS\n```\n\n# Error Codes\n\n------\n\nTable of Error Codes defined in Paybook Sync API\n\n| Code | Message               |\n| ---- | --------------------- |\n| 400  | Bad Request           |\n| 401  | Unauthorized          |\n| 402  | Payment Required      |\n| 403  | Forbidden             |\n| 404  | Not Found             |\n| 429  | Too Many Requests     |\n| 500  | Internal Server Error |\n| 503  | Service Unavailable   |\n\n# Rate limit\n\n------\n\nThere are two types of rate-limit:\n\n#### Rate limit by server\n\n5 request per second \n\n#### Limit by credential\n\n1 pull request per day",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
+		{
+			"name": "Catalogs",
+			"item": [
+				{
+					"name": "List Date Formats",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f8b4ec6f-6758-4b96-9ad9-8547928a0267",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseSyncUrl}}/v1/catalogues/date_formats",
+							"host": [
+								"{{baseSyncUrl}}"
+							],
+							"path": [
+								"v1",
+								"catalogues",
+								"date_formats"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0",
+									"description": "(optional) Skip rows to be returned",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "(optional) Limit the number of rows to be returned",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": null,
+									"description": "(optional) Order the rows to be returned",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List Customers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseSyncUrl}}/v1/payments/customers",
+									"host": [
+										"{{baseSyncUrl}}"
+									],
+									"path": [
+										"v1",
+										"payments",
+										"customers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 17:40:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Mon, 13 Jul 2020 17:40:38 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "ebcc5a26-cfc0-4a4e-bbba-73215d76b53a"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"ebcc5a26-cfc0-4a4e-bbba-73215d76b53a\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"total\": 1,\n        \"items\": [\n            {\n                \"id_pymnt_customer\": \"5eecf78fd2192b48f22aefab\",\n                \"id_user\": \"5eea6df9e125cb00c25b8723\",\n                \"full_name\": \"John Doe\",\n                \"email_address\": \"john.doe@test.com\",\n                \"default_card\": {\n                    \"id_pymnt_card\": \"5efaa0fe064054636f299d5c\",\n                    \"holder_name\": \"John Doe\",\n                    \"type\": \"VISA\",\n                    \"number\": \"471622XXXXXX4622\"\n                },\n                \"cards\": [\n                    {\n                        \"id_pymnt_card\": \"5efaa0fe064054636f299d5c\",\n                        \"holder_name\": \"John Doe\",\n                        \"type\": \"VISA\",\n                        \"number\": \"471622XXXXXX4622\"\n                    }\n                ],\n                \"dt_create\": 1592588175,\n                \"dt_modify\": 1593483518\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List Webhook Event Types",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4c81106e-6709-403c-ab98-db498eb7e85b",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseSyncUrl}}/v1/catalogues/webhook3_events",
+							"host": [
+								"{{baseSyncUrl}}"
+							],
+							"path": [
+								"v1",
+								"catalogues",
+								"webhook3_events"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0",
+									"description": "(optional) Skip rows to be returned",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "(optional) Limit the number of rows to be returned",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": null,
+									"description": "(optional) Order the rows to be returned",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List Customers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseSyncUrl}}/v1/payments/customers",
+									"host": [
+										"{{baseSyncUrl}}"
+									],
+									"path": [
+										"v1",
+										"payments",
+										"customers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 17:40:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Mon, 13 Jul 2020 17:40:38 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "ebcc5a26-cfc0-4a4e-bbba-73215d76b53a"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"ebcc5a26-cfc0-4a4e-bbba-73215d76b53a\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"total\": 1,\n        \"items\": [\n            {\n                \"id_pymnt_customer\": \"5eecf78fd2192b48f22aefab\",\n                \"id_user\": \"5eea6df9e125cb00c25b8723\",\n                \"full_name\": \"John Doe\",\n                \"email_address\": \"john.doe@test.com\",\n                \"default_card\": {\n                    \"id_pymnt_card\": \"5efaa0fe064054636f299d5c\",\n                    \"holder_name\": \"John Doe\",\n                    \"type\": \"VISA\",\n                    \"number\": \"471622XXXXXX4622\"\n                },\n                \"cards\": [\n                    {\n                        \"id_pymnt_card\": \"5efaa0fe064054636f299d5c\",\n                        \"holder_name\": \"John Doe\",\n                        \"type\": \"VISA\",\n                        \"number\": \"471622XXXXXX4622\"\n                    }\n                ],\n                \"dt_create\": 1592588175,\n                \"dt_modify\": 1593483518\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "Catalogues are collections of endpoints that are relevant to the data segmentation on some of the other endpoints.\n\n#### List of Catalogues: \n\n1. Date Formats\n2. Webhook Event Types\n\n\n\n#### Date Formats\n\n```json\n{\n    \"id_date_format\": \"5e961923bebbce48bd7601aa\",\n    // The ID of the date format\n    \"name\": \"Unix Timestamp\"\n    // String; The name of the Date Format\n}\n```\n\n#### Webhook Event Types\n\n```json\n{\n    \"id_attachment_type\": \"5ed54ea7f79417520c0015b9\",\n    // SyncID; The ID of the Attachment Type assignated by Paybook Sync\n    \"name\": \"payments.transaction_created\"\n    // String; The name of the Account Type\n}\n```\n",
+			"protocolProfileBehavior": {}
+		},
 		{
 			"name": "Customers",
 			"item": [
@@ -15,7 +340,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7aba5130-550f-46bb-b51c-b6db31a739a2",
+								"id": "18c4ac50-bfe1-4d06-a6d6-960523b24370",
 								"exec": [
 									"var json = JSON.parse(responseBody);",
 									"postman.setEnvironmentVariable(\"id_pymnt_customer\", json.response.id_pymnt_customer);",
@@ -338,7 +663,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "13b5e921-4cf9-42c2-8d64-3789932e8772",
+								"id": "1c156b4e-8381-4e90-a0e2-225beb58cbe6",
 								"exec": [
 									""
 								],
@@ -487,7 +812,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a7a85cb2-05d3-4a36-9530-ff1bb3c431a4",
+								"id": "6957522a-26f2-48b3-8efd-cf407a97d7ca",
 								"exec": [
 									""
 								],
@@ -646,7 +971,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "82095e25-04c0-4c5a-ba9e-e1b2e14dee2c",
+								"id": "d36df2c7-f2da-4f99-9813-e8857e4769ba",
 								"exec": [
 									""
 								],
@@ -806,7 +1131,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "fb9daa2f-c018-4a1a-b54c-0712caf7220a",
+						"id": "104616f2-38aa-4c43-b46b-45219164c0b0",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -816,7 +1141,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "94a62dcf-55ce-42c9-9fc6-61be6cee8ece",
+						"id": "07262724-e86c-4b9d-83b0-d853d02563bf",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -835,7 +1160,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b0ad32f2-efe8-46cc-bc92-8737621dd823",
+								"id": "9c23bdc8-9ba0-425a-aa70-543a00ef58f4",
 								"exec": [
 									""
 								],
@@ -1006,7 +1331,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7963a682-3755-4bb5-b8fe-5da09954fd7f",
+								"id": "df21fbe7-cbfa-4c65-9f7f-981561e98850",
 								"exec": [
 									"var json = JSON.parse(responseBody);",
 									"postman.setEnvironmentVariable(\"id_pymnt_affiliate\", json.response.id_pymnt_affiliate);",
@@ -1342,7 +1667,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "488989bb-9ac4-42db-ad36-21570c0ff673",
+						"id": "23676983-c494-4004-849d-b12ff8ba7c04",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1352,7 +1677,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "4f6acf7e-5024-4e8c-b8bf-b819cc14c37b",
+						"id": "0ceeef70-f977-4b2d-a9ba-d45f87cdcb4d",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1371,7 +1696,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f445d64c-26f5-4260-87b8-bbbb689e2627",
+								"id": "d63554d4-33b4-4c6e-ab24-7cf6772d8a8e",
 								"exec": [
 									"var json = JSON.parse(responseBody);",
 									"postman.setEnvironmentVariable(\"id_pymnt_card\", json.response.id_pymnt_card);",
@@ -1450,131 +1775,6 @@
 						}
 					},
 					"response": [
-						{
-							"name": "Add Card ( No Billing )",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Authorization",
-										"value": "Bearer 70909517dd70047e80b9ad69b861a7d1",
-										"disabled": true
-									},
-									{
-										"key": "Accept-Charset",
-										"value": "",
-										"disabled": true
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"number\": \"4716222791264622\",\n    \"cvv\": \"852\",\n    \"expiration\": \"2007\",\n    \"holder_name\": \"John Doe\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/cards",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"v1",
-										"payments",
-										"customers",
-										"{{id_pymnt_customer}}",
-										"cards"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Server",
-									"value": "nginx"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 02 Jun 2020 15:28:18 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Tue, 02 Jun 2020 15:28:18 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "24155993-d9a4-4611-82b8-96688314898d"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15768000"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"69cf8c32-d759-4670-95dc-a839e9e7699d\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n        \"holder_name\": \"John Doe\",\n        \"type\": \"VISA\",\n        \"number\": \"471622XXXXXX4622\",\n        \"bank_name\": \"VISA TEST\",\n        \"country_code\": \"MX\",\n        \"billing\": null,\n        \"is_default\": true,\n        \"dt_create\": 1592588182,\n        \"dt_modify\": null\n    }\n}"
-						},
 						{
 							"name": "Add Card ( Billing )",
 							"originalRequest": {
@@ -1713,6 +1913,131 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"rid\": \"69cf8c32-d759-4670-95dc-a839e9e7699d\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n        \"holder_name\": \"John Doe\",\n        \"type\": \"VISA\",\n        \"number\": \"471622XXXXXX4622\",\n        \"bank_name\": \"VISA TEST\",\n        \"country_code\": \"MX\",\n        \"billing\": {\n            \"emailAddress\": \"john.doe@test.com\",\n            \"firstName\": \"John\",\n            \"middleName\": \"\",\n            \"lastName\": \"Doe\",\n            \"address\": \"1234 Main Street\",\n            \"address2\": \"Apt 891\",\n            \"city\": \"Dallas\",\n            \"state\": \"TX\",\n            \"postalCode\": \"75208\"\n        },\n        \"is_default\": true,\n        \"dt_create\": 1592588182,\n        \"dt_modify\": null\n    }\n}"
+						},
+						{
+							"name": "Add Card ( No Billing )",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 70909517dd70047e80b9ad69b861a7d1",
+										"disabled": true
+									},
+									{
+										"key": "Accept-Charset",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"number\": \"4716222791264622\",\n    \"cvv\": \"852\",\n    \"expiration\": \"2007\",\n    \"holder_name\": \"John Doe\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/cards",
+									"host": [
+										"{{baseSyncUrl}}"
+									],
+									"path": [
+										"v1",
+										"payments",
+										"customers",
+										"{{id_pymnt_customer}}",
+										"cards"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 02 Jun 2020 15:28:18 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Tue, 02 Jun 2020 15:28:18 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "24155993-d9a4-4611-82b8-96688314898d"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"69cf8c32-d759-4670-95dc-a839e9e7699d\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n        \"holder_name\": \"John Doe\",\n        \"type\": \"VISA\",\n        \"number\": \"471622XXXXXX4622\",\n        \"bank_name\": \"VISA TEST\",\n        \"country_code\": \"MX\",\n        \"billing\": null,\n        \"is_default\": true,\n        \"dt_create\": 1592588182,\n        \"dt_modify\": null\n    }\n}"
 						}
 					]
 				},
@@ -1722,7 +2047,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "00d9ad3d-ff4b-4fbe-9663-051f92ac1ca1",
+								"id": "06b60bbb-f920-4bcd-90f6-ac694711b2fb",
 								"exec": [
 									""
 								],
@@ -1908,7 +2233,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a1eaf17a-440f-41c2-83e4-c7cd26a756df",
+								"id": "3adec7ea-cfa8-4783-9d33-e282b2031350",
 								"exec": [
 									""
 								],
@@ -2078,7 +2403,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "2f5a96b7-abf8-4de6-9608-6f685cc6d68d",
+								"id": "ead2e9b5-bca9-4f40-87af-40950508ddb3",
 								"exec": [
 									""
 								],
@@ -2229,7 +2554,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "ffcf2b5c-a68e-4917-af42-01e03a92604e",
+						"id": "e0cbbb3f-7a3b-4509-b39e-62e910eca587",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2239,7 +2564,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "961202a2-d3e4-4f55-91f2-9b5d32e631e4",
+						"id": "b5b57b7f-ba29-4c3d-9a19-9969f449e140",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2258,7 +2583,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "110476bc-a85e-49a4-b170-9864386abb38",
+								"id": "17d5b82f-b2e7-43c4-9edb-88102080598d",
 								"exec": [
 									"var json = JSON.parse(responseBody);",
 									"postman.setEnvironmentVariable(\"id_pymnt_charge\", json.response.id_pymnt_charge);",
@@ -2330,78 +2655,6 @@
 						}
 					},
 					"response": [
-						{
-							"name": "Add Charge ( Affiliate fee )",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n    \"reference\": \"20190814/0GZXXG81\",\n    \"description\": \"Sample charge\",\n    \"amount\": 100,\n    \"affiliate_details\": {\n        \"total_fee\": 70,\n        \"id_pymnt_affiliate\": \"5eecf65fd2192b48f22aefa3\"\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/charges",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"v1",
-										"payments",
-										"customers",
-										"{{id_pymnt_customer}}",
-										"charges"
-									],
-									"query": [
-										{
-											"key": "id_pymnt_customer",
-											"value": "",
-											"description": "The ID of the customer assigned by SrPago",
-											"disabled": true
-										},
-										{
-											"key": "id_pymnt_card",
-											"value": "",
-											"description": "(optional) The ID of the credit card assigned by SrPago, if passed, this card wil be used instead of the default one (the last one registered for the given customer)",
-											"disabled": true
-										},
-										{
-											"key": "reference",
-											"value": "",
-											"description": "Reference number (random generated on the client system)",
-											"disabled": true
-										},
-										{
-											"key": "description",
-											"value": "",
-											"description": "Statement descriptor for the charge",
-											"disabled": true
-										},
-										{
-											"key": "amount",
-											"value": "",
-											"description": "Total amount of the charge",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"_postman_previewlanguage": "json",
-							"header": [],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"ea99b1a0-bc57-437f-81b4-a353af8565f7\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_charge\": \"5eed180f869a260fe30e2209\",\n        \"id_pymnt_affiliate\": \"5eecf65fd2192b48f22aefa3\",\n        \"transaction\": \"MjczNzA2NQ==\",\n        \"payment_method\": \"POS\",\n        \"authorization_code\": \"586884\",\n        \"status\": \"N\",\n        \"transaction_type\": \"E\",\n        \"receipt_url\": \"https://sandbox-connect.srpago.com/recipe/NTI3NjIyYzUtMDFkOC00MjFiLThkOTQtNzgzZjgyNDFkNjcy\",\n        \"has_devolution\": \"0\",\n        \"reference\": {\n            \"number\": \"20190814/0GZXXG81\",\n            \"description\": \"Sample charge\"\n        },\n        \"card\": {\n            \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n            \"holder_name\": \"John Doe\",\n            \"type\": \"VISA\",\n            \"number\": \"471622XXXXXX4622\"\n        },\n        \"amount\": 100,\n        \"net_amount\": 95.82,\n        \"tip\": 0,\n        \"commission\": 0,\n        \"fee\": 4.18,\n        \"fee_details\": [\n            {\n                \"type\": \"fee\",\n                \"percentage\": 3.6,\n                \"amount\": 4.18,\n                \"description\": \"\"\n            }\n        ],\n        \"origin\": {\n            \"location\": {\n                \"latitude\": 32.896423,\n                \"longitude\": -96.966841\n            }\n        },\n        \"dt_create\": 1592596495,\n        \"dt_modify\": 1592596496\n    }\n}"
-						},
 						{
 							"name": "Add Charge (Default Card)",
 							"originalRequest": {
@@ -2516,6 +2769,78 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"rid\": \"66c18bbf-cc21-4d7b-8735-20dab55033e6\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_charge\": \"5eed0d0df23be1111a3af080\",\n        \"id_pymnt_affiliate\": null,\n        \"transaction\": \"MjczNzA1OA==\",\n        \"payment_method\": \"POS\",\n        \"authorization_code\": \"728923\",\n        \"status\": \"N\",\n        \"transaction_type\": \"E\",\n        \"receipt_url\": \"https://sandbox-connect.srpago.com/recipe/MTUxYzQ5YTMtMzFhNi00NWY3LWE0NGQtMTcyZWI3YjVkYWNm\",\n        \"has_devolution\": \"0\",\n        \"reference\": {\n            \"number\": \"20190814/0GZXXG81\",\n            \"description\": \"Sample charge\"\n        },\n        \"card\": {\n            \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n            \"holder_name\": \"John Doe\",\n            \"type\": \"VISA\",\n            \"number\": \"471622XXXXXX4622\"\n        },\n        \"amount\": 20,\n        \"net_amount\": 19.16,\n        \"tip\": 0,\n        \"commission\": 0,\n        \"fee\": 0.84,\n        \"fee_details\": [\n            {\n                \"type\": \"fee\",\n                \"percentage\": 3.6,\n                \"amount\": 0.84,\n                \"description\": \"\"\n            }\n        ],\n        \"origin\": {\n            \"location\": {\n                \"latitude\": 32.896423,\n                \"longitude\": -96.966841\n            }\n        },\n        \"dt_create\": 1592593677,\n        \"dt_modify\": 1592593677\n    }\n}"
+						},
+						{
+							"name": "Add Charge ( Affiliate fee )",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n    \"reference\": \"20190814/0GZXXG81\",\n    \"description\": \"Sample charge\",\n    \"amount\": 100,\n    \"affiliate_details\": {\n        \"total_fee\": 70,\n        \"id_pymnt_affiliate\": \"5eecf65fd2192b48f22aefa3\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/charges",
+									"host": [
+										"{{baseSyncUrl}}"
+									],
+									"path": [
+										"v1",
+										"payments",
+										"customers",
+										"{{id_pymnt_customer}}",
+										"charges"
+									],
+									"query": [
+										{
+											"key": "id_pymnt_customer",
+											"value": "",
+											"description": "The ID of the customer assigned by SrPago",
+											"disabled": true
+										},
+										{
+											"key": "id_pymnt_card",
+											"value": "",
+											"description": "(optional) The ID of the credit card assigned by SrPago, if passed, this card wil be used instead of the default one (the last one registered for the given customer)",
+											"disabled": true
+										},
+										{
+											"key": "reference",
+											"value": "",
+											"description": "Reference number (random generated on the client system)",
+											"disabled": true
+										},
+										{
+											"key": "description",
+											"value": "",
+											"description": "Statement descriptor for the charge",
+											"disabled": true
+										},
+										{
+											"key": "amount",
+											"value": "",
+											"description": "Total amount of the charge",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"ea99b1a0-bc57-437f-81b4-a353af8565f7\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_charge\": \"5eed180f869a260fe30e2209\",\n        \"id_pymnt_affiliate\": \"5eecf65fd2192b48f22aefa3\",\n        \"transaction\": \"MjczNzA2NQ==\",\n        \"payment_method\": \"POS\",\n        \"authorization_code\": \"586884\",\n        \"status\": \"N\",\n        \"transaction_type\": \"E\",\n        \"receipt_url\": \"https://sandbox-connect.srpago.com/recipe/NTI3NjIyYzUtMDFkOC00MjFiLThkOTQtNzgzZjgyNDFkNjcy\",\n        \"has_devolution\": \"0\",\n        \"reference\": {\n            \"number\": \"20190814/0GZXXG81\",\n            \"description\": \"Sample charge\"\n        },\n        \"card\": {\n            \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n            \"holder_name\": \"John Doe\",\n            \"type\": \"VISA\",\n            \"number\": \"471622XXXXXX4622\"\n        },\n        \"amount\": 100,\n        \"net_amount\": 95.82,\n        \"tip\": 0,\n        \"commission\": 0,\n        \"fee\": 4.18,\n        \"fee_details\": [\n            {\n                \"type\": \"fee\",\n                \"percentage\": 3.6,\n                \"amount\": 4.18,\n                \"description\": \"\"\n            }\n        ],\n        \"origin\": {\n            \"location\": {\n                \"latitude\": 32.896423,\n                \"longitude\": -96.966841\n            }\n        },\n        \"dt_create\": 1592596495,\n        \"dt_modify\": 1592596496\n    }\n}"
 						},
 						{
 							"name": "Add Charge (Existing Card)",
@@ -2664,7 +2989,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b29c69af-7034-477a-83cb-6571b5741163",
+								"id": "cf8648c5-2c4f-48c3-b7b5-c063bc54a6ac",
 								"exec": [
 									""
 								],
@@ -2817,7 +3142,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b874ff45-6e69-42f9-95aa-601caff39f82",
+								"id": "55bc3aaf-f9a2-4f4c-b437-c67c15cb22e1",
 								"exec": [
 									""
 								],
@@ -2994,7 +3319,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "0bed199c-78e7-4177-bd1d-c649752168d0",
+						"id": "96ccd546-4539-496f-aee9-e2cd06ce410a",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -3004,7 +3329,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "371e7b50-474f-4135-8d4a-fa4b472ce018",
+						"id": "adb8eb27-a295-4050-a380-4beaf0ddd25a",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -3023,7 +3348,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "2d55e126-83bf-4afe-89bf-99d52be3100a",
+								"id": "e368b168-2a02-456a-9625-84c20b3e97e4",
 								"exec": [
 									""
 								],
@@ -3185,7 +3510,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "71fe12f7-759d-46c0-ab10-54f15ac162f4",
+								"id": "cd22e45c-a824-4222-925c-eb90444e43bb",
 								"exec": [
 									""
 								],
@@ -3400,7 +3725,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "f354eeb7-ace0-401c-9f2c-f7b54fe9b71f",
+						"id": "db7aa6c7-0fcd-484b-83b8-5acc979e883d",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -3410,7 +3735,620 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "6a5cffc4-4de4-4b17-8bdf-72e04a1785e9",
+						"id": "0b67288c-8422-4e63-9b48-8b891dab5079",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Webhooks",
+			"item": [
+				{
+					"name": "List Webhooks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dca0aeb1-7537-4a9a-8192-3299aa6b904b",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseSyncUrl}}/v1/webhooks3",
+							"host": [
+								"{{baseSyncUrl}}"
+							],
+							"path": [
+								"v1",
+								"webhooks3"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0",
+									"description": "(optional) Skip rows to be returned",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "(optional) Limit the number of rows to be returned",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": null,
+									"description": "(optional) Order the rows to be returned",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List Customers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseSyncUrl}}/v1/payments/customers",
+									"host": [
+										"{{baseSyncUrl}}"
+									],
+									"path": [
+										"v1",
+										"payments",
+										"customers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 17:40:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Mon, 13 Jul 2020 17:40:38 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "ebcc5a26-cfc0-4a4e-bbba-73215d76b53a"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"ebcc5a26-cfc0-4a4e-bbba-73215d76b53a\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"total\": 1,\n        \"items\": [\n            {\n                \"id_pymnt_customer\": \"5eecf78fd2192b48f22aefab\",\n                \"id_user\": \"5eea6df9e125cb00c25b8723\",\n                \"full_name\": \"John Doe\",\n                \"email_address\": \"john.doe@test.com\",\n                \"default_card\": {\n                    \"id_pymnt_card\": \"5efaa0fe064054636f299d5c\",\n                    \"holder_name\": \"John Doe\",\n                    \"type\": \"VISA\",\n                    \"number\": \"471622XXXXXX4622\"\n                },\n                \"cards\": [\n                    {\n                        \"id_pymnt_card\": \"5efaa0fe064054636f299d5c\",\n                        \"holder_name\": \"John Doe\",\n                        \"type\": \"VISA\",\n                        \"number\": \"471622XXXXXX4622\"\n                    }\n                ],\n                \"dt_create\": 1592588175,\n                \"dt_modify\": 1593483518\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "AddWebhook",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e02c72d4-05f6-4fb4-b4f1-531cdbf065fb",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"id_webhook\", jsonData.response.id_webhook);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"Sample Webhook\",\n    \"events\": [\n        \"payments.transaction_created\"\n    ],\n    \"url\": \"https://webhooks.test.com/process\"\n}"
+						},
+						"url": {
+							"raw": "{{baseSyncUrl}}/v1/webhooks3",
+							"host": [
+								"{{baseSyncUrl}}"
+							],
+							"path": [
+								"v1",
+								"webhooks3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List Customers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseSyncUrl}}/v1/payments/customers",
+									"host": [
+										"{{baseSyncUrl}}"
+									],
+									"path": [
+										"v1",
+										"payments",
+										"customers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 17:40:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Mon, 13 Jul 2020 17:40:38 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "ebcc5a26-cfc0-4a4e-bbba-73215d76b53a"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"ebcc5a26-cfc0-4a4e-bbba-73215d76b53a\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"total\": 1,\n        \"items\": [\n            {\n                \"id_pymnt_customer\": \"5eecf78fd2192b48f22aefab\",\n                \"id_user\": \"5eea6df9e125cb00c25b8723\",\n                \"full_name\": \"John Doe\",\n                \"email_address\": \"john.doe@test.com\",\n                \"default_card\": {\n                    \"id_pymnt_card\": \"5efaa0fe064054636f299d5c\",\n                    \"holder_name\": \"John Doe\",\n                    \"type\": \"VISA\",\n                    \"number\": \"471622XXXXXX4622\"\n                },\n                \"cards\": [\n                    {\n                        \"id_pymnt_card\": \"5efaa0fe064054636f299d5c\",\n                        \"holder_name\": \"John Doe\",\n                        \"type\": \"VISA\",\n                        \"number\": \"471622XXXXXX4622\"\n                    }\n                ],\n                \"dt_create\": 1592588175,\n                \"dt_modify\": 1593483518\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "DeleteWebhook",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bb479a58-9df3-46b0-b183-285e11e11415",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseSyncUrl}}/v1/webhooks3/{{id_webhook}}",
+							"host": [
+								"{{baseSyncUrl}}"
+							],
+							"path": [
+								"v1",
+								"webhooks3",
+								"{{id_webhook}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List Customers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseSyncUrl}}/v1/payments/customers",
+									"host": [
+										"{{baseSyncUrl}}"
+									],
+									"path": [
+										"v1",
+										"payments",
+										"customers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 17:40:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Mon, 13 Jul 2020 17:40:38 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "ebcc5a26-cfc0-4a4e-bbba-73215d76b53a"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"ebcc5a26-cfc0-4a4e-bbba-73215d76b53a\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"total\": 1,\n        \"items\": [\n            {\n                \"id_pymnt_customer\": \"5eecf78fd2192b48f22aefab\",\n                \"id_user\": \"5eea6df9e125cb00c25b8723\",\n                \"full_name\": \"John Doe\",\n                \"email_address\": \"john.doe@test.com\",\n                \"default_card\": {\n                    \"id_pymnt_card\": \"5efaa0fe064054636f299d5c\",\n                    \"holder_name\": \"John Doe\",\n                    \"type\": \"VISA\",\n                    \"number\": \"471622XXXXXX4622\"\n                },\n                \"cards\": [\n                    {\n                        \"id_pymnt_card\": \"5efaa0fe064054636f299d5c\",\n                        \"holder_name\": \"John Doe\",\n                        \"type\": \"VISA\",\n                        \"number\": \"471622XXXXXX4622\"\n                    }\n                ],\n                \"dt_create\": 1592588175,\n                \"dt_modify\": 1593483518\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "UpdateWebhook",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3c754abc-6771-4116-98c5-4244bf44c572",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"Sample Webhook\",\n    \"events\": [\n        \"payments.transaction_created\"\n    ],\n    \"url\": \"https://webhooks.test.com/process\"\n}"
+						},
+						"url": {
+							"raw": "{{baseSyncUrl}}/v1/webhooks3/{{id_webhook}}",
+							"host": [
+								"{{baseSyncUrl}}"
+							],
+							"path": [
+								"v1",
+								"webhooks3",
+								"{{id_webhook}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List Customers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseSyncUrl}}/v1/payments/customers",
+									"host": [
+										"{{baseSyncUrl}}"
+									],
+									"path": [
+										"v1",
+										"payments",
+										"customers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2020 17:40:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Mon, 13 Jul 2020 17:40:38 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "ebcc5a26-cfc0-4a4e-bbba-73215d76b53a"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"ebcc5a26-cfc0-4a4e-bbba-73215d76b53a\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"total\": 1,\n        \"items\": [\n            {\n                \"id_pymnt_customer\": \"5eecf78fd2192b48f22aefab\",\n                \"id_user\": \"5eea6df9e125cb00c25b8723\",\n                \"full_name\": \"John Doe\",\n                \"email_address\": \"john.doe@test.com\",\n                \"default_card\": {\n                    \"id_pymnt_card\": \"5efaa0fe064054636f299d5c\",\n                    \"holder_name\": \"John Doe\",\n                    \"type\": \"VISA\",\n                    \"number\": \"471622XXXXXX4622\"\n                },\n                \"cards\": [\n                    {\n                        \"id_pymnt_card\": \"5efaa0fe064054636f299d5c\",\n                        \"holder_name\": \"John Doe\",\n                        \"type\": \"VISA\",\n                        \"number\": \"471622XXXXXX4622\"\n                    }\n                ],\n                \"dt_create\": 1592588175,\n                \"dt_modify\": 1593483518\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "# Webhooks\n------\n<br/>\n\nA webhook is a HTTP callback to a specified URL. They are triggered each time data is updated in SrPago to help you stay up to date with the latest changes.\n\nSrPago API requires that you setting up a Webhook to your API KEY in order to send these events notification:\n\n1.  `payments.chargeback_created` : New chargeback was created\n2.  `payments.transaction_created` : New transaction was created",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c4e8433c-d139-46f7-91cb-ecaa3e7efd35",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "f67f7d5b-2130-4411-901b-3cedc6f4ba55",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -3445,7 +4383,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "ce5de6d7-bee7-4e3f-851c-88394ea84f8e",
+				"id": "f9b6306f-7983-4125-aa7f-194745c70680",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -3455,7 +4393,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "34754c08-34cf-47b2-8f0e-96b5686e4c64",
+				"id": "ca1bf178-a6f4-42c6-89c3-99c308b820a7",
 				"type": "text/javascript",
 				"exec": [
 					""
