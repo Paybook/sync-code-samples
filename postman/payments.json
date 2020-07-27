@@ -363,7 +363,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"rid\": \"01f8360a-3698-463e-ad4f-b3deacd35ea4\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_webhook_event\": \"5ed54ea7f79417520c0015b1\",\n            \"name\": \"document_success\"\n        }\n    ]\n}"
+							"body": "{\n    \"rid\": \"01f8360a-3698-463e-ad4f-b3deacd35ea4\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_webhook_event\": \"5ed54ea7f79417520c0015b1\",\n            \"name\": \"payments.chargeback_created\"\n        }\n    ]\n}"
 						}
 					]
 				}
@@ -3961,7 +3961,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"rid\": \"4f232706-5f6d-4ab1-9954-58543e472a0d\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_webhook\": \"5f1f34f81a05175d365a2dc3\",\n            \"id_client\": \"58904209984806de178b456e\",\n            \"id_subscription_status\": \"5ee8027df6a38001a8001731\",\n            \"id_date_format\": \"5e961923bebbce48bd7601aa\",\n            \"description\": \"Sample Webhook\",\n            \"events\": [\n                \"payments.transaction_created\"\n            ],\n            \"url\": \"https://webhooks.test.com/process\",\n            \"method\": \"POST\",\n            \"ct_fail\": 0,\n            \"dt_fail\": null,\n            \"dt_modified\": 1595880713,\n            \"dt_created\": 1595880696\n        }\n    ]\n}"
+							"body": "{\n    \"rid\": \"4f232706-5f6d-4ab1-9954-58543e472a0d\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_webhook\": \"5f1f34f81a05175d365a2dc3\",\n            \"id_client\": \"58904209984806de178b456e\",\n            \"id_subscription_status\": \"5ee8027df6a38001a8001731\",\n            \"id_date_format\": \"5e961923bebbce48bd7601aa\",\n            \"description\": \"Sample Webhook\",\n            \"events\": [\n                \"payments.payments.chargeback_created \"\n            ],\n            \"url\": \"https://webhooks.test.com/process\",\n            \"method\": \"POST\",\n            \"ct_fail\": 0,\n            \"dt_fail\": null,\n            \"dt_modified\": 1595880713,\n            \"dt_created\": 1595880696\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -4413,7 +4413,7 @@
 					]
 				}
 			],
-			"description": "A webhook is a HTTP callback to a specified URL. They are triggered each time data is updated in SrPago to help you stay up to date with the latest changes.\n\nSrPago API requires that you setting up a Webhook to your API KEY in order to send these events notification:\n\n1.  `payments.chargeback_created` : New chargeback was created\n2.  `payments.transaction_created` : New transaction was created",
+			"description": "A webhook is a HTTP callback to a specified URL. They are triggered each time data is updated in SrPago to help you stay up to date with the latest changes.\n\n#### List of Webhook Events: \n\n1.  payments.chargeback_created: New chargeback was created\n2.  payments.transaction_created: New transaction was created",
 			"event": [
 				{
 					"listen": "prerequest",
