@@ -65,7 +65,7 @@
 					},
 					"response": [
 						{
-							"name": "List Customers",
+							"name": "List Date Formats",
 							"originalRequest": {
 								"method": "GET",
 								"header": [
@@ -75,14 +75,34 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/customers",
+									"raw": "{{baseSyncUrl}}/v1/catalogues/date_formats",
 									"host": [
 										"{{baseSyncUrl}}"
 									],
 									"path": [
 										"v1",
-										"payments",
-										"customers"
+										"catalogues",
+										"date_formats"
+									],
+									"query": [
+										{
+											"key": "skip",
+											"value": "0",
+											"description": "(optional) Skip rows to be returned",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "10",
+											"description": "(optional) Limit the number of rows to be returned",
+											"disabled": true
+										},
+										{
+											"key": "order",
+											"value": null,
+											"description": "(optional) Order the rows to be returned",
+											"disabled": true
+										}
 									]
 								}
 							},
@@ -96,7 +116,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Mon, 13 Jul 2020 17:40:38 GMT"
+									"value": "Mon, 27 Jul 2020 20:21:52 GMT"
 								},
 								{
 									"key": "Content-Type",
@@ -144,7 +164,7 @@
 								},
 								{
 									"key": "Last-Modified",
-									"value": "Mon, 13 Jul 2020 17:40:38 GMT"
+									"value": "Mon, 27 Jul 2020 20:21:52 GMT"
 								},
 								{
 									"key": "Pragma",
@@ -152,7 +172,7 @@
 								},
 								{
 									"key": "Request-ID",
-									"value": "ebcc5a26-cfc0-4a4e-bbba-73215d76b53a"
+									"value": "0e1f54e7-f537-47a0-9087-9b3b8e9b0d67"
 								},
 								{
 									"key": "Strict-Transport-Security",
@@ -164,7 +184,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"rid\": \"ebcc5a26-cfc0-4a4e-bbba-73215d76b53a\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"total\": 1,\n        \"items\": [\n            {\n                \"id_pymnt_customer\": \"5eecf78fd2192b48f22aefab\",\n                \"id_user\": \"5eea6df9e125cb00c25b8723\",\n                \"full_name\": \"John Doe\",\n                \"email_address\": \"john.doe@test.com\",\n                \"default_card\": {\n                    \"id_pymnt_card\": \"5efaa0fe064054636f299d5c\",\n                    \"holder_name\": \"John Doe\",\n                    \"type\": \"VISA\",\n                    \"number\": \"471622XXXXXX4622\"\n                },\n                \"cards\": [\n                    {\n                        \"id_pymnt_card\": \"5efaa0fe064054636f299d5c\",\n                        \"holder_name\": \"John Doe\",\n                        \"type\": \"VISA\",\n                        \"number\": \"471622XXXXXX4622\"\n                    }\n                ],\n                \"dt_create\": 1592588175,\n                \"dt_modify\": 1593483518\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"rid\": \"0e1f54e7-f537-47a0-9087-9b3b8e9b0d67\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_date_format\": \"5e961923bebbce48bd7601aa\",\n            \"name\": \"Unix Timestamp\"\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -224,7 +244,7 @@
 					},
 					"response": [
 						{
-							"name": "List Customers",
+							"name": "List Webhook Event Types",
 							"originalRequest": {
 								"method": "GET",
 								"header": [
@@ -234,14 +254,34 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/customers",
+									"raw": "{{baseSyncUrl}}/v1/catalogues/webhook3_events",
 									"host": [
 										"{{baseSyncUrl}}"
 									],
 									"path": [
 										"v1",
-										"payments",
-										"customers"
+										"catalogues",
+										"webhook3_events"
+									],
+									"query": [
+										{
+											"key": "skip",
+											"value": "0",
+											"description": "(optional) Skip rows to be returned",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "10",
+											"description": "(optional) Limit the number of rows to be returned",
+											"disabled": true
+										},
+										{
+											"key": "order",
+											"value": null,
+											"description": "(optional) Order the rows to be returned",
+											"disabled": true
+										}
 									]
 								}
 							},
@@ -255,7 +295,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Mon, 13 Jul 2020 17:40:38 GMT"
+									"value": "Mon, 27 Jul 2020 20:22:37 GMT"
 								},
 								{
 									"key": "Content-Type",
@@ -303,7 +343,7 @@
 								},
 								{
 									"key": "Last-Modified",
-									"value": "Mon, 13 Jul 2020 17:40:38 GMT"
+									"value": "Mon, 27 Jul 2020 20:22:37 GMT"
 								},
 								{
 									"key": "Pragma",
@@ -311,7 +351,7 @@
 								},
 								{
 									"key": "Request-ID",
-									"value": "ebcc5a26-cfc0-4a4e-bbba-73215d76b53a"
+									"value": "01f8360a-3698-463e-ad4f-b3deacd35ea4"
 								},
 								{
 									"key": "Strict-Transport-Security",
@@ -323,7 +363,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"rid\": \"ebcc5a26-cfc0-4a4e-bbba-73215d76b53a\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"total\": 1,\n        \"items\": [\n            {\n                \"id_pymnt_customer\": \"5eecf78fd2192b48f22aefab\",\n                \"id_user\": \"5eea6df9e125cb00c25b8723\",\n                \"full_name\": \"John Doe\",\n                \"email_address\": \"john.doe@test.com\",\n                \"default_card\": {\n                    \"id_pymnt_card\": \"5efaa0fe064054636f299d5c\",\n                    \"holder_name\": \"John Doe\",\n                    \"type\": \"VISA\",\n                    \"number\": \"471622XXXXXX4622\"\n                },\n                \"cards\": [\n                    {\n                        \"id_pymnt_card\": \"5efaa0fe064054636f299d5c\",\n                        \"holder_name\": \"John Doe\",\n                        \"type\": \"VISA\",\n                        \"number\": \"471622XXXXXX4622\"\n                    }\n                ],\n                \"dt_create\": 1592588175,\n                \"dt_modify\": 1593483518\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"rid\": \"01f8360a-3698-463e-ad4f-b3deacd35ea4\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_webhook_event\": \"5ed54ea7f79417520c0015b1\",\n            \"name\": \"document_success\"\n        }\n    ]\n}"
 						}
 					]
 				}
@@ -4373,7 +4413,7 @@
 					]
 				}
 			],
-			"description": "# Webhooks\n------\n<br/>\n\nA webhook is a HTTP callback to a specified URL. They are triggered each time data is updated in SrPago to help you stay up to date with the latest changes.\n\nSrPago API requires that you setting up a Webhook to your API KEY in order to send these events notification:\n\n1.  `payments.chargeback_created` : New chargeback was created\n2.  `payments.transaction_created` : New transaction was created",
+			"description": "A webhook is a HTTP callback to a specified URL. They are triggered each time data is updated in SrPago to help you stay up to date with the latest changes.\n\nSrPago API requires that you setting up a Webhook to your API KEY in order to send these events notification:\n\n1.  `payments.chargeback_created` : New chargeback was created\n2.  `payments.transaction_created` : New transaction was created",
 			"event": [
 				{
 					"listen": "prerequest",
