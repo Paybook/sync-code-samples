@@ -27,7 +27,7 @@ SrPago API requires that you setting up a Webhook to your API KEY in order to se
                 },
                 "user": {
                     "id_user": "5ef5130b553ab949f13cf0e1",
-                    "id_external": "j+test18@paybook.com",
+                    "id_external": "john.doe@test.com",
                     "id_environment": "574894bf7848066d138b4570"
                 }
             },
@@ -38,4 +38,16 @@ SrPago API requires that you setting up a Webhook to your API KEY in order to se
     ]
 }
 ```
+
+### Environment information
+
+It is important to note, that each webhook payload contains environment information in order to quickly identify from which environment the webhooks are coming from, 
+you can find the environment at the node `header.user.id_environment`:
+
+
+| ID Environment            | Environment      |
+| ------------------------  | ---------------- |
+| 574894bf7848066d138b4570	| Sandbox          |
+| 574894bf7848066d138b4571	| Production       |
+
 
