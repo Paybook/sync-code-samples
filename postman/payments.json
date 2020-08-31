@@ -17,7 +17,15 @@
 							"script": {
 								"id": "f8b4ec6f-6758-4b96-9ad9-8547928a0267",
 								"exec": [
-									""
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);",
+									"});",
+									"pm.test(\"Contain valid data time response objects\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    console.log(jsonData);",
+									"    pm.expect(jsonData.response[0]).to.have.property('id_date_format');",
+									"    pm.expect(jsonData.response[0]).to.have.property('name');",
+									"});"
 								],
 								"type": "text/javascript"
 							}
@@ -1763,7 +1771,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"number\": \"4716222791264622\",\n    \"cvv\": \"123\",\n    \"expiration\": \"2207\",\n    \"holder_name\": \"John Doe\",\n    \"billing\": {\n        \"emailAddress\": \"john.doe@test.com\",\n        \"firstName\": \"John\",\n        \"middleName\": \"\",\n        \"lastName\": \"Doe\",\n        \"address\": \"1234 Main Street\",\n        \"address2\": \"Apt 891\",\n        \"city\": \"Dallas\",\n        \"state\": \"TX\",\n        \"postalCode\": \"75208\"\n    }\n}",
+							"raw": "{\n    \"number\": \"5063115139979008\",\n    \"cvv\": \"123\",\n    \"expiration\": \"2207\",\n    \"holder_name\": \"John Doe\",\n    \"billing\": {\n        \"emailAddress\": \"john.doe@test.com\",\n        \"firstName\": \"John\",\n        \"middleName\": \"\",\n        \"lastName\": \"Doe\",\n        \"address\": \"1234 Main Street\",\n        \"address2\": \"Apt 891\",\n        \"city\": \"Dallas\",\n        \"state\": \"TX\",\n        \"postalCode\": \"75208\"\n    }\n}",
 							"options": {
 								"raw": {}
 							}
@@ -2649,7 +2657,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id_pymnt_card\": \"{{id_pymnt_card}}\",\n    \"reference\": \"20190814/0GZXXG81\",\n    \"description\": \"Sample charge\",\n    \"amount\": 100,\n    \"affiliate_details\": {\n        \"total_fee\": 70,\n        \"id_pymnt_affiliate\": \"{{id_pymnt_affiliate}}\"\n    }\n}",
+							"raw": "{\n    \"id_pymnt_card\": \"{{id_pymnt_card}}\",\n    \"reference\": \"20190814/0GZXXG81\",\n    \"description\": \"Sample charge\",\n    \"amount\": 100\n}",
 							"options": {
 								"raw": {}
 							}
@@ -3583,6 +3591,18 @@
 								"operations"
 							],
 							"query": [
+								{
+									"key": "id_pymnt_charge",
+									"value": null,
+									"description": "(optional) Filters by charge ID",
+									"disabled": true
+								},
+								{
+									"key": "transaction",
+									"value": "",
+									"description": "(optional) Transaction identifier",
+									"disabled": true
+								},
 								{
 									"key": "id_pymnt_affiliate",
 									"value": "{{id_pymnt_affiliate}}",
