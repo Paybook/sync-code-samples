@@ -1074,6 +1074,18 @@
 									"disabled": true
 								},
 								{
+									"key": "is_business",
+									"value": "Number",
+									"description": "(optional) Site is business",
+									"disabled": true
+								},
+								{
+									"key": "is_personal",
+									"value": "Number",
+									"description": "(optional) Site is personal",
+									"disabled": true
+								},
+								{
 									"key": "fields",
 									"value": "String",
 									"description": "(optional) Select fields to be returned",
@@ -1299,6 +1311,18 @@
 									"key": "id_country",
 									"value": "ID",
 									"description": "(optional) Country ID",
+									"disabled": true
+								},
+								{
+									"key": "is_business",
+									"value": "Number",
+									"description": "(optional) Site is business",
+									"disabled": true
+								},
+								{
+									"key": "is_personal",
+									"value": "Number",
+									"description": "(optional) Site is personal",
 									"disabled": true
 								}
 							]
