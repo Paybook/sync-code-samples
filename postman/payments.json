@@ -15,7 +15,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f8b4ec6f-6758-4b96-9ad9-8547928a0267",
 								"exec": [
 									"pm.test(\"Successful POST request\", function () {",
 									"    pm.expect(pm.response.code).to.be.oneOf([200]);",
@@ -64,7 +63,7 @@
 								},
 								{
 									"key": "order",
-									"value": null,
+									"value": "",
 									"description": "(optional) Order the rows to be returned",
 									"disabled": true
 								}
@@ -202,7 +201,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4c81106e-6709-403c-ab98-db498eb7e85b",
 								"exec": [
 									""
 								],
@@ -243,7 +241,7 @@
 								},
 								{
 									"key": "order",
-									"value": null,
+									"value": "",
 									"description": "(optional) Order the rows to be returned",
 									"disabled": true
 								}
@@ -376,8 +374,7 @@
 					]
 				}
 			],
-			"description": "Catalogues are collections of endpoints that are relevant to the data segmentation on some of the other endpoints.\n\n#### List of Catalogues: \n\n1. Date Formats\n2. Webhook Event Types\n\n\n\n#### Date Formats\n\n```json\n{\n    \"id_date_format\": \"5e961923bebbce48bd7601aa\",\n    // The ID of the date format\n    \"name\": \"Unix Timestamp\"\n    // String; The name of the Date Format\n}\n```\n\n#### Webhook Event Types\n\n```json\n{\n    \"id_attachment_type\": \"5ed54ea7f79417520c0015b9\",\n    // SyncID; The ID of the Attachment Type assignated by Paybook Sync\n    \"name\": \"payments.transaction_created\"\n    // String; The name of the Account Type\n}\n```\n",
-			"protocolProfileBehavior": {}
+			"description": "Catalogues are collections of endpoints that are relevant to the data segmentation on some of the other endpoints.\n\n#### List of Catalogues: \n\n1. Date Formats\n2. Webhook Event Types\n\n\n\n#### Date Formats\n\n```json\n{\n    \"id_date_format\": \"5e961923bebbce48bd7601aa\",\n    // The ID of the date format\n    \"name\": \"Unix Timestamp\"\n    // String; The name of the Date Format\n}\n```\n\n#### Webhook Event Types\n\n```json\n{\n    \"id_attachment_type\": \"5ed54ea7f79417520c0015b9\",\n    // SyncID; The ID of the Attachment Type assignated by Paybook Sync\n    \"name\": \"payments.transaction_created\"\n    // String; The name of the Account Type\n}\n```\n"
 		},
 		{
 			"name": "Customers",
@@ -388,7 +385,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "18c4ac50-bfe1-4d06-a6d6-960523b24370",
 								"exec": [
 									"var json = JSON.parse(responseBody);",
 									"postman.setEnvironmentVariable(\"id_pymnt_customer\", json.response.id_pymnt_customer);",
@@ -409,10 +405,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"full_name\": \"John Doe\",\n\t\"email_address\": \"john.doe@test.com\",\n    \"id_external\": \"869d56f0-555e-4c8c-847a-2e1ef53f6ef6\"\n}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\n\t\"full_name\": \"John Doe\",\n\t\"email_address\": \"john.doe@test.com\",\n    \"id_external\": \"869d56f0-555e-4c8c-847a-2e1ef53f6ef6\"\n}"
 						},
 						"url": {
 							"raw": "{{baseSyncUrl}}/v1/payments/customers",
@@ -711,7 +704,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1c156b4e-8381-4e90-a0e2-225beb58cbe6",
 								"exec": [
 									""
 								],
@@ -860,7 +852,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6957522a-26f2-48b3-8efd-cf407a97d7ca",
 								"exec": [
 									""
 								],
@@ -1025,7 +1016,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d36df2c7-f2da-4f99-9813-e8857e4769ba",
 								"exec": [
 									""
 								],
@@ -1043,10 +1033,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {}
-							}
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}",
@@ -1185,7 +1172,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "104616f2-38aa-4c43-b46b-45219164c0b0",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1195,15 +1181,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "07262724-e86c-4b9d-83b0-d853d02563bf",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Affiliates",
@@ -1214,7 +1198,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9c23bdc8-9ba0-425a-aa70-543a00ef58f4",
 								"exec": [
 									""
 								],
@@ -1261,7 +1244,7 @@
 								},
 								{
 									"key": "order",
-									"value": null,
+									"value": "",
 									"description": "(optional) Order the rows to be returned",
 									"disabled": true
 								}
@@ -1385,7 +1368,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "df21fbe7-cbfa-4c65-9f7f-981561e98850",
 								"exec": [
 									"var json = JSON.parse(responseBody);",
 									"postman.setEnvironmentVariable(\"id_pymnt_affiliate\", json.response.id_pymnt_affiliate);",
@@ -1411,10 +1393,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"john.doe@test.com\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Doe\",\n    \"second_last_name\": \"Gonzalez\",\n    \"phone\": \"+525572582036\",\n    \"street\": \"Reforma 1234\",\n    \"area\": \"San Angel\",\n    \"city\": \"CDMX\",\n    \"state\": \"Edo de Mexico\",\n    \"zip_code\": \"01000\",\n    \"birth_date\": 373916347,\n    \"company_name\": \"MY COMPANY\",\n    \"company_url\": \"https://www.mycompany.com\",\n    \"tax_id\": \"CUPU800825569\",\n    \"id_front\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACv0lEQVQ4T3WTXYiUVRjHf+e8O+vqKnYtYdFVGSGUVBS54EWSxAZeiF6ICLqxQRr0sRJBkohIXmTS4LajqRdK0IJDLHqhgmRsg1CrLLap6O67Na0z7HzsfLzzznnPeWKWZnozOzfnPJxzfs/H/3kUf6+j6R/MY8uWWWMj0zQWJ0IltATGMpvPL79xd+76z8f2vNh+395V+3Dm8nXZvmHdohk0DA/KdeaKRXLFkMnfHzA+dY8o0jcvfrZjbRzSAYxczMiujS0HlmoIC5UGC9UyxcAxMZ2jUi3y7OpVHPju2lTmyMAz/4lgeOwnGdj0ErgIh6bWDCmUAqzVZG77VE3E7tef58ylCc5evTkxnZ1b/9vJoUonguTYuAxuehnnQpzTiFaUmwbXtMzMlcjcyfLG2qfI1euMXrvFWOb2H1Nf7328A/gi/aPs7X8F5yxR5OjSYLWi3nRUgyYz2RzZXEDdRczmC5y+8ot/Z+T9JzqAQ+cuy76tG7DiiKylS0ArMGjKQYiNDJVqSEuh6UKJ94Yv+HdTMcAnJ9NyYGc/oVgaxrJUaTwRxFMoJ8wHIdVqgKc1+XKTLZ+f8++fiAHe/eq8fPnOWxRqDcRalNIk8NA9Cu0pPKsW7xKttEJD39AJ//43McBAMi3Dg/2UagHOCSICAt1eArdEkxBwBvAUpUqF1z5K+dOnPvynBm8n03I8BmjrrLs0YoTuRDfOOnp7uvALZdYPpfzZOGAw+b0kB9/sRNBplFaZhcWUnDhW9PaQzS/Qty/lz8QBu46OysiezYsAnPyr5Z2nMGLREaxcvpQ/5yv0DT0E2HLwrHz78Tbma3Ui62jr2xqqoGHRStBa0duzhFqjyasfjPizp2M12Lz/lIx+uuPhYftf+7ndR/zJVAywaut+88LTT9pyPTSd7nrEd+1EPKVWjE/e+7V24fCavwDOv4ogbMx1DgAAAABJRU5ErkJggg==\",\n    \"id_back\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACv0lEQVQ4T3WTXYiUVRjHf+e8O+vqKnYtYdFVGSGUVBS54EWSxAZeiF6ICLqxQRr0sRJBkohIXmTS4LajqRdK0IJDLHqhgmRsg1CrLLap6O67Na0z7HzsfLzzznnPeWKWZnozOzfnPJxzfs/H/3kUf6+j6R/MY8uWWWMj0zQWJ0IltATGMpvPL79xd+76z8f2vNh+395V+3Dm8nXZvmHdohk0DA/KdeaKRXLFkMnfHzA+dY8o0jcvfrZjbRzSAYxczMiujS0HlmoIC5UGC9UyxcAxMZ2jUi3y7OpVHPju2lTmyMAz/4lgeOwnGdj0ErgIh6bWDCmUAqzVZG77VE3E7tef58ylCc5evTkxnZ1b/9vJoUonguTYuAxuehnnQpzTiFaUmwbXtMzMlcjcyfLG2qfI1euMXrvFWOb2H1Nf7328A/gi/aPs7X8F5yxR5OjSYLWi3nRUgyYz2RzZXEDdRczmC5y+8ot/Z+T9JzqAQ+cuy76tG7DiiKylS0ArMGjKQYiNDJVqSEuh6UKJ94Yv+HdTMcAnJ9NyYGc/oVgaxrJUaTwRxFMoJ8wHIdVqgKc1+XKTLZ+f8++fiAHe/eq8fPnOWxRqDcRalNIk8NA9Cu0pPKsW7xKttEJD39AJ//43McBAMi3Dg/2UagHOCSICAt1eArdEkxBwBvAUpUqF1z5K+dOnPvynBm8n03I8BmjrrLs0YoTuRDfOOnp7uvALZdYPpfzZOGAw+b0kB9/sRNBplFaZhcWUnDhW9PaQzS/Qty/lz8QBu46OysiezYsAnPyr5Z2nMGLREaxcvpQ/5yv0DT0E2HLwrHz78Tbma3Ui62jr2xqqoGHRStBa0duzhFqjyasfjPizp2M12Lz/lIx+uuPhYftf+7ndR/zJVAywaut+88LTT9pyPTSd7nrEd+1EPKVWjE/e+7V24fCavwDOv4ogbMx1DgAAAABJRU5ErkJggg==\"\n}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\n    \"email\": \"john.doe@test.com\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Doe\",\n    \"second_last_name\": \"Gonzalez\",\n    \"phone\": \"+525572582036\",\n    \"street\": \"Reforma 1234\",\n    \"area\": \"San Angel\",\n    \"city\": \"CDMX\",\n    \"state\": \"Edo de Mexico\",\n    \"zip_code\": \"01000\",\n    \"birth_date\": 373916347,\n    \"company_name\": \"MY COMPANY\",\n    \"company_url\": \"https://www.mycompany.com\",\n    \"tax_id\": \"CUPU800825569\",\n    \"id_front\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACv0lEQVQ4T3WTXYiUVRjHf+e8O+vqKnYtYdFVGSGUVBS54EWSxAZeiF6ICLqxQRr0sRJBkohIXmTS4LajqRdK0IJDLHqhgmRsg1CrLLap6O67Na0z7HzsfLzzznnPeWKWZnozOzfnPJxzfs/H/3kUf6+j6R/MY8uWWWMj0zQWJ0IltATGMpvPL79xd+76z8f2vNh+395V+3Dm8nXZvmHdohk0DA/KdeaKRXLFkMnfHzA+dY8o0jcvfrZjbRzSAYxczMiujS0HlmoIC5UGC9UyxcAxMZ2jUi3y7OpVHPju2lTmyMAz/4lgeOwnGdj0ErgIh6bWDCmUAqzVZG77VE3E7tef58ylCc5evTkxnZ1b/9vJoUonguTYuAxuehnnQpzTiFaUmwbXtMzMlcjcyfLG2qfI1euMXrvFWOb2H1Nf7328A/gi/aPs7X8F5yxR5OjSYLWi3nRUgyYz2RzZXEDdRczmC5y+8ot/Z+T9JzqAQ+cuy76tG7DiiKylS0ArMGjKQYiNDJVqSEuh6UKJ94Yv+HdTMcAnJ9NyYGc/oVgaxrJUaTwRxFMoJ8wHIdVqgKc1+XKTLZ+f8++fiAHe/eq8fPnOWxRqDcRalNIk8NA9Cu0pPKsW7xKttEJD39AJ//43McBAMi3Dg/2UagHOCSICAt1eArdEkxBwBvAUpUqF1z5K+dOnPvynBm8n03I8BmjrrLs0YoTuRDfOOnp7uvALZdYPpfzZOGAw+b0kB9/sRNBplFaZhcWUnDhW9PaQzS/Qty/lz8QBu46OysiezYsAnPyr5Z2nMGLREaxcvpQ/5yv0DT0E2HLwrHz78Tbma3Ui62jr2xqqoGHRStBa0duzhFqjyasfjPizp2M12Lz/lIx+uuPhYftf+7ndR/zJVAywaut+88LTT9pyPTSd7nrEd+1EPKVWjE/e+7V24fCavwDOv4ogbMx1DgAAAABJRU5ErkJggg==\",\n    \"id_back\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACv0lEQVQ4T3WTXYiUVRjHf+e8O+vqKnYtYdFVGSGUVBS54EWSxAZeiF6ICLqxQRr0sRJBkohIXmTS4LajqRdK0IJDLHqhgmRsg1CrLLap6O67Na0z7HzsfLzzznnPeWKWZnozOzfnPJxzfs/H/3kUf6+j6R/MY8uWWWMj0zQWJ0IltATGMpvPL79xd+76z8f2vNh+395V+3Dm8nXZvmHdohk0DA/KdeaKRXLFkMnfHzA+dY8o0jcvfrZjbRzSAYxczMiujS0HlmoIC5UGC9UyxcAxMZ2jUi3y7OpVHPju2lTmyMAz/4lgeOwnGdj0ErgIh6bWDCmUAqzVZG77VE3E7tef58ylCc5evTkxnZ1b/9vJoUonguTYuAxuehnnQpzTiFaUmwbXtMzMlcjcyfLG2qfI1euMXrvFWOb2H1Nf7328A/gi/aPs7X8F5yxR5OjSYLWi3nRUgyYz2RzZXEDdRczmC5y+8ot/Z+T9JzqAQ+cuy76tG7DiiKylS0ArMGjKQYiNDJVqSEuh6UKJ94Yv+HdTMcAnJ9NyYGc/oVgaxrJUaTwRxFMoJ8wHIdVqgKc1+XKTLZ+f8++fiAHe/eq8fPnOWxRqDcRalNIk8NA9Cu0pPKsW7xKttEJD39AJ//43McBAMi3Dg/2UagHOCSICAt1eArdEkxBwBvAUpUqF1z5K+dOnPvynBm8n03I8BmjrrLs0YoTuRDfOOnp7uvALZdYPpfzZOGAw+b0kB9/sRNBplFaZhcWUnDhW9PaQzS/Qty/lz8QBu46OysiezYsAnPyr5Z2nMGLREaxcvpQ/5yv0DT0E2HLwrHz78Tbma3Ui62jr2xqqoGHRStBa0duzhFqjyasfjPizp2M12Lz/lIx+uuPhYftf+7ndR/zJVAywaut+88LTT9pyPTSd7nrEd+1EPKVWjE/e+7V24fCavwDOv4ogbMx1DgAAAABJRU5ErkJggg==\"\n}"
 						},
 						"url": {
 							"raw": "{{baseSyncUrl}}/v1/payments/affiliates",
@@ -1721,7 +1700,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "23676983-c494-4004-849d-b12ff8ba7c04",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1731,15 +1709,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "0ceeef70-f977-4b2d-a9ba-d45f87cdcb4d",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Cards",
@@ -1750,7 +1726,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d63554d4-33b4-4c6e-ab24-7cf6772d8a8e",
 								"exec": [
 									"var json = JSON.parse(responseBody);",
 									"postman.setEnvironmentVariable(\"id_pymnt_card\", json.response.id_pymnt_card);",
@@ -1771,10 +1746,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"number\": \"5063115139979008\",\n    \"cvv\": \"123\",\n    \"expiration\": \"2207\",\n    \"holder_name\": \"John Doe\",\n    \"billing\": {\n        \"emailAddress\": \"john.doe@test.com\",\n        \"firstName\": \"John\",\n        \"middleName\": \"\",\n        \"lastName\": \"Doe\",\n        \"address\": \"1234 Main Street\",\n        \"address2\": \"Apt 891\",\n        \"city\": \"Dallas\",\n        \"state\": \"TX\",\n        \"postalCode\": \"75208\"\n    }\n}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\n    \"number\": \"376661919713003\",\n    \"cvv\": \"5901\",\n    \"expiration\": \"2108\",\n    \"holder_name\": \"Jorge Lopez Perez\"\n}"
 						},
 						"url": {
 							"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/cards",
@@ -2101,7 +2073,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "06b60bbb-f920-4bcd-90f6-ac694711b2fb",
 								"exec": [
 									""
 								],
@@ -2287,7 +2258,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3adec7ea-cfa8-4783-9d33-e282b2031350",
 								"exec": [
 									""
 								],
@@ -2305,10 +2275,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {}
-							}
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/cards/{{id_pymnt_card}}",
@@ -2457,7 +2424,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ead2e9b5-bca9-4f40-87af-40950508ddb3",
 								"exec": [
 									""
 								],
@@ -2608,7 +2574,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "e0cbbb3f-7a3b-4509-b39e-62e910eca587",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2618,15 +2583,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b5b57b7f-ba29-4c3d-9a19-9969f449e140",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Charges",
@@ -2637,7 +2600,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "17d5b82f-b2e7-43c4-9edb-88102080598d",
 								"exec": [
 									"var json = JSON.parse(responseBody);",
 									"postman.setEnvironmentVariable(\"id_pymnt_charge\", json.response.id_pymnt_charge);",
@@ -2657,10 +2619,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id_pymnt_card\": \"{{id_pymnt_card}}\",\n    \"reference\": \"20190814/0GZXXG81\",\n    \"description\": \"Sample charge\",\n    \"amount\": 100\n}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\n    \"id_pymnt_card\": \"{{id_pymnt_card}}\",\n    \"reference\": \"20190814/0GZXXG81\",\n    \"description\": \"Sample charge\",\n    \"amount\": 100\n}"
 						},
 						"url": {
 							"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/charges",
@@ -3043,7 +3002,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "cf8648c5-2c4f-48c3-b7b5-c063bc54a6ac",
 								"exec": [
 									""
 								],
@@ -3196,7 +3154,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "55bc3aaf-f9a2-4f4c-b437-c67c15cb22e1",
 								"exec": [
 									""
 								],
@@ -3233,19 +3190,19 @@
 								},
 								{
 									"key": "skip",
-									"value": null,
+									"value": "",
 									"description": "(optional) Skip rows to be returned",
 									"disabled": true
 								},
 								{
 									"key": "limit",
-									"value": null,
+									"value": "",
 									"description": "(optional) Limit the number of rows to be returned",
 									"disabled": true
 								},
 								{
 									"key": "order",
-									"value": null,
+									"value": "",
 									"description": "(optional) Order the rows to be returned",
 									"disabled": true
 								}
@@ -3373,7 +3330,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "96ccd546-4539-496f-aee9-e2cd06ce410a",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -3383,15 +3339,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "adb8eb27-a295-4050-a380-4beaf0ddd25a",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Operations",
@@ -3402,7 +3356,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e368b168-2a02-456a-9625-84c20b3e97e4",
 								"exec": [
 									""
 								],
@@ -3420,10 +3373,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {}
-							}
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{baseSyncUrl}}/v1/payments/operations/{{id_pymnt_charge}}/reimburse",
@@ -3564,7 +3514,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "cd22e45c-a824-4222-925c-eb90444e43bb",
 								"exec": [
 									""
 								],
@@ -3581,7 +3530,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseSyncUrl}}/v1/payments/operations",
+							"raw": "{{baseSyncUrl}}/v1/payments/operations?type",
 							"host": [
 								"{{baseSyncUrl}}"
 							],
@@ -3593,7 +3542,7 @@
 							"query": [
 								{
 									"key": "id_pymnt_charge",
-									"value": null,
+									"value": "",
 									"description": "(optional) Filters by charge ID",
 									"disabled": true
 								},
@@ -3602,6 +3551,11 @@
 									"value": "",
 									"description": "(optional) Transaction identifier",
 									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": null,
+									"description": "(optional) Transaction type: chargeback, all"
 								},
 								{
 									"key": "id_pymnt_affiliate",
@@ -3791,7 +3745,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "db7aa6c7-0fcd-484b-83b8-5acc979e883d",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -3801,15 +3754,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "0b67288c-8422-4e63-9b48-8b891dab5079",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		}
 	],
 	"auth": {
@@ -3836,7 +3787,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "f9b6306f-7983-4125-aa7f-194745c70680",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -3846,13 +3796,11 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "ca1bf178-a6f4-42c6-89c3-99c308b820a7",
 				"type": "text/javascript",
 				"exec": [
 					""
 				]
 			}
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
