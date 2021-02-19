@@ -1,8 +1,8 @@
 {
 	"info": {
-		"_postman_id": "3d958702-1bbf-4d31-80b8-fb535725abf1",
+		"_postman_id": "79dc77cd-90c2-4461-9f15-f2b46eb35a09",
 		"name": "Paybook Sync Invoicing",
-		"description": "\n\n# Table of Content\n\n- Overview\n- Authentication\n- Request\n- Error Codes\n- Rate limit\n\n# Overview\n\n------\n\n\nStart using our API ASAP with just a few steps.\n\n1. Register\n\n   In order to gain entry to Sync, you need to register for both a Paybook account and a Sync account. If you haven’t already done so, please head over to our [website](https://www.paybook.com/), sign up, accept our terms, and you’re good to go!\n\n2. Play in the Sandbox\n\n   Once you're registered, you'll be taken to the Sync Control Panel where you can obtain your sandbox key to start testing the API without the need for valid user credentials.\n\n3. Access the Production Environment\n\n   When you're ready to work with live data, you'll need to accept the Sync Service Agreement and upload the by-laws or your (or your client's) entity to validate the authenticity of those entering into the agreement with Paybook.\n\n   - 30-day Trial: Want to give Sync a test drive before committing? Try us risk-free for up to 30 days.\n   - Select a Plan: At the end of the trial or any point prior, simply choose the plan that fits your needs and enjoy continuous feeds of financial data right at your fingertips.\n\n# Authentication\n\n------\n\nSync API has two types of authentication:\n\n#### API KEY\n\n```bash\ncurl URL \\\n-H \"Authorization: api_key api_key={API_KEY}\" \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS \n```\n\n#### Bearer Token\n\n```bash\ncurl URL \\\n-H \"Authorization: Bearer {TOKEN}\" \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS \n```\n\nType of Authentication required is defined by Resource\n\n| Resource     | Auth Type      |\n| ------------ | -------------- |\n| Users        | `API KEY`      |\n| Sessions     | `API KEY`      |\n| Taxpayers    | `Bearer Token` |\n| Invoices     | `Bearer Token` |\n\n# Environments\n\n------\n\n#### Sandbox\n\n1. ACME PAC\n\n#### Production\n\nLive PACs\n\n# Request\n\n------\n\n#### Structure\n\n```bash\ncurl URL \\\n-H AUTH \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS\n```\n\n# Error Codes\n\n------\n\nTable of Error Codes defined in Paybook Sync API\n\n| Code | Message               |\n| ---- | --------------------- |\n| 400  | Bad Request           |\n| 401  | Unauthorized          |\n| 402  | Payment Required      |\n| 403  | Forbidden             |\n| 404  | Not Found             |\n| 429  | Too Many Requests     |\n| 500  | Internal Server Error |\n| 503  | Service Unavailable   |\n\n# Rate limit\n\n------\n\nThere are two types of rate-limit:\n\n#### Rate limit by server\n\n5 request per second \n\n#### Limit by credential\n\n1 pull request per day",
+		"description": "\n\n# Table of Content\n\n- Overview\n- Authentication\n- Request\n- Error Codes\n- Rate limit\n\n# Overview\n\n------\n\n\nStart using our API ASAP with just a few steps.\n\n1. Register\n\n   In order to gain entry to Sync, you need to register for both a Paybook account and a Sync account. If you haven’t already done so, please head over to our [website](https://www.paybook.com/), sign up, accept our terms, and you’re good to go!\n\n2. Play in the Sandbox\n\n   Once you're registered, you'll be taken to the Sync Control Panel where you can obtain your sandbox key to start testing the API without the need for valid user credentials.\n\n3. Access the Production Environment\n\n   When you're ready to work with live data, you'll need to accept the Sync Service Agreement and upload the by-laws or your (or your client's) entity to validate the authenticity of those entering into the agreement with Paybook.\n\n   - 14-day Trial: Want to give Sync a test drive before committing? Try us risk-free for up to 14 days.\n   - Select a Plan: At the end of the trial or any point prior, simply choose the plan that fits your needs and enjoy continuous feeds of financial data right at your fingertips.\n\n# Authentication\n\n------\n\nSync API has two types of authentication:\n\n#### API KEY\n\n```bash\ncurl URL \\\n-H \"Authorization: api_key api_key={API_KEY}\" \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS \n```\n\n#### Bearer Token\n\n```bash\ncurl URL \\\n-H \"Authorization: Bearer {TOKEN}\" \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS \n```\n\nType of Authentication required is defined by Resource\n\n| Resource     | Auth Type      |\n| ------------ | -------------- |\n| Users        | `API KEY`      |\n| Sessions     | `API KEY`      |\n| Taxpayers    | `Bearer Token` |\n| Invoices     | `Bearer Token` |\n\n# Environments\n\n------\n\n#### Sandbox\n\n1. ACME PAC\n\n#### Production\n\nLive PACs\n\n# Request\n\n------\n\n#### Structure\n\n```bash\ncurl URL \\\n-H AUTH \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS\n```\n\n# Error Codes\n\n------\n\nTable of Error Codes defined in Paybook Sync API\n\n| Code | Message               |\n| ---- | --------------------- |\n| 400  | Bad Request           |\n| 401  | Unauthorized          |\n| 402  | Payment Required      |\n| 403  | Forbidden             |\n| 404  | Not Found             |\n| 429  | Too Many Requests     |\n| 500  | Internal Server Error |\n| 503  | Service Unavailable   |\n\n# Rate limit\n\n------\n\nThere are two types of rate-limit:\n\n#### Rate limit by server\n\n5 request per second \n\n#### Limit by credential\n\n1 pull request per day",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -15,7 +15,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/users?",
+							"raw": "https://sync.paybook.com/v1/users",
 							"protocol": "https",
 							"host": [
 								"sync",
@@ -61,7 +61,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/users?",
+									"raw": "https://sync.paybook.com/v1/users",
 									"protocol": "https",
 									"host": [
 										"sync",
@@ -215,7 +215,7 @@
 							"raw": "{\n\t\"name\" : \"{{sync_user_name}}\"\n}"
 						},
 						"url": {
-							"raw": "https://sync.paybook.com/v1/users?",
+							"raw": "https://sync.paybook.com/v1/users",
 							"protocol": "https",
 							"host": [
 								"sync",
@@ -260,7 +260,7 @@
 									"raw": "{\n\t\"name\" : \"{{sync_user_name}}\"\n}"
 								},
 								"url": {
-									"raw": "https://sync.paybook.com/v1/users?",
+									"raw": "https://sync.paybook.com/v1/users",
 									"protocol": "https",
 									"host": [
 										"sync",
@@ -401,7 +401,7 @@
 							"raw": "{\n\t\"id_external\" : \"{{sync_user_id_external}}\"\n}"
 						},
 						"url": {
-							"raw": "https://sync.paybook.com/v1/users/{{sync_id_user}}?",
+							"raw": "https://sync.paybook.com/v1/users/{{sync_id_user}}",
 							"protocol": "https",
 							"host": [
 								"sync",
@@ -446,7 +446,7 @@
 									"raw": "{\n\t\"id_external\" : \"{{sync_user_id_external}}\"\n}"
 								},
 								"url": {
-									"raw": "https://sync.paybook.com/v1/users/{{sync_id_user}}?",
+									"raw": "https://sync.paybook.com/v1/users/{{sync_id_user}}",
 									"protocol": "https",
 									"host": [
 										"sync",
@@ -738,7 +738,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "b944f8c3-307e-4b49-8015-f68f9b158067",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -748,15 +747,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "ddfd5064-7afb-439a-9027-5e67c56a7029",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Sessions",
@@ -1221,7 +1218,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "6b2be1d1-7e76-4b3f-ac43-809d9d3348c8",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1231,15 +1227,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "4a304882-6e6a-439f-b39f-b9f6107563af",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Taxpayers",
@@ -1507,7 +1501,7 @@
 							"raw": "{ \n\t\"taxpayer\": \"IXS7607092R5\",\n\t\"cer\": \"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\",\n\t\"key\": \"MIIFDjBABgkqhkiG9w0BBQ0wMzAbBgkqhkiG9w0BBQwwDgQIAgEAAoIBAQACAggAMBQGCCqGSIb3DQMHBAgwggS9AgEAMASCBMh4EHl7aNSCaMDA1VlRoXCZ5UUmqErAbucRBAKNQXH8t3X1ZNTXua+xM+dHKTDgiPce0sjfFzN8opkMp12yJFMiujuPxFwOW2FH7DsRJY2kCJalnVnWpFJ5NzMc3FpEuu+s03usy8CBEOo9F57I2ITTqCzbQsY3/J0upGQIWNN/7xQaBFArbczevtQOwgJ1JZtX04kM4siYFMwmreU/Jl5Lu5Ur9PGMwgQiYWBUXeoKb9b7exLZBCBHTxzSlDLuU2Vc/MNEwRJ1Cb4sCiJ+mFVPOF/P5rDZbD5uMRYyPEtZVfq67ptooDlYakQM1Gm3V17PMlEmaZg8vn7YZ8drB9myyvhIuZlxNEWQTyMCXrKV7qsXVisYxkWdlbaOo9CgjmVXWd4PgbM0OrCcfWevawE2+gAWNYLZRhBJNWjGdNA8xQ8VebFai7WYRVeMvuB85BpNMZFEQzAl6ztDnUMSyZDAmbXinYUon19qUV9Ff1YJqpvNWSErGza5jyh5TJ+yeZnY0WO7ONo3oZ+TdLbwLtthbr1zs1c+7nXn5i8WzW5lGgBX/7eHihYHGNIn0RiJ0v/LHEtdkPq/xXQ5jJjfgLRnujtKxq31CyxeV0vFCus3Hj1egVn6OXk7BGPN2q5UP+3xGjvH/cxzouSB6y13qoTbCX08R52GE4g7GbAiT0qiRdoiDZA6731ackMl0t2vKkGRtx/SMVnbPhUvquaR5byqPDEBtRlgD0Q/0726I0qaDrSch+gHjT/nkP7sneBZZCYIGIIt9PQnbn8bob3TPer1Ne/Q4m14P3W3WE2u6krFc3EqNcfNMhCQlX92Q3MPazxCLcWJC2y6Q6c7CxpPnzMVkzkMaYuUcE4v5ZZF3mPIMy7pEQS73GQUgRltXToNY+TFdhfyCDbiJK74Zd/RjleHyITlaidfAbyAKDZYLZEQ4a2gKx2M2/FV8jykmW+IWwRUSS9WQWgqFiamb0PHb+RRWZvxCrBX1v0tNwY8dwENTJTrJCVwcKEfCzUXzdwfJoYcT3/UyCNOS+n1l2ShSBsdJ+9v8FU16J/0Z6ZkcqMdGrcUZps+h8nbYHd2M5L+f9AuU71DGA/KCDAa5r6RI7Bvqb4o7NebJKshpPJj/E5SqsZY2n2T4OAnbIyF7Lb5jWx0gfo5ovPSbk8TcXyq8EToKLSTEUj+HvPhZhnizJQeyBI7SXVf3uo+DEDtSc2eCkYt12LjNo3n0l9DxdzSNyk8HB7btZltGZCU/IPC973l6U4lu3v4+4xW5jkv1PVDsQRsfpo+VTOP4fPKPbPUe0rKxKiXRXHWGeIpnukjsa2ebE3aFnbpKbJ2JxpmB86j5wgTN2LEFR0KIv3Hz5cf5jSv9+e30dL8REglJEonluzw1HjWplvGAANAIFwj9q7fPbR/0PJDOKq8KvnsLJLZzxU76Lelz3tWiN+krfsxoI0lP17n/bwQQhaW1/NWm9TfG9wwnqmdyl+iC0bqhJNJi+584tJh4fbUXDaflg64N29nMgiCB16IIL8T3bxMoiGEasH2cliI4aC0JG49RbaGOpsi2KSLX3/DhDfxkRh6rzbrOcN15+eQHEMx0Tksxh1GQH/e5jBcraJp5fa4JlO99tQ5VX9DhvF55IM=\",\n\t\"password\": \"12345678a\"\n}"
 						},
 						"url": {
-							"raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers?",
+							"raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers",
 							"protocol": "https",
 							"host": [
 								"sync",
@@ -1566,7 +1560,7 @@
 									"raw": "{ \n\t\"taxpayer\": \"IXS7607092R5\",\n\t\"cer\": \"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\",\n\t\"key\": \"MIIFDjBABgkqhkiG9w0BBQ0wMzAbBgkqhkiG9w0BBQwwDgQIAgEAAoIBAQACAggAMBQGCCqGSIb3DQMHBAgwggS9AgEAMASCBMh4EHl7aNSCaMDA1VlRoXCZ5UUmqErAbucRBAKNQXH8t3X1ZNTXua+xM+dHKTDgiPce0sjfFzN8opkMp12yJFMiujuPxFwOW2FH7DsRJY2kCJalnVnWpFJ5NzMc3FpEuu+s03usy8CBEOo9F57I2ITTqCzbQsY3/J0upGQIWNN/7xQaBFArbczevtQOwgJ1JZtX04kM4siYFMwmreU/Jl5Lu5Ur9PGMwgQiYWBUXeoKb9b7exLZBCBHTxzSlDLuU2Vc/MNEwRJ1Cb4sCiJ+mFVPOF/P5rDZbD5uMRYyPEtZVfq67ptooDlYakQM1Gm3V17PMlEmaZg8vn7YZ8drB9myyvhIuZlxNEWQTyMCXrKV7qsXVisYxkWdlbaOo9CgjmVXWd4PgbM0OrCcfWevawE2+gAWNYLZRhBJNWjGdNA8xQ8VebFai7WYRVeMvuB85BpNMZFEQzAl6ztDnUMSyZDAmbXinYUon19qUV9Ff1YJqpvNWSErGza5jyh5TJ+yeZnY0WO7ONo3oZ+TdLbwLtthbr1zs1c+7nXn5i8WzW5lGgBX/7eHihYHGNIn0RiJ0v/LHEtdkPq/xXQ5jJjfgLRnujtKxq31CyxeV0vFCus3Hj1egVn6OXk7BGPN2q5UP+3xGjvH/cxzouSB6y13qoTbCX08R52GE4g7GbAiT0qiRdoiDZA6731ackMl0t2vKkGRtx/SMVnbPhUvquaR5byqPDEBtRlgD0Q/0726I0qaDrSch+gHjT/nkP7sneBZZCYIGIIt9PQnbn8bob3TPer1Ne/Q4m14P3W3WE2u6krFc3EqNcfNMhCQlX92Q3MPazxCLcWJC2y6Q6c7CxpPnzMVkzkMaYuUcE4v5ZZF3mPIMy7pEQS73GQUgRltXToNY+TFdhfyCDbiJK74Zd/RjleHyITlaidfAbyAKDZYLZEQ4a2gKx2M2/FV8jykmW+IWwRUSS9WQWgqFiamb0PHb+RRWZvxCrBX1v0tNwY8dwENTJTrJCVwcKEfCzUXzdwfJoYcT3/UyCNOS+n1l2ShSBsdJ+9v8FU16J/0Z6ZkcqMdGrcUZps+h8nbYHd2M5L+f9AuU71DGA/KCDAa5r6RI7Bvqb4o7NebJKshpPJj/E5SqsZY2n2T4OAnbIyF7Lb5jWx0gfo5ovPSbk8TcXyq8EToKLSTEUj+HvPhZhnizJQeyBI7SXVf3uo+DEDtSc2eCkYt12LjNo3n0l9DxdzSNyk8HB7btZltGZCU/IPC973l6U4lu3v4+4xW5jkv1PVDsQRsfpo+VTOP4fPKPbPUe0rKxKiXRXHWGeIpnukjsa2ebE3aFnbpKbJ2JxpmB86j5wgTN2LEFR0KIv3Hz5cf5jSv9+e30dL8REglJEonluzw1HjWplvGAANAIFwj9q7fPbR/0PJDOKq8KvnsLJLZzxU76Lelz3tWiN+krfsxoI0lP17n/bwQQhaW1/NWm9TfG9wwnqmdyl+iC0bqhJNJi+584tJh4fbUXDaflg64N29nMgiCB16IIL8T3bxMoiGEasH2cliI4aC0JG49RbaGOpsi2KSLX3/DhDfxkRh6rzbrOcN15+eQHEMx0Tksxh1GQH/e5jBcraJp5fa4JlO99tQ5VX9DhvF55IM=\",\n\t\"password\": \"12345678a\"\n}"
 								},
 								"url": {
-									"raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers?",
+									"raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers",
 									"protocol": "https",
 									"host": [
 										"sync",
@@ -1708,7 +1702,7 @@
 									"raw": "{ \n\t\n\t\"taxpayer\": \"IXS7607092R5\",\n\t\"cer\": \"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\",\n\t\"key\": \"MIIFDjBABgkqhkiG9w0BBQ0wMzAbBgkqhkiG9w0BBQwwDgQIAgEAAoIBAQACAggAMBQGCCqGSIb3DQMHBAgwggS9AgEAMASCBMh4EHl7aNSCaMDA1VlRoXCZ5UUmqErAbucRBAKNQXH8t3X1ZNTXua+xM+dHKTDgiPce0sjfFzN8opkMp12yJFMiujuPxFwOW2FH7DsRJY2kCJalnVnWpFJ5NzMc3FpEuu+s03usy8CBEOo9F57I2ITTqCzbQsY3/J0upGQIWNN/7xQaBFArbczevtQOwgJ1JZtX04kM4siYFMwmreU/Jl5Lu5Ur9PGMwgQiYWBUXeoKb9b7exLZBCBHTxzSlDLuU2Vc/MNEwRJ1Cb4sCiJ+mFVPOF/P5rDZbD5uMRYyPEtZVfq67ptooDlYakQM1Gm3V17PMlEmaZg8vn7YZ8drB9myyvhIuZlxNEWQTyMCXrKV7qsXVisYxkWdlbaOo9CgjmVXWd4PgbM0OrCcfWevawE2+gAWNYLZRhBJNWjGdNA8xQ8VebFai7WYRVeMvuB85BpNMZFEQzAl6ztDnUMSyZDAmbXinYUon19qUV9Ff1YJqpvNWSErGza5jyh5TJ+yeZnY0WO7ONo3oZ+TdLbwLtthbr1zs1c+7nXn5i8WzW5lGgBX/7eHihYHGNIn0RiJ0v/LHEtdkPq/xXQ5jJjfgLRnujtKxq31CyxeV0vFCus3Hj1egVn6OXk7BGPN2q5UP+3xGjvH/cxzouSB6y13qoTbCX08R52GE4g7GbAiT0qiRdoiDZA6731ackMl0t2vKkGRtx/SMVnbPhUvquaR5byqPDEBtRlgD0Q/0726I0qaDrSch+gHjT/nkP7sneBZZCYIGIIt9PQnbn8bob3TPer1Ne/Q4m14P3W3WE2u6krFc3EqNcfNMhCQlX92Q3MPazxCLcWJC2y6Q6c7CxpPnzMVkzkMaYuUcE4v5ZZF3mPIMy7pEQS73GQUgRltXToNY+TFdhfyCDbiJK74Zd/RjleHyITlaidfAbyAKDZYLZEQ4a2gKx2M2/FV8jykmW+IWwRUSS9WQWgqFiamb0PHb+RRWZvxCrBX1v0tNwY8dwENTJTrJCVwcKEfCzUXzdwfJoYcT3/UyCNOS+n1l2ShSBsdJ+9v8FU16J/0Z6ZkcqMdGrcUZps+h8nbYHd2M5L+f9AuU71DGA/KCDAa5r6RI7Bvqb4o7NebJKshpPJj/E5SqsZY2n2T4OAnbIyF7Lb5jWx0gfo5ovPSbk8TcXyq8EToKLSTEUj+HvPhZhnizJQeyBI7SXVf3uo+DEDtSc2eCkYt12LjNo3n0l9DxdzSNyk8HB7btZltGZCU/IPC973l6U4lu3v4+4xW5jkv1PVDsQRsfpo+VTOP4fPKPbPUe0rKxKiXRXHWGeIpnukjsa2ebE3aFnbpKbJ2JxpmB86j5wgTN2LEFR0KIv3Hz5cf5jSv9+e30dL8REglJEonluzw1HjWplvGAANAIFwj9q7fPbR/0PJDOKq8KvnsLJLZzxU76Lelz3tWiN+krfsxoI0lP17n/bwQQhaW1/NWm9TfG9wwnqmdyl+iC0bqhJNJi+584tJh4fbUXDaflg64N29nMgiCB16IIL8T3bxMoiGEasH2cliI4aC0JG49RbaGOpsi2KSLX3/DhDfxkRh6rzbrOcN15+eQHEMx0Tksxh1GQH/e5jBcraJp5fa4JlO99tQ5VX9DhvF55IM=\",\n\t\"password\": \"12345678a\"\n}"
 								},
 								"url": {
-									"raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers?",
+									"raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers",
 									"protocol": "https",
 									"host": [
 										"sync",
@@ -1869,7 +1863,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers?",
+							"raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers",
 							"protocol": "https",
 							"host": [
 								"sync",
@@ -1912,153 +1906,6 @@
 					},
 					"response": [
 						{
-							"name": "401",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{ \n\t\"taxpayer\": \"IXS7607092R5\",\n\t\"cer\": \"MIIF5TCCA82gAwIBAgIUMzAwMDEwMDAwMDA0MDAwMDI0NDUwDQYJKoZIhvcNAQELBQAwggErMQ8wDQYDVQQDDAZBQyBVQVQxLjAsBgNVBAoMJVNFUlZJQ0lPIERFIEFETUlOSVNUUkFDSU9OIFRSSUJVVEFSSUExGjAYBgNVBAsMEVNBVC1JRVMgQXV0aG9yaXR5MSgwJgYJKoZIhvcNAQkBFhlvc2Nhci5tYXJ0aW5lekBzYXQuZ29iLm14MR0wGwYDVQQJDBQzcmEgY2VycmFkYSBkZSBjYWRpejEOMAwGA1UEEQwFMDYzNzAxCzAJBgNVBAYTAk1YMRkwFwYDVQQIDBBDSVVEQUQgREUgTUVYSUNPMREwDwYDVQQHDAhDT1lPQUNBTjERMA8GA1UELRMIMi41LjQuNDUxJTAjBgkqhkiG9w0BCQITFnJlc3BvbnNhYmxlOiBBQ0RNQS1TQVQwHhcNMTkwNjE3MjA0ODI0WhcNMjMwNjE3MjA0ODI0WjCCAQsxLzAtBgNVBAMTJklOVEVSTkFDSU9OQUwgWElNQk8gWSBTQUJPUkVTIFNBIERFIENWMS8wLQYDVQQpEyZJTlRFUk5BQ0lPTkFMIFhJTUJPIFkgU0FCT1JFUyBTQSBERSBDVjEvMC0GA1UEChMmSU5URVJOQUNJT05BTCBYSU1CTyBZIFNBQk9SRVMgU0EgREUgQ1YxJTAjBgNVBC0THElYUzc2MDcwOTJSNSAvIEtBSE82NDExMDFCMzkxHjAcBgNVBAUTFSAvIEtBSE82NDExMDFITlRMS1MwNjEvMC0GA1UECxMmSU5URVJOQUNJT05BTCBYSU1CTyBZIFNBQk9SRVMgU0EgREUgQ1YwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC8kcv3+BxexzGXa5Qf9lCP5/q92f0jPziUsf60NIWJkV1TLOnxsXzyUyU5FlWwa7PoiIBYUcYMCwbRWfQoMhcqzcnn/xxORNRqmzNmbrIPSxvOLuIwU495fmQZdqeXxj8Yws8YCDPZb1E+7/9DtW81skoh1A3vTICZQC0rie1B0FOsa12sIxXrWcwP3OZnfnKqUk69QAtoVJGTjcTAbT+DXyvxuYSHkMm+j9itED0LvAoU26sPtf9EWbYC3AB21RSgmnVPTELRGaaNIQJs/fQQY4JrqNNFBJoHYwo72tQtFUvcqqZ9MLURhCo5zaedE3VmT4ITLgzuHYF/QnAhBKIzAgMBAAGjHTAbMAwGA1UdEwEB/wQCMAAwCwYDVR0PBAQDAgbAMA0GCSqGSIb3DQEBCwUAA4ICAQA15SEAKaLgmF7wTfT1ILRnHAigfn/JGGn+eN+L15hINKSLrkEGwFqFGS+zy8QojtKsb1cnmsDF8mLH6mMHhcN45iJl5Q2OUg2BxeOa92PqrVpCgERMzLmXuGF8GJMjDWtWn16ZTm7ZoGPvu+jQGzW/fkJIygi0vpBMwIRLGssCWwRqlXkmI1Rira6CTlLyvAGKgGGEOV0JAoYtR9NjCq0lzpPdmrccr8coEw3266EcUq9pNysoGhm4gqoPVmDKKuNHOtdi5H34e92OIDobdl0VD/ESO6FtG3ClFHLx+r9NV5n0QfMVLc3Vxb5wEFdGLFnWYGReoLoRXwkiIsaKQ9ezEhxSbh40jSV3J5AxE9G2rHsGzXcKF07ZU0TQNeL5zNg9yf1ODXqYYGIMiFPzCbo4NkFhIDbUyMYUtWuuRbSD0cDZUzXUUGv5AvEvsa7WD9f7BSzSUh0UiPftA1uc2S6mzHR4zdXI9UvAc3AX0Ky64CrtE1ffrd/hD3BfPWvAu+1MAZwXxPBo28tN4qr1yffT1tNPbiO0MAT4GVyJOjeQhUA+J7O3Y6dc9ubcpXePgTOk1dB7/Fv0TUNMPz5gFAPagzQMAQLqnkzyNVnzuRyv4oEWCuSJhg5qIaNfTH1hCN3EmjMaQGIjwQf/TOVrpIzIUwA5D4kRRl3tzDPhvjFrEQ==\",\n\t\"key\": \"MIIFDjBABgkqhkiG9w0BBQ0wMzAbBgkqhkiG9w0BBQwwDgQIAgEAAoIBAQACAggAMBQGCCqGSIb3DQMHBAgwggS9AgEAMASCBMh4EHl7aNSCaMDA1VlRoXCZ5UUmqErAbucRBAKNQXH8t3X1ZNTXua+xM+dHKTDgiPce0sjfFzN8opkMp12yJFMiujuPxFwOW2FH7DsRJY2kCJalnVnWpFJ5NzMc3FpEuu+s03usy8CBEOo9F57I2ITTqCzbQsY3/J0upGQIWNN/7xQaBFArbczevtQOwgJ1JZtX04kM4siYFMwmreU/Jl5Lu5Ur9PGMwgQiYWBUXeoKb9b7exLZBCBHTxzSlDLuU2Vc/MNEwRJ1Cb4sCiJ+mFVPOF/P5rDZbD5uMRYyPEtZVfq67ptooDlYakQM1Gm3V17PMlEmaZg8vn7YZ8drB9myyvhIuZlxNEWQTyMCXrKV7qsXVisYxkWdlbaOo9CgjmVXWd4PgbM0OrCcfWevawE2+gAWNYLZRhBJNWjGdNA8xQ8VebFai7WYRVeMvuB85BpNMZFEQzAl6ztDnUMSyZDAmbXinYUon19qUV9Ff1YJqpvNWSErGza5jyh5TJ+yeZnY0WO7ONo3oZ+TdLbwLtthbr1zs1c+7nXn5i8WzW5lGgBX/7eHihYHGNIn0RiJ0v/LHEtdkPq/xXQ5jJjfgLRnujtKxq31CyxeV0vFCus3Hj1egVn6OXk7BGPN2q5UP+3xGjvH/cxzouSB6y13qoTbCX08R52GE4g7GbAiT0qiRdoiDZA6731ackMl0t2vKkGRtx/SMVnbPhUvquaR5byqPDEBtRlgD0Q/0726I0qaDrSch+gHjT/nkP7sneBZZCYIGIIt9PQnbn8bob3TPer1Ne/Q4m14P3W3WE2u6krFc3EqNcfNMhCQlX92Q3MPazxCLcWJC2y6Q6c7CxpPnzMVkzkMaYuUcE4v5ZZF3mPIMy7pEQS73GQUgRltXToNY+TFdhfyCDbiJK74Zd/RjleHyITlaidfAbyAKDZYLZEQ4a2gKx2M2/FV8jykmW+IWwRUSS9WQWgqFiamb0PHb+RRWZvxCrBX1v0tNwY8dwENTJTrJCVwcKEfCzUXzdwfJoYcT3/UyCNOS+n1l2ShSBsdJ+9v8FU16J/0Z6ZkcqMdGrcUZps+h8nbYHd2M5L+f9AuU71DGA/KCDAa5r6RI7Bvqb4o7NebJKshpPJj/E5SqsZY2n2T4OAnbIyF7Lb5jWx0gfo5ovPSbk8TcXyq8EToKLSTEUj+HvPhZhnizJQeyBI7SXVf3uo+DEDtSc2eCkYt12LjNo3n0l9DxdzSNyk8HB7btZltGZCU/IPC973l6U4lu3v4+4xW5jkv1PVDsQRsfpo+VTOP4fPKPbPUe0rKxKiXRXHWGeIpnukjsa2ebE3aFnbpKbJ2JxpmB86j5wgTN2LEFR0KIv3Hz5cf5jSv9+e30dL8REglJEonluzw1HjWplvGAANAIFwj9q7fPbR/0PJDOKq8KvnsLJLZzxU76Lelz3tWiN+krfsxoI0lP17n/bwQQhaW1/NWm9TfG9wwnqmdyl+iC0bqhJNJi+584tJh4fbUXDaflg64N29nMgiCB16IIL8T3bxMoiGEasH2cliI4aC0JG49RbaGOpsi2KSLX3/DhDfxkRh6rzbrOcN15+eQHEMx0Tksxh1GQH/e5jBcraJp5fa4JlO99tQ5VX9DhvF55IM=\",\n\t\"password\": \"12345678a\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers?",
-									"protocol": "https",
-									"host": [
-										"sync",
-										"paybook",
-										"com"
-									],
-									"path": [
-										"v1",
-										"invoicing",
-										"mx",
-										"taxpayers"
-									],
-									"query": [
-										{
-											"key": "taxpayer",
-											"value": "String",
-											"description": "The RFC of the taxpayer e.g.(AAA010101AAA)",
-											"disabled": true
-										},
-										{
-											"key": "cer",
-											"value": "String",
-											"description": "Certificate of the taxpayer (string encoded in base64)",
-											"disabled": true
-										},
-										{
-											"key": "key",
-											"value": "String",
-											"description": "Key of the certificate (string encoded in base64)",
-											"disabled": true
-										},
-										{
-											"key": "password",
-											"value": "String",
-											"description": "Password of the cer and key",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"status": "Unauthorized",
-							"code": 401,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Fri, 20 Mar 2020 23:06:01 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Fri, 20 Mar 2020 23:06:01 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "9076c6ba-8330-41d6-9833-e1b72f299eae"
-								},
-								{
-									"key": "CF-Cache-Status",
-									"value": "DYNAMIC"
-								},
-								{
-									"key": "Expect-CT",
-									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains; preload"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Server",
-									"value": "cloudflare"
-								},
-								{
-									"key": "CF-RAY",
-									"value": "577314ce4e50c7f6-DFW"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"9076c6ba-8330-41d6-9833-e1b72f299eae\",\n    \"code\": 401,\n    \"errors\": null,\n    \"status\": false,\n    \"message\": \"Unauthorized\",\n    \"response\": null\n}"
-						},
-						{
 							"name": "200",
 							"originalRequest": {
 								"method": "PUT",
@@ -2080,7 +1927,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers?",
+									"raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers",
 									"protocol": "https",
 									"host": [
 										"sync",
@@ -2216,6 +2063,153 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"rid\": \"b09ebbc2-9fa5-4a9e-b44d-1480e98aec43\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_taxpayer\": \"5e751e95d0510472295413b4\",\n        \"taxpayer\": \"IXS7607092R5\"\n    }\n}"
+						},
+						{
+							"name": "401",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \n\t\"taxpayer\": \"IXS7607092R5\",\n\t\"cer\": \"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\",\n\t\"key\": \"MIIFDjBABgkqhkiG9w0BBQ0wMzAbBgkqhkiG9w0BBQwwDgQIAgEAAoIBAQACAggAMBQGCCqGSIb3DQMHBAgwggS9AgEAMASCBMh4EHl7aNSCaMDA1VlRoXCZ5UUmqErAbucRBAKNQXH8t3X1ZNTXua+xM+dHKTDgiPce0sjfFzN8opkMp12yJFMiujuPxFwOW2FH7DsRJY2kCJalnVnWpFJ5NzMc3FpEuu+s03usy8CBEOo9F57I2ITTqCzbQsY3/J0upGQIWNN/7xQaBFArbczevtQOwgJ1JZtX04kM4siYFMwmreU/Jl5Lu5Ur9PGMwgQiYWBUXeoKb9b7exLZBCBHTxzSlDLuU2Vc/MNEwRJ1Cb4sCiJ+mFVPOF/P5rDZbD5uMRYyPEtZVfq67ptooDlYakQM1Gm3V17PMlEmaZg8vn7YZ8drB9myyvhIuZlxNEWQTyMCXrKV7qsXVisYxkWdlbaOo9CgjmVXWd4PgbM0OrCcfWevawE2+gAWNYLZRhBJNWjGdNA8xQ8VebFai7WYRVeMvuB85BpNMZFEQzAl6ztDnUMSyZDAmbXinYUon19qUV9Ff1YJqpvNWSErGza5jyh5TJ+yeZnY0WO7ONo3oZ+TdLbwLtthbr1zs1c+7nXn5i8WzW5lGgBX/7eHihYHGNIn0RiJ0v/LHEtdkPq/xXQ5jJjfgLRnujtKxq31CyxeV0vFCus3Hj1egVn6OXk7BGPN2q5UP+3xGjvH/cxzouSB6y13qoTbCX08R52GE4g7GbAiT0qiRdoiDZA6731ackMl0t2vKkGRtx/SMVnbPhUvquaR5byqPDEBtRlgD0Q/0726I0qaDrSch+gHjT/nkP7sneBZZCYIGIIt9PQnbn8bob3TPer1Ne/Q4m14P3W3WE2u6krFc3EqNcfNMhCQlX92Q3MPazxCLcWJC2y6Q6c7CxpPnzMVkzkMaYuUcE4v5ZZF3mPIMy7pEQS73GQUgRltXToNY+TFdhfyCDbiJK74Zd/RjleHyITlaidfAbyAKDZYLZEQ4a2gKx2M2/FV8jykmW+IWwRUSS9WQWgqFiamb0PHb+RRWZvxCrBX1v0tNwY8dwENTJTrJCVwcKEfCzUXzdwfJoYcT3/UyCNOS+n1l2ShSBsdJ+9v8FU16J/0Z6ZkcqMdGrcUZps+h8nbYHd2M5L+f9AuU71DGA/KCDAa5r6RI7Bvqb4o7NebJKshpPJj/E5SqsZY2n2T4OAnbIyF7Lb5jWx0gfo5ovPSbk8TcXyq8EToKLSTEUj+HvPhZhnizJQeyBI7SXVf3uo+DEDtSc2eCkYt12LjNo3n0l9DxdzSNyk8HB7btZltGZCU/IPC973l6U4lu3v4+4xW5jkv1PVDsQRsfpo+VTOP4fPKPbPUe0rKxKiXRXHWGeIpnukjsa2ebE3aFnbpKbJ2JxpmB86j5wgTN2LEFR0KIv3Hz5cf5jSv9+e30dL8REglJEonluzw1HjWplvGAANAIFwj9q7fPbR/0PJDOKq8KvnsLJLZzxU76Lelz3tWiN+krfsxoI0lP17n/bwQQhaW1/NWm9TfG9wwnqmdyl+iC0bqhJNJi+584tJh4fbUXDaflg64N29nMgiCB16IIL8T3bxMoiGEasH2cliI4aC0JG49RbaGOpsi2KSLX3/DhDfxkRh6rzbrOcN15+eQHEMx0Tksxh1GQH/e5jBcraJp5fa4JlO99tQ5VX9DhvF55IM=\",\n\t\"password\": \"12345678a\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers",
+									"protocol": "https",
+									"host": [
+										"sync",
+										"paybook",
+										"com"
+									],
+									"path": [
+										"v1",
+										"invoicing",
+										"mx",
+										"taxpayers"
+									],
+									"query": [
+										{
+											"key": "taxpayer",
+											"value": "String",
+											"description": "The RFC of the taxpayer e.g.(AAA010101AAA)",
+											"disabled": true
+										},
+										{
+											"key": "cer",
+											"value": "String",
+											"description": "Certificate of the taxpayer (string encoded in base64)",
+											"disabled": true
+										},
+										{
+											"key": "key",
+											"value": "String",
+											"description": "Key of the certificate (string encoded in base64)",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "String",
+											"description": "Password of the cer and key",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 20 Mar 2020 23:06:01 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Fri, 20 Mar 2020 23:06:01 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "9076c6ba-8330-41d6-9833-e1b72f299eae"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "577314ce4e50c7f6-DFW"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"9076c6ba-8330-41d6-9833-e1b72f299eae\",\n    \"code\": 401,\n    \"errors\": null,\n    \"status\": false,\n    \"message\": \"Unauthorized\",\n    \"response\": null\n}"
 						}
 					]
 				}
@@ -2235,7 +2229,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "3f27d977-56e7-46a6-b1a1-ebb853b5c114",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2245,15 +2238,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "d5fdac44-3469-43fc-924c-3ef21685396c",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Invoices",
@@ -3288,7 +3279,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "777a49f5-64da-472a-9940-1d8169ba4204",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -3298,22 +3288,19 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "a3283418-4d4d-4563-b3a6-a70b981614e7",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "b837781e-de9f-4572-b57d-a9dc757e29b1",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -3323,13 +3310,11 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "e8b4ad1d-9825-4f82-812e-bb670dfe8c27",
 				"type": "text/javascript",
 				"exec": [
 					""
 				]
 			}
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
