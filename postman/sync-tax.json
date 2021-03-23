@@ -3353,109 +3353,6 @@
 					},
 					"response": [
 						{
-							"name": "401",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://sync.paybook.com/v1/credentials",
-									"protocol": "https",
-									"host": [
-										"sync",
-										"paybook",
-										"com"
-									],
-									"path": [
-										"v1",
-										"credentials"
-									]
-								}
-							},
-							"status": "Unauthorized",
-							"code": 401,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Fri, 20 Mar 2020 23:02:41 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Fri, 20 Mar 2020 23:02:40 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "9e5f96ea-fa20-4c1c-aa26-77b8eca27a92"
-								},
-								{
-									"key": "CF-Cache-Status",
-									"value": "DYNAMIC"
-								},
-								{
-									"key": "Expect-CT",
-									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains; preload"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Server",
-									"value": "cloudflare"
-								},
-								{
-									"key": "CF-RAY",
-									"value": "57730fe9bbcac7f6-DFW"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"9e5f96ea-fa20-4c1c-aa26-77b8eca27a92\",\n    \"code\": 401,\n    \"errors\": null,\n    \"status\": false,\n    \"message\": \"Unauthorized\",\n    \"response\": null\n}"
-						},
-						{
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -3569,6 +3466,109 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"rid\": \"460c3090-d5c1-4277-a455-5f698e6b69a0\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_credential\": \"5e73bfe6d036f64a591d8822\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_environment\": \"574894bf7848066d138b4570\",\n            \"id_external\": \"\",\n            \"id_site\": \"5da784f1f9de2a06483abec1\",\n            \"id_site_organization\": \"56cf4ff5784806152c8b4567\",\n            \"id_site_organization_type\": \"56cf4f5b784806cf028b4569\",\n            \"id_organization\": \"56cf4ff5784806152c8b4567\",\n            \"is_authorized\": 1,\n            \"is_locked\": 0,\n            \"is_twofa\": 0,\n            \"can_sync\": 0,\n            \"ready_in\": 85992,\n            \"username\": \"A**********C\",\n            \"code\": 200,\n            \"keywords\": [\n                \"001\",\n                \"002\",\n                \"003\",\n                \"3.3\",\n                \"emitidas\",\n                \"i\",\n                \"impuestos\",\n                \"recibidas\",\n                \"retenciones\",\n                \"timbrefiscaldigital\",\n                \"traslados\",\n                \"vigente\"\n            ],\n            \"dt_authorized\": 1584644110,\n            \"dt_execute\": 1584644070,\n            \"dt_ready\": 1584730510,\n            \"dt_refresh\": 1584644110\n        }\n    ]\n}"
+						},
+						{
+							"name": "401",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://sync.paybook.com/v1/credentials",
+									"protocol": "https",
+									"host": [
+										"sync",
+										"paybook",
+										"com"
+									],
+									"path": [
+										"v1",
+										"credentials"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 20 Mar 2020 23:02:41 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Fri, 20 Mar 2020 23:02:40 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "9e5f96ea-fa20-4c1c-aa26-77b8eca27a92"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "57730fe9bbcac7f6-DFW"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"9e5f96ea-fa20-4c1c-aa26-77b8eca27a92\",\n    \"code\": 401,\n    \"errors\": null,\n    \"status\": false,\n    \"message\": \"Unauthorized\",\n    \"response\": null\n}"
 						}
 					]
 				},
@@ -3945,182 +3945,6 @@
 					},
 					"response": [
 						{
-							"name": "401",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://sync.paybook.com/v1/accounts?id_credential={{sync_id_credential}}",
-									"protocol": "https",
-									"host": [
-										"sync",
-										"paybook",
-										"com"
-									],
-									"path": [
-										"v1",
-										"accounts"
-									],
-									"query": [
-										{
-											"key": "id_credential",
-											"value": "{{sync_id_credential}}",
-											"description": "Credential ID"
-										},
-										{
-											"key": "id_account",
-											"value": "String",
-											"description": "(optional) Account ID",
-											"disabled": true
-										},
-										{
-											"key": "id_site",
-											"value": "String",
-											"description": "(optional) Site ID",
-											"disabled": true
-										},
-										{
-											"key": "id_site_organization",
-											"value": "String",
-											"description": "(optional) Site Organization ID",
-											"disabled": true
-										},
-										{
-											"key": "id_site_organization_type",
-											"value": "String",
-											"description": "(optional) Site Organization Type ID",
-											"disabled": true
-										},
-										{
-											"key": "is_disable",
-											"value": "Number",
-											"description": "(optional) Is disable, some sites can have the option to retreieve transactions that are not longer valid, active, etc.",
-											"disabled": true
-										},
-										{
-											"key": "fields",
-											"value": "String",
-											"description": "(optional) Select fields to be returned",
-											"disabled": true
-										},
-										{
-											"key": "limit",
-											"value": "Number",
-											"description": "(optional)Limit the number of rows to be returned",
-											"disabled": true
-										},
-										{
-											"key": "skip",
-											"value": "Number",
-											"description": "(optional) Skip rows to be returned",
-											"disabled": true
-										},
-										{
-											"key": "order",
-											"value": "String",
-											"description": "(optional) Order the rows to be returned",
-											"disabled": true
-										},
-										{
-											"key": "keywords",
-											"value": "String",
-											"description": "(optional) Filters by keywords (for multiple keywords concatenate a string using a comma as a separator)",
-											"disabled": true
-										},
-										{
-											"key": "skip_keywords",
-											"value": "String",
-											"description": "(optional) Filters by keywords (for multiple keywords concatenate a string using a comma as a separator)",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"status": "Unauthorized",
-							"code": 401,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Fri, 20 Mar 2020 23:03:10 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Fri, 20 Mar 2020 23:03:10 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "b145c3a9-5018-4323-8d64-a5c4c2c07ee0"
-								},
-								{
-									"key": "CF-Cache-Status",
-									"value": "DYNAMIC"
-								},
-								{
-									"key": "Expect-CT",
-									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains; preload"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Server",
-									"value": "cloudflare"
-								},
-								{
-									"key": "CF-RAY",
-									"value": "577310a23aacc7f6-DFW"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"b145c3a9-5018-4323-8d64-a5c4c2c07ee0\",\n    \"code\": 401,\n    \"errors\": null,\n    \"status\": false,\n    \"message\": \"Unauthorized\",\n    \"response\": null\n}"
-						},
-						{
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -4307,6 +4131,182 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"rid\": \"4ab8303b-6014-4f5a-a578-f5ea3f5fc18c\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_account\": \"5db073b1caaf236a6a4c2acc\",\n            \"id_account_type\": \"546d4904df527d1844a2e18d\",\n            \"id_currency\": \"523a25953b8e77910e8b456c\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_external\": \"\",\n            \"id_credential\": \"5e73bfe6d036f64a591d8822\",\n            \"id_site\": \"5da784f1f9de2a06483abec1\",\n            \"id_site_organization\": \"56cf4ff5784806152c8b4567\",\n            \"id_site_organization_type\": \"56cf4f5b784806cf028b4569\",\n            \"is_disable\": 0,\n            \"name\": \"Facturas CFDI ACM010101ABC\",\n            \"number\": null,\n            \"balance\": 0,\n            \"currency\": \"MXN\",\n            \"account_type\": \"IRS\",\n            \"site\": {\n                \"id_site\": \"5da784f1f9de2a06483abec1\",\n                \"id_site_organization\": \"56cf4ff5784806152c8b4567\",\n                \"id_site_organization_type\": \"56cf4f5b784806cf028b4569\",\n                \"name\": \"SAT\",\n                \"organization\": \"Acme Bank\",\n                \"avatar\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9sbFI3bEhOT0JEd2wyd2VsbjcrTWZYRzAxbzZEeUJqNGJuYnp6NUhjNG9nc1A4MlJXTENxVUlEdElaMVoreTlyNjlTSDFXaXBuckpqUGpFUytmcHU4dnhIQkt0QW81RHBKdz09\",\n                \"cover\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9sbFI3bEhOT0JEd2wyd2VsbjcrTWZYRzAxbzZEeUJqNGJxYXZVeEhjWWcxNTR0a25OMy9TV3dTMnE0VENlTmFzemVEYnZ2elhqWTVXa2JXU0lrclFtT3VteG8xN2sxeHN6QT09\",\n                \"small_cover\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9sbFI3bEhOT0JEd2wyd2VsbjcrTWZYRzAxbzZEeUJqNGJxYXZVeEhjWWcxNTR0a25OMy9TV3dTMnE0VENlTmFzemVEYnZ2elhqWTVXUTNZclN2TWF4YUJZNU9ib2crMWJpUUNyQ0NYRXVQWURpNmduU1JHTlRJZz0\",\n                \"time_zone\": \"America/Mexico_City\"\n            },\n            \"extra\": null,\n            \"keywords\": [\n                \"001\",\n                \"002\",\n                \"003\",\n                \"3.3\",\n                \"emitidas\",\n                \"i\",\n                \"impuestos\",\n                \"recibidas\",\n                \"retenciones\",\n                \"timbrefiscaldigital\",\n                \"traslados\",\n                \"vigente\"\n            ],\n            \"dt_refresh\": 1584644110\n        }\n    ]\n}"
+						},
+						{
+							"name": "401",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://sync.paybook.com/v1/accounts?id_credential={{sync_id_credential}}",
+									"protocol": "https",
+									"host": [
+										"sync",
+										"paybook",
+										"com"
+									],
+									"path": [
+										"v1",
+										"accounts"
+									],
+									"query": [
+										{
+											"key": "id_credential",
+											"value": "{{sync_id_credential}}",
+											"description": "Credential ID"
+										},
+										{
+											"key": "id_account",
+											"value": "String",
+											"description": "(optional) Account ID",
+											"disabled": true
+										},
+										{
+											"key": "id_site",
+											"value": "String",
+											"description": "(optional) Site ID",
+											"disabled": true
+										},
+										{
+											"key": "id_site_organization",
+											"value": "String",
+											"description": "(optional) Site Organization ID",
+											"disabled": true
+										},
+										{
+											"key": "id_site_organization_type",
+											"value": "String",
+											"description": "(optional) Site Organization Type ID",
+											"disabled": true
+										},
+										{
+											"key": "is_disable",
+											"value": "Number",
+											"description": "(optional) Is disable, some sites can have the option to retreieve transactions that are not longer valid, active, etc.",
+											"disabled": true
+										},
+										{
+											"key": "fields",
+											"value": "String",
+											"description": "(optional) Select fields to be returned",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "Number",
+											"description": "(optional)Limit the number of rows to be returned",
+											"disabled": true
+										},
+										{
+											"key": "skip",
+											"value": "Number",
+											"description": "(optional) Skip rows to be returned",
+											"disabled": true
+										},
+										{
+											"key": "order",
+											"value": "String",
+											"description": "(optional) Order the rows to be returned",
+											"disabled": true
+										},
+										{
+											"key": "keywords",
+											"value": "String",
+											"description": "(optional) Filters by keywords (for multiple keywords concatenate a string using a comma as a separator)",
+											"disabled": true
+										},
+										{
+											"key": "skip_keywords",
+											"value": "String",
+											"description": "(optional) Filters by keywords (for multiple keywords concatenate a string using a comma as a separator)",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 20 Mar 2020 23:03:10 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Fri, 20 Mar 2020 23:03:10 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "b145c3a9-5018-4323-8d64-a5c4c2c07ee0"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "577310a23aacc7f6-DFW"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"b145c3a9-5018-4323-8d64-a5c4c2c07ee0\",\n    \"code\": 401,\n    \"errors\": null,\n    \"status\": false,\n    \"message\": \"Unauthorized\",\n    \"response\": null\n}"
 						}
 					]
 				}
@@ -5937,185 +5937,6 @@
 					},
 					"response": [
 						{
-							"name": "401",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://sync.paybook.com/v1/attachments?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}&skip=Number&limit=Number",
-									"protocol": "https",
-									"host": [
-										"sync",
-										"paybook",
-										"com"
-									],
-									"path": [
-										"v1",
-										"attachments"
-									],
-									"query": [
-										{
-											"key": "id_credential",
-											"value": "{{sync_id_credential}}",
-											"description": " (optional) Credential ID"
-										},
-										{
-											"key": "id_account",
-											"value": "{{sync_id_account}}",
-											"description": " (optional) Filters by account ID"
-										},
-										{
-											"key": "skip",
-											"value": "Number",
-											"description": " (optional) Skip rows to be returned"
-										},
-										{
-											"key": "limit",
-											"value": "Number",
-											"description": " (optional) Limit the number of rows to be returned"
-										},
-										{
-											"key": "id_attachment_type",
-											"value": "String",
-											"description": " (optional) Attachment Type ID",
-											"disabled": true
-										},
-										{
-											"key": "id_transaction",
-											"value": "String",
-											"description": " (optional) Transaction ID",
-											"disabled": true
-										},
-										{
-											"key": "is_valid",
-											"value": "String",
-											"description": " (optional) Is attachment valid",
-											"disabled": true
-										},
-										{
-											"key": "dt_refresh_from",
-											"value": "Timestamp",
-											"description": " (optional) Filters by transaction refresh date, expected UNIX timestamp",
-											"disabled": true
-										},
-										{
-											"key": "dt_refresh_to",
-											"value": "Timestamp",
-											"description": " (optional) Filters by transaction refresh date, expected UNIX timestamp",
-											"disabled": true
-										},
-										{
-											"key": "fields",
-											"value": "String",
-											"description": " (optional) Select fields to be returned",
-											"disabled": true
-										},
-										{
-											"key": "order",
-											"value": "String",
-											"description": " (optional) Order the rows to be returned",
-											"disabled": true
-										},
-										{
-											"key": "keywords",
-											"value": "String",
-											"description": " (optional) Filters by keywords (for multiple keywords concatenate a string using a comma as a separator)",
-											"disabled": true
-										},
-										{
-											"key": "skip_keywords",
-											"value": "String",
-											"description": " (optional) Filters by keywords (for multiple keywords concatenate a string using a comma as a separator)",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"status": "Unauthorized",
-							"code": 401,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Fri, 20 Mar 2020 23:04:36 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Fri, 20 Mar 2020 23:04:36 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "7a6a67f0-740c-4b98-aabd-947a55f77cc8"
-								},
-								{
-									"key": "CF-Cache-Status",
-									"value": "DYNAMIC"
-								},
-								{
-									"key": "Expect-CT",
-									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains; preload"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Server",
-									"value": "cloudflare"
-								},
-								{
-									"key": "CF-RAY",
-									"value": "577312bbcf35c7f6-DFW"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"7a6a67f0-740c-4b98-aabd-947a55f77cc8\",\n    \"code\": 401,\n    \"errors\": null,\n    \"status\": false,\n    \"message\": \"Unauthorized\",\n    \"response\": null\n}"
-						},
-						{
 							"name": "200",
 							"originalRequest": {
 								"method": "GET",
@@ -6305,6 +6126,185 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"rid\": \"191524b2-380f-48c9-97a1-95758591b3c3\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_attachment\": \"5db073b4caaf236a6a4c2eb5\",\n            \"id_account\": \"5db073b1caaf236a6a4c2acc\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_external\": \"\",\n            \"id_attachment_type\": \"56bcdfca784806d1378b4567\",\n            \"id_transaction\": \"5db073b1caaf236a6a4c2acd\",\n            \"is_valid\": 1,\n            \"file\": \"4B2B511C-A29E-4CDF-8AD3-143515CF6152.xml\",\n            \"mime\": null,\n            \"url\": \"/attachments/5db073b4caaf236a6a4c2eb5\",\n            \"keywords\": [\n                \"3.3\",\n                \"emitidas\",\n                \"i\",\n                \"timbrefiscaldigital\",\n                \"vigente\"\n            ],\n            \"dt_refresh\": 1571844997\n        },\n        {\n            \"id_attachment\": \"5db073b4caaf236a6a4c2eb6\",\n            \"id_account\": \"5db073b1caaf236a6a4c2acc\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_external\": \"\",\n            \"id_attachment_type\": \"56bcdfca784806d1378b4567\",\n            \"id_transaction\": \"5db073b1caaf236a6a4c2ace\",\n            \"is_valid\": 1,\n            \"file\": \"27D33E8C-0120-4F98-ACCD-1C0DBA9D794F.xml\",\n            \"mime\": null,\n            \"url\": \"/attachments/5db073b4caaf236a6a4c2eb6\",\n            \"keywords\": [\n                \"001\",\n                \"002\",\n                \"3.3\",\n                \"i\",\n                \"impuestos\",\n                \"recibidas\",\n                \"retenciones\",\n                \"timbrefiscaldigital\",\n                \"traslados\",\n                \"vigente\"\n            ],\n            \"dt_refresh\": 1571844997\n        },\n        {\n            \"id_attachment\": \"5db073b4caaf236a6a4c2eb7\",\n            \"id_account\": \"5db073b1caaf236a6a4c2acc\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_external\": \"\",\n            \"id_attachment_type\": \"56bcdfca784806d1378b4567\",\n            \"id_transaction\": \"5db073b1caaf236a6a4c2acf\",\n            \"is_valid\": 1,\n            \"file\": \"D7577C8D-6047-49B6-8B88-8F8D2E526A34.xml\",\n            \"mime\": null,\n            \"url\": \"/attachments/5db073b4caaf236a6a4c2eb7\",\n            \"keywords\": [\n                \"002\",\n                \"003\",\n                \"3.3\",\n                \"emitidas\",\n                \"i\",\n                \"impuestos\",\n                \"timbrefiscaldigital\",\n                \"traslados\",\n                \"vigente\"\n            ],\n            \"dt_refresh\": 1571844997\n        },\n        {\n            \"id_attachment\": \"5db073b4caaf236a6a4c2eb8\",\n            \"id_account\": \"5db073b1caaf236a6a4c2acc\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_external\": \"\",\n            \"id_attachment_type\": \"56bcdfca784806d1378b4567\",\n            \"id_transaction\": \"5db073b1caaf236a6a4c2ad0\",\n            \"is_valid\": 1,\n            \"file\": \"3559A1EC-248D-40C7-8FD0-A4631F222550.xml\",\n            \"mime\": null,\n            \"url\": \"/attachments/5db073b4caaf236a6a4c2eb8\",\n            \"keywords\": [\n                \"002\",\n                \"3.3\",\n                \"i\",\n                \"impuestos\",\n                \"recibidas\",\n                \"timbrefiscaldigital\",\n                \"traslados\",\n                \"vigente\"\n            ],\n            \"dt_refresh\": 1571844997\n        },\n        {\n            \"id_attachment\": \"5db073b4caaf236a6a4c2eb9\",\n            \"id_account\": \"5db073b1caaf236a6a4c2acc\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_external\": \"\",\n            \"id_attachment_type\": \"56bcdfca784806d1378b4567\",\n            \"id_transaction\": \"5db073b1caaf236a6a4c2ad1\",\n            \"is_valid\": 1,\n            \"file\": \"1B6A163D-11A5-4CA1-9F1A-918FC219F35C.xml\",\n            \"mime\": null,\n            \"url\": \"/attachments/5db073b4caaf236a6a4c2eb9\",\n            \"keywords\": [\n                \"002\",\n                \"003\",\n                \"3.3\",\n                \"emitidas\",\n                \"i\",\n                \"impuestos\",\n                \"timbrefiscaldigital\",\n                \"traslados\",\n                \"vigente\"\n            ],\n            \"dt_refresh\": 1571844997\n        },\n        {\n            \"id_attachment\": \"5db073b4caaf236a6a4c2eba\",\n            \"id_account\": \"5db073b1caaf236a6a4c2acc\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_external\": \"\",\n            \"id_attachment_type\": \"56bcdfca784806d1378b4567\",\n            \"id_transaction\": \"5db073b1caaf236a6a4c2ad2\",\n            \"is_valid\": 1,\n            \"file\": \"5AFE2434-5962-481E-BA57-759E37AA7F89.xml\",\n            \"mime\": null,\n            \"url\": \"/attachments/5db073b4caaf236a6a4c2eba\",\n            \"keywords\": [\n                \"001\",\n                \"002\",\n                \"3.3\",\n                \"i\",\n                \"impuestos\",\n                \"recibidas\",\n                \"retenciones\",\n                \"timbrefiscaldigital\",\n                \"traslados\",\n                \"vigente\"\n            ],\n            \"dt_refresh\": 1571844997\n        },\n        {\n            \"id_attachment\": \"5db073b4caaf236a6a4c2ebb\",\n            \"id_account\": \"5db073b1caaf236a6a4c2acc\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_external\": \"\",\n            \"id_attachment_type\": \"56bcdfca784806d1378b4567\",\n            \"id_transaction\": \"5db073b1caaf236a6a4c2ad3\",\n            \"is_valid\": 1,\n            \"file\": \"BF6EE76B-6AED-4E0A-81C1-DE38BA7ABC11.xml\",\n            \"mime\": null,\n            \"url\": \"/attachments/5db073b4caaf236a6a4c2ebb\",\n            \"keywords\": [\n                \"002\",\n                \"003\",\n                \"3.3\",\n                \"emitidas\",\n                \"i\",\n                \"impuestos\",\n                \"timbrefiscaldigital\",\n                \"traslados\",\n                \"vigente\"\n            ],\n            \"dt_refresh\": 1571844997\n        },\n        {\n            \"id_attachment\": \"5db073b4caaf236a6a4c2ebc\",\n            \"id_account\": \"5db073b1caaf236a6a4c2acc\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_external\": \"\",\n            \"id_attachment_type\": \"56bcdfca784806d1378b4567\",\n            \"id_transaction\": \"5db073b1caaf236a6a4c2ad4\",\n            \"is_valid\": 1,\n            \"file\": \"52D588AE-9E84-4CA8-8803-7CBBE784ECC3.xml\",\n            \"mime\": null,\n            \"url\": \"/attachments/5db073b4caaf236a6a4c2ebc\",\n            \"keywords\": [\n                \"002\",\n                \"3.3\",\n                \"i\",\n                \"impuestos\",\n                \"recibidas\",\n                \"timbrefiscaldigital\",\n                \"traslados\",\n                \"vigente\"\n            ],\n            \"dt_refresh\": 1571844997\n        },\n        {\n            \"id_attachment\": \"5db073b4caaf236a6a4c2ebd\",\n            \"id_account\": \"5db073b1caaf236a6a4c2acc\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_external\": \"\",\n            \"id_attachment_type\": \"56bcdfca784806d1378b4567\",\n            \"id_transaction\": \"5db073b1caaf236a6a4c2ad5\",\n            \"is_valid\": 1,\n            \"file\": \"CC1A484D-BE1B-4A34-9B58-86A1AD3A30CE.xml\",\n            \"mime\": null,\n            \"url\": \"/attachments/5db073b4caaf236a6a4c2ebd\",\n            \"keywords\": [\n                \"002\",\n                \"003\",\n                \"3.3\",\n                \"emitidas\",\n                \"i\",\n                \"impuestos\",\n                \"timbrefiscaldigital\",\n                \"traslados\",\n                \"vigente\"\n            ],\n            \"dt_refresh\": 1571844997\n        },\n        {\n            \"id_attachment\": \"5db073b4caaf236a6a4c2ebe\",\n            \"id_account\": \"5db073b1caaf236a6a4c2acc\",\n            \"id_user\": \"5dde750d8c91e77a123e7013\",\n            \"id_external\": \"\",\n            \"id_attachment_type\": \"56bcdfca784806d1378b4567\",\n            \"id_transaction\": \"5db073b1caaf236a6a4c2ad6\",\n            \"is_valid\": 1,\n            \"file\": \"793453AD-FE81-4427-8E32-EF35EC5F0D49.xml\",\n            \"mime\": null,\n            \"url\": \"/attachments/5db073b4caaf236a6a4c2ebe\",\n            \"keywords\": [\n                \"3.3\",\n                \"i\",\n                \"recibidas\",\n                \"timbrefiscaldigital\",\n                \"vigente\"\n            ],\n            \"dt_refresh\": 1571844997\n        }\n    ]\n}"
+						},
+						{
+							"name": "401",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://sync.paybook.com/v1/attachments?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}&skip=Number&limit=Number",
+									"protocol": "https",
+									"host": [
+										"sync",
+										"paybook",
+										"com"
+									],
+									"path": [
+										"v1",
+										"attachments"
+									],
+									"query": [
+										{
+											"key": "id_credential",
+											"value": "{{sync_id_credential}}",
+											"description": " (optional) Credential ID"
+										},
+										{
+											"key": "id_account",
+											"value": "{{sync_id_account}}",
+											"description": " (optional) Filters by account ID"
+										},
+										{
+											"key": "skip",
+											"value": "Number",
+											"description": " (optional) Skip rows to be returned"
+										},
+										{
+											"key": "limit",
+											"value": "Number",
+											"description": " (optional) Limit the number of rows to be returned"
+										},
+										{
+											"key": "id_attachment_type",
+											"value": "String",
+											"description": " (optional) Attachment Type ID",
+											"disabled": true
+										},
+										{
+											"key": "id_transaction",
+											"value": "String",
+											"description": " (optional) Transaction ID",
+											"disabled": true
+										},
+										{
+											"key": "is_valid",
+											"value": "String",
+											"description": " (optional) Is attachment valid",
+											"disabled": true
+										},
+										{
+											"key": "dt_refresh_from",
+											"value": "Timestamp",
+											"description": " (optional) Filters by transaction refresh date, expected UNIX timestamp",
+											"disabled": true
+										},
+										{
+											"key": "dt_refresh_to",
+											"value": "Timestamp",
+											"description": " (optional) Filters by transaction refresh date, expected UNIX timestamp",
+											"disabled": true
+										},
+										{
+											"key": "fields",
+											"value": "String",
+											"description": " (optional) Select fields to be returned",
+											"disabled": true
+										},
+										{
+											"key": "order",
+											"value": "String",
+											"description": " (optional) Order the rows to be returned",
+											"disabled": true
+										},
+										{
+											"key": "keywords",
+											"value": "String",
+											"description": " (optional) Filters by keywords (for multiple keywords concatenate a string using a comma as a separator)",
+											"disabled": true
+										},
+										{
+											"key": "skip_keywords",
+											"value": "String",
+											"description": " (optional) Filters by keywords (for multiple keywords concatenate a string using a comma as a separator)",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 20 Mar 2020 23:04:36 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Fri, 20 Mar 2020 23:04:36 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "7a6a67f0-740c-4b98-aabd-947a55f77cc8"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "577312bbcf35c7f6-DFW"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"7a6a67f0-740c-4b98-aabd-947a55f77cc8\",\n    \"code\": 401,\n    \"errors\": null,\n    \"status\": false,\n    \"message\": \"Unauthorized\",\n    \"response\": null\n}"
 						}
 					]
 				},
