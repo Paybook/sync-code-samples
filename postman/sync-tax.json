@@ -7435,7 +7435,7 @@
 							]
 						}
 					],
-					"description": "Catalogues are collections of endpoints that are relevant to the data segmentation on some of the other endpoints.\n\n#### List of Catalogues: \n\n1. Document Types\n2. Document Status\n\n\n\n\n#### Document Type\n\n```json\n{    \"id_document_type\":\"5b2321ef056f29059a367e41\",\n    // SyncfyID; The ID of the Document Type assignated by Syncfy \n    \"name\": \"NFe\",\n    // String; The name of the Document Type\n    \"dt_created\": \"2018-06-29T21:00:47+00:00\",\n    // String: Creation date of Document Type\n    \"dt_modified\": \"2020-11-27T00:19:33+00:00\"\n    // String: Modification date of Document Type\n}\n```\n\n#### Document Status\n```json\n{\n    \"id_document_status\": \"5b23219d056f2905985444c1\",\n    // SyncfyID; The ID of the Document Status assignated by Syncfy \n    \"name\": \"Processing\",\n    // String; The name of the Document Status\n    \"dt_created\": \"2018-06-29T21:00:43+00:00\",\n     // String: Creation date of Document Type\n    \"dt_modified\": \"2019-03-27T17:55:43+00:00\"\n    // String: Modification date of Document Status\n}\n```",
+					"description": "Catalogues are collections of endpoints that are relevant to the data segmentation on some of the other endpoints.\n\n#### List of Catalogues: \n\n1. Document Types\n2. Document Status\n\n\n\n\n#### Document Type\n\n```json\n{\n    \"id_document_type\":\"5b2321ef056f29059a367e41\",\n    // SyncfyID; The ID of the Document Type assignated by Syncfy \n    \"name\": \"NFe\",\n    // String; The name of the Document Type\n    \"dt_created\": \"2018-06-29T21:00:47+00:00\",\n    // String: Creation date of Document Type\n    \"dt_modified\": \"2020-11-27T00:19:33+00:00\"\n    // String: Modification date of Document Type\n}\n```\n\n#### Document Status\n```json\n{\n    \"id_document_status\": \"5b23219d056f2905985444c1\",\n    // SyncfyID; The ID of the Document Status assignated by Syncfy \n    \"name\": \"Processing\",\n    // String; The name of the Document Status\n    \"dt_created\": \"2018-06-29T21:00:43+00:00\",\n     // String: Creation date of Document Type\n    \"dt_modified\": \"2019-03-27T17:55:43+00:00\"\n    // String: Modification date of Document Status\n}\n```",
 					"auth": {
 						"type": "bearer"
 					},
@@ -7461,7 +7461,7 @@
 					]
 				}
 			],
-			"description": "Documents are files generated or downloaded from data sources. Their content is relative to its origin and will have different meanint base on their type. Some documents are the output of an automated process while some are directly download from source."
+			"description": "Documents are files generated or downloaded from data sources. Their content is relative to its origin and will have different meaning based on their type. Some documents are the output of an automated process while some are directly downloaded from source."
 		}
 	],
 	"event": [
