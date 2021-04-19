@@ -3794,11 +3794,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseSyncUrl}}/webhooks/catalogues/events",
+									"raw": "{{baseSyncUrl}}/v1/webhooks/catalogues/events",
 									"host": [
 										"{{baseSyncUrl}}"
 									],
 									"path": [
+										"v1",
 										"webhooks",
 										"catalogues",
 										"events"
@@ -3849,11 +3850,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseSyncUrl}}/webhooks/catalogues/request_status",
+									"raw": "{{baseSyncUrl}}/v1/webhooks/catalogues/request_status",
 									"host": [
 										"{{baseSyncUrl}}"
 									],
 									"path": [
+										"v1",
 										"webhooks",
 										"catalogues",
 										"request_status"
@@ -3904,11 +3906,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseSyncUrl}}/webhooks/catalogues/subscription_status",
+									"raw": "{{baseSyncUrl}}/v1/webhooks/catalogues/subscription_status",
 									"host": [
 										"{{baseSyncUrl}}"
 									],
 									"path": [
+										"v1",
 										"webhooks",
 										"catalogues",
 										"subscription_status"
@@ -3959,11 +3962,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseSyncUrl}}/webhooks/catalogues/event_log_status",
+									"raw": "{{baseSyncUrl}}/v1/webhooks/catalogues/event_log_status",
 									"host": [
 										"{{baseSyncUrl}}"
 									],
 									"path": [
+										"v1",
 										"webhooks",
 										"catalogues",
 										"event_log_status"
@@ -4019,11 +4023,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseSyncUrl}}/webhooks/subscriptions/{{id_subscription}}",
+									"raw": "{{baseSyncUrl}}/v1/webhooks/subscriptions/{{id_subscription}}",
 									"host": [
 										"{{baseSyncUrl}}"
 									],
 									"path": [
+										"v1",
 										"webhooks",
 										"subscriptions",
 										"{{id_subscription}}"
@@ -4062,11 +4067,12 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseSyncUrl}}/webhooks/subscriptions",
+									"raw": "{{baseSyncUrl}}/v1/webhooks/subscriptions",
 									"host": [
 										"{{baseSyncUrl}}"
 									],
 									"path": [
+										"v1",
 										"webhooks",
 										"subscriptions"
 									],
@@ -4126,11 +4132,12 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "{{baseSyncUrl}}/webhooks/subscriptions/{{id_subscription}}",
+									"raw": "{{baseSyncUrl}}/v1/webhooks/subscriptions/{{id_subscription}}",
 									"host": [
 										"{{baseSyncUrl}}"
 									],
 									"path": [
+										"v1",
 										"webhooks",
 										"subscriptions",
 										"{{id_subscription}}"
@@ -4165,11 +4172,12 @@
 									"raw": "{\n    \"id_environment\": \"574894bf7848066d138b4570\",\n    \"description\": \"test2\",\n    \"events\": [\n        \"5ed54ea7f79417520c0015b1\"\n    ],\n    \"group_events\": 1,\n    \"url\": \"https://webhooks.test.com\"\n}"
 								},
 								"url": {
-									"raw": "{{baseSyncUrl}}/webhooks/subscriptions/{{id_subscription}}",
+									"raw": "{{baseSyncUrl}}/v1/webhooks/subscriptions/{{id_subscription}}",
 									"host": [
 										"{{baseSyncUrl}}"
 									],
 									"path": [
+										"v1",
 										"webhooks",
 										"subscriptions",
 										"{{id_subscription}}"
@@ -4230,11 +4238,12 @@
 									"raw": "{\n    \"id_environment\": \"574894bf7848066d138b4570\",\n    \"description\": \"test3\",\n    \"events\": [\n        \"5ed54ea7f79417520c0015b1\"\n    ],\n    \"group_events\": 1,\n    \"url\": \"https://webhooks.test.com\"\n}"
 								},
 								"url": {
-									"raw": "{{baseSyncUrl}}/webhooks/subscriptions",
+									"raw": "{{baseSyncUrl}}/v1/webhooks/subscriptions",
 									"host": [
 										"{{baseSyncUrl}}"
 									],
 									"path": [
+										"v1",
 										"webhooks",
 										"subscriptions"
 									],
