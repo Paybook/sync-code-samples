@@ -1086,7 +1086,7 @@
           ]
         }
       ],
-      "description": "Sessions are access tokens for the final user in order to consume Sync endpoints. Sessions expire after 5 minutes of inactivity and should be used for creating or updating credentials.\n\n```json\n{\n    \"token\": \"3a21dded8d451ee50b6f257ab4a09c66fbc807628f26f1a9519e92b4c7a38497\"\n}\n```",
+      "description": "Sessions are access tokens for the final user in order to consume {[app_name]} endpoints. Sessions expire after 5 minutes of inactivity and should be used for creating or updating credentials.\n\n```json\n{\n    \"token\": \"3a21dded8d451ee50b6f257ab4a09c66fbc807628f26f1a9519e92b4c7a38497\"\n}\n```",
       "auth": {
         "type": "apikey",
         "apikey": [

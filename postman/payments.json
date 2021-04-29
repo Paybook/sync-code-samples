@@ -348,7 +348,7 @@
           ]
         }
       ],
-      "description": "Catalogues are collections of endpoints that are relevant to the data segmentation on some of the other endpoints.\n\n#### List of Catalogues: \n\n1. Date Formats\n2. Webhook Event Types\n\n\n\n#### Date Formats\n\n```json\n{\n    \"id_date_format\": \"5e961923bebbce48bd7601aa\",\n    // The ID of the date format\n    \"name\": \"Unix Timestamp\"\n    // String; The name of the Date Format\n}\n```\n\n#### Webhook Event Types\n\n```json\n{\n    \"id_attachment_type\": \"5ed54ea7f79417520c0015b9\",\n    // SyncID; The ID of the Attachment Type assignated by Paybook Sync\n    \"name\": \"payments.transaction_created\"\n    // String; The name of the Account Type\n}\n```\n"
+      "description": "Catalogues are collections of endpoints that are relevant to the data segmentation on some of the other endpoints.\n\n#### List of Catalogues: \n\n1. Date Formats\n2. Webhook Event Types\n\n\n\n#### Date Formats\n\n```json\n{\n    \"id_date_format\": \"5e961923bebbce48bd7601aa\",\n    // The ID of the date format\n    \"name\": \"Unix Timestamp\"\n    // String; The name of the Date Format\n}\n```\n\n#### Webhook Event Types\n\n```json\n{\n    \"id_attachment_type\": \"5ed54ea7f79417520c0015b9\",\n    // {[app_name]} ID; The ID of the Attachment Type assignated by {[app_name]}\n    \"name\": \"payments.transaction_created\"\n    // String; The name of the Account Type\n}\n```\n"
     },
     {
       "name": "Customers",
@@ -1087,7 +1087,7 @@
           ]
         }
       ],
-      "description": "Customers are logical segmentations for end-users. It's a best practice to register customers in order to have their information grouped and have control on both ends. It is required to have at least one customer registered to add cards and create charges\n\n\n```json\n{\n    \"id_user\": \"5ed72b8fa21c26277c58411b\",\n    // The ID of the user assigned by SrPago\n    \"id_pymnt_customer\": \"5ed72b8fa21c26277c58411b\",\n    // The ID of the customer assigned by SrPago\n    \"id_external\": \"869d56f0-555e-4c8c-847a-2e1ef53f6ef6\",\n    // String, The external id for this customer ( this identifies the customer on your system )\n    \"name\": \"John Doe\",\n    // String, The customer full name\n    \"dt_create\": 1591110350,\n    // Integer; a Unix timestamp of the time when the user was created\n    \"dt_modify\": null\n    // Integer; a Unix timestamp of the time when the user was modified\n}\n```",
+      "description": "Customers are logical segmentations for end-users. It's a best practice to register customers in order to have their information grouped and have control on both ends. It is required to have at least one customer registered to add cards and create charges\n\n\n```json\n{\n    \"id_user\": \"5ed72b8fa21c26277c58411b\",\n    // The ID of the user assigned by {[app_name]}\n    \"id_pymnt_customer\": \"5ed72b8fa21c26277c58411b\",\n    // The ID of the customer assigned by {[app_name]}\n    \"id_external\": \"869d56f0-555e-4c8c-847a-2e1ef53f6ef6\",\n    // String, The external id for this customer ( this identifies the customer on your system )\n    \"name\": \"John Doe\",\n    // String, The customer full name\n    \"dt_create\": 1591110350,\n    // Integer; a Unix timestamp of the time when the user was created\n    \"dt_modify\": null\n    // Integer; a Unix timestamp of the time when the user was modified\n}\n```",
       "event": [
         {
           "listen": "prerequest",
