@@ -681,7 +681,7 @@
                 {
                   "key": "id_pymnt_customer",
                   "value": "",
-                  "description": "The ID of the customer assigned by SrPago",
+                  "description": "The ID of the customer assigned by {[app_name]}",
                   "disabled": true
                 }
               ]
@@ -972,7 +972,7 @@
                 {
                   "key": "id_pymnt_customer",
                   "value": "",
-                  "description": "The ID of the customer assigned by SrPago",
+                  "description": "The ID of the customer assigned by {[app_name]}",
                   "disabled": true
                 }
               ]
@@ -1653,7 +1653,7 @@
                 {
                   "key": "id_pymnt_customer",
                   "value": "",
-                  "description": "The ID of the customer assigned by SrPago",
+                  "description": "The ID of the customer assigned by {[app_name]}",
                   "disabled": true
                 },
                 {
@@ -1988,13 +1988,13 @@
                 {
                   "key": "id_pymnt_customer",
                   "value": "",
-                  "description": "The ID of the customer assigned by SrPago",
+                  "description": "The ID of the customer assigned by {[app_name]}",
                   "disabled": true
                 },
                 {
                   "key": "id_pymnt_card",
                   "value": "",
-                  "description": "The ID of the credit card assigned by SrPago",
+                  "description": "The ID of the credit card assigned by {[app_name]}",
                   "disabled": true
                 }
               ]
@@ -2169,13 +2169,13 @@
                 {
                   "key": "id_pymnt_customer",
                   "value": "",
-                  "description": "The ID of the customer assigned by SrPago",
+                  "description": "The ID of the customer assigned by {[app_name]}",
                   "disabled": true
                 },
                 {
                   "key": "id_pymnt_card",
                   "value": "",
-                  "description": "The ID of the credit card assigned by SrPago",
+                  "description": "The ID of the credit card assigned by {[app_name]}",
                   "disabled": true
                 }
               ]
@@ -2324,7 +2324,7 @@
                 {
                   "key": "id_pymnt_customer",
                   "value": "",
-                  "description": "The ID of the customer assigned by SrPago",
+                  "description": "The ID of the customer assigned by {[app_name]}",
                   "disabled": true
                 }
               ]
@@ -2498,13 +2498,13 @@
                 {
                   "key": "id_pymnt_customer",
                   "value": "",
-                  "description": "The ID of the customer assigned by SrPago",
+                  "description": "The ID of the customer assigned by {[app_name]}",
                   "disabled": true
                 },
                 {
                   "key": "id_pymnt_card",
                   "value": "",
-                  "description": "(optional) The ID of the credit card assigned by SrPago, if passed, this card wil be used instead of the default one (the last one registered for the given customer)",
+                  "description": "(optional) The ID of the credit card assigned by {[app_name]}, if passed, this card wil be used instead of the default one (the last one registered for the given customer)",
                   "disabled": true
                 },
                 {
@@ -2677,13 +2677,13 @@
                     {
                       "key": "id_pymnt_customer",
                       "value": "",
-                      "description": "The ID of the customer assigned by SrPago",
+                      "description": "The ID of the customer assigned by {[app_name]}",
                       "disabled": true
                     },
                     {
                       "key": "id_pymnt_card",
                       "value": "",
-                      "description": "(optional) The ID of the credit card assigned by SrPago, if passed, this card wil be used instead of the default one (the last one registered for the given customer)",
+                      "description": "(optional) The ID of the credit card assigned by {[app_name]}, if passed, this card wil be used instead of the default one (the last one registered for the given customer)",
                       "disabled": true
                     },
                     {
@@ -2885,7 +2885,7 @@
                 {
                   "key": "id_pymnt_customer",
                   "value": "",
-                  "description": "The ID of the customer assigned by SrPago",
+                  "description": "The ID of the customer assigned by {[app_name]}",
                   "disabled": true
                 }
               ]
@@ -3030,7 +3030,7 @@
                 {
                   "key": "id_pymnt_customer",
                   "value": "",
-                  "description": "The ID of the customer assigned by SrPago",
+                  "description": "The ID of the customer assigned by {[app_name]}",
                   "disabled": true
                 },
                 {
@@ -3079,7 +3079,7 @@
                     {
                       "key": "id_pymnt_customer",
                       "value": "",
-                      "description": "The ID of the customer assigned by SrPago",
+                      "description": "The ID of the customer assigned by {[app_name]}",
                       "disabled": true
                     }
                   ]
@@ -3226,7 +3226,7 @@
                 {
                   "key": "id_pymnt_charge",
                   "value": "",
-                  "description": "The ID of the charge assigned by SrPago",
+                  "description": "The ID of the charge assigned by {[app_name]}",
                   "disabled": true
                 }
               ]

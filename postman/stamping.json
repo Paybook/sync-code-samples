@@ -2437,7 +2437,7 @@
                 {
                   "key": "id_provider",
                   "value": "String",
-                  "description": "(optional) Id or name of the available providers in Sync",
+                  "description": "(optional) Id or name of the available providers in {[app_name]}",
                   "disabled": true
                 },
                 {
@@ -2524,7 +2524,7 @@
                     {
                       "key": "id_provider",
                       "value": "String",
-                      "description": "(optional) Id or name of the available providers in Sync",
+                      "description": "(optional) Id or name of the available providers in {[app_name]}",
                       "disabled": true
                     }
                   ]
@@ -2663,7 +2663,7 @@
                     {
                       "key": "id_provider",
                       "value": "String",
-                      "description": "(optional) Id or name of the available providers in Sync",
+                      "description": "(optional) Id or name of the available providers in {[app_name]}",
                       "disabled": true
                     }
                   ]
