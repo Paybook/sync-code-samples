@@ -8,9 +8,9 @@
   <img src="https://drive.google.com/uc?export=view&id=1Ll-fQQodIEnlx9ys0U4hn67y8w_EjNlX"/>
 </figure>
 
-##### What is the Sync Widget?
+##### What is the Syncfy Widget?
 
-The _Sync Widget_ is the easiest way to implement the Sync API. By using this widget you can very quickly integrate your web application with the Sync API and being able to **create** and **update** credentials right away.
+The _Syncfy Widget_ is the easiest way to implement the Syncfy API. By using this widget you can very quickly integrate your web application with the Syncfy API and being able to **create** and **update** credentials right away.
 
 ---
 
@@ -18,7 +18,7 @@ The _Sync Widget_ is the easiest way to implement the Sync API. By using this wi
 
 ##### How to install it?
 
-There are two ways to install the Sync Widget
+There are two ways to install the Syncfy Widget
 
 _[1] Using Node Package Manager:_
 
@@ -31,13 +31,13 @@ npm install --save @paybook/sync-widget
 And then import the widget styles to your app:
 
 ```javascript
-import '@paybook/sync-widget/dist/widget.css';
+import "@paybook/sync-widget/dist/widget.css";
 ```
 
 And finally get access to the `SyncWidget` class by importing it:
 
 ```javascript
-import SyncWidget from '@paybook/sync-widget';
+import SyncWidget from "@paybook/sync-widget";
 ```
 
 _[2] Using CDN:_
@@ -47,13 +47,16 @@ To install it via CDN import the following files in your _index.html_ file:
 Add this line in the `<head>` element:
 
 ```html
-<link rel="stylesheet" href="https://www.paybook.com/sync/widget/v2/widget.css" />
+<link rel="stylesheet" href="https://syncfy.com/widget/v2/widget.css" />
 ```
 
 And add this line in the `<body>` element:
 
 ```html
-<script type="text/javascript" src="https://www.paybook.com/sync/widget/v2/widget.js"></script>
+<script
+  type="text/javascript"
+  src="https://syncfy.com/widget/v2/widget.js"
+></script>
 ```
 
 This will expose the `SyncWidget` class in the global window object
@@ -68,9 +71,9 @@ First of all, since the widget is coded in vanilla javascript, you can use it in
 
 Basically, to use the widget you will need to follow this checklist:
 
-1. Sign up for your Sync API account and thus get your API keys.
-2. Second, you have to create a session token. For this, review the Sync API docs on how to create a Session and obtain a token (for this, you will need your API keys)
-3. Then, in your frontend application import the Sync Widget files (.js and .css) or install the widget using NPM.
+1. Sign up for your Syncfy API account and thus get your API keys.
+2. Second, you have to create a session token. For this, review the Syncfy API docs on how to create a Session and obtain a token (for this, you will need your API keys)
+3. Then, in your frontend application import the Syncfy Widget files (.js and .css) or install the widget using NPM.
 4. Finally, configure the widget as desired, instantiate it using the token you already have.
 5. Start adding or updating credentials and that's it :)
 
@@ -78,12 +81,12 @@ Basically, to use the widget you will need to follow this checklist:
 
 <br />
 
-##### What can I do with the Sync Widget?
+##### What can I do with the Syncfy Widget?
 
-You can use the _Sync Widget_ for the following use cases:
+You can use the _Syncfy Widget_ for the following use cases:
 
-- **To create a credential:** use the Sync Widget to create a new credential, this is, to connect to a bank or site by first time.
-- **To update an existing credential:** use the Sync Widget to update an existing credential, this is, to update the username, password, etc. of a credential you added in the past.
+- **To create a credential:** use the Syncfy Widget to create a new credential, this is, to connect to a bank or site by first time.
+- **To update an existing credential:** use the Syncfy Widget to update an existing credential, this is, to update the username, password, etc. of a credential you added in the past.
 - **To re-sync a credentials:** put a credential up to date, by this we mean to force the synchronization process to be executed whenever your end-users desire, or to run the sinchronization every now and then for those credentials which require token (two factor authentication).
 
 ---
@@ -92,7 +95,7 @@ You can use the _Sync Widget_ for the following use cases:
 
 ##### Where can I learn how to implement it and customize it?
 
-There is plenty of documentation and resources that will help you implment the Sync Widget, namely:
+There is plenty of documentation and resources that will help you implement the Syncfy Widget, namely:
 
 - Widget Configuration: how to configure the widget
 - Widget Methods: the methods you can use to set up and manipulate the widget

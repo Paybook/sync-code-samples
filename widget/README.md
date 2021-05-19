@@ -1,4 +1,4 @@
-# Sync Widget
+# Syncfy Widget
 
 - [Overview](https://github.com/Paybook/sync-code-samples/tree/master/widget/overview.md)
 - [Configuration](https://github.com/Paybook/sync-code-samples/tree/master/widget/config.md)

@@ -4,7 +4,7 @@
 
 <br />
 
-The _Sync Widget_ **instance** has several methods that you can use to configure it but also to manipulate it
+The _Syncfy Widget_ **instance** has several methods that you can use to configure it but also to manipulate it
 
 All of the methods described below with the exception of `setEntrypointCredential` will only modify the current set up of the widget but will not re-render it automatically. Therefore, after executing those methods and in order to see the changes reflected in the UI the `syncWidget.open` method has to be executed.
 
@@ -18,7 +18,7 @@ All the methods exposed by the SyncWidget are exposed below:
 
 ```javascript
 /*
- * Use this method to open the Sync Widget modal
+ * Use this method to open the Syncfy Widget modal
  */
 syncWidget.open();
 ```
@@ -31,7 +31,7 @@ syncWidget.open();
 
 ```javascript
 /*
- * Use this method to close the Sync Widget modal
+ * Use this method to close the Syncfy Widget modal
  */
 syncWidget.close();
 ```
@@ -81,7 +81,7 @@ In contrast to `setConfig`, this config will be merged with the current's widget
 /*
  * Use this method to replace or set a new authentication token.
  */
-syncWidget.setToken('... a valid Sync API token ... ');
+syncWidget.setToken("... a valid Syncfy API token ... ");
 ```
 
 ---
@@ -92,10 +92,10 @@ syncWidget.setToken('... a valid Sync API token ... ');
 
 ```javascript
 /*
- * Use this method to opens the *Sync Widget* for the given credential
+ * Use this method to opens the *Syncfy Widget* for the given credential
  * and thus re-synchronize the credential or put it up to date
  */
-syncWidget.setEntrypointCredential('...some-credential-id...');
+syncWidget.setEntrypointCredential("...some-credential-id...");
 ```
 
 When called this method, the synchronization process will be triggered (the status toast will be opened right away). Also, since this action starts the widget for the **re-synchronization case** and this case does not uses the modal, there is no need to execute `open()` after setting the credential entrypoint.
@@ -108,14 +108,14 @@ When called this method, the synchronization process will be triggered (the stat
 
 ```javascript
 /*
- * Use this methdo to set up the *Sync Widget* entrypoint to the
+ * Use this method to set up the *Syncfy Widget* entrypoint to the
  * given id_site. When the widget is opened it will starts in the
  * given id_site ready to get the username, password, etc.
  */
-syncWidget.setEntrypointSite('...some id_site...');
+syncWidget.setEntrypointSite("...some id_site...");
 ```
 
-When the widget is set up for a given id_site, and the user happens to introduce the username/password of a credential that already exist, the Sync API will automatically recognize this and update the existing credential to store the new username and password data if valid. This is why, the `entrypoint.site` can be used to edit an existing credential's username, password, etc. Although your not providing the id_credential, the Sync API will infer it from the username provided that this value is unique.
+When the widget is set up for a given id_site, and the user happens to introduce the username/password of a credential that already exist, the Syncfy API will automatically recognize this and update the existing credential to store the new username and password data if valid. This is why, the `entrypoint.site` can be used to edit an existing credential's username, password, etc. Although your not providing the id_credential, the Syncfy API will infer it from the username provided that this value is unique.
 
 ---
 
@@ -125,9 +125,9 @@ When the widget is set up for a given id_site, and the user happens to introduce
 
 ```javascript
 /*
- * Use this method to listen to the Sync Widget events and do something
+ * Use this method to listen to the Syncfy Widget events and do something
  */
-syncWidget.$on('opened', () => {
+syncWidget.$on("opened", () => {
   // ... do something when the widget is opened ...
 });
 ```
