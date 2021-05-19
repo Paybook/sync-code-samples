@@ -29,13 +29,13 @@ Then, you will call the `SyncWidget` constructor and pass to it the required dat
 * 1. Set up and configure it:
 */
 const params = {
-    // [REQUIRED] A session token obtained from the Sync API
+    // [REQUIRED] A session token obtained from the Syncfy API
     token,
     // [REQUIRED] A DOM element identifier
     // IMPORTANT: This HAS TO MATCH the "id" of the HTML element
     element: "#widget",
     // [OPTIONAL] you can instantiate the widget in strict mode passing the JSON Web Keys
-    // JWK(s) as provided in the session object obtained from the Sync API:
+    // JWK(s) as provided in the session object obtained from the Syncfy API:
     strict: {
       authorization,
       body
@@ -75,7 +75,7 @@ Here is a more detailed description of the data required to create a SyncWidget 
 
 | **Parameter**          |      **Type**       | **REQUIRED** | **Default Value**                                                 | **Description**                                                                                                                                                                                                    |
 | ---------------------- | :-----------------: | :----------- | :---------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `token`                |     **String**      | **REQUIRED** | _N/A_                                                             | A valid _Sync API_ **token** whether for Sandbox or Production environments                                                                                                                                        |
+| `token`                |     **String**      | **REQUIRED** | _N/A_                                                             | A valid _Syncfy API_ **token** whether for Sandbox or Production environments                                                                                                                                      |
 | `element`              | **String, Element** | **REQUIRED** | `"#widget"`                                                       | A valid _HTML DOM_ element selector in which the widget will be rendered OR an **Element** instance from the _DOM_                                                                                                 |
 | `config`               |  **WidgetConfig**   | **REQUIRED** | _See the docs below_                                              | A valid **WidgetConfig** object                                                                                                                                                                                    |
 | `strict`               |     **Object**      | **OPTIONAL** | _See API Docs on how to get the JWK(s)_                           | A valid set authorization and body JSON Web Keys                                                                                                                                                                   |
@@ -181,10 +181,10 @@ The **WidgetConfig** object is described below:
     // Default='top-right'. Alowed values: 'top-left', 'top-center', 'top-right',
     // 'bottom-left', 'bottom-center', 'bottom-right'
     "toastPosition": "string",
-    // If true, success message will be send when the credentials complete login step 
-    // in the site. Otherwise, the widget will wait to complete all download process. 
+    // If true, success message will be send when the credentials complete login step
+    // in the site. Otherwise, the widget will wait to complete all download process.
     // Default=false
-    "quickAnswer": "bool",
+    "quickAnswer": "bool"
   }
 }
 ```
@@ -192,5 +192,5 @@ The **WidgetConfig** object is described below:
 Take into account these clariffications:
 
 - If any configuration attribut value is not allowable, the widget will raise an exception and will not be displayed.
-- If a given entrypoint attribute value is not valid, the widget will raise an exception and will not display any data. For instance, if you provide a `site` identifier that is not found in the Sync API catalogues, or it exists but not allowed for the given configuration e.g. given a Business `site` when the widget is configured to display only Personal sites.
+- If a given entrypoint attribute value is not valid, the widget will raise an exception and will not display any data. For instance, if you provide a `site` identifier that is not found in the Syncfy API catalogues, or it exists but not allowed for the given configuration e.g. given a Business `site` when the widget is configured to display only Personal sites.
 - For the entrypoint attributes, `credential` takes precedence over `site` if both attributes are given.

@@ -4,7 +4,7 @@
 
 <br />
 
-Just as an example of how the Sync Widget set up might look like, here is the DEFAULT's one. This is the configuration that the widget will use in case you do not pass any config input apart of the required one:
+Just as an example of how the Syncfy Widget set up might look like, here is the DEFAULT's one. This is the configuration that the widget will use in case you do not pass any config input apart of the required one:
 
 ```json
 {
