@@ -31,13 +31,13 @@ npm install --save @paybook/sync-widget
 And then import the widget styles to your app:
 
 ```javascript
-import '@paybook/sync-widget/dist/widget.css';
+import "@paybook/sync-widget/dist/widget.css";
 ```
 
 And finally get access to the `SyncWidget` class by importing it:
 
 ```javascript
-import SyncWidget from '@paybook/sync-widget';
+import SyncWidget from "@paybook/sync-widget";
 ```
 
 _[2] Using CDN:_
@@ -47,13 +47,16 @@ To install it via CDN import the following files in your _index.html_ file:
 Add this line in the `<head>` element:
 
 ```html
-<link rel="stylesheet" href="https://www.paybook.com/sync/widget/v2/widget.css" />
+<link rel="stylesheet" href="https://syncfy.com/widget/widget.css" />
 ```
 
 And add this line in the `<body>` element:
 
 ```html
-<script type="text/javascript" src="https://www.paybook.com/sync/widget/v2/widget.js"></script>
+<script
+  type="text/javascript"
+  src="https://syncfy.com/widget/widget.js"
+></script>
 ```
 
 This will expose the `SyncWidget` class in the global window object
