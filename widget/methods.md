@@ -108,7 +108,7 @@ When called this method, the synchronization process will be triggered (the stat
 
 ```javascript
 /*
- * Use this methdo to set up the *Syncfy Widget* entrypoint to the
+ * Use this method to set up the *Syncfy Widget* entrypoint to the
  * given id_site. When the widget is opened it will starts in the
  * given id_site ready to get the username, password, etc.
  */
