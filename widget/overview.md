@@ -47,7 +47,7 @@ To install it via CDN import the following files in your _index.html_ file:
 Add this line in the `<head>` element:
 
 ```html
-<link rel="stylesheet" href="https://syncfy.com/widget/widget.css" />
+<link rel="stylesheet" href="https://syncfy.com/widget/v2/widget.css" />
 ```
 
 And add this line in the `<body>` element:
@@ -55,7 +55,7 @@ And add this line in the `<body>` element:
 ```html
 <script
   type="text/javascript"
-  src="https://syncfy.com/widget/widget.js"
+  src="https://syncfy.com/widget/v2/widget.js"
 ></script>
 ```
 
