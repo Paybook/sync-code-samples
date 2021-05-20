@@ -77,7 +77,7 @@ Message:
 			"header": {
 				"event": {
 					"eid": "fac3d61b-c425-47a0-b5bb-903c8f5511c2",
-					"name": "payments.chargeback_created",
+					"name": "payments.transaction_created",
 					"at": "2020-01-22 12:55:23.929393+0000",
 					"version": "3.1"
 				},
