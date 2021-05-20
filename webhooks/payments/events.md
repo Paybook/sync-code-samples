@@ -62,3 +62,55 @@ Message:
     ]
 }
 ```
+
+#### New transaction was created 
+
+ `payments.transaction_created`
+
+Message:
+
+```json
+{
+    "rid": "8df2a899-fb8e-4034-82ca-233ab3030d00",
+    "events": [
+       {
+			"header": {
+				"event": {
+					"eid": "fac3d61b-c425-47a0-b5bb-903c8f5511c2",
+					"name": "payments.chargeback_created",
+					"at": "2020-01-22 12:55:23.929393+0000",
+					"version": "3.1"
+				},
+				"user": {
+					"id_user": "5f253440bf86772627785847",
+					"id_external": "cus_2mo28NTyk69BKXXX",
+					"id_environment": "574894bf7848066d138b4571"
+				}
+			},
+			"payload": {
+				"id_pymnt_charge": "6082d1cb3a32082d2b649d54",
+				"id_pymnt_affiliate": null,
+				"transaction": "MjQ3NjkzOTk=",
+				"payment_method": "POS",
+				"authorization_code": "",
+				"status": "",
+				"transaction_type": "C",
+				"receipt_url": "https://connect.srpago.com/recipe/ODU5NWQyZGItYTQzYi0xMWViLWE2NzAtMGFlMjFkZjUzMWYx",
+				"has_devolution": "0",
+				"reference": { "description": "CONTRACARGO POR: Autorizacion [005472] - Transaccion [23565695]" },
+				"card": [],
+				"linked": [ "605676a63a3d497512703116" ],
+				"amount": -6688.5,
+				"net_amount": -6688.5,
+				"tip": 0,
+				"commission": 0,
+				"fee": 0,
+				"fee_details": null,
+				"origin": { "location": { "latitude": 0, "longitude": 0 } },
+				"dt_create": 1619186123,
+				"dt_modify": null
+			}
+		}
+    ]
+}
+```
