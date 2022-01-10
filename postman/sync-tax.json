@@ -7973,7 +7973,7 @@
 					]
 				}
 			],
-			"description": "Documents are files generated or downloaded from data sources. Their content is relative to its origin and will have different meaning based on their type. Some documents are the output of an automated process while some are directly downloaded from source."
+			"description": "Documents are files generated or downloaded from data sources. Their content is relative to its origin and will have different meaning based on their type. Some documents are the output of an automated process while some are directly downloaded from source.\n\nDocuments content field is base64 encoded."
 		}
 	],
 	"event": [
