@@ -10,6 +10,193 @@
 			"name": "Users",
 			"item": [
 				{
+					"name": "Create a new user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"{{sync_user_name}}\"\n}"
+						},
+						"url": {
+							"raw": "https://sync.paybook.com/v1/users",
+							"protocol": "https",
+							"host": [
+								"sync",
+								"paybook",
+								"com"
+							],
+							"path": [
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "id_external",
+									"value": "String",
+									"description": "(optional) External ID, this field can be <code>null</code> and be used to keep track of that user with an external ID",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "String",
+									"description": "User name",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\" : \"{{sync_user_name}}\"\n}"
+								},
+								"url": {
+									"raw": "https://sync.paybook.com/v1/users",
+									"protocol": "https",
+									"host": [
+										"sync",
+										"paybook",
+										"com"
+									],
+									"path": [
+										"v1",
+										"users"
+									],
+									"query": [
+										{
+											"key": "id_external",
+											"value": "String",
+											"description": "(optional) External ID, this field can be <code>null</code> and be used to keep track of that user with an external ID",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "String",
+											"description": "User name",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 20 Mar 2020 19:45:24 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Fri, 20 Mar 2020 19:45:24 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "5b49bbd4-2929-4e50-9738-2dfd1bba846d"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "5771eeee7b22e99e-DFW"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"5b49bbd4-2929-4e50-9738-2dfd1bba846d\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_user\": \"5e751d54d0510472295413b3\",\n        \"id_external\": null,\n        \"name\": \"INTERNACIONAL XIMBO Y SABORES SA DE CV\",\n        \"dt_create\": 1584733524,\n        \"dt_modify\": null\n    }\n}"
+						}
+					]
+				},
+				{
 					"name": "List users",
 					"request": {
 						"method": "GET",
@@ -195,193 +382,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"rid\": \"262bd942-5409-4197-8176-ab0339d9ea2a\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_user\": \"5e751d54d0510472295413b3\",\n            \"id_external\": \"IXS7607092R5\",\n            \"name\": \"INTERNACIONAL XIMBO Y SABORES SA DE CV\",\n            \"dt_create\": 1584733524,\n            \"dt_modify\": 1584733564\n        }\n    ]\n}"
-						}
-					]
-				},
-				{
-					"name": "Create a new user",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"name\" : \"{{sync_user_name}}\"\n}"
-						},
-						"url": {
-							"raw": "https://sync.paybook.com/v1/users",
-							"protocol": "https",
-							"host": [
-								"sync",
-								"paybook",
-								"com"
-							],
-							"path": [
-								"v1",
-								"users"
-							],
-							"query": [
-								{
-									"key": "id_external",
-									"value": "String",
-									"description": "(optional) External ID, this field can be <code>null</code> and be used to keep track of that user with an external ID",
-									"disabled": true
-								},
-								{
-									"key": "name",
-									"value": "String",
-									"description": "User name",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "200",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"name\" : \"{{sync_user_name}}\"\n}"
-								},
-								"url": {
-									"raw": "https://sync.paybook.com/v1/users",
-									"protocol": "https",
-									"host": [
-										"sync",
-										"paybook",
-										"com"
-									],
-									"path": [
-										"v1",
-										"users"
-									],
-									"query": [
-										{
-											"key": "id_external",
-											"value": "String",
-											"description": "(optional) External ID, this field can be <code>null</code> and be used to keep track of that user with an external ID",
-											"disabled": true
-										},
-										{
-											"key": "name",
-											"value": "String",
-											"description": "User name",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Fri, 20 Mar 2020 19:45:24 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Fri, 20 Mar 2020 19:45:24 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "5b49bbd4-2929-4e50-9738-2dfd1bba846d"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "CF-Cache-Status",
-									"value": "DYNAMIC"
-								},
-								{
-									"key": "Expect-CT",
-									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains; preload"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Server",
-									"value": "cloudflare"
-								},
-								{
-									"key": "CF-RAY",
-									"value": "5771eeee7b22e99e-DFW"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"5b49bbd4-2929-4e50-9738-2dfd1bba846d\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_user\": \"5e751d54d0510472295413b3\",\n        \"id_external\": null,\n        \"name\": \"INTERNACIONAL XIMBO Y SABORES SA DE CV\",\n        \"dt_create\": 1584733524,\n        \"dt_modify\": null\n    }\n}"
 						}
 					]
 				},
@@ -759,147 +759,6 @@
 			"name": "Sessions",
 			"item": [
 				{
-					"name": "Validates session token",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://sync.paybook.com/v1/sessions/{{sync_token}}/verify",
-							"protocol": "https",
-							"host": [
-								"sync",
-								"paybook",
-								"com"
-							],
-							"path": [
-								"v1",
-								"sessions",
-								"{{sync_token}}",
-								"verify"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "200",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://sync.paybook.com/v1/sessions/{{sync_token}}/verify",
-									"protocol": "https",
-									"host": [
-										"sync",
-										"paybook",
-										"com"
-									],
-									"path": [
-										"v1",
-										"sessions",
-										"{{sync_token}}",
-										"verify"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Wed, 18 Mar 2020 18:27:50 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Wed, 18 Mar 2020 18:27:50 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "3ebb8fdb-393f-48ce-892e-2166c7461d41"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "CF-Cache-Status",
-									"value": "DYNAMIC"
-								},
-								{
-									"key": "Expect-CT",
-									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains; preload"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Server",
-									"value": "cloudflare"
-								},
-								{
-									"key": "CF-RAY",
-									"value": "576102910c517f78-QRO"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"3ebb8fdb-393f-48ce-892e-2166c7461d41\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": true\n}"
-						}
-					]
-				},
-				{
 					"name": "Create a session token",
 					"request": {
 						"method": "POST",
@@ -1055,6 +914,147 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"rid\": \"b2feccd3-7776-43ed-a198-e94b64f07349\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"token\": \"ba477d90a30ed4ab7faaf60124dd0df99508fc7c8668ab714b63c089bada1b81\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Validates session token",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://sync.paybook.com/v1/sessions/{{sync_token}}/verify",
+							"protocol": "https",
+							"host": [
+								"sync",
+								"paybook",
+								"com"
+							],
+							"path": [
+								"v1",
+								"sessions",
+								"{{sync_token}}",
+								"verify"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://sync.paybook.com/v1/sessions/{{sync_token}}/verify",
+									"protocol": "https",
+									"host": [
+										"sync",
+										"paybook",
+										"com"
+									],
+									"path": [
+										"v1",
+										"sessions",
+										"{{sync_token}}",
+										"verify"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 18 Mar 2020 18:27:50 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Wed, 18 Mar 2020 18:27:50 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "3ebb8fdb-393f-48ce-892e-2166c7461d41"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "576102910c517f78-QRO"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"3ebb8fdb-393f-48ce-892e-2166c7461d41\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": true\n}"
 						}
 					]
 				},
@@ -1238,6 +1238,373 @@
 		{
 			"name": "Taxpayers",
 			"item": [
+				{
+					"name": "Create a new taxpayer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\t\"taxpayer\": \"IXS7607092R5\",\n\t\"cer\": \"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\",\n\t\"key\": \"MIIFDjBABgkqhkiG9w0BBQ0wMzAbBgkqhkiG9w0BBQwwDgQIAgEAAoIBAQACAggAMBQGCCqGSIb3DQMHBAgwggS9AgEAMASCBMh4EHl7aNSCaMDA1VlRoXCZ5UUmqErAbucRBAKNQXH8t3X1ZNTXua+xM+dHKTDgiPce0sjfFzN8opkMp12yJFMiujuPxFwOW2FH7DsRJY2kCJalnVnWpFJ5NzMc3FpEuu+s03usy8CBEOo9F57I2ITTqCzbQsY3/J0upGQIWNN/7xQaBFArbczevtQOwgJ1JZtX04kM4siYFMwmreU/Jl5Lu5Ur9PGMwgQiYWBUXeoKb9b7exLZBCBHTxzSlDLuU2Vc/MNEwRJ1Cb4sCiJ+mFVPOF/P5rDZbD5uMRYyPEtZVfq67ptooDlYakQM1Gm3V17PMlEmaZg8vn7YZ8drB9myyvhIuZlxNEWQTyMCXrKV7qsXVisYxkWdlbaOo9CgjmVXWd4PgbM0OrCcfWevawE2+gAWNYLZRhBJNWjGdNA8xQ8VebFai7WYRVeMvuB85BpNMZFEQzAl6ztDnUMSyZDAmbXinYUon19qUV9Ff1YJqpvNWSErGza5jyh5TJ+yeZnY0WO7ONo3oZ+TdLbwLtthbr1zs1c+7nXn5i8WzW5lGgBX/7eHihYHGNIn0RiJ0v/LHEtdkPq/xXQ5jJjfgLRnujtKxq31CyxeV0vFCus3Hj1egVn6OXk7BGPN2q5UP+3xGjvH/cxzouSB6y13qoTbCX08R52GE4g7GbAiT0qiRdoiDZA6731ackMl0t2vKkGRtx/SMVnbPhUvquaR5byqPDEBtRlgD0Q/0726I0qaDrSch+gHjT/nkP7sneBZZCYIGIIt9PQnbn8bob3TPer1Ne/Q4m14P3W3WE2u6krFc3EqNcfNMhCQlX92Q3MPazxCLcWJC2y6Q6c7CxpPnzMVkzkMaYuUcE4v5ZZF3mPIMy7pEQS73GQUgRltXToNY+TFdhfyCDbiJK74Zd/RjleHyITlaidfAbyAKDZYLZEQ4a2gKx2M2/FV8jykmW+IWwRUSS9WQWgqFiamb0PHb+RRWZvxCrBX1v0tNwY8dwENTJTrJCVwcKEfCzUXzdwfJoYcT3/UyCNOS+n1l2ShSBsdJ+9v8FU16J/0Z6ZkcqMdGrcUZps+h8nbYHd2M5L+f9AuU71DGA/KCDAa5r6RI7Bvqb4o7NebJKshpPJj/E5SqsZY2n2T4OAnbIyF7Lb5jWx0gfo5ovPSbk8TcXyq8EToKLSTEUj+HvPhZhnizJQeyBI7SXVf3uo+DEDtSc2eCkYt12LjNo3n0l9DxdzSNyk8HB7btZltGZCU/IPC973l6U4lu3v4+4xW5jkv1PVDsQRsfpo+VTOP4fPKPbPUe0rKxKiXRXHWGeIpnukjsa2ebE3aFnbpKbJ2JxpmB86j5wgTN2LEFR0KIv3Hz5cf5jSv9+e30dL8REglJEonluzw1HjWplvGAANAIFwj9q7fPbR/0PJDOKq8KvnsLJLZzxU76Lelz3tWiN+krfsxoI0lP17n/bwQQhaW1/NWm9TfG9wwnqmdyl+iC0bqhJNJi+584tJh4fbUXDaflg64N29nMgiCB16IIL8T3bxMoiGEasH2cliI4aC0JG49RbaGOpsi2KSLX3/DhDfxkRh6rzbrOcN15+eQHEMx0Tksxh1GQH/e5jBcraJp5fa4JlO99tQ5VX9DhvF55IM=\",\n\t\"password\": \"12345678a\"\n}"
+						},
+						"url": {
+							"raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers",
+							"protocol": "https",
+							"host": [
+								"sync",
+								"paybook",
+								"com"
+							],
+							"path": [
+								"v1",
+								"invoicing",
+								"mx",
+								"taxpayers"
+							],
+							"query": [
+								{
+									"key": "taxpayer",
+									"value": "String",
+									"description": "The RFC of the taxpayer e.g.(AAA010101AAA)",
+									"disabled": true
+								},
+								{
+									"key": "cer",
+									"value": "String",
+									"description": "Certificate of the taxpayer (string encoded in base64)",
+									"disabled": true
+								},
+								{
+									"key": "key",
+									"value": "String",
+									"description": "Key of the certificate (string encoded in base64)",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "String",
+									"description": "Password of the cer and key",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"taxpayer\": \"EKU9003173C9\",\n    \"cer\": \"MIIFuzCCA6OgAwIBAgIUMzAwMDEwMDAwMDA0MDAwMDI0MzQwDQYJKoZIhvcNAQELBQAwggErMQ8wDQYDVQQDDAZBQyBVQVQxLjAsBgNVBAoMJVNFUlZJQ0lPIERFIEFETUlOSVNUUkFDSU9OIFRSSUJVVEFSSUExGjAYBgNVBAsMEVNBVC1JRVMgQXV0aG9yaXR5MSgwJgYJKoZIhvcNAQkBFhlvc2Nhci5tYXJ0aW5lekBzYXQuZ29iLm14MR0wGwYDVQQJDBQzcmEgY2VycmFkYSBkZSBjYWRpejEOMAwGA1UEEQwFMDYzNzAxCzAJBgNVBAYTAk1YMRkwFwYDVQQIDBBDSVVEQUQgREUgTUVYSUNPMREwDwYDVQQHDAhDT1lPQUNBTjERMA8GA1UELRMIMi41LjQuNDUxJTAjBgkqhkiG9w0BCQITFnJlc3BvbnNhYmxlOiBBQ0RNQS1TQVQwHhcNMTkwNjE3MTk0NDE0WhcNMjMwNjE3MTk0NDE0WjCB4jEnMCUGA1UEAxMeRVNDVUVMQSBLRU1QRVIgVVJHQVRFIFNBIERFIENWMScwJQYDVQQpEx5FU0NVRUxBIEtFTVBFUiBVUkdBVEUgU0EgREUgQ1YxJzAlBgNVBAoTHkVTQ1VFTEEgS0VNUEVSIFVSR0FURSBTQSBERSBDVjElMCMGA1UELRMcRUtVOTAwMzE3M0M5IC8gWElRQjg5MTExNlFFNDEeMBwGA1UEBRMVIC8gWElRQjg5MTExNk1HUk1aUjA1MR4wHAYDVQQLExVFc2N1ZWxhIEtlbXBlciBVcmdhdGUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCN0peKpgfOL75iYRv1fqq+oVYsLPVUR/GibYmGKc9InHFy5lYF6OTYjnIIvmkOdRobbGlCUxORX/tLsl8Ya9gm6Yo7hHnODRBIDup3GISFzB/96R9K/MzYQOcscMIoBDARaycnLvy7FlMvO7/rlVnsSARxZRO8Kz8Zkksj2zpeYpjZIya/369+oGqQk1cTRkHo59JvJ4Tfbk/3iIyf4H/Ini9nBe9cYWo0MnKob7DDt/vsdi5tA8mMtA953LapNyCZIDCRQQlUGNgDqY9/8F5mUvVgkcczsIgGdvf9vMQPSf3jjCiKj7j6ucxl1+FwJWmbvgNmiaUR/0q4m2rm78lFAgMBAAGjHTAbMAwGA1UdEwEB/wQCMAAwCwYDVR0PBAQDAgbAMA0GCSqGSIb3DQEBCwUAA4ICAQBcpj1TjT4jiinIujIdAlFzE6kRwYJCnDG08zSp4kSnShjxADGEXH2chehKMV0FY7c4njA5eDGdA/G2OCTPvF5rpeCZP5Dw504RZkYDl2suRz+wa1sNBVpbnBJEK0fQcN3IftBwsgNFdFhUtCyw3lus1SSJbPxjLHS6FcZZ51YSeIfcNXOAuTqdimusaXq15GrSrCOkM6n2jfj2sMJYM2HXaXJ6rGTEgYmhYdwxWtil6RfZB+fGQ/H9I9WLnl4KTZUS6C9+NLHh4FPDhSk19fpS2S/56aqgFoGAkXAYt9Fy5ECaPcULIfJ1DEbsXKyRdCv3JY89+0MNkOdaDnsemS2o5Gl08zI4iYtt3L40gAZ60NPh31kVLnYNsmvfNxYyKp+AeJtDHyW9w7ftM0Hoi+BuRmcAQSKFV3pk8j51la+jrRBrAUv8blbRcQ5BiZUwJzHFEKIwTsRGoRyEx96sNnB03n6GTwjIGz92SmLdNl95r9rkvp+2m4S6q1lPuXaFg7DGBrXWC8iyqeWE2iobdwIIuXPTMVqQb12m1dAkJVRO5NdHnP/MpqOvOgLqoZBNHGyBg4Gqm4sCJHCxA1c8Elfa2RQTCk0tAzllL4vOnI1GHkGJn65xokGsaU4B4D36xh7eWrfj4/pgWHmtoDAYa8wzSwo2GVCZOs+mtEgOQB91/g==\",\n    \"key\": \"MIIFDjBABgkqhkiG9w0BBQ0wMzAbBgkqhkiG9w0BBQwwDgQIAgEAAoIBAQACAggAMBQGCCqGSIb3DQMHBAgwggS8AgEAMASCBMh4EHl7aNSCaMDA1VlRoXCZ5UUmqErAbucRFLOMmsAaFNkyWR0dXIAh0CMjE6NpQIMZhQ0HH/4tHgmwh4kCawGjIwERoG6/IH3mCt7u19J5+m6gUEGOJdEMXj976E5lKCd/EG6t6lCq66GE3rgux/nFmeQZvsjLlzPyhe2j+X81LrGudITTjDdgLI0EdbdV9CUJwWbibzrVxjuAVShRh07XPL/DiEw3Wk2+kdy4cfWmMvh0U55p0RKZopNkWuVVSvr3ai7ZNCwHZWDVqkUDpwDDGdyt0kYQ7qoKanIxv/A9wv6ekq0LQ/yLlOcelkxQeb8Glu4RXe+krRvrASw1eBAQ3mvNKpngwF8vtlyoil41PjHUOKALMJtNpywckRRYOk4703ylWIzTfdBlrZ6VmDBjdC5723G1HAx3R/x+o+08++RNiFaN06Ly5QbZZvjnealDfSKz1VKRHWeXggaW87rl4n0SOOWnvabKs4ZWRXTS0dhWK+KD/yYYQypTslDSXQrmyMkpc1Zcb4p9RTjodXxGCWdsR5i5+Ro/RiJvxWwwaO3YW6eaSavV0ROqANQ+A+GizMlxsVjl6G5Ooh6ORdA7jTNWmK44Icgyz6QFNh+J3NibxVK2GZxsQRi+N3HXeKYtq5SDXARA0BsaJQzYfDotA9LFgmFKg9jVhtcc1V3rtpaJ5sab8tdBTPPyN/XT8fA0GxlIX+hjLd3E9wB7qzNR6PZ84UKDxhCGWrLuIoSzuCbr+TD9UCJprsfTu8kr8Pur4rrxm7Zu1MsJRR9U5Ut+O9FZfw4SqGykyTGGh0v1gDG8esKpTW5MKNk9dRwDNHEmIF6tE6NeXDlzovf8VW6z9JA6AVUkgiFjDvLUY5MgyTqPB9RJNMSAZBzrkZgXyHlmFz2rvPqQGFbAtukjeRNS+nkVayLqfQnqpgthBvsgDUgFn03z0U2Svb094Q5XHMeQ4KM/nMWTEUC+8cybYhwVklJU7FBl9nzs66wkMZpViIrVWwSB2k9R1r/ZQcmeL+LR+WwgCtRs4It1rNVkxXwYHjsFM2Ce46TWhbVMF/h7Ap4lOTS15EHC8RvIBBcR2w1iJ+3pXiMeihArTELVnQsS31X3kxbBp3dGvLvW7PxDlwwdUQOXnMoimUCI/h0uPdSRULPAQHgSp9+TwqI0Uswb7cEiXnN8PySN5Tk109CYJjKqCxtuXu+oOeQV2I/0knQLd2zol+yIzNLj5a/HvyN+kOhIGi6TrFThuiVbbtnTtRM1CzKtFGuw5lYrwskkkvenoSLNY0N85QCU8ugjc3Bw4JZ9jNrDUaJ1Vb5/+1GQx/q/Dbxnl+FK6wMLjXy5JdFDeQyjBEBqndQxrs9cM5xBnl6AYs2Xymydafm2qK0cEDzwOPMpVcKU8sXS/AHvtgsn+rjMzW0wrQblWE0Ht/74GgfCj4diCDtzxQ0ggi6yJD+yhLZtVVqmKS3Gwnj9RxPLNfpgzPP01eYyBBi/W0RWTzcTb8iMxWX52MTU0oX9//4I7CAPXn0ZhpWAAIvUmkfjwfEModH7iwwaNtZFlT2rlzeshbP++UCEtqbwvveDRhmr5sMYkl+duEOca5156fcRy4tQ8Y3moNcKFKzHGMenShEIHz+W5KE=\",\n    \"password\": \"12345678a\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers",
+									"protocol": "https",
+									"host": [
+										"sync",
+										"paybook",
+										"com"
+									],
+									"path": [
+										"v1",
+										"invoicing",
+										"mx",
+										"taxpayers"
+									],
+									"query": [
+										{
+											"key": "taxpayer",
+											"value": "String",
+											"description": "The RFC of the taxpayer e.g.(AAA010101AAA)",
+											"disabled": true
+										},
+										{
+											"key": "cer",
+											"value": "String",
+											"description": "Certificate of the taxpayer (string encoded in base64)",
+											"disabled": true
+										},
+										{
+											"key": "key",
+											"value": "String",
+											"description": "Key of the certificate (string encoded in base64)",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "String",
+											"description": "Password of the cer and key",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 20 Mar 2020 19:50:45 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Fri, 20 Mar 2020 19:50:45 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "be300424-c584-4c6a-b450-e38141e76f5a"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "5771f6c67f9fe99e-DFW"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"be300424-c584-4c6a-b450-e38141e76f5a\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_taxpayer\": \"5e751e95d0510472295413b4\",\n        \"taxpayer\": \"IXS7607092R5\",\n        \"s_id\": \"paybook1.0\"\n    }\n}"
+						},
+						{
+							"name": "401",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"taxpayer\": \"EKU9003173C9\",\n    \"cer\": \"MIIFuzCCA6OgAwIBAgIUMzAwMDEwMDAwMDA0MDAwMDI0MzQwDQYJKoZIhvcNAQELBQAwggErMQ8wDQYDVQQDDAZBQyBVQVQxLjAsBgNVBAoMJVNFUlZJQ0lPIERFIEFETUlOSVNUUkFDSU9OIFRSSUJVVEFSSUExGjAYBgNVBAsMEVNBVC1JRVMgQXV0aG9yaXR5MSgwJgYJKoZIhvcNAQkBFhlvc2Nhci5tYXJ0aW5lekBzYXQuZ29iLm14MR0wGwYDVQQJDBQzcmEgY2VycmFkYSBkZSBjYWRpejEOMAwGA1UEEQwFMDYzNzAxCzAJBgNVBAYTAk1YMRkwFwYDVQQIDBBDSVVEQUQgREUgTUVYSUNPMREwDwYDVQQHDAhDT1lPQUNBTjERMA8GA1UELRMIMi41LjQuNDUxJTAjBgkqhkiG9w0BCQITFnJlc3BvbnNhYmxlOiBBQ0RNQS1TQVQwHhcNMTkwNjE3MTk0NDE0WhcNMjMwNjE3MTk0NDE0WjCB4jEnMCUGA1UEAxMeRVNDVUVMQSBLRU1QRVIgVVJHQVRFIFNBIERFIENWMScwJQYDVQQpEx5FU0NVRUxBIEtFTVBFUiBVUkdBVEUgU0EgREUgQ1YxJzAlBgNVBAoTHkVTQ1VFTEEgS0VNUEVSIFVSR0FURSBTQSBERSBDVjElMCMGA1UELRMcRUtVOTAwMzE3M0M5IC8gWElRQjg5MTExNlFFNDEeMBwGA1UEBRMVIC8gWElRQjg5MTExNk1HUk1aUjA1MR4wHAYDVQQLExVFc2N1ZWxhIEtlbXBlciBVcmdhdGUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCN0peKpgfOL75iYRv1fqq+oVYsLPVUR/GibYmGKc9InHFy5lYF6OTYjnIIvmkOdRobbGlCUxORX/tLsl8Ya9gm6Yo7hHnODRBIDup3GISFzB/96R9K/MzYQOcscMIoBDARaycnLvy7FlMvO7/rlVnsSARxZRO8Kz8Zkksj2zpeYpjZIya/369+oGqQk1cTRkHo59JvJ4Tfbk/3iIyf4H/Ini9nBe9cYWo0MnKob7DDt/vsdi5tA8mMtA953LapNyCZIDCRQQlUGNgDqY9/8F5mUvVgkcczsIgGdvf9vMQPSf3jjCiKj7j6ucxl1+FwJWmbvgNmiaUR/0q4m2rm78lFAgMBAAGjHTAbMAwGA1UdEwEB/wQCMAAwCwYDVR0PBAQDAgbAMA0GCSqGSIb3DQEBCwUAA4ICAQBcpj1TjT4jiinIujIdAlFzE6kRwYJCnDG08zSp4kSnShjxADGEXH2chehKMV0FY7c4njA5eDGdA/G2OCTPvF5rpeCZP5Dw504RZkYDl2suRz+wa1sNBVpbnBJEK0fQcN3IftBwsgNFdFhUtCyw3lus1SSJbPxjLHS6FcZZ51YSeIfcNXOAuTqdimusaXq15GrSrCOkM6n2jfj2sMJYM2HXaXJ6rGTEgYmhYdwxWtil6RfZB+fGQ/H9I9WLnl4KTZUS6C9+NLHh4FPDhSk19fpS2S/56aqgFoGAkXAYt9Fy5ECaPcULIfJ1DEbsXKyRdCv3JY89+0MNkOdaDnsemS2o5Gl08zI4iYtt3L40gAZ60NPh31kVLnYNsmvfNxYyKp+AeJtDHyW9w7ftM0Hoi+BuRmcAQSKFV3pk8j51la+jrRBrAUv8blbRcQ5BiZUwJzHFEKIwTsRGoRyEx96sNnB03n6GTwjIGz92SmLdNl95r9rkvp+2m4S6q1lPuXaFg7DGBrXWC8iyqeWE2iobdwIIuXPTMVqQb12m1dAkJVRO5NdHnP/MpqOvOgLqoZBNHGyBg4Gqm4sCJHCxA1c8Elfa2RQTCk0tAzllL4vOnI1GHkGJn65xokGsaU4B4D36xh7eWrfj4/pgWHmtoDAYa8wzSwo2GVCZOs+mtEgOQB91/g==\",\n    \"key\": \"MIIFDjBABgkqhkiG9w0BBQ0wMzAbBgkqhkiG9w0BBQwwDgQIAgEAAoIBAQACAggAMBQGCCqGSIb3DQMHBAgwggS8AgEAMASCBMh4EHl7aNSCaMDA1VlRoXCZ5UUmqErAbucRFLOMmsAaFNkyWR0dXIAh0CMjE6NpQIMZhQ0HH/4tHgmwh4kCawGjIwERoG6/IH3mCt7u19J5+m6gUEGOJdEMXj976E5lKCd/EG6t6lCq66GE3rgux/nFmeQZvsjLlzPyhe2j+X81LrGudITTjDdgLI0EdbdV9CUJwWbibzrVxjuAVShRh07XPL/DiEw3Wk2+kdy4cfWmMvh0U55p0RKZopNkWuVVSvr3ai7ZNCwHZWDVqkUDpwDDGdyt0kYQ7qoKanIxv/A9wv6ekq0LQ/yLlOcelkxQeb8Glu4RXe+krRvrASw1eBAQ3mvNKpngwF8vtlyoil41PjHUOKALMJtNpywckRRYOk4703ylWIzTfdBlrZ6VmDBjdC5723G1HAx3R/x+o+08++RNiFaN06Ly5QbZZvjnealDfSKz1VKRHWeXggaW87rl4n0SOOWnvabKs4ZWRXTS0dhWK+KD/yYYQypTslDSXQrmyMkpc1Zcb4p9RTjodXxGCWdsR5i5+Ro/RiJvxWwwaO3YW6eaSavV0ROqANQ+A+GizMlxsVjl6G5Ooh6ORdA7jTNWmK44Icgyz6QFNh+J3NibxVK2GZxsQRi+N3HXeKYtq5SDXARA0BsaJQzYfDotA9LFgmFKg9jVhtcc1V3rtpaJ5sab8tdBTPPyN/XT8fA0GxlIX+hjLd3E9wB7qzNR6PZ84UKDxhCGWrLuIoSzuCbr+TD9UCJprsfTu8kr8Pur4rrxm7Zu1MsJRR9U5Ut+O9FZfw4SqGykyTGGh0v1gDG8esKpTW5MKNk9dRwDNHEmIF6tE6NeXDlzovf8VW6z9JA6AVUkgiFjDvLUY5MgyTqPB9RJNMSAZBzrkZgXyHlmFz2rvPqQGFbAtukjeRNS+nkVayLqfQnqpgthBvsgDUgFn03z0U2Svb094Q5XHMeQ4KM/nMWTEUC+8cybYhwVklJU7FBl9nzs66wkMZpViIrVWwSB2k9R1r/ZQcmeL+LR+WwgCtRs4It1rNVkxXwYHjsFM2Ce46TWhbVMF/h7Ap4lOTS15EHC8RvIBBcR2w1iJ+3pXiMeihArTELVnQsS31X3kxbBp3dGvLvW7PxDlwwdUQOXnMoimUCI/h0uPdSRULPAQHgSp9+TwqI0Uswb7cEiXnN8PySN5Tk109CYJjKqCxtuXu+oOeQV2I/0knQLd2zol+yIzNLj5a/HvyN+kOhIGi6TrFThuiVbbtnTtRM1CzKtFGuw5lYrwskkkvenoSLNY0N85QCU8ugjc3Bw4JZ9jNrDUaJ1Vb5/+1GQx/q/Dbxnl+FK6wMLjXy5JdFDeQyjBEBqndQxrs9cM5xBnl6AYs2Xymydafm2qK0cEDzwOPMpVcKU8sXS/AHvtgsn+rjMzW0wrQblWE0Ht/74GgfCj4diCDtzxQ0ggi6yJD+yhLZtVVqmKS3Gwnj9RxPLNfpgzPP01eYyBBi/W0RWTzcTb8iMxWX52MTU0oX9//4I7CAPXn0ZhpWAAIvUmkfjwfEModH7iwwaNtZFlT2rlzeshbP++UCEtqbwvveDRhmr5sMYkl+duEOca5156fcRy4tQ8Y3moNcKFKzHGMenShEIHz+W5KE=\",\n    \"password\": \"12345678a\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers",
+									"protocol": "https",
+									"host": [
+										"sync",
+										"paybook",
+										"com"
+									],
+									"path": [
+										"v1",
+										"invoicing",
+										"mx",
+										"taxpayers"
+									],
+									"query": [
+										{
+											"key": "taxpayer",
+											"value": "String",
+											"description": "The RFC of the taxpayer e.g.(AAA010101AAA)",
+											"disabled": true
+										},
+										{
+											"key": "cer",
+											"value": "String",
+											"description": "Certificate of the taxpayer (string encoded in base64)",
+											"disabled": true
+										},
+										{
+											"key": "key",
+											"value": "String",
+											"description": "Key of the certificate (string encoded in base64)",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "String",
+											"description": "Password of the cer and key",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 20 Mar 2020 23:05:50 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Fri, 20 Mar 2020 23:05:50 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "dc258cb3-e920-4b34-b3c9-e2bcdba69648"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "5773148cab54c7f6-DFW"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"dc258cb3-e920-4b34-b3c9-e2bcdba69648\",\n    \"code\": 401,\n    \"errors\": null,\n    \"status\": false,\n    \"message\": \"Unauthorized\",\n    \"response\": null\n}"
+						}
+					]
+				},
 				{
 					"name": "Get the list of the registered taxpayers for the user",
 					"request": {
@@ -1481,363 +1848,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"rid\": \"efd66fa9-c3c4-4fe0-9c53-c551b3a52f4b\",\n    \"code\": 401,\n    \"errors\": null,\n    \"status\": false,\n    \"message\": \"Unauthorized\",\n    \"response\": null\n}"
-						}
-					]
-				},
-				{
-					"name": "Create a new taxpayer",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{ \n\t\"taxpayer\": \"IXS7607092R5\",\n\t\"cer\": \"MIIF5TCCA82gAwIBAgIUMzAwMDEwMDAwMDA0MDAwMDI0NDUwDQYJKoZIhvcNAQELBQAwggErMQ8wDQYDVQQDDAZBQyBVQVQxLjAsBgNVBAoMJVNFUlZJQ0lPIERFIEFETUlOSVNUUkFDSU9OIFRSSUJVVEFSSUExGjAYBgNVBAsMEVNBVC1JRVMgQXV0aG9yaXR5MSgwJgYJKoZIhvcNAQkBFhlvc2Nhci5tYXJ0aW5lekBzYXQuZ29iLm14MR0wGwYDVQQJDBQzcmEgY2VycmFkYSBkZSBjYWRpejEOMAwGA1UEEQwFMDYzNzAxCzAJBgNVBAYTAk1YMRkwFwYDVQQIDBBDSVVEQUQgREUgTUVYSUNPMREwDwYDVQQHDAhDT1lPQUNBTjERMA8GA1UELRMIMi41LjQuNDUxJTAjBgkqhkiG9w0BCQITFnJlc3BvbnNhYmxlOiBBQ0RNQS1TQVQwHhcNMTkwNjE3MjA0ODI0WhcNMjMwNjE3MjA0ODI0WjCCAQsxLzAtBgNVBAMTJklOVEVSTkFDSU9OQUwgWElNQk8gWSBTQUJPUkVTIFNBIERFIENWMS8wLQYDVQQpEyZJTlRFUk5BQ0lPTkFMIFhJTUJPIFkgU0FCT1JFUyBTQSBERSBDVjEvMC0GA1UEChMmSU5URVJOQUNJT05BTCBYSU1CTyBZIFNBQk9SRVMgU0EgREUgQ1YxJTAjBgNVBC0THElYUzc2MDcwOTJSNSAvIEtBSE82NDExMDFCMzkxHjAcBgNVBAUTFSAvIEtBSE82NDExMDFITlRMS1MwNjEvMC0GA1UECxMmSU5URVJOQUNJT05BTCBYSU1CTyBZIFNBQk9SRVMgU0EgREUgQ1YwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC8kcv3+BxexzGXa5Qf9lCP5/q92f0jPziUsf60NIWJkV1TLOnxsXzyUyU5FlWwa7PoiIBYUcYMCwbRWfQoMhcqzcnn/xxORNRqmzNmbrIPSxvOLuIwU495fmQZdqeXxj8Yws8YCDPZb1E+7/9DtW81skoh1A3vTICZQC0rie1B0FOsa12sIxXrWcwP3OZnfnKqUk69QAtoVJGTjcTAbT+DXyvxuYSHkMm+j9itED0LvAoU26sPtf9EWbYC3AB21RSgmnVPTELRGaaNIQJs/fQQY4JrqNNFBJoHYwo72tQtFUvcqqZ9MLURhCo5zaedE3VmT4ITLgzuHYF/QnAhBKIzAgMBAAGjHTAbMAwGA1UdEwEB/wQCMAAwCwYDVR0PBAQDAgbAMA0GCSqGSIb3DQEBCwUAA4ICAQA15SEAKaLgmF7wTfT1ILRnHAigfn/JGGn+eN+L15hINKSLrkEGwFqFGS+zy8QojtKsb1cnmsDF8mLH6mMHhcN45iJl5Q2OUg2BxeOa92PqrVpCgERMzLmXuGF8GJMjDWtWn16ZTm7ZoGPvu+jQGzW/fkJIygi0vpBMwIRLGssCWwRqlXkmI1Rira6CTlLyvAGKgGGEOV0JAoYtR9NjCq0lzpPdmrccr8coEw3266EcUq9pNysoGhm4gqoPVmDKKuNHOtdi5H34e92OIDobdl0VD/ESO6FtG3ClFHLx+r9NV5n0QfMVLc3Vxb5wEFdGLFnWYGReoLoRXwkiIsaKQ9ezEhxSbh40jSV3J5AxE9G2rHsGzXcKF07ZU0TQNeL5zNg9yf1ODXqYYGIMiFPzCbo4NkFhIDbUyMYUtWuuRbSD0cDZUzXUUGv5AvEvsa7WD9f7BSzSUh0UiPftA1uc2S6mzHR4zdXI9UvAc3AX0Ky64CrtE1ffrd/hD3BfPWvAu+1MAZwXxPBo28tN4qr1yffT1tNPbiO0MAT4GVyJOjeQhUA+J7O3Y6dc9ubcpXePgTOk1dB7/Fv0TUNMPz5gFAPagzQMAQLqnkzyNVnzuRyv4oEWCuSJhg5qIaNfTH1hCN3EmjMaQGIjwQf/TOVrpIzIUwA5D4kRRl3tzDPhvjFrEQ==\",\n\t\"key\": \"MIIFDjBABgkqhkiG9w0BBQ0wMzAbBgkqhkiG9w0BBQwwDgQIAgEAAoIBAQACAggAMBQGCCqGSIb3DQMHBAgwggS9AgEAMASCBMh4EHl7aNSCaMDA1VlRoXCZ5UUmqErAbucRBAKNQXH8t3X1ZNTXua+xM+dHKTDgiPce0sjfFzN8opkMp12yJFMiujuPxFwOW2FH7DsRJY2kCJalnVnWpFJ5NzMc3FpEuu+s03usy8CBEOo9F57I2ITTqCzbQsY3/J0upGQIWNN/7xQaBFArbczevtQOwgJ1JZtX04kM4siYFMwmreU/Jl5Lu5Ur9PGMwgQiYWBUXeoKb9b7exLZBCBHTxzSlDLuU2Vc/MNEwRJ1Cb4sCiJ+mFVPOF/P5rDZbD5uMRYyPEtZVfq67ptooDlYakQM1Gm3V17PMlEmaZg8vn7YZ8drB9myyvhIuZlxNEWQTyMCXrKV7qsXVisYxkWdlbaOo9CgjmVXWd4PgbM0OrCcfWevawE2+gAWNYLZRhBJNWjGdNA8xQ8VebFai7WYRVeMvuB85BpNMZFEQzAl6ztDnUMSyZDAmbXinYUon19qUV9Ff1YJqpvNWSErGza5jyh5TJ+yeZnY0WO7ONo3oZ+TdLbwLtthbr1zs1c+7nXn5i8WzW5lGgBX/7eHihYHGNIn0RiJ0v/LHEtdkPq/xXQ5jJjfgLRnujtKxq31CyxeV0vFCus3Hj1egVn6OXk7BGPN2q5UP+3xGjvH/cxzouSB6y13qoTbCX08R52GE4g7GbAiT0qiRdoiDZA6731ackMl0t2vKkGRtx/SMVnbPhUvquaR5byqPDEBtRlgD0Q/0726I0qaDrSch+gHjT/nkP7sneBZZCYIGIIt9PQnbn8bob3TPer1Ne/Q4m14P3W3WE2u6krFc3EqNcfNMhCQlX92Q3MPazxCLcWJC2y6Q6c7CxpPnzMVkzkMaYuUcE4v5ZZF3mPIMy7pEQS73GQUgRltXToNY+TFdhfyCDbiJK74Zd/RjleHyITlaidfAbyAKDZYLZEQ4a2gKx2M2/FV8jykmW+IWwRUSS9WQWgqFiamb0PHb+RRWZvxCrBX1v0tNwY8dwENTJTrJCVwcKEfCzUXzdwfJoYcT3/UyCNOS+n1l2ShSBsdJ+9v8FU16J/0Z6ZkcqMdGrcUZps+h8nbYHd2M5L+f9AuU71DGA/KCDAa5r6RI7Bvqb4o7NebJKshpPJj/E5SqsZY2n2T4OAnbIyF7Lb5jWx0gfo5ovPSbk8TcXyq8EToKLSTEUj+HvPhZhnizJQeyBI7SXVf3uo+DEDtSc2eCkYt12LjNo3n0l9DxdzSNyk8HB7btZltGZCU/IPC973l6U4lu3v4+4xW5jkv1PVDsQRsfpo+VTOP4fPKPbPUe0rKxKiXRXHWGeIpnukjsa2ebE3aFnbpKbJ2JxpmB86j5wgTN2LEFR0KIv3Hz5cf5jSv9+e30dL8REglJEonluzw1HjWplvGAANAIFwj9q7fPbR/0PJDOKq8KvnsLJLZzxU76Lelz3tWiN+krfsxoI0lP17n/bwQQhaW1/NWm9TfG9wwnqmdyl+iC0bqhJNJi+584tJh4fbUXDaflg64N29nMgiCB16IIL8T3bxMoiGEasH2cliI4aC0JG49RbaGOpsi2KSLX3/DhDfxkRh6rzbrOcN15+eQHEMx0Tksxh1GQH/e5jBcraJp5fa4JlO99tQ5VX9DhvF55IM=\",\n\t\"password\": \"12345678a\"\n}"
-						},
-						"url": {
-							"raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers",
-							"protocol": "https",
-							"host": [
-								"sync",
-								"paybook",
-								"com"
-							],
-							"path": [
-								"v1",
-								"invoicing",
-								"mx",
-								"taxpayers"
-							],
-							"query": [
-								{
-									"key": "taxpayer",
-									"value": "String",
-									"description": "The RFC of the taxpayer e.g.(AAA010101AAA)",
-									"disabled": true
-								},
-								{
-									"key": "cer",
-									"value": "String",
-									"description": "Certificate of the taxpayer (string encoded in base64)",
-									"disabled": true
-								},
-								{
-									"key": "key",
-									"value": "String",
-									"description": "Key of the certificate (string encoded in base64)",
-									"disabled": true
-								},
-								{
-									"key": "password",
-									"value": "String",
-									"description": "Password of the cer and key",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "401",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{ \n\t\"taxpayer\": \"IXS7607092R5\",\n\t\"cer\": \"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\",\n\t\"key\": \"MIIFDjBABgkqhkiG9w0BBQ0wMzAbBgkqhkiG9w0BBQwwDgQIAgEAAoIBAQACAggAMBQGCCqGSIb3DQMHBAgwggS9AgEAMASCBMh4EHl7aNSCaMDA1VlRoXCZ5UUmqErAbucRBAKNQXH8t3X1ZNTXua+xM+dHKTDgiPce0sjfFzN8opkMp12yJFMiujuPxFwOW2FH7DsRJY2kCJalnVnWpFJ5NzMc3FpEuu+s03usy8CBEOo9F57I2ITTqCzbQsY3/J0upGQIWNN/7xQaBFArbczevtQOwgJ1JZtX04kM4siYFMwmreU/Jl5Lu5Ur9PGMwgQiYWBUXeoKb9b7exLZBCBHTxzSlDLuU2Vc/MNEwRJ1Cb4sCiJ+mFVPOF/P5rDZbD5uMRYyPEtZVfq67ptooDlYakQM1Gm3V17PMlEmaZg8vn7YZ8drB9myyvhIuZlxNEWQTyMCXrKV7qsXVisYxkWdlbaOo9CgjmVXWd4PgbM0OrCcfWevawE2+gAWNYLZRhBJNWjGdNA8xQ8VebFai7WYRVeMvuB85BpNMZFEQzAl6ztDnUMSyZDAmbXinYUon19qUV9Ff1YJqpvNWSErGza5jyh5TJ+yeZnY0WO7ONo3oZ+TdLbwLtthbr1zs1c+7nXn5i8WzW5lGgBX/7eHihYHGNIn0RiJ0v/LHEtdkPq/xXQ5jJjfgLRnujtKxq31CyxeV0vFCus3Hj1egVn6OXk7BGPN2q5UP+3xGjvH/cxzouSB6y13qoTbCX08R52GE4g7GbAiT0qiRdoiDZA6731ackMl0t2vKkGRtx/SMVnbPhUvquaR5byqPDEBtRlgD0Q/0726I0qaDrSch+gHjT/nkP7sneBZZCYIGIIt9PQnbn8bob3TPer1Ne/Q4m14P3W3WE2u6krFc3EqNcfNMhCQlX92Q3MPazxCLcWJC2y6Q6c7CxpPnzMVkzkMaYuUcE4v5ZZF3mPIMy7pEQS73GQUgRltXToNY+TFdhfyCDbiJK74Zd/RjleHyITlaidfAbyAKDZYLZEQ4a2gKx2M2/FV8jykmW+IWwRUSS9WQWgqFiamb0PHb+RRWZvxCrBX1v0tNwY8dwENTJTrJCVwcKEfCzUXzdwfJoYcT3/UyCNOS+n1l2ShSBsdJ+9v8FU16J/0Z6ZkcqMdGrcUZps+h8nbYHd2M5L+f9AuU71DGA/KCDAa5r6RI7Bvqb4o7NebJKshpPJj/E5SqsZY2n2T4OAnbIyF7Lb5jWx0gfo5ovPSbk8TcXyq8EToKLSTEUj+HvPhZhnizJQeyBI7SXVf3uo+DEDtSc2eCkYt12LjNo3n0l9DxdzSNyk8HB7btZltGZCU/IPC973l6U4lu3v4+4xW5jkv1PVDsQRsfpo+VTOP4fPKPbPUe0rKxKiXRXHWGeIpnukjsa2ebE3aFnbpKbJ2JxpmB86j5wgTN2LEFR0KIv3Hz5cf5jSv9+e30dL8REglJEonluzw1HjWplvGAANAIFwj9q7fPbR/0PJDOKq8KvnsLJLZzxU76Lelz3tWiN+krfsxoI0lP17n/bwQQhaW1/NWm9TfG9wwnqmdyl+iC0bqhJNJi+584tJh4fbUXDaflg64N29nMgiCB16IIL8T3bxMoiGEasH2cliI4aC0JG49RbaGOpsi2KSLX3/DhDfxkRh6rzbrOcN15+eQHEMx0Tksxh1GQH/e5jBcraJp5fa4JlO99tQ5VX9DhvF55IM=\",\n\t\"password\": \"12345678a\"\n}"
-								},
-								"url": {
-									"raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers",
-									"protocol": "https",
-									"host": [
-										"sync",
-										"paybook",
-										"com"
-									],
-									"path": [
-										"v1",
-										"invoicing",
-										"mx",
-										"taxpayers"
-									],
-									"query": [
-										{
-											"key": "taxpayer",
-											"value": "String",
-											"description": "The RFC of the taxpayer e.g.(AAA010101AAA)",
-											"disabled": true
-										},
-										{
-											"key": "cer",
-											"value": "String",
-											"description": "Certificate of the taxpayer (string encoded in base64)",
-											"disabled": true
-										},
-										{
-											"key": "key",
-											"value": "String",
-											"description": "Key of the certificate (string encoded in base64)",
-											"disabled": true
-										},
-										{
-											"key": "password",
-											"value": "String",
-											"description": "Password of the cer and key",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"status": "Unauthorized",
-							"code": 401,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Fri, 20 Mar 2020 23:05:50 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Fri, 20 Mar 2020 23:05:50 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "dc258cb3-e920-4b34-b3c9-e2bcdba69648"
-								},
-								{
-									"key": "CF-Cache-Status",
-									"value": "DYNAMIC"
-								},
-								{
-									"key": "Expect-CT",
-									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains; preload"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Server",
-									"value": "cloudflare"
-								},
-								{
-									"key": "CF-RAY",
-									"value": "5773148cab54c7f6-DFW"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"dc258cb3-e920-4b34-b3c9-e2bcdba69648\",\n    \"code\": 401,\n    \"errors\": null,\n    \"status\": false,\n    \"message\": \"Unauthorized\",\n    \"response\": null\n}"
-						},
-						{
-							"name": "200",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{ \n\t\n\t\"taxpayer\": \"IXS7607092R5\",\n\t\"cer\": \"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\",\n\t\"key\": \"MIIFDjBABgkqhkiG9w0BBQ0wMzAbBgkqhkiG9w0BBQwwDgQIAgEAAoIBAQACAggAMBQGCCqGSIb3DQMHBAgwggS9AgEAMASCBMh4EHl7aNSCaMDA1VlRoXCZ5UUmqErAbucRBAKNQXH8t3X1ZNTXua+xM+dHKTDgiPce0sjfFzN8opkMp12yJFMiujuPxFwOW2FH7DsRJY2kCJalnVnWpFJ5NzMc3FpEuu+s03usy8CBEOo9F57I2ITTqCzbQsY3/J0upGQIWNN/7xQaBFArbczevtQOwgJ1JZtX04kM4siYFMwmreU/Jl5Lu5Ur9PGMwgQiYWBUXeoKb9b7exLZBCBHTxzSlDLuU2Vc/MNEwRJ1Cb4sCiJ+mFVPOF/P5rDZbD5uMRYyPEtZVfq67ptooDlYakQM1Gm3V17PMlEmaZg8vn7YZ8drB9myyvhIuZlxNEWQTyMCXrKV7qsXVisYxkWdlbaOo9CgjmVXWd4PgbM0OrCcfWevawE2+gAWNYLZRhBJNWjGdNA8xQ8VebFai7WYRVeMvuB85BpNMZFEQzAl6ztDnUMSyZDAmbXinYUon19qUV9Ff1YJqpvNWSErGza5jyh5TJ+yeZnY0WO7ONo3oZ+TdLbwLtthbr1zs1c+7nXn5i8WzW5lGgBX/7eHihYHGNIn0RiJ0v/LHEtdkPq/xXQ5jJjfgLRnujtKxq31CyxeV0vFCus3Hj1egVn6OXk7BGPN2q5UP+3xGjvH/cxzouSB6y13qoTbCX08R52GE4g7GbAiT0qiRdoiDZA6731ackMl0t2vKkGRtx/SMVnbPhUvquaR5byqPDEBtRlgD0Q/0726I0qaDrSch+gHjT/nkP7sneBZZCYIGIIt9PQnbn8bob3TPer1Ne/Q4m14P3W3WE2u6krFc3EqNcfNMhCQlX92Q3MPazxCLcWJC2y6Q6c7CxpPnzMVkzkMaYuUcE4v5ZZF3mPIMy7pEQS73GQUgRltXToNY+TFdhfyCDbiJK74Zd/RjleHyITlaidfAbyAKDZYLZEQ4a2gKx2M2/FV8jykmW+IWwRUSS9WQWgqFiamb0PHb+RRWZvxCrBX1v0tNwY8dwENTJTrJCVwcKEfCzUXzdwfJoYcT3/UyCNOS+n1l2ShSBsdJ+9v8FU16J/0Z6ZkcqMdGrcUZps+h8nbYHd2M5L+f9AuU71DGA/KCDAa5r6RI7Bvqb4o7NebJKshpPJj/E5SqsZY2n2T4OAnbIyF7Lb5jWx0gfo5ovPSbk8TcXyq8EToKLSTEUj+HvPhZhnizJQeyBI7SXVf3uo+DEDtSc2eCkYt12LjNo3n0l9DxdzSNyk8HB7btZltGZCU/IPC973l6U4lu3v4+4xW5jkv1PVDsQRsfpo+VTOP4fPKPbPUe0rKxKiXRXHWGeIpnukjsa2ebE3aFnbpKbJ2JxpmB86j5wgTN2LEFR0KIv3Hz5cf5jSv9+e30dL8REglJEonluzw1HjWplvGAANAIFwj9q7fPbR/0PJDOKq8KvnsLJLZzxU76Lelz3tWiN+krfsxoI0lP17n/bwQQhaW1/NWm9TfG9wwnqmdyl+iC0bqhJNJi+584tJh4fbUXDaflg64N29nMgiCB16IIL8T3bxMoiGEasH2cliI4aC0JG49RbaGOpsi2KSLX3/DhDfxkRh6rzbrOcN15+eQHEMx0Tksxh1GQH/e5jBcraJp5fa4JlO99tQ5VX9DhvF55IM=\",\n\t\"password\": \"12345678a\"\n}"
-								},
-								"url": {
-									"raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers",
-									"protocol": "https",
-									"host": [
-										"sync",
-										"paybook",
-										"com"
-									],
-									"path": [
-										"v1",
-										"invoicing",
-										"mx",
-										"taxpayers"
-									],
-									"query": [
-										{
-											"key": "taxpayer",
-											"value": "String",
-											"description": "The RFC of the taxpayer e.g.(AAA010101AAA)",
-											"disabled": true
-										},
-										{
-											"key": "cer",
-											"value": "String",
-											"description": "Certificate of the taxpayer (string encoded in base64)",
-											"disabled": true
-										},
-										{
-											"key": "key",
-											"value": "String",
-											"description": "Key of the certificate (string encoded in base64)",
-											"disabled": true
-										},
-										{
-											"key": "password",
-											"value": "String",
-											"description": "Password of the cer and key",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Fri, 20 Mar 2020 19:50:45 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Fri, 20 Mar 2020 19:50:45 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "be300424-c584-4c6a-b450-e38141e76f5a"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "CF-Cache-Status",
-									"value": "DYNAMIC"
-								},
-								{
-									"key": "Expect-CT",
-									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains; preload"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Server",
-									"value": "cloudflare"
-								},
-								{
-									"key": "CF-RAY",
-									"value": "5771f6c67f9fe99e-DFW"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"be300424-c584-4c6a-b450-e38141e76f5a\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_taxpayer\": \"5e751e95d0510472295413b4\",\n        \"taxpayer\": \"IXS7607092R5\",\n        \"s_id\": \"paybook1.0\"\n    }\n}"
 						}
 					]
 				},
@@ -2250,6 +2260,546 @@
 			"name": "Invoices",
 			"item": [
 				{
+					"name": "Stamp new Invoice",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id_provider\" : \"acme\",\n\t\"invoice_data\" : {\n\t\t\"Version\": \"3.3\",\n\t\t\"Serie\": \"A\",\n\t\t\"Folio\": \"1\",\n\t\t\"Fecha\": \"2020-03-20T12:09:14\",\n\t\t\"FormaPago\": \"99\",\n\t\t\"CondicionesDePago\":\"3 meses\",\n\t\t\"SubTotal\": \"50\",\n\t\t\"Descuento\": \"0\",\n\t\t\"Moneda\":\"MXN\",\n\t\t\"Total\":\"58\",\n\t\t\"TipoDeComprobante\": \"I\",\n\t\t\"MetodoPago\":\"PUE\",\n\t\t\"LugarExpedicion\": \"05000\",\n\t\t\"Emisor\": {\n\t\t\t\"Rfc\": \t\"IXS7607092R5\",\n\t\t\t\"Nombre\": \"INTERNACIONAL XIMBO Y SABORES SA DE CV\",\n\t\t\t\"RegimenFiscal\": \"603\"\n\t\t},\n\n\t\t\"Receptor\":{\n\t\t\t\"Rfc\": \"CACX7605101P8\",\n\t\t\t\"Nombre\":\"XOCHILT CASAS CHAVEZ\",\n\t\t\t\"UsoCFDI\": \"D01\"\n\t\t},\n\t\t\"Conceptos\" : {\n\t\t\t\"Concepto\" : [\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"Concepto\" : {\n\t\t\t\t\t            \"ClaveProdServ\": \"01010101\",\n\t\t\t\t\t            \"NoIdentificacion\": \"UT421510 \",\n\t\t\t\t\t            \"Cantidad\": \"1\",\n\t\t\t\t\t            \"ClaveUnidad\": \"H87\",\n\t\t\t\t\t            \"Unidad\": \"PZA\",\n\t\t\t\t\t            \"Descripcion\": \"ARTICULO\",\n\t\t\t\t\t            \"ValorUnitario\": \"50\",\n\t\t\t\t\t            \"Importe\": \"50\",\n\t\t\t\t\t            \"Descuento\": \"0\",\n\t\t\t\t\t            \"Impuestos\": {\n\t\t\t\t\t                \"Retenciones\": {\n\t\t\t\t\t                    \"Retencion\": [{\n\t\t\t\t\t                        \"Retencion\": {\n\t\t\t\t\t                            \"Base\": \"50\",\n\t\t\t\t\t                            \"Impuesto\": \"002\",\n\t\t\t\t\t                            \"TipoFactor\": \"Tasa\",\n\t\t\t\t\t                            \"TasaOCuota\": \"0.160000\",\n\t\t\t\t\t                            \"Importe\": \"8\"\n\t\t\t\t\t                        }\n\t\t\t\t\t                    }]\n\t\t\t\t\t                }\n\t\t\t\t\t            }\n\t\t\t\t\t        }\n\t\t\t\t\t    }\n\t\t\t]\n\t\t},\n\t    \"Impuestos\": {\n\t        \"TotalImpuestosRetenidos\": \"0\",\n\t        \"TotalImpuestosTrasladados\": \"8\",\n\t        \"Traslados\": {\n\t            \"Traslado\": [\n\t            \t{\n\t\t                \"Traslado\": {\n\t\t                    \"Impuesto\": \"002\",\n\t\t                \t\"TipoFactor\": \"Tasa\",\n                    \t\t\"TasaOCuota\": \"0.160000\",\n\t\t                    \"Importe\": \"8\"\n\t\t                }\n\t\t            }\n\t        \t]\n\t        }    \n\t    }\n\t} \t\n}"
+						},
+						"url": {
+							"raw": "https://sync.paybook.com/v1/invoicing/mx/invoices",
+							"protocol": "https",
+							"host": [
+								"sync",
+								"paybook",
+								"com"
+							],
+							"path": [
+								"v1",
+								"invoicing",
+								"mx",
+								"invoices"
+							],
+							"query": [
+								{
+									"key": "invoice_data",
+									"value": "JSON",
+									"description": "JSON structure of the invoice",
+									"disabled": true
+								},
+								{
+									"key": "invoice_xml",
+									"value": "String",
+									"description": "XML string (base64 encoded)",
+									"disabled": true
+								},
+								{
+									"key": "id_provider",
+									"value": "String",
+									"description": "(optional) Id or name of the available providers in {[app_name]}",
+									"disabled": true
+								},
+								{
+									"key": "email_data",
+									"value": "JSON",
+									"description": "(optional) Information to email the invoice",
+									"disabled": true
+								},
+								{
+									"key": "email_data.email",
+									"value": "String",
+									"description": "Email address",
+									"disabled": true
+								},
+								{
+									"key": "email_data.reply",
+									"value": "String",
+									"description": "Reply address ",
+									"disabled": true
+								},
+								{
+									"key": "email_data.body",
+									"value": "String",
+									"description": "Content of the Email",
+									"disabled": true
+								},
+								{
+									"key": "email_data.subject",
+									"value": "String",
+									"description": "Subject of the Email",
+									"disabled": true
+								},
+								{
+									"key": "pdf",
+									"value": "Boolean",
+									"description": "(optional) PDF File of the invoice is required",
+									"disabled": true
+								},
+								{
+									"key": "pdf_comments",
+									"value": "String",
+									"description": "(optional) Commets for PDF File of the invoice",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Stamp a new invoice, you can send the JSON structure or XML string"
+					},
+					"response": [
+						{
+							"name": "200 JSON",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"api_key\": \"{{apiKey}}\",\n    \"id_user\": \"{{id_user}}\",\n    \"invoice_data\": {\n        \"Version\": \"4.0\",\n        \"Serie\": \"SY-1001\",\n        \"Folio\": \"123542\",\n        \"Fecha\": \"2022-02-17T14:36:17\",\n        \"SubTotal\": \"10.00\",\n        \"Descuento\": \"0.00\",\n        \"Moneda\": \"USD\",\n        \"TipoCambio\": \"20.00\",\n        \"Total\": \"10.00\",\n        \"TipoDeComprobante\": \"I\",\n        \"Exportacion\": \"01\",\n        \"LugarExpedicion\": \"45610\",\n        \"Emisor\": {\n            \"Rfc\": \"EKU9003173C9\",\n            \"Nombre\": \"ESCUELA KEMPER URGATE SA DE CV\",\n            \"RegimenFiscal\": \"601\"\n        },\n        \"Receptor\": {\n            \"Rfc\": \"XOJI740919U48\",\n            \"Nombre\": \"INGRID XODAR JIMENEZ\",\n            \"DomicilioFiscalReceptor\": \"88965\",\n            \"RegimenFiscalReceptor\": \"621\",\n            \"UsoCFDI\": \"P01\"\n        },\n        \"Conceptos\": [\n            {\n                \"ClaveProdServ\": \"50181906\",\n                \"NoIdentificacion\": \"None\",\n                \"Cantidad\": \"1.0\",\n                \"ClaveUnidad\": \"H87\",\n                \"Unidad\": \"Pieza\",\n                \"Descripcion\": \"Galletas\",\n                \"ValorUnitario\": \"10.00\",\n                \"Importe\": \"10.00\",\n                \"Descuento\": \"0.00\",\n                \"ObjetoImp\": \"02\",\n                \"Impuestos\": {\n                    \"Traslados\": [\n                        {\n                            \"Base\": \"1\",\n                            \"Importe\": \"1\",\n                            \"Impuesto\": \"002\",\n                            \"TasaOCuota\": \"0.160000\",\n                            \"TipoFactor\": \"Tasa\"\n                        }\n                    ],\n                    \"Retenciones\": [\n                        {\n                            \"Base\": \"1\",\n                            \"Importe\": \"1\",\n                            \"Impuesto\": \"002\",\n                            \"TasaOCuota\": \"0.040000\",\n                            \"TipoFactor\": \"Tasa\"\n                        }\n                    ]\n                }\n            }\n        ],\n        \"Impuestos\": {\n            \"TotalImpuestosTrasladados\": \"1.00\",\n            \"TotalImpuestosRetenidos\": \"1.00\",\n            \"Retenciones\": [\n                {\n                    \"Importe\": \"1.00\",\n                    \"Impuesto\": \"002\"\n                }\n            ],\n            \"Traslados\": [\n                {\n                    \"Base\": \"1.00\",\n                    \"Importe\": \"1.00\",\n                    \"Impuesto\": \"002\",\n                    \"TasaOCuota\": \"0.160000\",\n                    \"TipoFactor\": \"Tasa\"\n                }\n            ]\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://sync.paybook.com/v1/invoicing/mx/invoices",
+									"protocol": "https",
+									"host": [
+										"sync",
+										"paybook",
+										"com"
+									],
+									"path": [
+										"v1",
+										"invoicing",
+										"mx",
+										"invoices"
+									],
+									"query": [
+										{
+											"key": "invoice_data",
+											"value": "JSON",
+											"description": "JSON structure of the invoice",
+											"disabled": true
+										},
+										{
+											"key": "invoice_xml",
+											"value": "String",
+											"description": "XML string (base64 encoded)",
+											"disabled": true
+										},
+										{
+											"key": "id_provider",
+											"value": "String",
+											"description": "(optional) Id or name of the available providers in {[app_name]}",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 20 Mar 2020 21:41:41 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Fri, 20 Mar 2020 21:41:41 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "b5e23964-29bf-4bd0-840f-098de08e066d"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "5772992bf89e9b4e-DFW"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"c5edc359-795f-4269-bd5b-602c5c0bfd12\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"taxpayer\": \"EKU9003173C9\",\n        \"errors\": [],\n        \"success\": true,\n        \"stamp_code\": \"200\",\n        \"xml\": \"<?xml version=\\\"1.0\\\" encoding=\\\"utf-8\\\"?><cfdi:Comprobante xsi:schemaLocation=\\\"http://www.sat.gob.mx/cfd/4 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd\\\" Version=\\\"4.0\\\" Serie=\\\"SY-1001\\\" Folio=\\\"123542\\\" Fecha=\\\"2022-02-19T12:19:00\\\" SubTotal=\\\"10.00\\\" Descuento=\\\"0.00\\\" Moneda=\\\"USD\\\" TipoCambio=\\\"20.00\\\" Total=\\\"10.00\\\" TipoDeComprobante=\\\"I\\\" Exportacion=\\\"01\\\" LugarExpedicion=\\\"45610\\\" xmlns:cfdi=\\\"http://www.sat.gob.mx/cfd/4\\\" xmlns:xsi=\\\"http://www.w3.org/2001/XMLSchema-instance\\\" NoCertificado=\\\"30001000000400002434\\\" Certificado=\\\"MIIFuzCCA6OgAwIBAgIUMzAwMDEwMDAwMDA0MDAwMDI0MzQwDQYJKoZIhvcNAQELBQAwggErMQ8wDQYDVQQDDAZBQyBVQVQxLjAsBgNVBAoMJVNFUlZJQ0lPIERFIEFETUlOSVNUUkFDSU9OIFRSSUJVVEFSSUExGjAYBgNVBAsMEVNBVC1JRVMgQXV0aG9yaXR5MSgwJgYJKoZIhvcNAQkBFhlvc2Nhci5tYXJ0aW5lekBzYXQuZ29iLm14MR0wGwYDVQQJDBQzcmEgY2VycmFkYSBkZSBjYWRpejEOMAwGA1UEEQwFMDYzNzAxCzAJBgNVBAYTAk1YMRkwFwYDVQQIDBBDSVVEQUQgREUgTUVYSUNPMREwDwYDVQQHDAhDT1lPQUNBTjERMA8GA1UELRMIMi41LjQuNDUxJTAjBgkqhkiG9w0BCQITFnJlc3BvbnNhYmxlOiBBQ0RNQS1TQVQwHhcNMTkwNjE3MTk0NDE0WhcNMjMwNjE3MTk0NDE0WjCB4jEnMCUGA1UEAxMeRVNDVUVMQSBLRU1QRVIgVVJHQVRFIFNBIERFIENWMScwJQYDVQQpEx5FU0NVRUxBIEtFTVBFUiBVUkdBVEUgU0EgREUgQ1YxJzAlBgNVBAoTHkVTQ1VFTEEgS0VNUEVSIFVSR0FURSBTQSBERSBDVjElMCMGA1UELRMcRUtVOTAwMzE3M0M5IC8gWElRQjg5MTExNlFFNDEeMBwGA1UEBRMVIC8gWElRQjg5MTExNk1HUk1aUjA1MR4wHAYDVQQLExVFc2N1ZWxhIEtlbXBlciBVcmdhdGUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCN0peKpgfOL75iYRv1fqq+oVYsLPVUR/GibYmGKc9InHFy5lYF6OTYjnIIvmkOdRobbGlCUxORX/tLsl8Ya9gm6Yo7hHnODRBIDup3GISFzB/96R9K/MzYQOcscMIoBDARaycnLvy7FlMvO7/rlVnsSARxZRO8Kz8Zkksj2zpeYpjZIya/369+oGqQk1cTRkHo59JvJ4Tfbk/3iIyf4H/Ini9nBe9cYWo0MnKob7DDt/vsdi5tA8mMtA953LapNyCZIDCRQQlUGNgDqY9/8F5mUvVgkcczsIgGdvf9vMQPSf3jjCiKj7j6ucxl1+FwJWmbvgNmiaUR/0q4m2rm78lFAgMBAAGjHTAbMAwGA1UdEwEB/wQCMAAwCwYDVR0PBAQDAgbAMA0GCSqGSIb3DQEBCwUAA4ICAQBcpj1TjT4jiinIujIdAlFzE6kRwYJCnDG08zSp4kSnShjxADGEXH2chehKMV0FY7c4njA5eDGdA/G2OCTPvF5rpeCZP5Dw504RZkYDl2suRz+wa1sNBVpbnBJEK0fQcN3IftBwsgNFdFhUtCyw3lus1SSJbPxjLHS6FcZZ51YSeIfcNXOAuTqdimusaXq15GrSrCOkM6n2jfj2sMJYM2HXaXJ6rGTEgYmhYdwxWtil6RfZB+fGQ/H9I9WLnl4KTZUS6C9+NLHh4FPDhSk19fpS2S/56aqgFoGAkXAYt9Fy5ECaPcULIfJ1DEbsXKyRdCv3JY89+0MNkOdaDnsemS2o5Gl08zI4iYtt3L40gAZ60NPh31kVLnYNsmvfNxYyKp+AeJtDHyW9w7ftM0Hoi+BuRmcAQSKFV3pk8j51la+jrRBrAUv8blbRcQ5BiZUwJzHFEKIwTsRGoRyEx96sNnB03n6GTwjIGz92SmLdNl95r9rkvp+2m4S6q1lPuXaFg7DGBrXWC8iyqeWE2iobdwIIuXPTMVqQb12m1dAkJVRO5NdHnP/MpqOvOgLqoZBNHGyBg4Gqm4sCJHCxA1c8Elfa2RQTCk0tAzllL4vOnI1GHkGJn65xokGsaU4B4D36xh7eWrfj4/pgWHmtoDAYa8wzSwo2GVCZOs+mtEgOQB91/g==\\\" Sello=\\\"eEQCI2f4bDLPFTb3U6xpu8C/nrqDctq1FDdh8ZQhWx5jyM2x4OYvbB33yFIcSv2iNs+p3lSLCdzuTMUzCr3nezu50X3XjoIPVrdOqJxuAtajtXOhFULonR05TGYxpQzWGJvSsDZBx+2uSMr/ypL2Zg+Zw0zHyD/HcVOvGKt6XGD6RgNRzjlr1JVlisd/WnLj/6AIWj8tEGA2E4Y7H+ToxMyiOXgf2f8rPd1/yZr++aPoWhkIAhNBGKC7vN/M5/H7dCcbkHVBpOQpMyxRiXkDp4v76AMQzt8oZYk5bc/G5a4eh832J30dlAYxW5j6TAj96TrkVSjE8n8Tc/xGmgWMgg==\\\"><cfdi:Emisor Rfc=\\\"EKU9003173C9\\\" Nombre=\\\"ESCUELA KEMPER URGATE SA DE CV\\\" RegimenFiscal=\\\"601\\\" /><cfdi:Receptor Rfc=\\\"XOJI740919U48\\\" Nombre=\\\"INGRID XODAR JIMENEZ\\\" DomicilioFiscalReceptor=\\\"88965\\\" RegimenFiscalReceptor=\\\"621\\\" UsoCFDI=\\\"P01\\\" /><cfdi:Conceptos><cfdi:Concepto ClaveProdServ=\\\"50181906\\\" NoIdentificacion=\\\"None\\\" Cantidad=\\\"1.0\\\" ClaveUnidad=\\\"H87\\\" Unidad=\\\"Pieza\\\" Descripcion=\\\"Galletas\\\" ValorUnitario=\\\"10.00\\\" Importe=\\\"10.00\\\" Descuento=\\\"0.00\\\" ObjetoImp=\\\"02\\\"><cfdi:Impuestos><cfdi:Traslados><cfdi:Traslado Base=\\\"1\\\" Impuesto=\\\"002\\\" TipoFactor=\\\"Tasa\\\" TasaOCuota=\\\"0.160000\\\" Importe=\\\"1\\\" /></cfdi:Traslados><cfdi:Retenciones><cfdi:Retencion Base=\\\"1\\\" Impuesto=\\\"002\\\" TipoFactor=\\\"Tasa\\\" TasaOCuota=\\\"0.040000\\\" Importe=\\\"1\\\" /></cfdi:Retenciones></cfdi:Impuestos></cfdi:Concepto></cfdi:Conceptos><cfdi:Impuestos TotalImpuestosRetenidos=\\\"1.00\\\" TotalImpuestosTrasladados=\\\"1.00\\\"><cfdi:Retenciones><cfdi:Retencion Impuesto=\\\"002\\\" Importe=\\\"1.00\\\" /></cfdi:Retenciones><cfdi:Traslados><cfdi:Traslado Base=\\\"1.00\\\" Impuesto=\\\"002\\\" TipoFactor=\\\"Tasa\\\" TasaOCuota=\\\"0.160000\\\" Importe=\\\"1.00\\\" /></cfdi:Traslados></cfdi:Impuestos><cfdi:Complemento><tfd:TimbreFiscalDigital xsi:schemaLocation=\\\"http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd\\\" Version=\\\"1.1\\\" UUID=\\\"28c2a878-ddd8-422f-9530-6dd695e82ee7\\\" FechaTimbrado=\\\"2022-02-19T12:19:01\\\" RfcProvCertif=\\\"SPR190613I52\\\" SelloCFD=\\\"eEQCI2f4bDLPFTb3U6xpu8C/nrqDctq1FDdh8ZQhWx5jyM2x4OYvbB33yFIcSv2iNs+p3lSLCdzuTMUzCr3nezu50X3XjoIPVrdOqJxuAtajtXOhFULonR05TGYxpQzWGJvSsDZBx+2uSMr/ypL2Zg+Zw0zHyD/HcVOvGKt6XGD6RgNRzjlr1JVlisd/WnLj/6AIWj8tEGA2E4Y7H+ToxMyiOXgf2f8rPd1/yZr++aPoWhkIAhNBGKC7vN/M5/H7dCcbkHVBpOQpMyxRiXkDp4v76AMQzt8oZYk5bc/G5a4eh832J30dlAYxW5j6TAj96TrkVSjE8n8Tc/xGmgWMgg==\\\" NoCertificadoSAT=\\\"30001000000400002495\\\" SelloSAT=\\\"L2GOAKUuNJtlQjA2Lomp0UuAYlriuhpTNZRb+xuis+PRuH1q/pBRTRw7vSeyhkHgroXC9NOo3rNMr1L5MaWRZ1cOfsyMHqMtcrdds1TYT1UQ+ecCj3qfhpUI03WUxybd1jMJ1IcnWOe0/eVCiQ2rrH0QDcvh06tVgocvcDc4IMBjVj/+5rLURHUULxq6RsaTBmv9xJY1cFhppOZde7kPuXtV1JQIrldib0tGWOVtIV8bcUNlaR/dmsB1XKiBKv3+bs+llvflVGoByzORq6pJYTlKGlEWL8w0dBWZHAoxpvz70YslbicQN+s7zMxd/T/Bn72VSC6ckDwZ2ZPu8yNMkw==\\\" xmlns:tfd=\\\"http://www.sat.gob.mx/TimbreFiscalDigital\\\" xmlns:xsi=\\\"http://www.w3.org/2001/XMLSchema-instance\\\" /></cfdi:Complemento></cfdi:Comprobante>\",\n        \"uuid\": \"28C2A878-DDD8-422F-9530-6DD695E82EE7\",\n        \"warnings\": false,\n        \"cadenaOriginal\": \"||1.1|28c2a878-ddd8-422f-9530-6dd695e82ee7|2022-02-19T12:19:01|SPR190613I52|eEQCI2f4bDLPFTb3U6xpu8C/nrqDctq1FDdh8ZQhWx5jyM2x4OYvbB33yFIcSv2iNs+p3lSLCdzuTMUzCr3nezu50X3XjoIPVrdOqJxuAtajtXOhFULonR05TGYxpQzWGJvSsDZBx+2uSMr/ypL2Zg+Zw0zHyD/HcVOvGKt6XGD6RgNRzjlr1JVlisd/WnLj/6AIWj8tEGA2E4Y7H+ToxMyiOXgf2f8rPd1/yZr++aPoWhkIAhNBGKC7vN/M5/H7dCcbkHVBpOQpMyxRiXkDp4v76AMQzt8oZYk5bc/G5a4eh832J30dlAYxW5j6TAj96TrkVSjE8n8Tc/xGmgWMgg==|30001000000400002495||\",\n        \"selloSAT\": \"L2GOAKUuNJtlQjA2Lomp0UuAYlriuhpTNZRb+xuis+PRuH1q/pBRTRw7vSeyhkHgroXC9NOo3rNMr1L5MaWRZ1cOfsyMHqMtcrdds1TYT1UQ+ecCj3qfhpUI03WUxybd1jMJ1IcnWOe0/eVCiQ2rrH0QDcvh06tVgocvcDc4IMBjVj/+5rLURHUULxq6RsaTBmv9xJY1cFhppOZde7kPuXtV1JQIrldib0tGWOVtIV8bcUNlaR/dmsB1XKiBKv3+bs+llvflVGoByzORq6pJYTlKGlEWL8w0dBWZHAoxpvz70YslbicQN+s7zMxd/T/Bn72VSC6ckDwZ2ZPu8yNMkw==\",\n        \"selloCFD\": \"eEQCI2f4bDLPFTb3U6xpu8C/nrqDctq1FDdh8ZQhWx5jyM2x4OYvbB33yFIcSv2iNs+p3lSLCdzuTMUzCr3nezu50X3XjoIPVrdOqJxuAtajtXOhFULonR05TGYxpQzWGJvSsDZBx+2uSMr/ypL2Zg+Zw0zHyD/HcVOvGKt6XGD6RgNRzjlr1JVlisd/WnLj/6AIWj8tEGA2E4Y7H+ToxMyiOXgf2f8rPd1/yZr++aPoWhkIAhNBGKC7vN/M5/H7dCcbkHVBpOQpMyxRiXkDp4v76AMQzt8oZYk5bc/G5a4eh832J30dlAYxW5j6TAj96TrkVSjE8n8Tc/xGmgWMgg==\",\n        \"QRString\": \"?re=EKU9003173C9&rr=XOJI740919U48&tt=0000000010.000000&id=28C2A878-DDD8-422F-9530-6DD695E82EE7\",\n        \"emailError\": false,\n        \"pdf\": false,\n        \"count\": 2820\n    }\n}"
+						},
+						{
+							"name": "200 XML",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"api_key\": \"{{apiKey}}\",\n    \"id_user\": \"{{id_user}}\",\n    \"invoice_xml\": \"PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPGNmZGk6Q29tcHJvYmFudGUgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vd3d3LnNhdC5nb2IubXgvY2ZkLzQgaHR0cDovL3d3dy5zYXQuZ29iLm14L3NpdGlvX2ludGVybmV0L2NmZC80L2NmZHY0MC54c2QiIFZlcnNpb249IjQuMCIgU2VyaWU9IlNlcmllIiBGb2xpbz0iRm9saW8iIEZlY2hhPSIyMDIyLTAyLTE2VDA1OjMzOjM4IiBTZWxsbz0iZSIgQ29uZGljaW9uZXNEZVBhZ289IkNvbmRpY2lvbmVzRGVQYWdvIiBTdWJUb3RhbD0iMjAwIiBEZXNjdWVudG89IjEiIE1vbmVkYT0iQU1EIiBUaXBvQ2FtYmlvPSIxIiBUb3RhbD0iMTk5LjE2IiBUaXBvRGVDb21wcm9iYW50ZT0iSSIgRXhwb3J0YWNpb249IjAxIiBNZXRvZG9QYWdvPSJQUEQiIEZvcm1hUGFnbz0iOTkiIEx1Z2FyRXhwZWRpY2lvbj0iMjAwMDAiICB4bWxuczpjZmRpPSJodHRwOi8vd3d3LnNhdC5nb2IubXgvY2ZkLzQiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiPgogIDxjZmRpOkVtaXNvciBSZmM9IkVLVTkwMDMxNzNDOSIgTm9tYnJlPSJFU0NVRUxBIEtFTVBFUiBVUkdBVEUgU0EgREUgQ1YiIFJlZ2ltZW5GaXNjYWw9IjYwMSIgLz4KICA8Y2ZkaTpSZWNlcHRvciBSZmM9IlhPSkk3NDA5MTlVNDgiIE5vbWJyZT0iSU5HUklEIFhPREFSIEpJTUVORVoiIERvbWljaWxpb0Zpc2NhbFJlY2VwdG9yPSI4ODk2NSIgUmVnaW1lbkZpc2NhbFJlY2VwdG9yPSI2MjEiIFVzb0NGREk9IkcwMSIgLz4KICA8Y2ZkaTpDb25jZXB0b3M+CiAgICA8Y2ZkaTpDb25jZXB0byBDbGF2ZVByb2RTZXJ2PSI1MDIxMTUwMyIgQ2FudGlkYWQ9IjEiIENsYXZlVW5pZGFkPSJIODciIFVuaWRhZD0iUGllemEiIERlc2NyaXBjaW9uPSJHYWxsZXRhcyIgVmFsb3JVbml0YXJpbz0iMjAwLjAwIiBEZXNjdWVudG89IjEiIEltcG9ydGU9IjIwMC4wMCIgT2JqZXRvSW1wPSIwMiI+CiAgICAgIDxjZmRpOkltcHVlc3Rvcz4KICAgICAgICA8Y2ZkaTpUcmFzbGFkb3M+CiAgICAgICAgICA8Y2ZkaTpUcmFzbGFkbyBCYXNlPSIxIiBJbXBvcnRlPSIwLjE2IiBJbXB1ZXN0bz0iMDAyIiBUYXNhT0N1b3RhPSIwLjE2MDAwMCIgVGlwb0ZhY3Rvcj0iVGFzYSIvPgogICAgICAgIDwvY2ZkaTpUcmFzbGFkb3M+CiAgICAgICAgPGNmZGk6UmV0ZW5jaW9uZXM+CiAgICAgICAgICA8Y2ZkaTpSZXRlbmNpb24gQmFzZT0iMSIgSW1wdWVzdG89IjAwMSIgVGlwb0ZhY3Rvcj0iVGFzYSIgVGFzYU9DdW90YT0iMC4xMDAwMDAiIEltcG9ydGU9IjAuMDAiIC8+CiAgICAgICAgICA8Y2ZkaTpSZXRlbmNpb24gQmFzZT0iMSIgSW1wdWVzdG89IjAwMiIgVGlwb0ZhY3Rvcj0iVGFzYSIgVGFzYU9DdW90YT0iMC4xMDY2NjYiIEltcG9ydGU9IjAuMDAiIC8+CiAgICAgICAgPC9jZmRpOlJldGVuY2lvbmVzPgogICAgICA8L2NmZGk6SW1wdWVzdG9zPgogICAgPC9jZmRpOkNvbmNlcHRvPgogIDwvY2ZkaTpDb25jZXB0b3M+CiAgPGNmZGk6SW1wdWVzdG9zIFRvdGFsSW1wdWVzdG9zUmV0ZW5pZG9zPSIwLjAwIiBUb3RhbEltcHVlc3Rvc1RyYXNsYWRhZG9zPSIwLjE2Ij4KICAgIDxjZmRpOlJldGVuY2lvbmVzPgogICAgICA8Y2ZkaTpSZXRlbmNpb24gSW1wdWVzdG89IjAwMSIgSW1wb3J0ZT0iMC4wMCIgLz4KICAgICAgPGNmZGk6UmV0ZW5jaW9uIEltcHVlc3RvPSIwMDIiIEltcG9ydGU9IjAuMDAiIC8+CiAgICA8L2NmZGk6UmV0ZW5jaW9uZXM+CiAgICA8Y2ZkaTpUcmFzbGFkb3M+CiAgICAgIDxjZmRpOlRyYXNsYWRvIEJhc2U9IjEiIEltcG9ydGU9IjAuMTYiIEltcHVlc3RvPSIwMDIiIFRhc2FPQ3VvdGE9IjAuMTYwMDAwIiBUaXBvRmFjdG9yPSJUYXNhIi8+CiAgICA8L2NmZGk6VHJhc2xhZG9zPgogIDwvY2ZkaTpJbXB1ZXN0b3M+CjwvY2ZkaTpDb21wcm9iYW50ZT4=\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://sync.paybook.com/v1/invoicing/mx/invoices",
+									"protocol": "https",
+									"host": [
+										"sync",
+										"paybook",
+										"com"
+									],
+									"path": [
+										"v1",
+										"invoicing",
+										"mx",
+										"invoices"
+									],
+									"query": [
+										{
+											"key": "invoice_data",
+											"value": "JSON",
+											"description": "JSON structure of the invoice",
+											"disabled": true
+										},
+										{
+											"key": "invoice_xml",
+											"value": "String",
+											"description": "XML string (base64 encoded)",
+											"disabled": true
+										},
+										{
+											"key": "id_provider",
+											"value": "String",
+											"description": "(optional) Id or name of the available providers in {[app_name]}",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 20 Mar 2020 21:41:41 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Fri, 20 Mar 2020 21:41:41 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "b5e23964-29bf-4bd0-840f-098de08e066d"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "5772992bf89e9b4e-DFW"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"c5edc359-795f-4269-bd5b-602c5c0bfd12\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"taxpayer\": \"EKU9003173C9\",\n        \"errors\": [],\n        \"success\": true,\n        \"stamp_code\": \"200\",\n        \"xml\": \"<?xml version=\\\"1.0\\\" encoding=\\\"utf-8\\\"?><cfdi:Comprobante xsi:schemaLocation=\\\"http://www.sat.gob.mx/cfd/4 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd\\\" Version=\\\"4.0\\\" Serie=\\\"SY-1001\\\" Folio=\\\"123542\\\" Fecha=\\\"2022-02-19T12:19:00\\\" SubTotal=\\\"10.00\\\" Descuento=\\\"0.00\\\" Moneda=\\\"USD\\\" TipoCambio=\\\"20.00\\\" Total=\\\"10.00\\\" TipoDeComprobante=\\\"I\\\" Exportacion=\\\"01\\\" LugarExpedicion=\\\"45610\\\" xmlns:cfdi=\\\"http://www.sat.gob.mx/cfd/4\\\" xmlns:xsi=\\\"http://www.w3.org/2001/XMLSchema-instance\\\" NoCertificado=\\\"30001000000400002434\\\" Certificado=\\\"MIIFuzCCA6OgAwIBAgIUMzAwMDEwMDAwMDA0MDAwMDI0MzQwDQYJKoZIhvcNAQELBQAwggErMQ8wDQYDVQQDDAZBQyBVQVQxLjAsBgNVBAoMJVNFUlZJQ0lPIERFIEFETUlOSVNUUkFDSU9OIFRSSUJVVEFSSUExGjAYBgNVBAsMEVNBVC1JRVMgQXV0aG9yaXR5MSgwJgYJKoZIhvcNAQkBFhlvc2Nhci5tYXJ0aW5lekBzYXQuZ29iLm14MR0wGwYDVQQJDBQzcmEgY2VycmFkYSBkZSBjYWRpejEOMAwGA1UEEQwFMDYzNzAxCzAJBgNVBAYTAk1YMRkwFwYDVQQIDBBDSVVEQUQgREUgTUVYSUNPMREwDwYDVQQHDAhDT1lPQUNBTjERMA8GA1UELRMIMi41LjQuNDUxJTAjBgkqhkiG9w0BCQITFnJlc3BvbnNhYmxlOiBBQ0RNQS1TQVQwHhcNMTkwNjE3MTk0NDE0WhcNMjMwNjE3MTk0NDE0WjCB4jEnMCUGA1UEAxMeRVNDVUVMQSBLRU1QRVIgVVJHQVRFIFNBIERFIENWMScwJQYDVQQpEx5FU0NVRUxBIEtFTVBFUiBVUkdBVEUgU0EgREUgQ1YxJzAlBgNVBAoTHkVTQ1VFTEEgS0VNUEVSIFVSR0FURSBTQSBERSBDVjElMCMGA1UELRMcRUtVOTAwMzE3M0M5IC8gWElRQjg5MTExNlFFNDEeMBwGA1UEBRMVIC8gWElRQjg5MTExNk1HUk1aUjA1MR4wHAYDVQQLExVFc2N1ZWxhIEtlbXBlciBVcmdhdGUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCN0peKpgfOL75iYRv1fqq+oVYsLPVUR/GibYmGKc9InHFy5lYF6OTYjnIIvmkOdRobbGlCUxORX/tLsl8Ya9gm6Yo7hHnODRBIDup3GISFzB/96R9K/MzYQOcscMIoBDARaycnLvy7FlMvO7/rlVnsSARxZRO8Kz8Zkksj2zpeYpjZIya/369+oGqQk1cTRkHo59JvJ4Tfbk/3iIyf4H/Ini9nBe9cYWo0MnKob7DDt/vsdi5tA8mMtA953LapNyCZIDCRQQlUGNgDqY9/8F5mUvVgkcczsIgGdvf9vMQPSf3jjCiKj7j6ucxl1+FwJWmbvgNmiaUR/0q4m2rm78lFAgMBAAGjHTAbMAwGA1UdEwEB/wQCMAAwCwYDVR0PBAQDAgbAMA0GCSqGSIb3DQEBCwUAA4ICAQBcpj1TjT4jiinIujIdAlFzE6kRwYJCnDG08zSp4kSnShjxADGEXH2chehKMV0FY7c4njA5eDGdA/G2OCTPvF5rpeCZP5Dw504RZkYDl2suRz+wa1sNBVpbnBJEK0fQcN3IftBwsgNFdFhUtCyw3lus1SSJbPxjLHS6FcZZ51YSeIfcNXOAuTqdimusaXq15GrSrCOkM6n2jfj2sMJYM2HXaXJ6rGTEgYmhYdwxWtil6RfZB+fGQ/H9I9WLnl4KTZUS6C9+NLHh4FPDhSk19fpS2S/56aqgFoGAkXAYt9Fy5ECaPcULIfJ1DEbsXKyRdCv3JY89+0MNkOdaDnsemS2o5Gl08zI4iYtt3L40gAZ60NPh31kVLnYNsmvfNxYyKp+AeJtDHyW9w7ftM0Hoi+BuRmcAQSKFV3pk8j51la+jrRBrAUv8blbRcQ5BiZUwJzHFEKIwTsRGoRyEx96sNnB03n6GTwjIGz92SmLdNl95r9rkvp+2m4S6q1lPuXaFg7DGBrXWC8iyqeWE2iobdwIIuXPTMVqQb12m1dAkJVRO5NdHnP/MpqOvOgLqoZBNHGyBg4Gqm4sCJHCxA1c8Elfa2RQTCk0tAzllL4vOnI1GHkGJn65xokGsaU4B4D36xh7eWrfj4/pgWHmtoDAYa8wzSwo2GVCZOs+mtEgOQB91/g==\\\" Sello=\\\"eEQCI2f4bDLPFTb3U6xpu8C/nrqDctq1FDdh8ZQhWx5jyM2x4OYvbB33yFIcSv2iNs+p3lSLCdzuTMUzCr3nezu50X3XjoIPVrdOqJxuAtajtXOhFULonR05TGYxpQzWGJvSsDZBx+2uSMr/ypL2Zg+Zw0zHyD/HcVOvGKt6XGD6RgNRzjlr1JVlisd/WnLj/6AIWj8tEGA2E4Y7H+ToxMyiOXgf2f8rPd1/yZr++aPoWhkIAhNBGKC7vN/M5/H7dCcbkHVBpOQpMyxRiXkDp4v76AMQzt8oZYk5bc/G5a4eh832J30dlAYxW5j6TAj96TrkVSjE8n8Tc/xGmgWMgg==\\\"><cfdi:Emisor Rfc=\\\"EKU9003173C9\\\" Nombre=\\\"ESCUELA KEMPER URGATE SA DE CV\\\" RegimenFiscal=\\\"601\\\" /><cfdi:Receptor Rfc=\\\"XOJI740919U48\\\" Nombre=\\\"INGRID XODAR JIMENEZ\\\" DomicilioFiscalReceptor=\\\"88965\\\" RegimenFiscalReceptor=\\\"621\\\" UsoCFDI=\\\"P01\\\" /><cfdi:Conceptos><cfdi:Concepto ClaveProdServ=\\\"50181906\\\" NoIdentificacion=\\\"None\\\" Cantidad=\\\"1.0\\\" ClaveUnidad=\\\"H87\\\" Unidad=\\\"Pieza\\\" Descripcion=\\\"Galletas\\\" ValorUnitario=\\\"10.00\\\" Importe=\\\"10.00\\\" Descuento=\\\"0.00\\\" ObjetoImp=\\\"02\\\"><cfdi:Impuestos><cfdi:Traslados><cfdi:Traslado Base=\\\"1\\\" Impuesto=\\\"002\\\" TipoFactor=\\\"Tasa\\\" TasaOCuota=\\\"0.160000\\\" Importe=\\\"1\\\" /></cfdi:Traslados><cfdi:Retenciones><cfdi:Retencion Base=\\\"1\\\" Impuesto=\\\"002\\\" TipoFactor=\\\"Tasa\\\" TasaOCuota=\\\"0.040000\\\" Importe=\\\"1\\\" /></cfdi:Retenciones></cfdi:Impuestos></cfdi:Concepto></cfdi:Conceptos><cfdi:Impuestos TotalImpuestosRetenidos=\\\"1.00\\\" TotalImpuestosTrasladados=\\\"1.00\\\"><cfdi:Retenciones><cfdi:Retencion Impuesto=\\\"002\\\" Importe=\\\"1.00\\\" /></cfdi:Retenciones><cfdi:Traslados><cfdi:Traslado Base=\\\"1.00\\\" Impuesto=\\\"002\\\" TipoFactor=\\\"Tasa\\\" TasaOCuota=\\\"0.160000\\\" Importe=\\\"1.00\\\" /></cfdi:Traslados></cfdi:Impuestos><cfdi:Complemento><tfd:TimbreFiscalDigital xsi:schemaLocation=\\\"http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd\\\" Version=\\\"1.1\\\" UUID=\\\"28c2a878-ddd8-422f-9530-6dd695e82ee7\\\" FechaTimbrado=\\\"2022-02-19T12:19:01\\\" RfcProvCertif=\\\"SPR190613I52\\\" SelloCFD=\\\"eEQCI2f4bDLPFTb3U6xpu8C/nrqDctq1FDdh8ZQhWx5jyM2x4OYvbB33yFIcSv2iNs+p3lSLCdzuTMUzCr3nezu50X3XjoIPVrdOqJxuAtajtXOhFULonR05TGYxpQzWGJvSsDZBx+2uSMr/ypL2Zg+Zw0zHyD/HcVOvGKt6XGD6RgNRzjlr1JVlisd/WnLj/6AIWj8tEGA2E4Y7H+ToxMyiOXgf2f8rPd1/yZr++aPoWhkIAhNBGKC7vN/M5/H7dCcbkHVBpOQpMyxRiXkDp4v76AMQzt8oZYk5bc/G5a4eh832J30dlAYxW5j6TAj96TrkVSjE8n8Tc/xGmgWMgg==\\\" NoCertificadoSAT=\\\"30001000000400002495\\\" SelloSAT=\\\"L2GOAKUuNJtlQjA2Lomp0UuAYlriuhpTNZRb+xuis+PRuH1q/pBRTRw7vSeyhkHgroXC9NOo3rNMr1L5MaWRZ1cOfsyMHqMtcrdds1TYT1UQ+ecCj3qfhpUI03WUxybd1jMJ1IcnWOe0/eVCiQ2rrH0QDcvh06tVgocvcDc4IMBjVj/+5rLURHUULxq6RsaTBmv9xJY1cFhppOZde7kPuXtV1JQIrldib0tGWOVtIV8bcUNlaR/dmsB1XKiBKv3+bs+llvflVGoByzORq6pJYTlKGlEWL8w0dBWZHAoxpvz70YslbicQN+s7zMxd/T/Bn72VSC6ckDwZ2ZPu8yNMkw==\\\" xmlns:tfd=\\\"http://www.sat.gob.mx/TimbreFiscalDigital\\\" xmlns:xsi=\\\"http://www.w3.org/2001/XMLSchema-instance\\\" /></cfdi:Complemento></cfdi:Comprobante>\",\n        \"uuid\": \"28C2A878-DDD8-422F-9530-6DD695E82EE7\",\n        \"warnings\": false,\n        \"cadenaOriginal\": \"||1.1|28c2a878-ddd8-422f-9530-6dd695e82ee7|2022-02-19T12:19:01|SPR190613I52|eEQCI2f4bDLPFTb3U6xpu8C/nrqDctq1FDdh8ZQhWx5jyM2x4OYvbB33yFIcSv2iNs+p3lSLCdzuTMUzCr3nezu50X3XjoIPVrdOqJxuAtajtXOhFULonR05TGYxpQzWGJvSsDZBx+2uSMr/ypL2Zg+Zw0zHyD/HcVOvGKt6XGD6RgNRzjlr1JVlisd/WnLj/6AIWj8tEGA2E4Y7H+ToxMyiOXgf2f8rPd1/yZr++aPoWhkIAhNBGKC7vN/M5/H7dCcbkHVBpOQpMyxRiXkDp4v76AMQzt8oZYk5bc/G5a4eh832J30dlAYxW5j6TAj96TrkVSjE8n8Tc/xGmgWMgg==|30001000000400002495||\",\n        \"selloSAT\": \"L2GOAKUuNJtlQjA2Lomp0UuAYlriuhpTNZRb+xuis+PRuH1q/pBRTRw7vSeyhkHgroXC9NOo3rNMr1L5MaWRZ1cOfsyMHqMtcrdds1TYT1UQ+ecCj3qfhpUI03WUxybd1jMJ1IcnWOe0/eVCiQ2rrH0QDcvh06tVgocvcDc4IMBjVj/+5rLURHUULxq6RsaTBmv9xJY1cFhppOZde7kPuXtV1JQIrldib0tGWOVtIV8bcUNlaR/dmsB1XKiBKv3+bs+llvflVGoByzORq6pJYTlKGlEWL8w0dBWZHAoxpvz70YslbicQN+s7zMxd/T/Bn72VSC6ckDwZ2ZPu8yNMkw==\",\n        \"selloCFD\": \"eEQCI2f4bDLPFTb3U6xpu8C/nrqDctq1FDdh8ZQhWx5jyM2x4OYvbB33yFIcSv2iNs+p3lSLCdzuTMUzCr3nezu50X3XjoIPVrdOqJxuAtajtXOhFULonR05TGYxpQzWGJvSsDZBx+2uSMr/ypL2Zg+Zw0zHyD/HcVOvGKt6XGD6RgNRzjlr1JVlisd/WnLj/6AIWj8tEGA2E4Y7H+ToxMyiOXgf2f8rPd1/yZr++aPoWhkIAhNBGKC7vN/M5/H7dCcbkHVBpOQpMyxRiXkDp4v76AMQzt8oZYk5bc/G5a4eh832J30dlAYxW5j6TAj96TrkVSjE8n8Tc/xGmgWMgg==\",\n        \"QRString\": \"?re=EKU9003173C9&rr=XOJI740919U48&tt=0000000010.000000&id=28C2A878-DDD8-422F-9530-6DD695E82EE7\",\n        \"emailError\": false,\n        \"pdf\": false,\n        \"count\": 2820\n    }\n}"
+						},
+						{
+							"name": "401",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id_provider\" : \"acme\",\n\t\"invoice_data\" : {\n\t\t\"Version\": \"3.3\",\n\t\t\"Serie\": \"A\",\n\t\t\"Folio\": \"1\",\n\t\t\"Fecha\": \"2020-03-20T12:09:14\",\n\t\t\"FormaPago\": \"99\",\n\t\t\"CondicionesDePago\":\"3 meses\",\n\t\t\"SubTotal\": \"50\",\n\t\t\"Descuento\": \"0\",\n\t\t\"Moneda\":\"MXN\",\n\t\t\"Total\":\"58\",\n\t\t\"TipoDeComprobante\": \"I\",\n\t\t\"MetodoPago\":\"PUE\",\n\t\t\"LugarExpedicion\": \"05000\",\n\t\t\"Emisor\": {\n\t\t\t\"Rfc\": \t\"IXS7607092R5\",\n\t\t\t\"Nombre\": \"INTERNACIONAL XIMBO Y SABORES SA DE CV\",\n\t\t\t\"RegimenFiscal\": \"603\"\n\t\t},\n\n\t\t\"Receptor\":{\n\t\t\t\"Rfc\": \"CACX7605101P8\",\n\t\t\t\"Nombre\":\"XOCHILT CASAS CHAVEZ\",\n\t\t\t\"UsoCFDI\": \"D01\"\n\t\t},\n\t\t\"Conceptos\" : {\n\t\t\t\"Concepto\" : [\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"Concepto\" : {\n\t\t\t\t\t            \"ClaveProdServ\": \"01010101\",\n\t\t\t\t\t            \"NoIdentificacion\": \"UT421510 \",\n\t\t\t\t\t            \"Cantidad\": \"1\",\n\t\t\t\t\t            \"ClaveUnidad\": \"H87\",\n\t\t\t\t\t            \"Unidad\": \"PZA\",\n\t\t\t\t\t            \"Descripcion\": \"ARTICULO\",\n\t\t\t\t\t            \"ValorUnitario\": \"50\",\n\t\t\t\t\t            \"Importe\": \"50\",\n\t\t\t\t\t            \"Descuento\": \"0\",\n\t\t\t\t\t            \"Impuestos\": {\n\t\t\t\t\t                \"Retenciones\": {\n\t\t\t\t\t                    \"Retencion\": [{\n\t\t\t\t\t                        \"Retencion\": {\n\t\t\t\t\t                            \"Base\": \"50\",\n\t\t\t\t\t                            \"Impuesto\": \"002\",\n\t\t\t\t\t                            \"TipoFactor\": \"Tasa\",\n\t\t\t\t\t                            \"TasaOCuota\": \"0.160000\",\n\t\t\t\t\t                            \"Importe\": \"8\"\n\t\t\t\t\t                        }\n\t\t\t\t\t                    }]\n\t\t\t\t\t                }\n\t\t\t\t\t            }\n\t\t\t\t\t        }\n\t\t\t\t\t    }\n\t\t\t]\n\t\t},\n\t    \"Impuestos\": {\n\t        \"TotalImpuestosRetenidos\": \"0\",\n\t        \"TotalImpuestosTrasladados\": \"8\",\n\t        \"Traslados\": {\n\t            \"Traslado\": [\n\t            \t{\n\t\t                \"Traslado\": {\n\t\t                    \"Impuesto\": \"002\",\n\t\t                \t\"TipoFactor\": \"Tasa\",\n                    \t\t\"TasaOCuota\": \"0.160000\",\n\t\t                    \"Importe\": \"8\"\n\t\t                }\n\t\t            }\n\t        \t]\n\t        }    \n\t    }\n\t} \t\n}"
+								},
+								"url": {
+									"raw": "https://sync.paybook.com/v1/invoicing/mx/invoices",
+									"protocol": "https",
+									"host": [
+										"sync",
+										"paybook",
+										"com"
+									],
+									"path": [
+										"v1",
+										"invoicing",
+										"mx",
+										"invoices"
+									],
+									"query": [
+										{
+											"key": "invoice_data",
+											"value": "JSON",
+											"description": "JSON structure of the invoice",
+											"disabled": true
+										},
+										{
+											"key": "invoice_xml",
+											"value": "String",
+											"description": "XML string (base64 encoded)",
+											"disabled": true
+										},
+										{
+											"key": "id_provider",
+											"value": "String",
+											"description": "(optional) Id or name of the available providers in {[app_name]}",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 20 Mar 2020 23:06:24 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
+								},
+								{
+									"key": "Expires",
+									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Fri, 20 Mar 2020 23:06:24 GMT"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Request-ID",
+									"value": "44987a53-4b74-4ab0-b56a-c3c11f62e1ca"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "57731560a921c7f6-DFW"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"44987a53-4b74-4ab0-b56a-c3c11f62e1ca\",\n    \"code\": 401,\n    \"errors\": null,\n    \"status\": false,\n    \"message\": \"Unauthorized\",\n    \"response\": null\n}"
+						}
+					]
+				},
+				{
 					"name": "List Invoices",
 					"request": {
 						"method": "GET",
@@ -2629,388 +3179,6 @@
 					]
 				},
 				{
-					"name": "Stamp new Invoice",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"id_provider\" : \"acme\",\n\t\"invoice_data\" : {\n\t\t\"Version\": \"3.3\",\n\t\t\"Serie\": \"A\",\n\t\t\"Folio\": \"1\",\n\t\t\"Fecha\": \"2020-03-20T12:09:14\",\n\t\t\"FormaPago\": \"99\",\n\t\t\"CondicionesDePago\":\"3 meses\",\n\t\t\"SubTotal\": \"50\",\n\t\t\"Descuento\": \"0\",\n\t\t\"Moneda\":\"MXN\",\n\t\t\"Total\":\"58\",\n\t\t\"TipoDeComprobante\": \"I\",\n\t\t\"MetodoPago\":\"PUE\",\n\t\t\"LugarExpedicion\": \"05000\",\n\t\t\"Emisor\": {\n\t\t\t\"Rfc\": \t\"IXS7607092R5\",\n\t\t\t\"Nombre\": \"INTERNACIONAL XIMBO Y SABORES SA DE CV\",\n\t\t\t\"RegimenFiscal\": \"603\"\n\t\t},\n\n\t\t\"Receptor\":{\n\t\t\t\"Rfc\": \"CACX7605101P8\",\n\t\t\t\"Nombre\":\"XOCHILT CASAS CHAVEZ\",\n\t\t\t\"UsoCFDI\": \"D01\"\n\t\t},\n\t\t\"Conceptos\" : {\n\t\t\t\"Concepto\" : [\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"Concepto\" : {\n\t\t\t\t\t            \"ClaveProdServ\": \"01010101\",\n\t\t\t\t\t            \"NoIdentificacion\": \"UT421510 \",\n\t\t\t\t\t            \"Cantidad\": \"1\",\n\t\t\t\t\t            \"ClaveUnidad\": \"H87\",\n\t\t\t\t\t            \"Unidad\": \"PZA\",\n\t\t\t\t\t            \"Descripcion\": \"ARTICULO\",\n\t\t\t\t\t            \"ValorUnitario\": \"50\",\n\t\t\t\t\t            \"Importe\": \"50\",\n\t\t\t\t\t            \"Descuento\": \"0\",\n\t\t\t\t\t            \"Impuestos\": {\n\t\t\t\t\t                \"Retenciones\": {\n\t\t\t\t\t                    \"Retencion\": [{\n\t\t\t\t\t                        \"Retencion\": {\n\t\t\t\t\t                            \"Base\": \"50\",\n\t\t\t\t\t                            \"Impuesto\": \"002\",\n\t\t\t\t\t                            \"TipoFactor\": \"Tasa\",\n\t\t\t\t\t                            \"TasaOCuota\": \"0.160000\",\n\t\t\t\t\t                            \"Importe\": \"8\"\n\t\t\t\t\t                        }\n\t\t\t\t\t                    }]\n\t\t\t\t\t                }\n\t\t\t\t\t            }\n\t\t\t\t\t        }\n\t\t\t\t\t    }\n\t\t\t]\n\t\t},\n\t    \"Impuestos\": {\n\t        \"TotalImpuestosRetenidos\": \"0\",\n\t        \"TotalImpuestosTrasladados\": \"8\",\n\t        \"Traslados\": {\n\t            \"Traslado\": [\n\t            \t{\n\t\t                \"Traslado\": {\n\t\t                    \"Impuesto\": \"002\",\n\t\t                \t\"TipoFactor\": \"Tasa\",\n                    \t\t\"TasaOCuota\": \"0.160000\",\n\t\t                    \"Importe\": \"8\"\n\t\t                }\n\t\t            }\n\t        \t]\n\t        }    \n\t    }\n\t} \t\n}"
-						},
-						"url": {
-							"raw": "https://sync.paybook.com/v1/invoicing/mx/invoices",
-							"protocol": "https",
-							"host": [
-								"sync",
-								"paybook",
-								"com"
-							],
-							"path": [
-								"v1",
-								"invoicing",
-								"mx",
-								"invoices"
-							],
-							"query": [
-								{
-									"key": "invoice_data",
-									"value": "JSON",
-									"description": "JSON structure of the invoice",
-									"disabled": true
-								},
-								{
-									"key": "invoice_xml",
-									"value": "String",
-									"description": "XML string (base64 encoded)",
-									"disabled": true
-								},
-								{
-									"key": "id_provider",
-									"value": "String",
-									"description": "(optional) Id or name of the available providers in {[app_name]}",
-									"disabled": true
-								},
-								{
-									"key": "email_data",
-									"value": "JSON",
-									"description": "(optional) Information to email the invoice",
-									"disabled": true
-								},
-								{
-									"key": "email_data.email",
-									"value": "String",
-									"description": "Email address",
-									"disabled": true
-								},
-								{
-									"key": "email_data.reply",
-									"value": "String",
-									"description": "Reply address ",
-									"disabled": true
-								},
-								{
-									"key": "email_data.body",
-									"value": "String",
-									"description": "Content of the Email",
-									"disabled": true
-								},
-								{
-									"key": "email_data.subject",
-									"value": "String",
-									"description": "Subject of the Email",
-									"disabled": true
-								},
-								{
-									"key": "pdf",
-									"value": "Boolean",
-									"description": "(optional) PDF File of the invoice is required",
-									"disabled": true
-								},
-								{
-									"key": "pdf_comments",
-									"value": "String",
-									"description": "(optional) Commets for PDF File of the invoice",
-									"disabled": true
-								}
-							]
-						},
-						"description": "Stamp a new invoice, you can send the JSON structure or XML string"
-					},
-					"response": [
-						{
-							"name": "200",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"id_provider\" : \"acme\",\n\t\"invoice_data\" : {\n\t\t\"Version\": \"3.3\",\n\t\t\"Serie\": \"A\",\n\t\t\"Folio\": \"1\",\n\t\t\"Fecha\": \"2020-03-20T12:09:14\",\n\t\t\"FormaPago\": \"99\",\n\t\t\"CondicionesDePago\":\"3 meses\",\n\t\t\"SubTotal\": \"50\",\n\t\t\"Descuento\": \"0\",\n\t\t\"Moneda\":\"MXN\",\n\t\t\"Total\":\"58\",\n\t\t\"TipoDeComprobante\": \"I\",\n\t\t\"MetodoPago\":\"PUE\",\n\t\t\"LugarExpedicion\": \"05000\",\n\t\t\"Emisor\": {\n\t\t\t\"Rfc\": \t\"IXS7607092R5\",\n\t\t\t\"Nombre\": \"INTERNACIONAL XIMBO Y SABORES SA DE CV\",\n\t\t\t\"RegimenFiscal\": \"603\"\n\t\t},\n\n\t\t\"Receptor\":{\n\t\t\t\"Rfc\": \"CACX7605101P8\",\n\t\t\t\"Nombre\":\"XOCHILT CASAS CHAVEZ\",\n\t\t\t\"UsoCFDI\": \"D01\"\n\t\t},\n\t\t\"Conceptos\" : {\n\t\t\t\"Concepto\" : [\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"Concepto\" : {\n\t\t\t\t\t            \"ClaveProdServ\": \"01010101\",\n\t\t\t\t\t            \"NoIdentificacion\": \"UT421510 \",\n\t\t\t\t\t            \"Cantidad\": \"1\",\n\t\t\t\t\t            \"ClaveUnidad\": \"H87\",\n\t\t\t\t\t            \"Unidad\": \"PZA\",\n\t\t\t\t\t            \"Descripcion\": \"ARTICULO\",\n\t\t\t\t\t            \"ValorUnitario\": \"50\",\n\t\t\t\t\t            \"Importe\": \"50\",\n\t\t\t\t\t            \"Descuento\": \"0\",\n\t\t\t\t\t            \"Impuestos\": {\n\t\t\t\t\t                \"Retenciones\": {\n\t\t\t\t\t                    \"Retencion\": [{\n\t\t\t\t\t                        \"Retencion\": {\n\t\t\t\t\t                            \"Base\": \"50\",\n\t\t\t\t\t                            \"Impuesto\": \"002\",\n\t\t\t\t\t                            \"TipoFactor\": \"Tasa\",\n\t\t\t\t\t                            \"TasaOCuota\": \"0.160000\",\n\t\t\t\t\t                            \"Importe\": \"8\"\n\t\t\t\t\t                        }\n\t\t\t\t\t                    }]\n\t\t\t\t\t                }\n\t\t\t\t\t            }\n\t\t\t\t\t        }\n\t\t\t\t\t    }\n\t\t\t]\n\t\t},\n\t    \"Impuestos\": {\n\t        \"TotalImpuestosRetenidos\": \"0\",\n\t        \"TotalImpuestosTrasladados\": \"8\",\n\t        \"Traslados\": {\n\t            \"Traslado\": [\n\t            \t{\n\t\t                \"Traslado\": {\n\t\t                    \"Impuesto\": \"002\",\n\t\t                \t\"TipoFactor\": \"Tasa\",\n                    \t\t\"TasaOCuota\": \"0.160000\",\n\t\t                    \"Importe\": \"8\"\n\t\t                }\n\t\t            }\n\t        \t]\n\t        }    \n\t    }\n\t} \t\n}"
-								},
-								"url": {
-									"raw": "https://sync.paybook.com/v1/invoicing/mx/invoices",
-									"protocol": "https",
-									"host": [
-										"sync",
-										"paybook",
-										"com"
-									],
-									"path": [
-										"v1",
-										"invoicing",
-										"mx",
-										"invoices"
-									],
-									"query": [
-										{
-											"key": "invoice_data",
-											"value": "JSON",
-											"description": "JSON structure of the invoice",
-											"disabled": true
-										},
-										{
-											"key": "invoice_xml",
-											"value": "String",
-											"description": "XML string (base64 encoded)",
-											"disabled": true
-										},
-										{
-											"key": "id_provider",
-											"value": "String",
-											"description": "(optional) Id or name of the available providers in {[app_name]}",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Fri, 20 Mar 2020 21:41:41 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Expose-Headers",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Fri, 20 Mar 2020 21:41:41 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "b5e23964-29bf-4bd0-840f-098de08e066d"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "CF-Cache-Status",
-									"value": "DYNAMIC"
-								},
-								{
-									"key": "Expect-CT",
-									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains; preload"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Server",
-									"value": "cloudflare"
-								},
-								{
-									"key": "CF-RAY",
-									"value": "5772992bf89e9b4e-DFW"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"b5e23964-29bf-4bd0-840f-098de08e066d\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"taxpayer\": \"IXS7607092R5\",\n        \"errors\": [],\n        \"success\": true,\n        \"stamp_code\": \"200\",\n        \"xml\": \"<?xml version=\\\"1.0\\\" encoding=\\\"utf-8\\\"?>\\n<cfdi:Comprobante xmlns:cfdi=\\\"http://www.sat.gob.mx/cfd/3\\\" xmlns:implocal=\\\"http://www.sat.gob.mx/implocal\\\" xmlns:iedu=\\\"http://www.sat.gob.mx/iedu\\\" xmlns:tfd=\\\"http://www.sat.gob.mx/TimbreFiscalDigital\\\" xmlns:pago10=\\\"http://www.sat.gob.mx/Pagos\\\" xmlns:nomina12=\\\"http://www.sat.gob.mx/nomina12\\\" xmlns:donat=\\\"http://www.sat.gob.mx/donat\\\" xmlns:cce11=\\\"http://www.sat.gob.mx/ComercioExterior11\\\" xmlns:xsi=\\\"http://www.w3.org/2001/XMLSchema-instance\\\" xsi:schemaLocation=\\\"http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd\\\" Version=\\\"3.3\\\" Serie=\\\"A\\\" Folio=\\\"1\\\" Fecha=\\\"2020-03-20T12:09:14\\\" FormaPago=\\\"99\\\" NoCertificado=\\\"30001000000400002445\\\" Certificado=\\\"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\\\" CondicionesDePago=\\\"3 meses\\\" SubTotal=\\\"50\\\" Descuento=\\\"0\\\" Moneda=\\\"MXN\\\" Total=\\\"58\\\" TipoDeComprobante=\\\"I\\\" MetodoPago=\\\"PUE\\\" LugarExpedicion=\\\"05000\\\" Sello=\\\"jl00XEsqkcpFsjATLRVwVO8aEprq+mYJPqCzvj0ikJrCBoY4v3M8uo2bd9POnz1pnZ+gZqyJ+hEYrNlAncBjV7aTdV8rcnWqNbqAqTl868X4wLpkRhG+AkQIQRRv0JfFXrGgB4ejRNSszaTHjG4t1PSzvAhAYo361QuRosQypYK+m6QCyElyvFkYk69mA8P6a5Wv4TA7GprNPIVB6roJxTWqvaNboc1hSlfXSD8mgVU6sorXlXduCfaPEMnpBM+QSDqvQsvBt8LwBtZHUrA2EF5RMIOo1hQ2qEbSMtx1CHalS2iFrV6d+B8eASG1Mwd1/FGmQGoh1DzmTTylYwDqYQ==\\\"><cfdi:Emisor Rfc=\\\"IXS7607092R5\\\" Nombre=\\\"INTERNACIONAL XIMBO Y SABORES SA DE CV\\\" RegimenFiscal=\\\"603\\\"/><cfdi:Receptor Rfc=\\\"CACX7605101P8\\\" Nombre=\\\"XOCHILT CASAS CHAVEZ\\\" UsoCFDI=\\\"D01\\\"/><cfdi:Conceptos><cfdi:Concepto ClaveProdServ=\\\"01010101\\\" NoIdentificacion=\\\"UT421510 \\\" Cantidad=\\\"1\\\" ClaveUnidad=\\\"H87\\\" Unidad=\\\"PZA\\\" Descripcion=\\\"ARTICULO\\\" ValorUnitario=\\\"50\\\" Importe=\\\"50\\\" Descuento=\\\"0\\\"><cfdi:Impuestos><cfdi:Retenciones><cfdi:Retencion Base=\\\"50\\\" Impuesto=\\\"002\\\" TipoFactor=\\\"Tasa\\\" TasaOCuota=\\\"0.160000\\\" Importe=\\\"8\\\"/></cfdi:Retenciones></cfdi:Impuestos></cfdi:Concepto></cfdi:Conceptos><cfdi:Impuestos TotalImpuestosRetenidos=\\\"0\\\" TotalImpuestosTrasladados=\\\"8\\\"><cfdi:Traslados><cfdi:Traslado Impuesto=\\\"002\\\" TipoFactor=\\\"Tasa\\\" TasaOCuota=\\\"0.160000\\\" Importe=\\\"8\\\"/></cfdi:Traslados></cfdi:Impuestos><cfdi:Complemento><tfd:TimbreFiscalDigital xmlns:tfd=\\\"http://www.sat.gob.mx/TimbreFiscalDigital\\\" xmlns:xsi=\\\"http://www.w3.org/2001/XMLSchema-instance\\\" xsi:schemaLocation=\\\"http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/TimbreFiscalDigital/TimbreFiscalDigital.xsd\\\" version=\\\"1.0\\\" UUID=\\\"TCBE9B51F-3953-4595-9F91-24AA7D5D47A9\\\" FechaTimbrado=\\\"2020-03-20T12:09:14\\\" SelloCFD=\\\"HvSZ/+c6+aQAIsPjWztUCDAhkMkt39KzFJoYcaSY4L+dkp7so2/Ad9qG5xpX/in1vSdiGmTL1ojXXabgBNuZsDsvmvvPZdCdmbokG3n7dSfG3irse8G1PDn6rIvhcsR3tlDgbQ50SVvohuWv2+C9FXKd1Q7rZHPAjE3bm+JQj3M=\\\" NoCertificadoSAT=\\\"292233162870206001759766198444326234574038512693\\\" SelloSAT=\\\"SelloDummyE5xY7UJudSgA6jgKN0pVa6j6UdpxqP5pCBnGtsnrJltVCWzhZumvRsqnZnyyO0ZwMT9xZ/qbBfcDh8q0LtJ6OrmvcP83qQygLGhzoOEeH+7lJ9opcjIS2hnyZMrXOMbONK04dujr0xSO95paJ7VYVN03i4TdcmCu53uOS7WHGQs=\\\"/></cfdi:Complemento></cfdi:Comprobante>\",\n        \"uuid\": \"TCBE9B51F-3953-4595-9F91-24AA7D5D47A9\",\n        \"warnings\": false,\n        \"cadenaOriginal\": \"||3.3|A|1|2020-03-20T12:09:14|99|30001000000400002445|3 meses|50|0|MXN|58|I|PUE|05000|IXS7607092R5|INTERNACIONAL XIMBO Y SABORES SA DE CV|603|CACX7605101P8|XOCHILT CASAS CHAVEZ|D01|01010101|UT421510|1|H87|PZA|ARTICULO|50|50|0|50|002|Tasa|0.160000|8|0|002|Tasa|0.160000|8|8||\",\n        \"selloSAT\": \"SelloDummyE5xY7UJudSgA6jgKN0pVa6j6UdpxqP5pCBnGtsnrJltVCWzhZumvRsqnZnyyO0ZwMT9xZ/qbBfcDh8q0LtJ6OrmvcP83qQygLGhzoOEeH+7lJ9opcjIS2hnyZMrXOMbONK04dujr0xSO95paJ7VYVN03i4TdcmCu53uOS7WHGQs=\",\n        \"selloCFD\": \"HvSZ/+c6+aQAIsPjWztUCDAhkMkt39KzFJoYcaSY4L+dkp7so2/Ad9qG5xpX/in1vSdiGmTL1ojXXabgBNuZsDsvmvvPZdCdmbokG3n7dSfG3irse8G1PDn6rIvhcsR3tlDgbQ50SVvohuWv2+C9FXKd1Q7rZHPAjE3bm+JQj3M=\",\n        \"QRString\": \"?re=IXS7607092R5&rr=CACX7605101P8&tt=0000000058.000000&id=TCBE9B51F-3953-4595-9F91-24AA7D5D47A9\",\n        \"emailError\": false,\n        \"pdf\": false,\n        \"count\": 25396\n    }\n}"
-						},
-						{
-							"name": "401",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"id_provider\" : \"acme\",\n\t\"invoice_data\" : {\n\t\t\"Version\": \"3.3\",\n\t\t\"Serie\": \"A\",\n\t\t\"Folio\": \"1\",\n\t\t\"Fecha\": \"2020-03-20T12:09:14\",\n\t\t\"FormaPago\": \"99\",\n\t\t\"CondicionesDePago\":\"3 meses\",\n\t\t\"SubTotal\": \"50\",\n\t\t\"Descuento\": \"0\",\n\t\t\"Moneda\":\"MXN\",\n\t\t\"Total\":\"58\",\n\t\t\"TipoDeComprobante\": \"I\",\n\t\t\"MetodoPago\":\"PUE\",\n\t\t\"LugarExpedicion\": \"05000\",\n\t\t\"Emisor\": {\n\t\t\t\"Rfc\": \t\"IXS7607092R5\",\n\t\t\t\"Nombre\": \"INTERNACIONAL XIMBO Y SABORES SA DE CV\",\n\t\t\t\"RegimenFiscal\": \"603\"\n\t\t},\n\n\t\t\"Receptor\":{\n\t\t\t\"Rfc\": \"CACX7605101P8\",\n\t\t\t\"Nombre\":\"XOCHILT CASAS CHAVEZ\",\n\t\t\t\"UsoCFDI\": \"D01\"\n\t\t},\n\t\t\"Conceptos\" : {\n\t\t\t\"Concepto\" : [\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"Concepto\" : {\n\t\t\t\t\t            \"ClaveProdServ\": \"01010101\",\n\t\t\t\t\t            \"NoIdentificacion\": \"UT421510 \",\n\t\t\t\t\t            \"Cantidad\": \"1\",\n\t\t\t\t\t            \"ClaveUnidad\": \"H87\",\n\t\t\t\t\t            \"Unidad\": \"PZA\",\n\t\t\t\t\t            \"Descripcion\": \"ARTICULO\",\n\t\t\t\t\t            \"ValorUnitario\": \"50\",\n\t\t\t\t\t            \"Importe\": \"50\",\n\t\t\t\t\t            \"Descuento\": \"0\",\n\t\t\t\t\t            \"Impuestos\": {\n\t\t\t\t\t                \"Retenciones\": {\n\t\t\t\t\t                    \"Retencion\": [{\n\t\t\t\t\t                        \"Retencion\": {\n\t\t\t\t\t                            \"Base\": \"50\",\n\t\t\t\t\t                            \"Impuesto\": \"002\",\n\t\t\t\t\t                            \"TipoFactor\": \"Tasa\",\n\t\t\t\t\t                            \"TasaOCuota\": \"0.160000\",\n\t\t\t\t\t                            \"Importe\": \"8\"\n\t\t\t\t\t                        }\n\t\t\t\t\t                    }]\n\t\t\t\t\t                }\n\t\t\t\t\t            }\n\t\t\t\t\t        }\n\t\t\t\t\t    }\n\t\t\t]\n\t\t},\n\t    \"Impuestos\": {\n\t        \"TotalImpuestosRetenidos\": \"0\",\n\t        \"TotalImpuestosTrasladados\": \"8\",\n\t        \"Traslados\": {\n\t            \"Traslado\": [\n\t            \t{\n\t\t                \"Traslado\": {\n\t\t                    \"Impuesto\": \"002\",\n\t\t                \t\"TipoFactor\": \"Tasa\",\n                    \t\t\"TasaOCuota\": \"0.160000\",\n\t\t                    \"Importe\": \"8\"\n\t\t                }\n\t\t            }\n\t        \t]\n\t        }    \n\t    }\n\t} \t\n}"
-								},
-								"url": {
-									"raw": "https://sync.paybook.com/v1/invoicing/mx/invoices",
-									"protocol": "https",
-									"host": [
-										"sync",
-										"paybook",
-										"com"
-									],
-									"path": [
-										"v1",
-										"invoicing",
-										"mx",
-										"invoices"
-									],
-									"query": [
-										{
-											"key": "invoice_data",
-											"value": "JSON",
-											"description": "JSON structure of the invoice",
-											"disabled": true
-										},
-										{
-											"key": "invoice_xml",
-											"value": "String",
-											"description": "XML string (base64 encoded)",
-											"disabled": true
-										},
-										{
-											"key": "id_provider",
-											"value": "String",
-											"description": "(optional) Id or name of the available providers in {[app_name]}",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"status": "Unauthorized",
-							"code": 401,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Fri, 20 Mar 2020 23:06:24 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Access-Control-Allow-Headers",
-									"value": "Authorization, Content-Type, X-App-Version, X-Requested-With"
-								},
-								{
-									"key": "Access-Control-Allow-Methods",
-									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Access-Control-Max-Age",
-									"value": "86400"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "max-age=0, no-store, no-cache, post-check=0, pre-check=0"
-								},
-								{
-									"key": "Expires",
-									"value": "Mon, 26 Jul 1997 05:00:00 GMT"
-								},
-								{
-									"key": "Last-Modified",
-									"value": "Fri, 20 Mar 2020 23:06:24 GMT"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Request-ID",
-									"value": "44987a53-4b74-4ab0-b56a-c3c11f62e1ca"
-								},
-								{
-									"key": "CF-Cache-Status",
-									"value": "DYNAMIC"
-								},
-								{
-									"key": "Expect-CT",
-									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains; preload"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Server",
-									"value": "cloudflare"
-								},
-								{
-									"key": "CF-RAY",
-									"value": "57731560a921c7f6-DFW"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"rid\": \"44987a53-4b74-4ab0-b56a-c3c11f62e1ca\",\n    \"code\": 401,\n    \"errors\": null,\n    \"status\": false,\n    \"message\": \"Unauthorized\",\n    \"response\": null\n}"
-						}
-					]
-				},
-				{
 					"name": "Cancel an Invoice",
 					"request": {
 						"method": "PUT",
@@ -3039,7 +3207,23 @@
 							"name": "200",
 							"originalRequest": {
 								"method": "PUT",
-								"header": [],
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"reason\": \"02\",\n    \"api_key\": \"{{apiKey}}\",\n    \"id_user\": \"{{id_user}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
 									"raw": "https://sync.paybook.com/v1/invoicing/mx/invoices/{{sync_invoices_invoice_uuid}}/cancel",
 									"protocol": "https",
@@ -3152,7 +3336,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"rid\": \"f62d3a21-4ebd-4444-bb0c-70d5bc00847e\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"success\": true,\n        \"cancel_receipt\": \"<s:Envelope xmlns:s=\\\"http://schemas.xmlsoap.org/soap/envelope/\\\"><s:Body xmlns:xsi=\\\"http://www.w3.org/2001/XMLSchema-instance\\\" xmlns:xsd=\\\"http://www.w3.org/2001/XMLSchema\\\"><CancelaCFDResponse xmlns=\\\"http://cancelacfd.sat.gob.mx\\\"><CancelaCFDResult Fecha=\\\"2020-03-20 16:43:57\\\" RfcEmisor=\\\"IXS7607092R5\\\"><Folios><UUID>TCBE9B51F-3953-4595-9F91-24AA7D5D47A9</UUID><EstatusUUID>201</EstatusUUID></Folios><Signature Id=\\\"SelloSAT\\\" xmlns=\\\"http://www.w3.org/2000/09/xmldsig#\\\"><SignedInfo><CanonicalizationMethod Algorithm=\\\"http://www.w3.org/TR/2001/REC-xml-c14n-20010315\\\"/><SignatureMethod Algorithm=\\\"http://www.w3.org/2001/04/xmldsig-more#hmac-sha512\\\"/><Reference URI=\\\"\\\"><Transforms><Transform Algorithm=\\\"http://www.w3.org/TR/1999/REC-xpath-19991116\\\"><XPath>not(ancestor-or-self::*[local-name()=\\\"Signature\\\"])</XPath></Transform></Transforms><DigestMethod Algorithm=\\\"http://www.w3.org/2001/04/xmlenc#sha512\\\"/><DigestValue>P2lENAhvzEBJuAS1aIPcpZVjYN2A73ckFc0wkj+XPA2rp6NrIVGFEPq3qCSAwlsR2+xx1ZaItMkSuv+f5t3ZGA==</DigestValue></Reference></SignedInfo><SignatureValue>EeXPV2EIrQtZzERdWgvrVOkl5HVcBVwZChX2Q/q9W2KzliiVWTznzVNVPqzaAvGkaZqAdv6KzbPeD9fUXTpB5g==</SignatureValue><KeyInfo><KeyName>00001088888800111093</KeyName><KeyValue><RSAKeyValue><Modulus>yxMvUucuS+s3aeWTFZvJrrFWIdes7kIDJmO7DA5DP+ZTapofNt37ageIHlTUdAVvd/fDKhfiwNSh+vbrNbD58X3UEdQor3ngb6zpjrDjgYsedckPLv6fro4DO0NXLCdALFqhN8ARyX77kYBfvIj1fOSVp401Vc3gfUtiEm16Kle3tOyWddzdK3oAIXF8oeei/GburWbJnpP+NeGaHVE5bkxLCBp5757nKVonXwzpfpEGuBp204NGkI2/jyA2EH8wyRuyUvzjT47IJYrHng23klRDlJoRYwa98QQPdQSTpcrgeu8nLhpQdI/zMTLoNF2NiBCkQNuAMacKhnvlVw==</Modulus><Exponent>AQAC</Exponent></RSAKeyValue></KeyValue></KeyInfo></Signature></CancelaCFDResult></CancelaCFDResponse></s:Body></s:Envelope>\",\n        \"uuid\": \"TCBE9B51F-3953-4595-9F91-24AA7D5D47A9\"\n    }\n}"
+							"body": "{\n    \"rid\": \"9858f4ef-3c11-4f26-b829-873f3793e16c\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"success\": true,\n        \"cancel_receipt\": \"<?xml version=\\\"1.0\\\" encoding=\\\"utf-8\\\"?><Acuse xmlns:xsd=\\\"http://www.w3.org/2001/XMLSchema\\\" xmlns:xsi=\\\"http://www.w3.org/2001/XMLSchema-instance\\\" Fecha=\\\"2022-02-19T12:23:56.0938555\\\" RfcEmisor=\\\"EKU9003173C9\\\"><Folios xmlns=\\\"http://cancelacfd.sat.gob.mx\\\"><UUID>2FBB4C20-8E36-42ED-A833-1CBBADDC80E9</UUID><EstatusUUID>201</EstatusUUID></Folios><Signature Id=\\\"SelloSAT\\\" xmlns=\\\"http://www.w3.org/2000/09/xmldsig#\\\"><SignedInfo><CanonicalizationMethod Algorithm=\\\"http://www.w3.org/TR/2001/REC-xml-c14n-20010315\\\" /><SignatureMethod Algorithm=\\\"http://www.w3.org/2001/04/xmldsig-more#hmac-sha512\\\" /><Reference URI=\\\"\\\"><Transforms><Transform Algorithm=\\\"http://www.w3.org/TR/1999/REC-xpath-19991116\\\"><XPath>not(ancestor-or-self::*[local-name()='Signature'])</XPath></Transform></Transforms><DigestMethod Algorithm=\\\"http://www.w3.org/2001/04/xmlenc#sha512\\\" /><DigestValue>hADWfieuizcMqFubZsjATT92DzAuW5MqFdXDQ8gHVEwyoDsHUm+MYeYfoVX5m5oN1h2H8zVsvhq564W8JvXMlw==</DigestValue></Reference></SignedInfo><SignatureValue>hdjJFMUBLGaJXqQ9nT54ovD8mYX1oXrqEKcC0L9m0X9c2fBz46xMblgikYtS9sYE7urjd6NAJTyl3vkhqCK4hQ==</SignatureValue><KeyInfo><KeyName>BF66E582888CC845</KeyName><KeyValue><RSAKeyValue><Modulus>n5YsGT0w5Z70ONPbqszhExfJU+KY3Bscftc2jxUn4wxpSjEUhnCuTd88OK5QbDW3Mupoc61jr83lRhUCjchFAmCigpC10rEntTfEU+7qtX8ud/jJJDB1a9lTIB6bhBN//X8IQDjhmHrfKvfen3p7RxLrFoxzWgpwKriuGI5wUlU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue></KeyInfo></Signature></Acuse>\",\n        \"code\": \"201\",\n        \"uuid\": \"2FBB4C20-8E36-42ED-A833-1CBBADDC80E9\"\n    }\n}"
 						},
 						{
 							"name": "401",
