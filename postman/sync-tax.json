@@ -3700,7 +3700,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/credentials",
+									"raw": "https://sync.paybook.com/v1/credentials/all",
 									"protocol": "https",
 									"host": [
 										"sync",
@@ -3709,7 +3709,8 @@
 									],
 									"path": [
 										"v1",
-										"credentials"
+										"credentials",
+										"all"
 									]
 								}
 							},
@@ -3815,7 +3816,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/credentials",
+									"raw": "https://sync.paybook.com/v1/credentials/all",
 									"protocol": "https",
 									"host": [
 										"sync",
@@ -3824,7 +3825,8 @@
 									],
 									"path": [
 										"v1",
-										"credentials"
+										"credentials",
+										"all"
 									]
 								}
 							},
