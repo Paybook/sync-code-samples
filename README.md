@@ -1,14 +1,7 @@
-# Paybook Sync API
+# Syncfy API
 
 ### Introducción
 
-El objetivo de éste repositorio es compartirte recursos que te ayuden a conocer el funcionamiento del API y así tu integración sea sencilla y apegada a las mejores prácticas.
+The objective of this repository is to version control the website documentation based on markdowns, postman collections and openapi specs.
 
-### API Sync ¿Qué es? 
-
--
-
-### Estructura de Información
-
-API KEY -> Users -> Sesiones -> Credentials -> Accounts -> Transactions -> Attachments
-
+To see the full documentation of syncfy's servcies visit syncfy.com
