@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "90572920-5114-4f98-934d-07cca0a4433b",
+		"_postman_id": "d9275c2f-55cf-4673-abfc-8a807a8ff984",
 		"name": "Payments",
 		"description": "\n\n# Table of Content\n\n- Overview\n- Authentication\n- Request\n- Error Codes\n- Rate limit\n\n# Overview\n\n------\n\n{[app_name]} allows our customers to process payments in different FIAT and Crypto currencies, simplifying how payments are managed and processed.\n\n{[app_name]}’s API has an architectural style of a RESTful design pattern. It uses HTTP as its underlying protocol, where standard HTTP verbs and HTTP response codes are used. Communication travels via HTTPS to ensure a secure data exchange. Almost every response body is JSON encoded, unless stated on the endpoint description. Since RESTful services and JSON are highly popular and most major development languages include a form to interact with these technologies, it's quite easy to integrate with {[app_name]}'s API.\n\n# Authentication\n\n------\n\n{[app_name]} API has two types of authentication:\n\n#### API KEY\n\n```bash\ncurl URL \\\n-H \"Authorization: api_key api_key={API_KEY}\" \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS \n```\n\n#### Bearer Token\n\n```bash\ncurl URL \\\n-H \"Authorization: Bearer {TOKEN}\" \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS \n```\n\nType of Authentication required is defined by Resource\n\n| Resource     | Auth Type      |\n| ------------ | -------------- |\n| Customers    | `API KEY`      |\n| Cards        | `API KEY`      |\n| Charges      | `API KEY`      |\n| Operations   | `API KEY`      |\n\n# Environments\n\n------\n\n- Sandbox\n\n- Production\n\n# Request\n\n------\n\n#### Structure\n\n```bash\ncurl URL \\\n-H AUTH \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS\n```\n\n# Error Codes\n\n------\n\nTable of Error Codes defined in {[app_name]} API\n\n| Code | Message               |\n| ---- | --------------------- |\n| 400  | Bad Request           |\n| 401  | Unauthorized          |\n| 402  | Payment Required      |\n| 403  | Forbidden             |\n| 404  | Not Found             |\n| 429  | Too Many Requests     |\n| 500  | Internal Server Error |\n| 503  | Service Unavailable   |\n\n# Rate limit\n\n------\n\nThere are two types of rate-limit:\n\n#### Rate limit by server\n\n5 request per second",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "24074027"
+		"_exporter_id": "21000760"
 	},
 	"item": [
 		{
@@ -4180,6 +4180,450 @@
 							""
 						]
 					}
+				}
+			]
+		},
+		{
+			"name": "Links",
+			"item": [
+				{
+					"name": "Add Link",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Sample Charge Link 0GZXXG94\",\r\n    \"amount\": 150,\r\n    \"reference\": \"20230324/0GZXXG94\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/links?api_key={{apiKey}}",
+							"host": [
+								"{{baseSyncUrl}}"
+							],
+							"path": [
+								"v1",
+								"payments",
+								"customers",
+								"{{id_pymnt_customer}}",
+								"links"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{apiKey}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Link",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"Sample Charge Link 0GZXXG94\",\r\n    \"amount\": 150,\r\n    \"reference\": \"20230324/0GZXXG94\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/links?api_key={{apiKey}}",
+									"host": [
+										"{{baseSyncUrl}}"
+									],
+									"path": [
+										"v1",
+										"payments",
+										"customers",
+										"{{id_pymnt_customer}}",
+										"links"
+									],
+									"query": [
+										{
+											"key": "api_key",
+											"value": "{{apiKey}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Apr 2023 07:49:11 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Wed, 26 Apr 2023 07:49:11 GMT"
+								},
+								{
+									"key": "Request-ID",
+									"value": "bac2cc57-d1b5-489d-9222-4766172bdd2e"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"bac2cc57-d1b5-489d-9222-4766172bdd2e\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_charge\": \"6448d776badaab516a40e513\",\n        \"id_pymnt_affiliate\": null,\n        \"transaction\": \"\",\n        \"payment_method\": \"link\",\n        \"authorization_code\": \"\",\n        \"status\": \"\",\n        \"transaction_type\": \"\",\n        \"receipt_url\": \"https://uat.kshk.co/syncfy/lpPqJstS2\",\n        \"has_devolution\": \"0\",\n        \"reference\": {\n            \"number\": \"20230324/0GZXXG94\",\n            \"description\": \"Sample Charge Link 0GZXXG94\"\n        },\n        \"card\": [],\n        \"amount\": 0,\n        \"net_amount\": 0,\n        \"tip\": 0,\n        \"commission\": 0,\n        \"fee\": 0,\n        \"fee_details\": null,\n        \"origin\": null,\n        \"dt_create\": 1682495350,\n        \"dt_modify\": null\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "SPEI",
+			"item": [
+				{
+					"name": "Add SPEI",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Sample Charge SPEI 0GZXXG92\",\r\n    \"amount\": 150,\r\n    \"reference\": \"20230324/0GZXXG92\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/spei?api_key={{apiKey}}",
+							"host": [
+								"{{baseSyncUrl}}"
+							],
+							"path": [
+								"v1",
+								"payments",
+								"customers",
+								"{{id_pymnt_customer}}",
+								"spei"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{apiKey}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SPEI",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"Sample Charge SPEI 0GZXXG92\",\r\n    \"amount\": 150,\r\n    \"reference\": \"20230324/0GZXXG92\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/spei?api_key={{apiKey}}",
+									"host": [
+										"{{baseSyncUrl}}"
+									],
+									"path": [
+										"v1",
+										"payments",
+										"customers",
+										"{{id_pymnt_customer}}",
+										"spei"
+									],
+									"query": [
+										{
+											"key": "api_key",
+											"value": "{{apiKey}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Apr 2023 07:48:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Wed, 26 Apr 2023 07:48:14 GMT"
+								},
+								{
+									"key": "Request-ID",
+									"value": "58a9e618-fabc-4a82-945d-ab6d81d43554"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"58a9e618-fabc-4a82-945d-ab6d81d43554\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_charge\": \"6448d73e429d55250a322044\",\n        \"id_pymnt_affiliate\": null,\n        \"id_pymnt_customer\": \"644178abe28f3a2043435854\",\n        \"id_currency\": \"523a25953b8e77910e8b456c\",\n        \"id_crypto_currency\": \"\",\n        \"id_profile\": \"644178aae28f3a2043435852\",\n        \"transaction\": \"646186618000009483\",\n        \"address\": \"\",\n        \"crypto\": null,\n        \"timestamp\": \"\",\n        \"dt_charge\": 1682495294,\n        \"period\": null,\n        \"week\": null,\n        \"day\": null,\n        \"payment_method\": \"SPE\",\n        \"authorization_code\": \"1682495293107864\",\n        \"status\": \"initializedTransaction\",\n        \"transaction_type\": \"SPEI\",\n        \"receipt_url\": \"https://\",\n        \"checkout_url\": \"\",\n        \"has_devolution\": \"0\",\n        \"affiliation\": \"\",\n        \"affiliation_name\": \"\",\n        \"reference\": {\n            \"number\": \"20230324/0GZXXG92\",\n            \"description\": \"Sample Charge SPEI 0GZXXG92\"\n        },\n        \"card\": [],\n        \"amount\": 150,\n        \"amount_crypto\": \"0\",\n        \"net_amount\": 0,\n        \"net_amount_crypto\": \"0\",\n        \"tip\": 0,\n        \"commission\": 0,\n        \"commission_crypto\": \"0\",\n        \"fee\": 0,\n        \"fee_crypto\": \"0\",\n        \"fee_details\": null,\n        \"origin\": null,\n        \"bank\": \"STP Processor\",\n        \"bank_account_number\": \"1111111\",\n        \"dt_create\": 1682495294,\n        \"dt_modify\": null\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Stores",
+			"item": [
+				{
+					"name": "Add Store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Sample Charge Store 0GZXXG94\", \r\n    \"amount\": 150,\r\n    \"reference\": \"20230324/0GZXXG94\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/stores?api_key={{apiKey}}",
+							"host": [
+								"{{baseSyncUrl}}"
+							],
+							"path": [
+								"v1",
+								"payments",
+								"customers",
+								"{{id_pymnt_customer}}",
+								"stores"
+							],
+							"query": [
+								{
+									"key": "api_key",
+									"value": "{{apiKey}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Store",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"Sample Charge Store 0GZXXG94\", \r\n    \"amount\": 150,\r\n    \"reference\": \"20230324/0GZXXG94\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/stores?api_key={{apiKey}}",
+									"host": [
+										"{{baseSyncUrl}}"
+									],
+									"path": [
+										"v1",
+										"payments",
+										"customers",
+										"{{id_pymnt_customer}}",
+										"stores"
+									],
+									"query": [
+										{
+											"key": "api_key",
+											"value": "{{apiKey}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Apr 2023 07:47:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Wed, 26 Apr 2023 07:47:38 GMT"
+								},
+								{
+									"key": "Request-ID",
+									"value": "9805f493-5983-41bf-b263-1e3b4cdfbb48"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"9805f493-5983-41bf-b263-1e3b4cdfbb48\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_charge\": \"6448d719753ba4227501ee64\",\n        \"id_pymnt_affiliate\": null,\n        \"id_pymnt_customer\": \"644178abe28f3a2043435854\",\n        \"id_currency\": \"523a25953b8e77910e8b456c\",\n        \"id_crypto_currency\": \"\",\n        \"id_profile\": \"644178aae28f3a2043435852\",\n        \"transaction\": \"2382495252434346\",\n        \"address\": \"\",\n        \"crypto\": null,\n        \"timestamp\": \"1683100052430\",\n        \"dt_charge\": 1682495257,\n        \"period\": null,\n        \"week\": null,\n        \"day\": null,\n        \"payment_method\": \"STORE\",\n        \"authorization_code\": \"2495254159\",\n        \"status\": \"initializedTransaction\",\n        \"transaction_type\": \"STORE\",\n        \"receipt_url\": \"https://api-uat.kushkipagos.com/cash/v1/charges/2382495252434346/receipt\",\n        \"checkout_url\": \"\",\n        \"has_devolution\": \"0\",\n        \"affiliation\": \"\",\n        \"affiliation_name\": \"\",\n        \"reference\": {\n            \"number\": \"20230324/0GZXXG94\",\n            \"description\": \"Sample Charge Store 0GZXXG94\"\n        },\n        \"card\": [],\n        \"amount\": 150,\n        \"amount_crypto\": \"0\",\n        \"net_amount\": 0,\n        \"net_amount_crypto\": \"0\",\n        \"tip\": 0,\n        \"commission\": 0,\n        \"commission_crypto\": \"0\",\n        \"fee\": 0,\n        \"fee_crypto\": \"0\",\n        \"fee_details\": null,\n        \"origin\": null,\n        \"dt_create\": 1682495257,\n        \"dt_modify\": null\n    }\n}"
+						}
+					]
 				}
 			]
 		},
