@@ -2572,6 +2572,124 @@
 							"body": "{\n    \"rid\": \"fc5d1e7a-ce1b-4f1a-8b8b-365df66145c9\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_pymnt_card\": \"5ed67012c6254b0c30251715\",\n            \"holder_name\": \"John Doe\",\n            \"type\": \"VISA\",\n            \"number\": \"471622XXXXXX4622\",\n            \"bank_name\": \"VISA TEST\",\n            \"billing\": null,\n            \"is_default\": true,\n            \"dt_create\": 1591111698,\n            \"dt_modify\": null\n        }\n    ]\n}"
 						}
 					]
+				},
+				{
+					"name": "Tokenize Card",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"number\": \"4456540000000063\",\r\n    \"cvv\": \"854\",\r\n    \"expiration\": \"2412\",\r\n    \"holder_name\": \"Jorge Lopez Perez\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSyncUrl}}/v1/payments/cards/tokenize",
+							"host": [
+								"{{baseSyncUrl}}"
+							],
+							"path": [
+								"v1",
+								"payments",
+								"cards",
+								"tokenize"
+							],
+							"query": [
+								{
+									"key": "id_user",
+									"value": "",
+									"description": "The ID of the user to associate with the card",
+									"disabled": true
+								},
+								{
+									"key": "id_currency",
+									"value": "",
+									"description": "The ID of the currency of the card",
+									"disabled": true
+								},
+								{
+									"key": "number",
+									"value": "",
+									"description": "Card Number",
+									"disabled": true
+								},
+								{
+									"key": "cvv",
+									"value": "",
+									"description": "Credit Card CVV",
+									"disabled": true
+								},
+								{
+									"key": "expiration",
+									"value": "",
+									"description": "Expiration Date (YY/MM)",
+									"disabled": true
+								},
+								{
+									"key": "holder_name",
+									"value": "",
+									"description": "Credit Card Holder Name",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Tokenize Card",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"number\": \"4456540000000063\",\r\n    \"cvv\": \"854\",\r\n    \"expiration\": \"2412\",\r\n    \"holder_name\": \"Holder Name\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseSyncUrl}}/v1/payments/cards/tokenize?id_user={{id_user}}&id_currency={{id_currency}}",
+									"host": [
+										"{{baseSyncUrl}}"
+									],
+									"path": [
+										"v1",
+										"payments",
+										"cards",
+										"tokenize"
+									],
+									"query": [
+										{
+											"key": "id_user",
+											"value": "{{id_user}}"
+										},
+										{
+											"key": "id_currency",
+											"value": "{{id_currency}}"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"76fca3b9-ab90-408d-a7ec-08d1f8b2b326\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_card\": \"644a0733eb045632ff3a35e3\",\n        \"id_user\": \"644a0733eb045632ff3a35e3\",\n        \"token\": \"b4dd3a84d8de4130a74711af1587fb2b\",\n        \"secure\": {\n            \"acsURL\": null,\n            \"authenticationTransactionId\": null,\n            \"authRequired\": null,\n            \"paReq\": null,\n            \"specificationVersion\": null,\n            \"secure_id\": null,\n            \"secure_service\": null\n        },\n        \"dt_create\": 1682573107,\n        \"dt_modify\": null\n    }\n}"
+						}
+					]
 				}
 			],
 			"description": "Credit cards associated to a given customer, with the information below, this payment method will be use to process charges.\n\n```json\n{\n    \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n    \"holder_name\": \"John Doe\",\n    \"type\": \"VISA\",\n    \"number\": \"471622XXXXXX4622\",\n    \"bank_name\": \"VISA TEST\",\n    \"country_code\": \"MX\",\n    \"billing\": {\n        \"emailAddress\": \"john.doe@test.com\",\n        \"firstName\": \"John\",\n        \"middleName\": \"\",\n        \"lastName\": \"Doe\",\n        \"address\": \"1234 Main Street\",\n        \"address2\": \"Apt 891\",\n        \"city\": \"Dallas\",\n        \"state\": \"TX\",\n        \"postalCode\": \"75208\"\n    }\n}\n```\n\nYou can simulate transaction results in sandbox mode using the following cards:\n\n#### Valid TEST credit card numbers with SUCCESSFUL charges\n\n| VISA\t            | MASTERCARD       |\n| ----------------  | ---------------- |\n| 4485531263748329\t| 5175680047225740 |\n| 4716222791264622\t| 5125252423995626 |\n| 4929464181360031\t| 5353145032081148 |\n| 4688063477474448\t| 5216010618470403 |\n| 4532446651358792\t| 5356291927355838 |\n\n\n#### Valid TEST credit card numbers with ERROR charges\n\n| Card\t            | Error                                                  |\n| ----------------  | ------------------------------------------------------ |\n| 5335584458144100\t| Bank authorization issue (Unable to complete charge)   |\n| 5504174401458735\t| Bank authorization issue (Invalid Card)                |\n| 5529267979203458\t| Payment Gateway restriction (1)                        |\n| 4916263460461980\t| Payment Gateway restriction (2)                        |\n| 5063115139979008\t| Chargeback issue                                       |\n\n",
@@ -3370,7 +3488,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/links?api_key={{apiKey}}",
+							"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/links",
 							"host": [
 								"{{baseSyncUrl}}"
 							],
@@ -3383,8 +3501,28 @@
 							],
 							"query": [
 								{
-									"key": "api_key",
-									"value": "{{apiKey}}"
+									"key": "id_pymnt_customer",
+									"value": "",
+									"description": "The ID of the customer assigned by {[app_name]}",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "",
+									"description": "Statement descriptor for the charge",
+									"disabled": true
+								},
+								{
+									"key": "amount",
+									"value": "",
+									"description": "Total amount of the charge",
+									"disabled": true
+								},
+								{
+									"key": "reference",
+									"value": "",
+									"description": "Reference number (random generated on the client system)",
+									"disabled": true
 								}
 							]
 						}
@@ -3405,7 +3543,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/links?api_key={{apiKey}}",
+									"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/links",
 									"host": [
 										"{{baseSyncUrl}}"
 									],
@@ -3415,12 +3553,6 @@
 										"customers",
 										"{{id_pymnt_customer}}",
 										"links"
-									],
-									"query": [
-										{
-											"key": "api_key",
-											"value": "{{apiKey}}"
-										}
 									]
 								}
 							},
@@ -3518,7 +3650,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/spei?api_key={{apiKey}}",
+							"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/spei",
 							"host": [
 								"{{baseSyncUrl}}"
 							],
@@ -3531,8 +3663,28 @@
 							],
 							"query": [
 								{
-									"key": "api_key",
-									"value": "{{apiKey}}"
+									"key": "id_pymnt_customer",
+									"value": null,
+									"description": "The ID of the customer assigned by {[app_name]}",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": null,
+									"description": "Statement descriptor for the charge",
+									"disabled": true
+								},
+								{
+									"key": "amount",
+									"value": null,
+									"description": "Total amount of the charge",
+									"disabled": true
+								},
+								{
+									"key": "reference",
+									"value": null,
+									"description": "Reference number (random generated on the client system)",
+									"disabled": true
 								}
 							]
 						}
@@ -3553,7 +3705,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/spei?api_key={{apiKey}}",
+									"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/spei",
 									"host": [
 										"{{baseSyncUrl}}"
 									],
@@ -3563,12 +3715,6 @@
 										"customers",
 										"{{id_pymnt_customer}}",
 										"spei"
-									],
-									"query": [
-										{
-											"key": "api_key",
-											"value": "{{apiKey}}"
-										}
 									]
 								}
 							},
@@ -3666,7 +3812,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/stores?api_key={{apiKey}}",
+							"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/stores",
 							"host": [
 								"{{baseSyncUrl}}"
 							],
@@ -3679,8 +3825,28 @@
 							],
 							"query": [
 								{
-									"key": "api_key",
-									"value": "{{apiKey}}"
+									"key": "id_pymnt_customer",
+									"value": null,
+									"description": "The ID of the customer assigned by {[app_name]}",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": null,
+									"description": "Statement descriptor for the charge",
+									"disabled": true
+								},
+								{
+									"key": "amount",
+									"value": null,
+									"description": "Total amount of the charge",
+									"disabled": true
+								},
+								{
+									"key": "reference",
+									"value": null,
+									"description": "Reference number (random generated on the client system)",
+									"disabled": true
 								}
 							]
 						}
@@ -3701,7 +3867,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/stores?api_key={{apiKey}}",
+									"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/stores",
 									"host": [
 										"{{baseSyncUrl}}"
 									],
@@ -3711,12 +3877,6 @@
 										"customers",
 										"{{id_pymnt_customer}}",
 										"stores"
-									],
-									"query": [
-										{
-											"key": "api_key",
-											"value": "{{apiKey}}"
-										}
 									]
 								}
 							},
