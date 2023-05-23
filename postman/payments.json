@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "90572920-5114-4f98-934d-07cca0a4433b",
+		"_postman_id": "d9275c2f-55cf-4673-abfc-8a807a8ff984",
 		"name": "Payments",
 		"description": "\n\n# Table of Content\n\n- Overview\n- Authentication\n- Request\n- Error Codes\n- Rate limit\n\n# Overview\n\n------\n\n{[app_name]} allows our customers to process payments in different FIAT and Crypto currencies, simplifying how payments are managed and processed.\n\n{[app_name]}’s API has an architectural style of a RESTful design pattern. It uses HTTP as its underlying protocol, where standard HTTP verbs and HTTP response codes are used. Communication travels via HTTPS to ensure a secure data exchange. Almost every response body is JSON encoded, unless stated on the endpoint description. Since RESTful services and JSON are highly popular and most major development languages include a form to interact with these technologies, it's quite easy to integrate with {[app_name]}'s API.\n\n# Authentication\n\n------\n\n{[app_name]} API has two types of authentication:\n\n#### API KEY\n\n```bash\ncurl URL \\\n-H \"Authorization: api_key api_key={API_KEY}\" \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS \n```\n\n#### Bearer Token\n\n```bash\ncurl URL \\\n-H \"Authorization: Bearer {TOKEN}\" \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS \n```\n\nType of Authentication required is defined by Resource\n\n| Resource     | Auth Type      |\n| ------------ | -------------- |\n| Customers    | `API KEY`      |\n| Cards        | `API KEY`      |\n| Charges      | `API KEY`      |\n| Operations   | `API KEY`      |\n\n# Environments\n\n------\n\n- Sandbox\n\n- Production\n\n# Request\n\n------\n\n#### Structure\n\n```bash\ncurl URL \\\n-H AUTH \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS\n```\n\n# Error Codes\n\n------\n\nTable of Error Codes defined in {[app_name]} API\n\n| Code | Message               |\n| ---- | --------------------- |\n| 400  | Bad Request           |\n| 401  | Unauthorized          |\n| 402  | Payment Required      |\n| 403  | Forbidden             |\n| 404  | Not Found             |\n| 429  | Too Many Requests     |\n| 500  | Internal Server Error |\n| 503  | Service Unavailable   |\n\n# Rate limit\n\n------\n\nThere are two types of rate-limit:\n\n#### Rate limit by server\n\n5 request per second",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "24074027"
+		"_exporter_id": "21000760"
 	},
 	"item": [
 		{
@@ -376,837 +376,6 @@
 				}
 			],
 			"description": "Catalogues are collections of endpoints that are relevant to the data segmentation on some of the other endpoints.\n\n#### List of Catalogues: \n\n1. Date Formats\n2. Webhook Event Types\n\n\n\n#### Date Formats\n\n```json\n{\n    \"id_date_format\": \"5e961923bebbce48bd7601aa\",\n    // The ID of the date format\n    \"name\": \"Unix Timestamp\"\n    // String; The name of the Date Format\n}\n```\n\n#### Webhook Event Types\n\n```json\n{\n    \"id_attachment_type\": \"5ed54ea7f79417520c0015b9\",\n    // {[app_name]} ID; The ID of the Attachment Type assignated by {[app_name]}\n    \"name\": \"payments.transaction_created\"\n    // String; The name of the Account Type\n}\n```\n"
-		},
-		{
-			"name": "ACH",
-			"item": [
-				{
-					"name": "Signup",
-					"item": [
-						{
-							"name": "Get Signup Status",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/ach/{{id_pymnt_customer}}/signup",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"v1",
-										"payments",
-										"ach",
-										"{{id_pymnt_customer}}",
-										"signup"
-									],
-									"query": [
-										{
-											"key": "id_pymnt_customer",
-											"value": null,
-											"description": "The ID of the customer assigned by {[app_name]}",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Personal Signup",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"first_name\": \"John\",\n    \"last_name\": \"Doe\",\n    \"second_last_name\": \"Smith\",\n    \"birth_date\": \"19800101\",\n    \"phone\": \"5512341234\",\n    \"curp\": \"EARV800101HDFSYC01\",\n    \"rfc\": \"EARV810101HDF\",\n    \"zip_code\": \"66100\",\n    \"street_name\": \"Test Street\",\n    \"street_number_exterior\": \"2121\",\n    \"gender\": \"M\",\n    \"account_number\": \"021580040410300325\",\n    \"ocupation\": \"School Teacher\",\n    \"nationality\": \"Mexican\",\n    \"id_bank\": \"5fcd37d194e8bc75d75a77d6\",\n    \"latitude\": \"19.4326\",\n    \"longitude\": \"-99.1332\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseSyncUrl}}/payments/ach/{{id_pymnt_customer_mxn}}/signup/individual",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"payments",
-										"ach",
-										"{{id_pymnt_customer_mxn}}",
-										"signup",
-										"individual"
-									],
-									"query": [
-										{
-											"key": "id_pymnt_customer",
-											"value": "",
-											"description": "The ID of the customer assigned by {[app_name]}",
-											"disabled": true
-										},
-										{
-											"key": "first_name",
-											"value": "",
-											"description": "Person First Name",
-											"disabled": true
-										},
-										{
-											"key": "last_name",
-											"value": "",
-											"description": "Person Last Name",
-											"disabled": true
-										},
-										{
-											"key": "second_last_name",
-											"value": "",
-											"description": "Person 2nd Last Name",
-											"disabled": true
-										},
-										{
-											"key": "birth_date",
-											"value": "",
-											"description": "Person Birthdate",
-											"disabled": true
-										},
-										{
-											"key": "phone",
-											"value": "",
-											"description": "Person Phone",
-											"disabled": true
-										},
-										{
-											"key": "curp",
-											"value": "",
-											"description": "Person CURP",
-											"disabled": true
-										},
-										{
-											"key": "rfc",
-											"value": "",
-											"description": "Person RFC",
-											"disabled": true
-										},
-										{
-											"key": "zip_code",
-											"value": "",
-											"description": "Person Address Zip/Postal Code",
-											"disabled": true
-										},
-										{
-											"key": "street_name",
-											"value": "",
-											"description": "Person Address Street Name",
-											"disabled": true
-										},
-										{
-											"key": "street_number_exterior",
-											"value": "",
-											"description": "Person Address Street Number",
-											"disabled": true
-										},
-										{
-											"key": "gender",
-											"value": "",
-											"description": "Person Gender (M/F)",
-											"disabled": true
-										},
-										{
-											"key": "account_number",
-											"value": "",
-											"description": "Person Bank Account Number",
-											"disabled": true
-										},
-										{
-											"key": "ocupation",
-											"value": "",
-											"description": "Person Occupation",
-											"disabled": true
-										},
-										{
-											"key": "nationality",
-											"value": "",
-											"description": "Person Nationality",
-											"disabled": true
-										},
-										{
-											"key": "id_bank",
-											"value": "",
-											"description": "Bank ID",
-											"disabled": true
-										},
-										{
-											"key": "latitude",
-											"value": "",
-											"description": "Latitude Location",
-											"disabled": true
-										},
-										{
-											"key": "longitude",
-											"value": "",
-											"description": "Longitude Location",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Business Signup",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"business_name\": \"PAYBOOK SA DE CV\",\n    \"rfc_company\": \"PAY170329BXA\",\n    \"area_code\": \"55\",\n    \"phone\": \"12341234\",\n    \"zip_code\": \"64000\",\n    \"street_name\": \"Paybook Street\",\n    \"street_number_exterior\": \"2121\",\n    \"id_bank\": \"5fcd37d194e8bc75d75a77d6\",\n    \"account_number\": \"021061000123456782\",\n    \"incorporation_date\": \"20170329\",\n    \"incorporation_number\": \"1234\",\n    \"first_name\": \"John\",\n    \"last_name\": \"Doe\",\n    \"second_last_name\": \"Smith\",\n    \"curp\": \"EARV8001010HDFSYC03\",\n    \"rfc\": \"EARV800101HDF\",\n    \"legal_power_number\": \"4321\",\n    \"latitude\": \"19.4326\",\n    \"longitude\": \"-99.1332\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseSyncUrl}}/payments/ach/{{id_pymnt_customer_mxn}}/signup/business",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"payments",
-										"ach",
-										"{{id_pymnt_customer_mxn}}",
-										"signup",
-										"business"
-									],
-									"query": [
-										{
-											"key": "id_pymnt_customer",
-											"value": "",
-											"description": "The ID of the customer assigned by {[app_name]}",
-											"disabled": true
-										},
-										{
-											"key": "business_name",
-											"value": "",
-											"description": "Business Name",
-											"disabled": true
-										},
-										{
-											"key": "rfc_company",
-											"value": "",
-											"description": "Company RFC",
-											"disabled": true
-										},
-										{
-											"key": "area_code",
-											"value": "",
-											"description": "City Area Code",
-											"disabled": true
-										},
-										{
-											"key": "phone",
-											"value": "",
-											"description": "Business Phone",
-											"disabled": true
-										},
-										{
-											"key": "zip_code",
-											"value": "",
-											"description": "Business Address Zip/Postal Code",
-											"disabled": true
-										},
-										{
-											"key": "street_name",
-											"value": "",
-											"description": "Business Address Street Name",
-											"disabled": true
-										},
-										{
-											"key": "street_number_exterior",
-											"value": "",
-											"description": "Business Address Street Number",
-											"disabled": true
-										},
-										{
-											"key": "id_bank",
-											"value": "",
-											"description": "Bank ID",
-											"disabled": true
-										},
-										{
-											"key": "account_number",
-											"value": "",
-											"description": "Business Bank Account Number",
-											"disabled": true
-										},
-										{
-											"key": "incorporation_date",
-											"value": "",
-											"description": "Business Incorporation Date",
-											"disabled": true
-										},
-										{
-											"key": "incorporation_number",
-											"value": "",
-											"description": "Business Incorporation Number",
-											"disabled": true
-										},
-										{
-											"key": "first_name",
-											"value": "",
-											"description": "Owner First Name",
-											"disabled": true
-										},
-										{
-											"key": "last_name",
-											"value": "",
-											"description": "Owner Last Name",
-											"disabled": true
-										},
-										{
-											"key": "second_last_name",
-											"value": "",
-											"description": "Owner 2nd Last Name",
-											"disabled": true
-										},
-										{
-											"key": "curp",
-											"value": "",
-											"description": "Owner CURP",
-											"disabled": true
-										},
-										{
-											"key": "rfc",
-											"value": "",
-											"description": "Owner RFC",
-											"disabled": true
-										},
-										{
-											"key": "legal_power_number",
-											"value": "",
-											"description": "Legal Power Number",
-											"disabled": true
-										},
-										{
-											"key": "latitude",
-											"value": "",
-											"description": "Latitude Location",
-											"disabled": true
-										},
-										{
-											"key": "longitude",
-											"value": "",
-											"description": "Longitude Location",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "Suppliers",
-					"item": [
-						{
-							"name": "Get Suppliers",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"skip\": \"0\",\n    \"limit\": \"10\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/ach/{{id_pymnt_customer}}/suppliers",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"v1",
-										"payments",
-										"ach",
-										"{{id_pymnt_customer}}",
-										"suppliers"
-									],
-									"query": [
-										{
-											"key": "id_pymnt_customer",
-											"value": "",
-											"description": "The ID of the customer assigned by {[app_name]}",
-											"disabled": true
-										},
-										{
-											"key": "id_supplier",
-											"value": "",
-											"description": "ID of Supplier",
-											"disabled": true
-										},
-										{
-											"key": "skip",
-											"value": null,
-											"description": "Items to skip",
-											"disabled": true
-										},
-										{
-											"key": "limit",
-											"value": null,
-											"description": "Items Count Limit",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Get Supplier",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/ach/{{id_pymnt_customer}}/suppliers/{{id_supplier}}",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"v1",
-										"payments",
-										"ach",
-										"{{id_pymnt_customer}}",
-										"suppliers",
-										"{{id_supplier}}"
-									],
-									"query": [
-										{
-											"key": "id_pymnt_customer",
-											"value": "",
-											"description": "The ID of the customer assigned by {[app_name]}",
-											"disabled": true
-										},
-										{
-											"key": "id_supplier",
-											"value": null,
-											"description": "ID of Supplier",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Add Supplier",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"name\": \"Test Supplier\",\n    \"rfc\": \"EARV810101HDF\",\n    \"account_number\": \"653180001000106432\",\n    \"id_bank\": \"5fcd37d194e8bc75d75a77df\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/ach/{{id_pymnt_customer}}/suppliers",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"v1",
-										"payments",
-										"ach",
-										"{{id_pymnt_customer}}",
-										"suppliers"
-									],
-									"query": [
-										{
-											"key": "id_pymnt_customer",
-											"value": "",
-											"description": "The ID of the customer assigned by {[app_name]}",
-											"disabled": true
-										},
-										{
-											"key": "name",
-											"value": null,
-											"description": "Supplier Name",
-											"disabled": true
-										},
-										{
-											"key": "rfc",
-											"value": null,
-											"description": "Supplier RFC",
-											"disabled": true
-										},
-										{
-											"key": "account_number",
-											"value": null,
-											"description": "Bank Account Number",
-											"disabled": true
-										},
-										{
-											"key": "id_bank",
-											"value": null,
-											"description": "Bank ID",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Update Supplier",
-							"request": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"name\": \"Test Supplier\",\n    \"rfc\": \"EARV810101HDF\",\n    \"account_number\": \"653180001000106432\",\n    \"id_bank\": \"5fcd37d194e8bc75d75a77df\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/ach/{{id_pymnt_customer}}/suppliers",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"v1",
-										"payments",
-										"ach",
-										"{{id_pymnt_customer}}",
-										"suppliers"
-									],
-									"query": [
-										{
-											"key": "id_pymnt_customer",
-											"value": "",
-											"description": "The ID of the customer assigned by {[app_name]}",
-											"disabled": true
-										},
-										{
-											"key": "name",
-											"value": null,
-											"description": "Supplier Name",
-											"disabled": true
-										},
-										{
-											"key": "rfc",
-											"value": null,
-											"description": "Supplier RFC",
-											"disabled": true
-										},
-										{
-											"key": "account_number",
-											"value": null,
-											"description": "Bank Account Number",
-											"disabled": true
-										},
-										{
-											"key": "id_bank",
-											"value": null,
-											"description": "Bank ID",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Delete Supplier",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/ach/{{id_pymnt_customer}}/suppliers/{{id_supplier}}",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"v1",
-										"payments",
-										"ach",
-										"{{id_pymnt_customer}}",
-										"suppliers",
-										"{{id_supplier}}"
-									],
-									"query": [
-										{
-											"key": "id_pymnt_customer",
-											"value": "",
-											"description": "The ID of the customer assigned by {[app_name]}",
-											"disabled": true
-										},
-										{
-											"key": "id_supplier",
-											"value": null,
-											"description": "ID of Supplier",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "Balance",
-					"item": [
-						{
-							"name": "Get Balance",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/ach/{{id_pymnt_customer}}/balance",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"v1",
-										"payments",
-										"ach",
-										"{{id_pymnt_customer}}",
-										"balance"
-									],
-									"query": [
-										{
-											"key": "id_pymnt_customer",
-											"value": null,
-											"description": "The ID of the customer assigned by {[app_name]}",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "Payout",
-					"item": [
-						{
-							"name": "Get Payout",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/ach/{{id_pymnt_customer}}/payouts/{{id_payout}}",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"v1",
-										"payments",
-										"ach",
-										"{{id_pymnt_customer}}",
-										"payouts",
-										"{{id_payout}}"
-									],
-									"query": [
-										{
-											"key": "id_pymnt_customer",
-											"value": "",
-											"description": "The ID of the customer assigned by {[app_name]}",
-											"disabled": true
-										},
-										{
-											"key": "id_payout",
-											"value": "",
-											"description": "Payout ID",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Execute Payout",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"amount\": \"100.00\",\n    \"latitude\": \"19.4326\",\n    \"longitude\": \"-99.1332\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/ach/{{id_pymnt_customer}}/payouts",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"v1",
-										"payments",
-										"ach",
-										"{{id_pymnt_customer}}",
-										"payouts"
-									],
-									"query": [
-										{
-											"key": "id_pymnt_customer",
-											"value": "",
-											"description": "The ID of the customer assigned by {[app_name]}",
-											"disabled": true
-										},
-										{
-											"key": "amount",
-											"value": null,
-											"description": "Total Payout Amount",
-											"disabled": true
-										},
-										{
-											"key": "latitude",
-											"value": null,
-											"description": "Location Latitude",
-											"disabled": true
-										},
-										{
-											"key": "longitude",
-											"value": null,
-											"description": "Location Longitude",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "Transfers",
-					"item": [
-						{
-							"name": "Get Transfer",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/ach/{{id_pymnt_customer}}/transfers/{{id_transfer}}",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"v1",
-										"payments",
-										"ach",
-										"{{id_pymnt_customer}}",
-										"transfers",
-										"{{id_transfer}}"
-									],
-									"query": [
-										{
-											"key": "id_pymnt_customer",
-											"value": "",
-											"description": "The ID of the customer assigned by {[app_name]}",
-											"disabled": true
-										},
-										{
-											"key": "id_transfer",
-											"value": null,
-											"description": "Transfer ID",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Execute Transfer",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"id_pymnt_supplier\": \"62b1440e214c5c0c3c5ecef2\",\n    \"amount\": \"10\",\n    \"reference\": 12345,\n    \"latitude\": \"19.4326\",\n    \"longitude\": \"-99.1332\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseSyncUrl}}/v1/payments/ach/{{id_pymnt_customer}}/transfers",
-									"host": [
-										"{{baseSyncUrl}}"
-									],
-									"path": [
-										"v1",
-										"payments",
-										"ach",
-										"{{id_pymnt_customer}}",
-										"transfers"
-									],
-									"query": [
-										{
-											"key": "id_pymnt_customer",
-											"value": "",
-											"description": "The ID of the customer assigned by {[app_name]}",
-											"disabled": true
-										},
-										{
-											"key": "id_pymnt_supplier",
-											"value": null,
-											"description": "Supplier ID",
-											"disabled": true
-										},
-										{
-											"key": "amount",
-											"value": null,
-											"description": "Total amount of the transfer",
-											"disabled": true
-										},
-										{
-											"key": "reference",
-											"value": null,
-											"description": "Transfer Reference Number",
-											"disabled": true
-										},
-										{
-											"key": "latitude",
-											"value": null,
-											"description": "Location Latitude",
-											"disabled": true
-										},
-										{
-											"key": "longitude",
-											"value": null,
-											"description": "Location Longitude",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				}
-			]
 		},
 		{
 			"name": "Customers",
@@ -3403,6 +2572,124 @@
 							"body": "{\n    \"rid\": \"fc5d1e7a-ce1b-4f1a-8b8b-365df66145c9\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": [\n        {\n            \"id_pymnt_card\": \"5ed67012c6254b0c30251715\",\n            \"holder_name\": \"John Doe\",\n            \"type\": \"VISA\",\n            \"number\": \"471622XXXXXX4622\",\n            \"bank_name\": \"VISA TEST\",\n            \"billing\": null,\n            \"is_default\": true,\n            \"dt_create\": 1591111698,\n            \"dt_modify\": null\n        }\n    ]\n}"
 						}
 					]
+				},
+				{
+					"name": "Tokenize Card",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"number\": \"4456540000000063\",\r\n    \"cvv\": \"854\",\r\n    \"expiration\": \"2412\",\r\n    \"holder_name\": \"Jorge Lopez Perez\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSyncUrl}}/v1/payments/cards/tokenize",
+							"host": [
+								"{{baseSyncUrl}}"
+							],
+							"path": [
+								"v1",
+								"payments",
+								"cards",
+								"tokenize"
+							],
+							"query": [
+								{
+									"key": "id_user",
+									"value": "",
+									"description": "The ID of the user to associate with the card",
+									"disabled": true
+								},
+								{
+									"key": "id_currency",
+									"value": "",
+									"description": "The ID of the currency of the card",
+									"disabled": true
+								},
+								{
+									"key": "number",
+									"value": "",
+									"description": "Card Number",
+									"disabled": true
+								},
+								{
+									"key": "cvv",
+									"value": "",
+									"description": "Credit Card CVV",
+									"disabled": true
+								},
+								{
+									"key": "expiration",
+									"value": "",
+									"description": "Expiration Date (YY/MM)",
+									"disabled": true
+								},
+								{
+									"key": "holder_name",
+									"value": "",
+									"description": "Credit Card Holder Name",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Tokenize Card",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"number\": \"4456540000000063\",\r\n    \"cvv\": \"854\",\r\n    \"expiration\": \"2412\",\r\n    \"holder_name\": \"Holder Name\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseSyncUrl}}/v1/payments/cards/tokenize?id_user={{id_user}}&id_currency={{id_currency}}",
+									"host": [
+										"{{baseSyncUrl}}"
+									],
+									"path": [
+										"v1",
+										"payments",
+										"cards",
+										"tokenize"
+									],
+									"query": [
+										{
+											"key": "id_user",
+											"value": "{{id_user}}"
+										},
+										{
+											"key": "id_currency",
+											"value": "{{id_currency}}"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"76fca3b9-ab90-408d-a7ec-08d1f8b2b326\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_card\": \"644a0733eb045632ff3a35e3\",\n        \"id_user\": \"644a0733eb045632ff3a35e3\",\n        \"token\": \"b4dd3a84d8de4130a74711af1587fb2b\",\n        \"secure\": {\n            \"acsURL\": null,\n            \"authenticationTransactionId\": null,\n            \"authRequired\": null,\n            \"paReq\": null,\n            \"specificationVersion\": null,\n            \"secure_id\": null,\n            \"secure_service\": null\n        },\n        \"dt_create\": 1682573107,\n        \"dt_modify\": null\n    }\n}"
+						}
+					]
 				}
 			],
 			"description": "Credit cards associated to a given customer, with the information below, this payment method will be use to process charges.\n\n```json\n{\n    \"id_pymnt_card\": \"5eecf796f23be1111a3af07b\",\n    \"holder_name\": \"John Doe\",\n    \"type\": \"VISA\",\n    \"number\": \"471622XXXXXX4622\",\n    \"bank_name\": \"VISA TEST\",\n    \"country_code\": \"MX\",\n    \"billing\": {\n        \"emailAddress\": \"john.doe@test.com\",\n        \"firstName\": \"John\",\n        \"middleName\": \"\",\n        \"lastName\": \"Doe\",\n        \"address\": \"1234 Main Street\",\n        \"address2\": \"Apt 891\",\n        \"city\": \"Dallas\",\n        \"state\": \"TX\",\n        \"postalCode\": \"75208\"\n    }\n}\n```\n\nYou can simulate transaction results in sandbox mode using the following cards:\n\n#### Valid TEST credit card numbers with SUCCESSFUL charges\n\n| VISA\t            | MASTERCARD       |\n| ----------------  | ---------------- |\n| 4485531263748329\t| 5175680047225740 |\n| 4716222791264622\t| 5125252423995626 |\n| 4929464181360031\t| 5353145032081148 |\n| 4688063477474448\t| 5216010618470403 |\n| 4532446651358792\t| 5356291927355838 |\n\n\n#### Valid TEST credit card numbers with ERROR charges\n\n| Card\t            | Error                                                  |\n| ----------------  | ------------------------------------------------------ |\n| 5335584458144100\t| Bank authorization issue (Unable to complete charge)   |\n| 5504174401458735\t| Bank authorization issue (Invalid Card)                |\n| 5529267979203458\t| Payment Gateway restriction (1)                        |\n| 4916263460461980\t| Payment Gateway restriction (2)                        |\n| 5063115139979008\t| Chargeback issue                                       |\n\n",
@@ -4180,6 +3467,492 @@
 							""
 						]
 					}
+				}
+			]
+		},
+		{
+			"name": "Links",
+			"item": [
+				{
+					"name": "Add Link",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Sample Charge Link 0GZXXG94\",\r\n    \"amount\": 150,\r\n    \"reference\": \"20230324/0GZXXG94\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/links",
+							"host": [
+								"{{baseSyncUrl}}"
+							],
+							"path": [
+								"v1",
+								"payments",
+								"customers",
+								"{{id_pymnt_customer}}",
+								"links"
+							],
+							"query": [
+								{
+									"key": "id_pymnt_customer",
+									"value": "",
+									"description": "The ID of the customer assigned by {[app_name]}",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "",
+									"description": "Statement descriptor for the charge",
+									"disabled": true
+								},
+								{
+									"key": "amount",
+									"value": "",
+									"description": "Total amount of the charge",
+									"disabled": true
+								},
+								{
+									"key": "reference",
+									"value": "",
+									"description": "Reference number (random generated on the client system)",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Link",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"Sample Charge Link 0GZXXG94\",\r\n    \"amount\": 150,\r\n    \"reference\": \"20230324/0GZXXG94\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/links",
+									"host": [
+										"{{baseSyncUrl}}"
+									],
+									"path": [
+										"v1",
+										"payments",
+										"customers",
+										"{{id_pymnt_customer}}",
+										"links"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Apr 2023 07:49:11 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Wed, 26 Apr 2023 07:49:11 GMT"
+								},
+								{
+									"key": "Request-ID",
+									"value": "bac2cc57-d1b5-489d-9222-4766172bdd2e"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"bac2cc57-d1b5-489d-9222-4766172bdd2e\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_charge\": \"6448d776badaab516a40e513\",\n        \"id_pymnt_affiliate\": null,\n        \"transaction\": \"\",\n        \"payment_method\": \"link\",\n        \"authorization_code\": \"\",\n        \"status\": \"\",\n        \"transaction_type\": \"\",\n        \"receipt_url\": \"https://uat.kshk.co/syncfy/lpPqJstS2\",\n        \"has_devolution\": \"0\",\n        \"reference\": {\n            \"number\": \"20230324/0GZXXG94\",\n            \"description\": \"Sample Charge Link 0GZXXG94\"\n        },\n        \"card\": [],\n        \"amount\": 0,\n        \"net_amount\": 0,\n        \"tip\": 0,\n        \"commission\": 0,\n        \"fee\": 0,\n        \"fee_details\": null,\n        \"origin\": null,\n        \"dt_create\": 1682495350,\n        \"dt_modify\": null\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "SPEI",
+			"item": [
+				{
+					"name": "Add SPEI",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Sample Charge SPEI 0GZXXG92\",\r\n    \"amount\": 150,\r\n    \"reference\": \"20230324/0GZXXG92\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/spei",
+							"host": [
+								"{{baseSyncUrl}}"
+							],
+							"path": [
+								"v1",
+								"payments",
+								"customers",
+								"{{id_pymnt_customer}}",
+								"spei"
+							],
+							"query": [
+								{
+									"key": "id_pymnt_customer",
+									"value": null,
+									"description": "The ID of the customer assigned by {[app_name]}",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": null,
+									"description": "Statement descriptor for the charge",
+									"disabled": true
+								},
+								{
+									"key": "amount",
+									"value": null,
+									"description": "Total amount of the charge",
+									"disabled": true
+								},
+								{
+									"key": "reference",
+									"value": null,
+									"description": "Reference number (random generated on the client system)",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SPEI",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"Sample Charge SPEI 0GZXXG92\",\r\n    \"amount\": 150,\r\n    \"reference\": \"20230324/0GZXXG92\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/spei",
+									"host": [
+										"{{baseSyncUrl}}"
+									],
+									"path": [
+										"v1",
+										"payments",
+										"customers",
+										"{{id_pymnt_customer}}",
+										"spei"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Apr 2023 07:48:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Wed, 26 Apr 2023 07:48:14 GMT"
+								},
+								{
+									"key": "Request-ID",
+									"value": "58a9e618-fabc-4a82-945d-ab6d81d43554"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"58a9e618-fabc-4a82-945d-ab6d81d43554\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_charge\": \"6448d73e429d55250a322044\",\n        \"id_pymnt_affiliate\": null,\n        \"id_pymnt_customer\": \"644178abe28f3a2043435854\",\n        \"id_currency\": \"523a25953b8e77910e8b456c\",\n        \"id_crypto_currency\": \"\",\n        \"id_profile\": \"644178aae28f3a2043435852\",\n        \"transaction\": \"646186618000009483\",\n        \"address\": \"\",\n        \"crypto\": null,\n        \"timestamp\": \"\",\n        \"dt_charge\": 1682495294,\n        \"period\": null,\n        \"week\": null,\n        \"day\": null,\n        \"payment_method\": \"SPE\",\n        \"authorization_code\": \"1682495293107864\",\n        \"status\": \"initializedTransaction\",\n        \"transaction_type\": \"SPEI\",\n        \"receipt_url\": \"https://\",\n        \"checkout_url\": \"\",\n        \"has_devolution\": \"0\",\n        \"affiliation\": \"\",\n        \"affiliation_name\": \"\",\n        \"reference\": {\n            \"number\": \"20230324/0GZXXG92\",\n            \"description\": \"Sample Charge SPEI 0GZXXG92\"\n        },\n        \"card\": [],\n        \"amount\": 150,\n        \"amount_crypto\": \"0\",\n        \"net_amount\": 0,\n        \"net_amount_crypto\": \"0\",\n        \"tip\": 0,\n        \"commission\": 0,\n        \"commission_crypto\": \"0\",\n        \"fee\": 0,\n        \"fee_crypto\": \"0\",\n        \"fee_details\": null,\n        \"origin\": null,\n        \"bank\": \"STP Processor\",\n        \"bank_account_number\": \"1111111\",\n        \"dt_create\": 1682495294,\n        \"dt_modify\": null\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Stores",
+			"item": [
+				{
+					"name": "Add Store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Sample Charge Store 0GZXXG94\", \r\n    \"amount\": 150,\r\n    \"reference\": \"20230324/0GZXXG94\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/stores",
+							"host": [
+								"{{baseSyncUrl}}"
+							],
+							"path": [
+								"v1",
+								"payments",
+								"customers",
+								"{{id_pymnt_customer}}",
+								"stores"
+							],
+							"query": [
+								{
+									"key": "id_pymnt_customer",
+									"value": null,
+									"description": "The ID of the customer assigned by {[app_name]}",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": null,
+									"description": "Statement descriptor for the charge",
+									"disabled": true
+								},
+								{
+									"key": "amount",
+									"value": null,
+									"description": "Total amount of the charge",
+									"disabled": true
+								},
+								{
+									"key": "reference",
+									"value": null,
+									"description": "Reference number (random generated on the client system)",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Store",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"Sample Charge Store 0GZXXG94\", \r\n    \"amount\": 150,\r\n    \"reference\": \"20230324/0GZXXG94\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseSyncUrl}}/v1/payments/customers/{{id_pymnt_customer}}/stores",
+									"host": [
+										"{{baseSyncUrl}}"
+									],
+									"path": [
+										"v1",
+										"payments",
+										"customers",
+										"{{id_pymnt_customer}}",
+										"stores"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Apr 2023 07:47:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Authorization, Content-Type, DNT, Origin, Referer, Sec-Fetch-Mode, User-Agent, X-App-Version, X-Requested-With"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "HEAD, POST, GET, DELETE, PUT, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, no-store"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Wed, 26 Apr 2023 07:47:38 GMT"
+								},
+								{
+									"key": "Request-ID",
+									"value": "9805f493-5983-41bf-b263-1e3b4cdfbb48"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15768000"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rid\": \"9805f493-5983-41bf-b263-1e3b4cdfbb48\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pymnt_charge\": \"6448d719753ba4227501ee64\",\n        \"id_pymnt_affiliate\": null,\n        \"id_pymnt_customer\": \"644178abe28f3a2043435854\",\n        \"id_currency\": \"523a25953b8e77910e8b456c\",\n        \"id_crypto_currency\": \"\",\n        \"id_profile\": \"644178aae28f3a2043435852\",\n        \"transaction\": \"2382495252434346\",\n        \"address\": \"\",\n        \"crypto\": null,\n        \"timestamp\": \"1683100052430\",\n        \"dt_charge\": 1682495257,\n        \"period\": null,\n        \"week\": null,\n        \"day\": null,\n        \"payment_method\": \"STORE\",\n        \"authorization_code\": \"2495254159\",\n        \"status\": \"initializedTransaction\",\n        \"transaction_type\": \"STORE\",\n        \"receipt_url\": \"https://api-uat.kushkipagos.com/cash/v1/charges/2382495252434346/receipt\",\n        \"checkout_url\": \"\",\n        \"has_devolution\": \"0\",\n        \"affiliation\": \"\",\n        \"affiliation_name\": \"\",\n        \"reference\": {\n            \"number\": \"20230324/0GZXXG94\",\n            \"description\": \"Sample Charge Store 0GZXXG94\"\n        },\n        \"card\": [],\n        \"amount\": 150,\n        \"amount_crypto\": \"0\",\n        \"net_amount\": 0,\n        \"net_amount_crypto\": \"0\",\n        \"tip\": 0,\n        \"commission\": 0,\n        \"commission_crypto\": \"0\",\n        \"fee\": 0,\n        \"fee_crypto\": \"0\",\n        \"fee_details\": null,\n        \"origin\": null,\n        \"dt_create\": 1682495257,\n        \"dt_modify\": null\n    }\n}"
+						}
+					]
 				}
 			]
 		},
