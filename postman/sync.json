@@ -3395,7 +3395,7 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "https://sync.paybook.com/v1/credentials",
+									"raw": "https://sync.paybook.com/v1/credentials/{{sync_id_credential}}/sync",
 									"protocol": "https",
 									"host": [
 										"sync",
@@ -3404,7 +3404,9 @@
 									],
 									"path": [
 										"v1",
-										"credentials"
+										"credentials",
+										"{{sync_id_credential}}",
+										"sync"
 									]
 								}
 							},
@@ -3514,7 +3516,7 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "https://sync.paybook.com/v1/credentials",
+									"raw": "https://sync.paybook.com/v1/credentials/{{sync_id_credential}}/sync",
 									"protocol": "https",
 									"host": [
 										"sync",
@@ -3523,7 +3525,9 @@
 									],
 									"path": [
 										"v1",
-										"credentials"
+										"credentials",
+										"{{sync_id_credential}}",
+										"sync"
 									]
 								}
 							},
