@@ -3388,11 +3388,11 @@
 						{
 							"name": "200",
 							"originalRequest": {
-								"method": "POST",
+								"method": "PUT",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"id_site\" : \"56cf5728784806f72b8b456f\",\n    \"credentials\" : {\n        \"rfc\" : \"{{sync_user_rfc}}\",\n        \"password\" : \"{{sync_user_password}}\"\n    },\n    \"options\" : {\n        \"search_from\" : \"2020-01-01\",\n        \"search_to\" : \"2020-01-31\"\n    }\n}"
+									"raw": ""
 								},
 								"url": {
 									"raw": "https://sync.paybook.com/v1/credentials",
@@ -3507,11 +3507,11 @@
 						{
 							"name": "401",
 							"originalRequest": {
-								"method": "POST",
+								"method": "PUT",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"id_site\" : \"56cf5728784806f72b8b456f\",\n    \"credentials\" : {\n        \"rfc\" : \"{{sync_user_rfc}}\",\n        \"password\" : \"{{sync_user_password}}\"\n    },\n    \"options\" : {\n        \"search_from\" : \"2020-01-01\",\n        \"search_to\" : \"2020-01-31\"\n    }\n}"
+									"raw": ""
 								},
 								"url": {
 									"raw": "https://sync.paybook.com/v1/credentials",
