@@ -3504,7 +3504,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"rid\": \"81ee5ac7-7224-41f6-8e9f-4a350d2cefff\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_credential\": \"5ff5a6ec804fa4566c5c5fe5\",\n        \"id_job_uuid\": \"5ff5a6ecc1b77b0683239143\",\n        \"id_job\": \"5ff5a6ecc1b77b0683239142\",\n        \"is_new\": 1,\n        \"username\": \"A**********A\",\n        \"ws\": \"wss://syncdev.paybook.com/v1/status/5ff5a6ecc1b77b0683239142\",\n        \"status\": \n\"https://syncdev.paybook.com/v1/jobs/5ff5a6ecc1b77b0683239142/status\",\n        \"twofa\": \n\"https://syncdev.paybook.com/v1/jobs/5ff5a6ecc1b77b0683239142/twofa\"\n    }\n}"
+							"body": "{\n    \"rid\": \"81ee5ac7-7224-41f6-8e9f-4a350d2cefff\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_credential\": \"5ff5a6ec804fa4566c5c5fe5\",\n        \"id_job_uuid\": \"5ff5a6ecc1b77b0683239143\",\n        \"id_job\": \"5ff5a6ecc1b77b0683239142\",\n        \"is_new\": 1,\n        \"username\": \"A**********A\",\n        \"ws\": \"wss://sync.paybook.com/v1/status/5ff5a6ecc1b77b0683239142\",\n        \"status\": \n\"https://sync.paybook.com/v1/jobs/5ff5a6ecc1b77b0683239142/status\",\n        \"twofa\": \n\"https://sync.paybook.com/v1/jobs/5ff5a6ecc1b77b0683239142/twofa\"\n    }\n}"
 						},
 						{
 							"name": "401",
