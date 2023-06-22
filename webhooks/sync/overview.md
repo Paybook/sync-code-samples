@@ -1,4 +1,4 @@
-# Webhooks
+# Webhooks V3
 
 ---
 
@@ -8,29 +8,33 @@ A webhook is a HTTP callback to a specified URL. They are triggered each time da
 
 Syncfy API requires that you setting up a Webhook to your API KEY in order to send these events notification:
 
-1.  `credential_create` : New credential was created
-2.  `credential_update` : Existing credential was updated
-3.  `refresh` : Data for an existing credential was added or updated
+1.  `credentials.created` : New credential was created.
+2.  `credentials.updated` : Existing credential was updated.
+3.  `credentials.refreshed` : Data for an existing credential was added or updated.
+4.  `documents.completed` : Document synchronization is complete.
+5.  `documents.fail` : One or more errors occurred while downloading the documents. There may be inconsistencies in the document.
+6.  `documents.success` : The download of the documents has been completed successfully.
+
+### documents.completed VS documents.success: 
+
+documentes completed indicates the process have finished even there are errors, documents.success indicates the process have finished successfully.
 
 ---
 
+#### Setup Webhooks
+
+1. Signup at (Syncfy.com)[https://syncfy.com/w/en/sync/signup].
+2. Go to the Webhooks section on your dashboard.
+3. Add the Webhook endpoint for any environment (Sandbox and production) and configure it.
+4. Add the events that your webhook will be listening.
+
 <br/>
 
-#### Syncfy Webhook Object
+##### Recomendations
 
-```json
-{
-  "id_webhook": "5d9bab5b8c91e73b2e4c75d3",
-  "id_user": null,
-  "is_disabled": 1,
-  "events": ["credential_create", "credential_update", "refresh"],
-  "url": "https://webhook_domain/my_webhook",
-  "delay": 0,
-  "ct_failed": 1001,
-  "dt_created": "2019-10-07T21:17:15+00:00",
-  "dt_modified": "2020-03-20T05:37:43+00:00"
-}
-```
+* Setup just one webhook globally for each environment.
+* Use the JWT key to secure your webhooks notifications.
+* You can set customized headers for the webhooks notifications.
 
 ---
 
@@ -40,18 +44,40 @@ Syncfy API requires that you setting up a Webhook to your API KEY in order to se
 
 ```json
 {
-  "endpoints": {
-    "credential": ["/v1/credentials/5e793889ea4c5165d46f9811"]
-  },
-  "event": "credential_create",
-  "id_credential": "5e793889ea4c5165d46f9811",
-  "id_external": "IXS7607092R5",
-  "id_job": "5e793889b783081dd61de29c",
-  "id_job_uuid": "5e793889b783081dd61de29b",
-  "id_site": "5da784f1f9de2a06483abec1",
-  "id_site_organization": "56cf4ff5784806152c8b4567",
-  "id_site_organization_type": "56cf4f5b784806cf028b4569",
-  "id_user": "5e751d54d0510472295413b3",
-  "is_executing": 1
+  "events": [
+    {
+      "header": {
+          "event": {
+              "at": "2023-06-16 19:06:18.944575+0000",
+              "eid": "6ff4da49-4193-4ee0-8e9e-7415b7fcb9cb",
+              "name": "credentials.created",
+              "version": "3.1"
+          },
+          "user": {
+              "id_environment": "574894bf7848066d138b4571",
+              "id_external": "20230614-DEMO",
+              "id_user": "648a053b59f043380d473be3"
+          }
+      },
+      "payload": {
+          "endpoints": {
+              "credential": [
+                  "/v1/credentials/648cb2a99ca1b91b0a141391"
+              ]
+          },
+          "event": "credential_create",
+          "id_credential": "648cb2a99ca1b91b0a141391",
+          "id_external": "20230614-DEMO",
+          "id_job": "648cb2a9718d6c796e4091c1",
+          "id_job_uuid": "648cb2a9718d6c796e4091c2",
+          "id_site": "56cf5728784806f72b8b456f",
+          "id_site_organization": "56cf4ff5784806152c8b4568",
+          "id_site_organization_type": "56cf4f5b784806cf028b4569",
+          "id_user": "648a053b59f043380d473be3",
+          "is_executing": 1
+      }
+    }
+  ],
+  "rid": "c53b1fcb-e112-465c-ad3e-8b64cf2f602c"
 }
 ```
