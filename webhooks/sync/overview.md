@@ -81,3 +81,13 @@ documentes completed indicates the process have finished even there are errors, 
   "rid": "c53b1fcb-e112-465c-ad3e-8b64cf2f602c"
 }
 ```
+
+---
+
+<br/>
+
+##### Webhooks V1 
+
+Webhooks V1 are the first version of webhooks and are managed via API, the recommendation is to going ahead with the webhooks V3.
+
+To review the webhooks V1 documentation, please visit the following [link](https://github.com/Paybook/code-samples/tree/master/webhooks/sync). 
