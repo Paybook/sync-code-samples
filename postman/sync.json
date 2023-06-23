@@ -4044,7 +4044,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"rid\": \"81ee5ac7-7224-41f6-8e9f-4a350d2cefff\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_job_uuid\": \"5ff5a6ecc1b77b0683239143\",\n        \"id_job\": \"5ff5a6ecc1b77b0683239142\",\n        \"ws\": \"wss://sync.paybook.com//v1/status/5ff5a6ecc1b77b0683239142\",\n        \"status\": \"https://sync.paybook.com/v1/jobs/5ff5a6ecc1b77b0683239142/status\",\n        \"twofa\": \"https://sync.paybook.com/v1/jobs/5ff5a6ecc1b77b0683239142/twofa\"\n    }\n}"
+							"body": "{\n    \"rid\": \"81ee5ac7-7224-41f6-8e9f-4a350d2cefff\",\n    \"code\": 200,\n    \"errors\": null,\n    \"status\": true,\n    \"message\": null,\n    \"response\": {\n        \"id_pull_uuid\": \"5ff5a6ecc1b77b0683239143\",\n        \"id_pull\": \"5ff5a6ecc1b77b0683239142\",\n        \"ws\": \"wss://sync.paybook.com/v1/status/5ff5a6ecc1b77b0683239142\",\n        \"status\": \"https://sync.paybook.com/v1/opendata/pulls/5ff5a6ecc1b77b0683239142/status\",\n        \"twofa\": \"https://sync.paybook.com/v1/opendata/pulls/5ff5a6ecc1b77b0683239142/twofa\"\n    }\n}"
 						},
 						{
 							"name": "401",
@@ -4213,10 +4213,22 @@
 							"name": "401",
 							"originalRequest": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
-									"raw": ""
+									"raw": "{\n    \"id_site\" : \"56cf5728784806f72b8b456f\",\n    \"input\": {\n        \"rfc\" : \"{{rfc}}\",\n        \"password\" : \"{{ciec}}\"\n    },\n    \"input_name\": \"default\",\n    \"at\": 1584684000,\n    \"auto_sync\": 0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
 								"url": {
 									"raw": "https://api.syncfy.com/v1/opendata/pulls/{{id_pull}}/status",
