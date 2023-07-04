@@ -3956,7 +3956,8 @@
 									"disabled": true
 								}
 							]
-						}
+						},
+						"description": "This endpoint allows you to start a pull request for the data extraction from the desired third party site."
 					},
 					"response": [
 						{
@@ -4163,7 +4164,8 @@
 									"disabled": true
 								}
 							]
-						}
+						},
+						"description": "This endpoint allows you to track the synchronization status of an existing pull request."
 					},
 					"response": [
 						{
@@ -4334,7 +4336,8 @@
 									"disabled": true
 								}
 							]
-						}
+						},
+						"description": "This endpoint allows you to send the Two-factor Authentication mehtod (2FA or Twofa) to the current pull request running process in case that is required by the third-party site login process."
 					},
 					"response": [
 						{
