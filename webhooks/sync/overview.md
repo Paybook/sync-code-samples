@@ -23,7 +23,7 @@ documentes completed indicates the process have finished even there are errors, 
 
 #### Setup Webhooks
 
-1. Signup at (Syncfy.com)[https://syncfy.com/w/en/sync/signup].
+1. Signup at [Syncfy.com](https://syncfy.com/w/en/sync/signup).
 2. Go to the Webhooks section on your dashboard.
 3. Add the Webhook endpoint for any environment (Sandbox and production) and configure it.
 4. Add the events that your webhook will be listening.
