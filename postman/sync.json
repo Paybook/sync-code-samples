@@ -1,13 +1,48 @@
 {
 	"info": {
-		"_postman_id": "e02e048c-7a77-4398-9592-a2d1f75f61c6",
+		"_postman_id": "f4fe03ed-bf38-4859-b170-3682805fb07e",
 		"name": "Connect",
 		"description": "# Overview\n\n---\n\n{\\[app_name\\]} retrieves user-authorized account and transactional data from financial institutions and returns it to third-party solutions in an organized, highly usable format.\n\n{\\[app_name\\]}’s API has an architectural style of a RESTful design pattern. It uses HTTP as its underlying protocol, where standard HTTP verbs and HTTP response codes are used. Communication travels via HTTPS to ensure a secure data exchange. Almost every response body is JSON encoded, unless stated on the endpoint description. Since RESTful services and JSON are highly popular and most major development languages include a form to interact with these technologies, it's quite easy to integrate with {\\[app_name\\]}'s API.\n\nStart using our API with just a few steps.\n\n1. RegisterIn order to gain entry to {\\[app_name\\]}, you need to register for a {\\[app_name\\]} account. If you haven’t already done so, please head over to our [website](https://{[app_url]}), sign up, accept our terms, and you’re good to go!\n2. Play in the SandboxOnce you're registered, you'll be taken to the {\\[app_name\\]} Control Panel where you can obtain your sandbox key to start testing the API without the need for valid user credentials.\n3. Access the Production EnvironmentWhen you're ready to work with live data, you'll need to accept the {\\[app_name\\]} Service Agreement and upload the by-laws or your (or your client's) entity to validate the authenticity of those entering into the agreement with {\\[app_name\\]}.\n4. 14-day TrialWant to give {\\[app_name\\]} a test drive before committing? Try us risk-free for up to 14 days.\n5. Select a Plan  \n    At the end of the trial or any point prior, simply choose the plan that fits your needs and enjoy continuous feeds of financial data right at your fingertips.\n    \n\n# Glossary\n\n- Pull: Pulls are API calls that initialize data extraction from a third-party site.\n- API call: An \"API call\" stands for Application Programming Interface call. It refers to a request made by a program or application to an Application Programming Interface (API) to access a specific service or resource.\n- Third-party site: They include all sites to which it is possible to connect and extract information through Syncfy's services. This includes banks, government, utilities, etc.\n- Transactional data: These are the data that can be found on the user’s thrid-party site, it includes the movements of deposits and withdrawals in the account history, also called transactions.\n- Credentials: These are the combination of the necessary information to perform a successful login into the third-party site account, for example, username + password. Also, it’s the name (credential) of the data object that represents this information inside Syncfy’s data model.\n- Account: These are the data that can be found inside the third-party site, commonly consisting of an account number, name, and balance. Also, this is the name of the data object that represents this information inside Syncfy’s data model.\n- Transactions: This is the name of the data object that represent each transactional data inside Syncfy’s data model.\n- Attachments: This is the name of the data object that represent each document or file linked to a transaction.\n- Single-auth: Refers to a single-factor authentication method where users provide only one form of identification, such as a password or username, to access a system or application.\n- TwoFA: Stands for Two-Factor Authentication (also 2FA), which adds a layer of security by requiring users to provide two different forms of identification, typically a password and a temporary verification code or token, to access a system or application.\n- MultiFA: Represents Multi-Factor Authentication, an authentication method that goes beyond two factors and involves the use of multiple independent credentials, such as a password, fingerprint, security token, or biometric data, to authenticate a user and provide enhanced security for accessing a system or application.\n    \n\n---\n\n# Authentication\n\n---\n\n{\\[app_name\\]} API has two types of authentication:\n\n#### API KEY\n\n``` bash\ncurl URL \\\n-H \"Authorization: api_key api_key={API_KEY}\" \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS \n\n ```\n\n#### Bearer Token\n\n``` bash\ncurl URL \\\n-H \"Authorization: Bearer {TOKEN}\" \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS \n\n ```\n\nType of Authentication required is defined by Resource\n\n| Resource | Auth Type |\n| --- | --- |\n| Users | `API KEY` |\n| Sessions | `API KEY` |\n| Catalogs | `Bearer Token` |\n| Credentials | `Bearer Token` |\n| Accounts | `Bearer Token` |\n| Transactions | `Bearer Token` |\n\n# Security best practices\n\n---\n\n1. Never share your API Keys with anyone outside your organization, {\\[app_name\\]} will never ask you to share your full API Key.\n2. Don't save your API Key in plain text files, nor hardcoded in your source code.\n3. Never use your API Key to authenticate the requests from the browser, instead use the token authentication method.\n4. Always create one API user for each entity, user, or organization using your system or application.\n5. Optionally you can add an extra security validation to your listening webhook for incoming notifications using the JWT signature key provided in each of the webhooks created with the dashboard.\n    \n\n# Environments\n\n---\n\n## Sandbox\n\nGo from zero to hero with our sandbox sites. Ready to use while you integrate the Syncfy API services. They are fully loaded with Acme data that mimics real-world use cases, so you can test out all the use cases, API endpoints, use the widget, and implement webhooks.\n\nWe strongly recommend you to start your integration with the Sandbox environment. Go to production is as easy as changing your Sandbox API Key to Production API Key.\n\n### Simple Auth Sandbox Sites Credentials\n\n| id_site | Name | Username | Password |\n| --- | --- | --- | --- |\n| 56cf5728784806f72b8b4568 | Normal (Simple Auth) | test | test |\n| 5ae37e06056f290607126261 | Select Input (Simple Auth) | test | test |\n| 5d0bb316f9de2a0a8f71aaf1 | Code Response Simulator (Simple Auth) | test | test |\n\n### 2FA Auth Sandbox Sites Credentials\n\n| id_site | Name | Username | Password | 2FA |\n| --- | --- | --- | --- | --- |\n| 56cf5728784806f72b8b4569 | Token (2FA) | test | test | token: 89704371 |\n| 572ba390784806060f8b458b | Captcha (2FA) | test | test | captcha : test |\n| 573ce20978480645038b4589 | Multiple Image (2FA) | test | test |  |\n| 58e28bce056f2903900d4d61 | Multiple Text (2FA) | test | test |  |\n| 5efe27e84cc5f861897a5431 | QR Code Scan (2FA) | test | test |  |\n| 5f427f7810dff8730c50d1c1 | Confirm Login (2FA) | test | test |  |\n\n### Use cases related with data\n\n| id_site | Name | Username | Password |\n| --- | --- | --- | --- |\n| 5f427fae9c41a502e30ebe93 | Live Transactions | test | test |\n| 5f427fae9c41a502e30ebe94 | Disable Transactions | test | test |\n| 58b884fc056f295aa1483a02 | Transactions with Attachments | test | test |\n| 61aec45361f37158fad6e44b | Sample Data (Simple Auth) | test | test |\n\n## Production\n\n- Banks\n- Digital Wallets\n- Blockchain\n- Utilities\n    \n\nSee the full list on the [coverage page](https://syncfy.com/coverage).\n\n# Request\n\n---\n\n#### Structure\n\n``` bash\ncurl URL \\\n-H AUTH \\\n-H MEDIA_TYPE \\\n-X METHOD \\\n-d PARAMS\n\n ```\n\n# Error Codes\n\n---\n\nTable of Error Codes defined in {\\[app_name\\]} API\n\n| Code | Message |\n| --- | --- |\n| 400 | Bad Request |\n| 401 | Unauthorized |\n| 402 | Payment Required |\n| 403 | Forbidden |\n| 404 | Not Found |\n| 429 | Too Many Requests |\n| 500 | Internal Server Error |\n| 503 | Service Unavailable |\n\n# Rate limit\n\n---\n\nThere are two types of rate-limit:\n\n#### Rate limit by server\n\n5 request per second\n\n#### Limit by credential\n\n5 minutes between each successful pull.\n\n# Special use cases\n\n1. [BBVA Netcash Bluetooth](https://foros.paybook.com/t/requisitos-para-la-conexion-con-bbva-net-cash-llave-inteligente-2023-usb-y-bluetooth/778)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "14711488",
-		"_collection_link": "https://syncfy.postman.co/workspace/c78c5d41-709c-43c4-9557-6462132d4482/collection/14711488-e02e048c-7a77-4398-9592-a2d1f75f61c6?action=share&source=collection_link&creator=14711488"
+		"_exporter_id": "19542982",
+		"_collection_link": "https://lunar-capsule-580420.postman.co/workspace/Syncfy-Documentation~9b3a4c32-b71e-446f-8383-e0739abfb559/collection/19542982-f4fe03ed-bf38-4859-b170-3682805fb07e?action=share&source=collection_link&creator=19542982"
 	},
 	"item": [
+		{
+			"name": "Status and Incidents",
+			"item": [],
+			"description": "API status is available at [syncfy.statuspage.io](https://syncfy.statuspage.io).\n\nAPI status and incidents are also available programmatically via the following endpoints:\n\n- [https://syncfy.statuspage.io/api/v2/status.json](https://syncfy.statuspage.io/api/v2/status.json) for current status\n    \n- [https://syncfy.statuspage.io/api/v2/incidents.json](https://syncfy.statuspage.io/api/v2/incidents.json) for current and historical incidents\n    \n\nFor a complete list of all API status information available programmatically, as well as more information on using these endpoints, see the [Atlassian Status API documentation](https://status.atlassian.com/api).",
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{sync_token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
 		{
 			"name": "Catalogues",
 			"item": [
@@ -1495,7 +1530,7 @@
 					]
 				}
 			],
-			"description": "Catalogues are collections of endpoints that are relevant to the data segmentation on some of the other endpoints.\n\n#### List of Catalogues: \n\n1. Account Types\n2. Attachment Types\n3. Countries\n4. Currencies\n5. Sites Organization Types\n6. Sites Organizations\n7. Sites\n\n\n\n#### Account Type\n\n```json\n{\n    \"id_account_type\": \"520d3aa93b8e778e0d000002\",\n    // {[app_name]} ID; The ID of the Acount Type assignated by {[app_name]}\n    \"name\": \"Credit Card\"\n    // String; The name of the Account Type\n}\n```\n\n#### Attachment Type\n```json\n{\n    \"id_attachment_type\": \"56bcdfca784806d1378b4567\",\n    // {[app_name]} ID; The ID of the Attachment Type assignated by {[app_name]}\n    \"name\": \"CFDI (XML)\"\n    // String; The name of the Account Type\n}\n```\n\n#### Country \n```json\n{\n\t\"id_country\": \"51ad44b83b8e7763120003c4\",\n\t\"name\": \"Mexico\",\n\t\"code\": \"MX\"\n}\n```\n\n#### Currency \n```json\n{\n\t\"id_currency\": \"523a25953b8e77910e8b4567\",\n\t\"name\": \"US Dollar\",\n\t\"code\": \"USD\"\n}\n```\n\n#### Sites Organization Types\n```json\n{\n    \"id_site_organization_type\": \"56cf4f5b784806cf028b4568\",\n    \"name\": \"Bank\",\n    \"label\": \"webapp_add_banks\"\n}\n```\n\n#### Site\n```json\n{\n    \"id_site\": \"572930c4784806060f8b456b\",\n    \"id_site_organization\": \"572930c4784806060f8b456a\",\n    \"id_site_organization_type\": \"56cf4f5b784806cf028b4568\",\n    \"id_site_type\": \"5b285177056f2911c13dbce1\",\n    \"is_business\": 0,\n    \"is_personal\": 1,\n    \"version\": 1,\n    \"name\": \"American Express\",\n    \"credentials\": [\n        {\n            \"name\": \"username\",\n            \"type\": \"text\",\n            \"label\": \"Usuario\",\n            \"required\": true,\n            \"username\": true,\n            \"token\": false,\n            \"validation\": null\n        },\n        {\n            \"name\": \"password\",\n            \"type\": \"password\",\n            \"label\": \"Contraseña\",\n            \"required\": true,\n            \"username\": false,\n            \"token\": false,\n            \"validation\": null\n        }\n    ],\n    \"endpoint\": \"/v1/credentials\"\n}\n```\n\n#### Site Organization\n\n```json\n{\n    \"id_site_organization\": \"572930c4784806060f8b456a\",\n    \"id_site_organization_type\": \"56cf4f5b784806cf028b4568\",\n    \"id_country\": \"51ad44b83b8e7763120003c4\",\n    \"name\": \"American Express\",\n    \"avatar\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9sbFI3bEhOT0JEd2xVeVNHQUYxS1hxdHBWVWtZdHJPSi9hNEFSaEVkTk9ydDgxRURyalBLcnI1Z0R4TGxaOS9za3lSZkUydGFnRW1HMjIzL0ZzYnRwQmlhK1hlcldPTjJpUT09\",\n    \"small_cover\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9sbFI3bEhOT0JEd2xVeVNHQUYxS1hxdHBWVWtZdHJPSi9WSWVBVE1HMENCTXNPRE5vL2Vna1E5N21Hc1hFUEkwWEQvbVcyV0Jsc1p5aWkzMG1qZFZVTlRwWC9uMHZtdm9RMmNBajZTWlc3MUpGYlRsSGtRT1hMVT0\",\n    \"cover\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9sbFI3bEhOT0JEd2xVeVNHQUYxS1hxdHBWVWtZdHJPSi9WSWVBVE1HMENCTXNPRE5vL2Vna1E5N21Hc1hFUEkwWEQvbVcyV0Jsc1p5UFk3c3E4K0pFRzhqMFdPaHBXN3E4dz09\"\n}\n```\n\n#### Organization Sites\n```json \n{\n    \"id_site_organization\": \"572930c4784806060f8b456a\",\n    \"id_site_organization_type\": \"56cf4f5b784806cf028b4568\",\n    \"id_country\": \"51ad44b83b8e7763120003c4\",\n    \"name\": \"American Express\",\n    \"avatar\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9sbFI3bEhOT0JEd2xVeVNHQUYxS1hxdHBWVWtZdHJPSi9hNEFSaEVkTk9ydDgxRURyalBLcnI1Z0R4TGxaOS9za3lSZkUydGFnRW1HMjIzL0ZzYnRwQmlhK1hlcldPTjJpUT09\",\n    \"small_cover\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9sbFI3bEhOT0JEd2xVeVNHQUYxS1hxdHBWVWtZdHJPSi9WSWVBVE1HMENCTXNPRE5vL2Vna1E5N21Hc1hFUEkwWEQvbVcyV0Jsc1p5aWkzMG1qZFZVTlRwWC9uMHZtdm9RMmNBajZTWlc3MUpGYlRsSGtRT1hMVT0\",\n    \"cover\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9sbFI3bEhOT0JEd2xVeVNHQUYxS1hxdHBWVWtZdHJPSi9WSWVBVE1HMENCTXNPRE5vL2Vna1E5N21Hc1hFUEkwWEQvbVcyV0Jsc1p5UFk3c3E4K0pFRzhqMFdPaHBXN3E4dz09\",\n    \"sites\": [\n        {\n            \"id_site\": \"572930c4784806060f8b456b\",\n            \"id_site_type\": \"5b285177056f2911c13dbce1\",\n            \"is_business\": 0,\n            \"is_personal\": 1,\n            \"version\": 1,\n            \"name\": \"American Express\",\n            \"credentials\": [\n            {\n                \"name\": \"username\",\n                \"type\": \"text\",\n                \"label\": \"Usuario\",\n                \"required\": true,\n                \"username\": true,\n                \"token\": false,\n                \"validation\": null\n            },\n            {\n                \"name\": \"password\",\n                \"type\": \"password\",\n                \"label\": \"Contraseña\",\n                \"required\": true,\n                \"username\": false,\n                \"token\": false,\n                \"validation\": null\n            }\n            ],\n            \"endpoint\": \"/v1/credentials\"\n        }\n    ]\n}\n```",
+			"description": "Catalogues are collections of endpoints that are relevant to the data segmentation on some of the other endpoints.\n\n#### List of Catalogues:\n\n1. Account Types\n    \n2. Attachment Types\n    \n3. Countries\n    \n4. Currencies\n    \n5. Sites Organization Types\n    \n6. Sites Organizations\n    \n7. Sites\n    \n\n#### Account Type\n\n``` json\n{\n    \"id_account_type\": \"520d3aa93b8e778e0d000002\",\n    // {[app_name]} ID; The ID of the Acount Type assignated by {[app_name]}\n    \"name\": \"Credit Card\"\n    // String; The name of the Account Type\n}\n\n ```\n\n#### Attachment Type\n\n``` json\n{\n    \"id_attachment_type\": \"56bcdfca784806d1378b4567\",\n    // {[app_name]} ID; The ID of the Attachment Type assignated by {[app_name]}\n    \"name\": \"CFDI (XML)\"\n    // String; The name of the Account Type\n}\n\n ```\n\n#### Country\n\n``` json\n{\n    \"id_country\": \"51ad44b83b8e7763120003c4\",\n    \"name\": \"Mexico\",\n    \"code\": \"MX\"\n}\n\n ```\n\n#### Currency\n\n``` json\n{\n    \"id_currency\": \"523a25953b8e77910e8b4567\",\n    \"name\": \"US Dollar\",\n    \"code\": \"USD\"\n}\n\n ```\n\n#### Sites Organization Types\n\n``` json\n{\n    \"id_site_organization_type\": \"56cf4f5b784806cf028b4568\",\n    \"name\": \"Bank\",\n    \"label\": \"webapp_add_banks\"\n}\n\n ```\n\n#### Site\n\n``` json\n{\n    \"id_site\": \"572930c4784806060f8b456b\",\n    \"id_site_organization\": \"572930c4784806060f8b456a\",\n    \"id_site_organization_type\": \"56cf4f5b784806cf028b4568\",\n    \"id_site_type\": \"5b285177056f2911c13dbce1\",\n    \"is_business\": 0,\n    \"is_personal\": 1,\n    \"version\": 1,\n    \"name\": \"American Express\",\n    \"credentials\": [\n        {\n            \"name\": \"username\",\n            \"type\": \"text\",\n            \"label\": \"Usuario\",\n            \"required\": true,\n            \"username\": true,\n            \"token\": false,\n            \"validation\": null\n        },\n        {\n            \"name\": \"password\",\n            \"type\": \"password\",\n            \"label\": \"Contraseña\",\n            \"required\": true,\n            \"username\": false,\n            \"token\": false,\n            \"validation\": null\n        }\n    ],\n    \"endpoint\": \"/v1/credentials\"\n}\n\n ```\n\n#### Site Organization\n\n``` json\n{\n    \"id_site_organization\": \"572930c4784806060f8b456a\",\n    \"id_site_organization_type\": \"56cf4f5b784806cf028b4568\",\n    \"id_country\": \"51ad44b83b8e7763120003c4\",\n    \"name\": \"American Express\",\n    \"avatar\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9sbFI3bEhOT0JEd2xVeVNHQUYxS1hxdHBWVWtZdHJPSi9hNEFSaEVkTk9ydDgxRURyalBLcnI1Z0R4TGxaOS9za3lSZkUydGFnRW1HMjIzL0ZzYnRwQmlhK1hlcldPTjJpUT09\",\n    \"small_cover\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9sbFI3bEhOT0JEd2xVeVNHQUYxS1hxdHBWVWtZdHJPSi9WSWVBVE1HMENCTXNPRE5vL2Vna1E5N21Hc1hFUEkwWEQvbVcyV0Jsc1p5aWkzMG1qZFZVTlRwWC9uMHZtdm9RMmNBajZTWlc3MUpGYlRsSGtRT1hMVT0\",\n    \"cover\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9sbFI3bEhOT0JEd2xVeVNHQUYxS1hxdHBWVWtZdHJPSi9WSWVBVE1HMENCTXNPRE5vL2Vna1E5N21Hc1hFUEkwWEQvbVcyV0Jsc1p5UFk3c3E4K0pFRzhqMFdPaHBXN3E4dz09\"\n}\n\n ```\n\n#### Organization Sites\n\n``` json\n{\n    \"id_site_organization\": \"572930c4784806060f8b456a\",\n    \"id_site_organization_type\": \"56cf4f5b784806cf028b4568\",\n    \"id_country\": \"51ad44b83b8e7763120003c4\",\n    \"name\": \"American Express\",\n    \"avatar\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9sbFI3bEhOT0JEd2xVeVNHQUYxS1hxdHBWVWtZdHJPSi9hNEFSaEVkTk9ydDgxRURyalBLcnI1Z0R4TGxaOS9za3lSZkUydGFnRW1HMjIzL0ZzYnRwQmlhK1hlcldPTjJpUT09\",\n    \"small_cover\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9sbFI3bEhOT0JEd2xVeVNHQUYxS1hxdHBWVWtZdHJPSi9WSWVBVE1HMENCTXNPRE5vL2Vna1E5N21Hc1hFUEkwWEQvbVcyV0Jsc1p5aWkzMG1qZFZVTlRwWC9uMHZtdm9RMmNBajZTWlc3MUpGYlRsSGtRT1hMVT0\",\n    \"cover\": \"/assets/Z1JLMk5FTTFTcVE4ZW81NWVEZU9sbFI3bEhOT0JEd2xVeVNHQUYxS1hxdHBWVWtZdHJPSi9WSWVBVE1HMENCTXNPRE5vL2Vna1E5N21Hc1hFUEkwWEQvbVcyV0Jsc1p5UFk3c3E4K0pFRzhqMFdPaHBXN3E4dz09\",\n    \"sites\": [\n        {\n            \"id_site\": \"572930c4784806060f8b456b\",\n            \"id_site_type\": \"5b285177056f2911c13dbce1\",\n            \"is_business\": 0,\n            \"is_personal\": 1,\n            \"version\": 1,\n            \"name\": \"American Express\",\n            \"credentials\": [\n            {\n                \"name\": \"username\",\n                \"type\": \"text\",\n                \"label\": \"Usuario\",\n                \"required\": true,\n                \"username\": true,\n                \"token\": false,\n                \"validation\": null\n            },\n            {\n                \"name\": \"password\",\n                \"type\": \"password\",\n                \"label\": \"Contraseña\",\n                \"required\": true,\n                \"username\": false,\n                \"token\": false,\n                \"validation\": null\n            }\n            ],\n            \"endpoint\": \"/v1/credentials\"\n        }\n    ]\n}\n\n ```",
 			"auth": {
 				"type": "bearer",
 				"bearer": [
@@ -1738,8 +1773,8 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
 								"value": "application/json",
+								"name": "Content-Type",
 								"type": "text"
 							}
 						],
@@ -1788,8 +1823,8 @@
 									},
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
 										"value": "application/json",
+										"name": "Content-Type",
 										"type": "text"
 									}
 								],
@@ -2448,8 +2483,8 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"name": "Content-Type",
 								"value": "application/json",
+								"name": "Content-Type",
 								"type": "text"
 							}
 						],
@@ -2479,8 +2514,8 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
 										"value": "application/json",
+										"name": "Content-Type",
 										"type": "text"
 									}
 								],
@@ -3967,8 +4002,8 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
 										"value": "application/json",
+										"name": "Content-Type",
 										"type": "text"
 									}
 								],
@@ -4054,8 +4089,8 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
 										"value": "application/json",
+										"name": "Content-Type",
 										"type": "text"
 									}
 								],
@@ -4218,8 +4253,8 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
 										"value": "application/json",
+										"name": "Content-Type",
 										"type": "text"
 									}
 								],
@@ -4347,8 +4382,8 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
 										"value": "application/json",
+										"name": "Content-Type",
 										"type": "text"
 									}
 								],
@@ -4412,8 +4447,8 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
 										"value": "application/json",
+										"name": "Content-Type",
 										"type": "text"
 									}
 								],
