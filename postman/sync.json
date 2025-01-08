@@ -9,42 +9,7 @@
 	},
 	"item": [
 		{
-			"name": "Status and Incidents",
-			"item": [],
-			"description": "API status is available at [syncfy.statuspage.io](https://syncfy.statuspage.io).\n\nAPI status and incidents are also available programmatically via the following endpoints:\n\n- [https://syncfy.statuspage.io/api/v2/status.json](https://syncfy.statuspage.io/api/v2/status.json) for current status\n    \n- [https://syncfy.statuspage.io/api/v2/incidents.json](https://syncfy.statuspage.io/api/v2/incidents.json) for current and historical incidents\n    \n\nFor a complete list of all API status information available programmatically, as well as more information on using these endpoints, see the [Atlassian Status API documentation](https://status.atlassian.com/api).",
-			"auth": {
-				"type": "bearer",
-				"bearer": [
-					{
-						"key": "token",
-						"value": "{{sync_token}}",
-						"type": "string"
-					}
-				]
-			},
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
-		},
-		{
-			"name": "Cataloguess",
+			"name": "Catalogues",
 			"item": [
 				{
 					"name": "Account Types",
