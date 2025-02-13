@@ -51,7 +51,7 @@ Todas las peticiones se construyen de la siguiente forma:
     <tbody>
         <tr>
             <td><b>URL</b></td>
-            <td colspan="4">El URL base para todos los recursos es <i>https://sync.paybook.com/v1/</i></td>
+            <td colspan="4">El URL base para todos los recursos es <i>https://opendata-api.syncfy.com/v1/</i></td>
         </tr>
         <tr>
             <td><b>Autenticación</b></td>
