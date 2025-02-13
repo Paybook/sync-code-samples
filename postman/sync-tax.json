@@ -17,11 +17,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/catalogues/account_types",
+							"raw": "https://opendata-api.syncfy.com/v1/catalogues/account_types",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -64,11 +64,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/catalogues/account_types",
+									"raw": "https://opendata-api.syncfy.com/v1/catalogues/account_types",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -208,11 +208,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/catalogues/attachment_types",
+							"raw": "https://opendata-api.syncfy.com/v1/catalogues/attachment_types",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -255,11 +255,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/catalogues/attachment_types",
+									"raw": "https://opendata-api.syncfy.com/v1/catalogues/attachment_types",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -399,11 +399,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/catalogues/countries",
+							"raw": "https://opendata-api.syncfy.com/v1/catalogues/countries",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -446,11 +446,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/catalogues/countries",
+									"raw": "https://opendata-api.syncfy.com/v1/catalogues/countries",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -590,11 +590,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/catalogues/site_organization_types",
+							"raw": "https://opendata-api.syncfy.com/v1/catalogues/site_organization_types",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -655,11 +655,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/catalogues/site_organization_types",
+									"raw": "https://opendata-api.syncfy.com/v1/catalogues/site_organization_types",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -817,11 +817,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/catalogues/site_organizations",
+							"raw": "https://opendata-api.syncfy.com/v1/catalogues/site_organizations",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -882,11 +882,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/catalogues/site_organizations",
+									"raw": "https://opendata-api.syncfy.com/v1/catalogues/site_organizations",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -1044,11 +1044,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/catalogues/sites",
+							"raw": "https://opendata-api.syncfy.com/v1/catalogues/sites",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -1109,11 +1109,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/catalogues/sites",
+									"raw": "https://opendata-api.syncfy.com/v1/catalogues/sites",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -1271,11 +1271,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/catalogues/organizations/sites",
+							"raw": "https://opendata-api.syncfy.com/v1/catalogues/organizations/sites",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -1313,11 +1313,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/catalogues/organizations/sites",
+									"raw": "https://opendata-api.syncfy.com/v1/catalogues/organizations/sites",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -1488,11 +1488,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/users",
+							"raw": "https://opendata-api.syncfy.com/v1/users",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -1546,11 +1546,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/users",
+									"raw": "https://opendata-api.syncfy.com/v1/users",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -1705,11 +1705,11 @@
 							"raw": "{\n\t\"id_external\" : \"{{sync_user_id_external}}\",\n\t\"name\" : \"{{sync_user_name}}\"\n}"
 						},
 						"url": {
-							"raw": "https://sync.paybook.com/v1/users",
+							"raw": "https://opendata-api.syncfy.com/v1/users",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -1746,7 +1746,6 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json",
-										"name": "Content-Type",
 										"type": "text"
 									}
 								],
@@ -1760,11 +1759,11 @@
 									}
 								},
 								"url": {
-									"raw": "https://sync.paybook.com/v1/users",
+									"raw": "https://opendata-api.syncfy.com/v1/users",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -1906,11 +1905,11 @@
 							"raw": "{\n\t\"name\" : \"{{sync_user_name}}\",\n\t\"id_external\" : \"{{sync_user_id_external}}\"\n}"
 						},
 						"url": {
-							"raw": "https://sync.paybook.com/v1/users/{{sync_id_user}}",
+							"raw": "https://opendata-api.syncfy.com/v1/users/{{sync_id_user}}",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -1956,11 +1955,11 @@
 									"raw": "{\n\t\"name\" : \"{{sync_user_name}}\",\n\t\"id_external\" : \"{{sync_user_id_external}}\"\n}"
 								},
 								"url": {
-									"raw": "https://sync.paybook.com/v1/users/{{sync_id_user}}",
+									"raw": "https://opendata-api.syncfy.com/v1/users/{{sync_id_user}}",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -2094,11 +2093,11 @@
 							}
 						],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/users/{{sync_id_user}}",
+							"raw": "https://opendata-api.syncfy.com/v1/users/{{sync_id_user}}",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -2121,11 +2120,11 @@
 									}
 								],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/users/{{sync_id_user}}",
+									"raw": "https://opendata-api.syncfy.com/v1/users/{{sync_id_user}}",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -2285,11 +2284,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/sessions/{{sync_token}}/verify",
+							"raw": "https://opendata-api.syncfy.com/v1/sessions/{{sync_token}}/verify",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -2307,11 +2306,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/sessions/{{sync_token}}/verify",
+									"raw": "https://opendata-api.syncfy.com/v1/sessions/{{sync_token}}/verify",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -2437,11 +2436,11 @@
 							"raw": "{\n\t\"id_user\" : \"{{sync_id_user}}\"\n}"
 						},
 						"url": {
-							"raw": "https://sync.paybook.com/v1/sessions",
+							"raw": "https://opendata-api.syncfy.com/v1/sessions",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -2459,7 +2458,6 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json",
-										"name": "Content-Type",
 										"type": "text"
 									}
 								],
@@ -2468,11 +2466,11 @@
 									"raw": "{\n\t\"id_user\" : \"{{sync_id_user}}\"\n}"
 								},
 								"url": {
-									"raw": "https://sync.paybook.com/v1/sessions",
+									"raw": "https://opendata-api.syncfy.com/v1/sessions",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -2585,11 +2583,11 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/sessions/{{sync_token}}",
+							"raw": "https://opendata-api.syncfy.com/v1/sessions/{{sync_token}}",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -2606,11 +2604,11 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/sessions/{{sync_token}}",
+									"raw": "https://opendata-api.syncfy.com/v1/sessions/{{sync_token}}",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -2756,11 +2754,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/credentials/{{sync_id_credential}}/transactions?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}&skip=Number&limit=Number&attachment_content=Number&attachment_content_parse=Number",
+									"raw": "https://opendata-api.syncfy.com/v1/credentials/{{sync_id_credential}}/transactions?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}&skip=Number&limit=Number&attachment_content=Number&attachment_content_parse=Number",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -2894,11 +2892,11 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "https://sync.paybook.com/v1/credentials/{{sync_id_credential}}/transactions?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}&skip=0&limit=10&attachment_content=1&attachment_content_parse=1",
+											"raw": "https://opendata-api.syncfy.com/v1/credentials/{{sync_id_credential}}/transactions?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}&skip=0&limit=10&attachment_content=1&attachment_content_parse=1",
 											"protocol": "https",
 											"host": [
-												"sync",
-												"paybook",
+												"opendata-api",
+												"syncfy",
 												"com"
 											],
 											"path": [
@@ -3127,11 +3125,11 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "https://sync.paybook.com/v1/credentials/{{sync_id_credential}}/transactions?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}&skip=Number&limit=Number&attachment_content=Number&attachment_content_parse=Number",
+											"raw": "https://opendata-api.syncfy.com/v1/credentials/{{sync_id_credential}}/transactions?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}&skip=Number&limit=Number&attachment_content=Number&attachment_content_parse=Number",
 											"protocol": "https",
 											"host": [
-												"sync",
-												"paybook",
+												"opendata-api",
+												"syncfy",
 												"com"
 											],
 											"path": [
@@ -3352,11 +3350,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/credentials",
+							"raw": "https://opendata-api.syncfy.com/v1/credentials",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -3416,11 +3414,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/credentials",
+									"raw": "https://opendata-api.syncfy.com/v1/credentials",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -3531,11 +3529,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/credentials",
+									"raw": "https://opendata-api.syncfy.com/v1/credentials",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -3636,11 +3634,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/credentials/all",
+							"raw": "https://opendata-api.syncfy.com/v1/credentials/all",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -3701,11 +3699,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/credentials/all",
+									"raw": "https://opendata-api.syncfy.com/v1/credentials/all",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -3817,11 +3815,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/credentials/all",
+									"raw": "https://opendata-api.syncfy.com/v1/credentials/all",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -3927,11 +3925,11 @@
 							"raw": "{\n    \"id_site\" : \"56cf5728784806f72b8b456f\",\n    \"credentials\" : {\n        \"rfc\" : \"{{sync_user_rfc}}\",\n        \"password\" : \"{{sync_user_password}}\"\n    },\n    \"options\" : {\n        \"search_from\" : \"2020-01-01\",\n        \"search_to\" : \"2020-01-31\"\n    }\n}"
 						},
 						"url": {
-							"raw": "https://sync.paybook.com/v1/credentials",
+							"raw": "https://opendata-api.syncfy.com/v1/credentials",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -3971,11 +3969,11 @@
 									"raw": "{\n    \"id_site\" : \"56cf5728784806f72b8b456f\",\n    \"credentials\" : {\n        \"rfc\" : \"{{sync_user_rfc}}\",\n        \"password\" : \"{{sync_user_password}}\"\n    },\n    \"options\" : {\n        \"search_from\" : \"2020-01-01\",\n        \"search_to\" : \"2020-01-31\"\n    }\n}"
 								},
 								"url": {
-									"raw": "https://sync.paybook.com/v1/credentials",
+									"raw": "https://opendata-api.syncfy.com/v1/credentials",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -4090,11 +4088,11 @@
 									"raw": "{\n    \"id_site\" : \"56cf5728784806f72b8b456f\",\n    \"credentials\" : {\n        \"rfc\" : \"{{sync_user_rfc}}\",\n        \"password\" : \"{{sync_user_password}}\"\n    },\n    \"options\" : {\n        \"search_from\" : \"2020-01-01\",\n        \"search_to\" : \"2020-01-31\"\n    }\n}"
 								},
 								"url": {
-									"raw": "https://sync.paybook.com/v1/credentials",
+									"raw": "https://opendata-api.syncfy.com/v1/credentials",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -4195,11 +4193,11 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/credentials/{{sync_id_credential}}",
+							"raw": "https://opendata-api.syncfy.com/v1/credentials/{{sync_id_credential}}",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -4216,11 +4214,11 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/credentials/{{sync_id_credential}}",
+									"raw": "https://opendata-api.syncfy.com/v1/credentials/{{sync_id_credential}}",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -4320,11 +4318,11 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/credentials/{{sync_id_credential}}",
+									"raw": "https://opendata-api.syncfy.com/v1/credentials/{{sync_id_credential}}",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -4474,11 +4472,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/accounts?id_credential={{sync_id_credential}}",
+							"raw": "https://opendata-api.syncfy.com/v1/accounts?id_credential={{sync_id_credential}}",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -4567,11 +4565,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/accounts?id_credential={{sync_id_credential}}",
+									"raw": "https://opendata-api.syncfy.com/v1/accounts?id_credential={{sync_id_credential}}",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -4755,11 +4753,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/accounts?id_credential={{sync_id_credential}}",
+									"raw": "https://opendata-api.syncfy.com/v1/accounts?id_credential={{sync_id_credential}}",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -4969,11 +4967,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/transactions/count?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}",
+							"raw": "https://opendata-api.syncfy.com/v1/transactions/count?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -5074,11 +5072,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/transactions/count?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}",
+									"raw": "https://opendata-api.syncfy.com/v1/transactions/count?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -5262,11 +5260,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/transactions/count?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}",
+									"raw": "https://opendata-api.syncfy.com/v1/transactions/count?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -5464,11 +5462,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/transactions?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}&skip=Number&limit=Number",
+							"raw": "https://opendata-api.syncfy.com/v1/transactions?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}&skip=Number&limit=Number",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -5590,11 +5588,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/transactions?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}&skip=0&limit=10",
+									"raw": "https://opendata-api.syncfy.com/v1/transactions?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}&skip=0&limit=10",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -5811,11 +5809,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/transactions?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}&skip=Number&limit=Number",
+									"raw": "https://opendata-api.syncfy.com/v1/transactions?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}&skip=Number&limit=Number",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -6058,11 +6056,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/attachments/count?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}",
+							"raw": "https://opendata-api.syncfy.com/v1/attachments/count?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -6133,11 +6131,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/attachments/count?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}",
+									"raw": "https://opendata-api.syncfy.com/v1/attachments/count?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -6291,11 +6289,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/attachments/count?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}",
+									"raw": "https://opendata-api.syncfy.com/v1/attachments/count?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -6463,11 +6461,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/attachments?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}&skip=Number&limit=Number",
+							"raw": "https://opendata-api.syncfy.com/v1/attachments?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}&skip=Number&limit=Number",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -6559,11 +6557,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/attachments?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}&skip=0&limit=10",
+									"raw": "https://opendata-api.syncfy.com/v1/attachments?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}&skip=0&limit=10",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -6750,11 +6748,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/attachments?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}&skip=Number&limit=Number",
+									"raw": "https://opendata-api.syncfy.com/v1/attachments?id_credential={{sync_id_credential}}&id_account={{sync_id_account}}&skip=Number&limit=Number",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -6931,11 +6929,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/attachments/{{sync_id_attachment}}",
+							"raw": "https://opendata-api.syncfy.com/v1/attachments/{{sync_id_attachment}}",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -6952,11 +6950,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/attachments/{{sync_id_attachment}}",
+									"raw": "https://opendata-api.syncfy.com/v1/attachments/{{sync_id_attachment}}",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -7036,11 +7034,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/attachments/{{sync_id_attachment}}",
+									"raw": "https://opendata-api.syncfy.com/v1/attachments/{{sync_id_attachment}}",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -7142,11 +7140,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/attachments/{{sync_id_attachment}}/extra",
+							"raw": "https://opendata-api.syncfy.com/v1/attachments/{{sync_id_attachment}}/extra",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -7164,11 +7162,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/attachments/{{sync_id_attachment}}/extra",
+									"raw": "https://opendata-api.syncfy.com/v1/attachments/{{sync_id_attachment}}/extra",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -7281,11 +7279,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/attachments/{{sync_id_attachment}}/extra",
+									"raw": "https://opendata-api.syncfy.com/v1/attachments/{{sync_id_attachment}}/extra",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -7388,11 +7386,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/attachments/{{sync_id_attachment}}/json",
+							"raw": "https://opendata-api.syncfy.com/v1/attachments/{{sync_id_attachment}}/json",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -7410,11 +7408,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/attachments/{{sync_id_attachment}}/json",
+									"raw": "https://opendata-api.syncfy.com/v1/attachments/{{sync_id_attachment}}/json",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -7515,11 +7513,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/attachments/{{sync_id_attachment}}/json",
+									"raw": "https://opendata-api.syncfy.com/v1/attachments/{{sync_id_attachment}}/json",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -7673,11 +7671,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/documents/catalogues/document_types",
+									"raw": "https://opendata-api.syncfy.com/v1/documents/catalogues/document_types",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -7721,11 +7719,11 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "https://sync.paybook.com/v1/catalogues/countries",
+											"raw": "https://opendata-api.syncfy.com/v1/catalogues/countries",
 											"protocol": "https",
 											"host": [
-												"sync",
-												"paybook",
+												"opendata-api",
+												"syncfy",
 												"com"
 											],
 											"path": [
@@ -7865,11 +7863,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/documents/catalogues/document_status",
+									"raw": "https://opendata-api.syncfy.com/v1/documents/catalogues/document_status",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
@@ -7913,11 +7911,11 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "https://sync.paybook.com/v1/catalogues/countries",
+											"raw": "https://opendata-api.syncfy.com/v1/catalogues/countries",
 											"protocol": "https",
 											"host": [
-												"sync",
-												"paybook",
+												"opendata-api",
+												"syncfy",
 												"com"
 											],
 											"path": [
@@ -8083,11 +8081,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/documents",
+							"raw": "https://opendata-api.syncfy.com/v1/documents",
 							"protocol": "https",
 							"host": [
-								"sync",
-								"paybook",
+								"opendata-api",
+								"syncfy",
 								"com"
 							],
 							"path": [
@@ -8123,11 +8121,11 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/catalogues/countries",
+									"raw": "https://opendata-api.syncfy.com/v1/catalogues/countries",
 									"protocol": "https",
 									"host": [
-										"sync",
-										"paybook",
+										"opendata-api",
+										"syncfy",
 										"com"
 									],
 									"path": [
