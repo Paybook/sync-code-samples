@@ -82,7 +82,7 @@ go get paybook.com/sync-code-samples
 ```
 go run /go/src/paybook.com/sync-code-samples/examples.go -test
 Test Go samples:
-SYNC_BASEURL= https://sync.paybook.com/v1/
+SYNC_BASEURL= https://opendata-api.syncfy.com/v1/
 ```
 
 ### Build
