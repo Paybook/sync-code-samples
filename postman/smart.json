@@ -21,7 +21,7 @@
                 }
               ],
               "url": {
-                "raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers",
+                "raw": "https://opendata-api.syncfy.com/v1/invoicing/mx/taxpayers",
                 "protocol": "https",
                 "host": ["sync", "paybook", "com"],
                 "path": ["v1", "invoicing", "mx", "taxpayers"]
@@ -47,7 +47,7 @@
                 }
               ],
               "url": {
-                "raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers?",
+                "raw": "https://opendata-api.syncfy.com/v1/invoicing/mx/taxpayers?",
                 "protocol": "https",
                 "host": ["sync", "paybook", "com"],
                 "path": ["v1", "invoicing", "mx", "taxpayers"],
@@ -102,7 +102,7 @@
                     "raw": "{\n\t\"taxpayer\" : \"{{sync_taxpayer_identifier}}\",\n    \"password\" : \"{{sync_taxpayer_password}}\",\n\t\"cer\": \"{{sync_taxpayer_cer}}\",\n\t\"key\": \"{{sync_taxpayer_key}}\"\n}"
                   },
                   "url": {
-                    "raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers?",
+                    "raw": "https://opendata-api.syncfy.com/v1/invoicing/mx/taxpayers?",
                     "protocol": "https",
                     "host": ["sync", "paybook", "com"],
                     "path": ["v1", "invoicing", "mx", "taxpayers"],
@@ -242,7 +242,7 @@
                 }
               ],
               "url": {
-                "raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers?",
+                "raw": "https://opendata-api.syncfy.com/v1/invoicing/mx/taxpayers?",
                 "protocol": "https",
                 "host": ["sync", "paybook", "com"],
                 "path": ["v1", "invoicing", "mx", "taxpayers"],
@@ -297,7 +297,7 @@
                     "raw": "{\n\t\"taxpayer\" : \"{{sync_taxpayer_identifier}}\",\n    \"password\" : \"{{sync_taxpayer_password}}\",\n\t\"cer\": \"{{sync_taxpayer_cer}}\",\n\t\"key\": \"{{sync_taxpayer_key}}\"\n}"
                   },
                   "url": {
-                    "raw": "https://sync.paybook.com/v1/invoicing/mx/taxpayers?",
+                    "raw": "https://opendata-api.syncfy.com/v1/invoicing/mx/taxpayers?",
                     "protocol": "https",
                     "host": ["sync", "paybook", "com"],
                     "path": ["v1", "invoicing", "mx", "taxpayers"],
