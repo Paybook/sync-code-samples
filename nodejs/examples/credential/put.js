@@ -6,7 +6,7 @@ const args = require('minimist')(process.argv.slice(2))
 const SYNC_TOKEN = args['token'];
 const SYNC_ID_CREDENTIAL = args['id_credential'];
 
-const SYNC_API = 'https://sync.paybook.com/v1';
+const SYNC_API = 'https://opendata-api.syncfy.com/v1';
 
 function delay(ms){
   return new Promise(function(resolve){
