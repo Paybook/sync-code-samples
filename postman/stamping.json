@@ -27,7 +27,7 @@
 							"raw": "{\n\t\"name\" : \"{{sync_user_name}}\"\n}"
 						},
 						"url": {
-							"raw": "https://sync.paybook.com/v1/users",
+							"raw": "https://opendata-api.syncfy.com/v1/users",
 							"protocol": "https",
 							"host": [
 								"sync",
@@ -72,7 +72,7 @@
 									"raw": "{\n\t\"name\" : \"{{sync_user_name}}\"\n}"
 								},
 								"url": {
-									"raw": "https://sync.paybook.com/v1/users",
+									"raw": "https://opendata-api.syncfy.com/v1/users",
 									"protocol": "https",
 									"host": [
 										"sync",
@@ -203,7 +203,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/users",
+							"raw": "https://opendata-api.syncfy.com/v1/users",
 							"protocol": "https",
 							"host": [
 								"sync",
@@ -249,7 +249,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/users",
+									"raw": "https://opendata-api.syncfy.com/v1/users",
 									"protocol": "https",
 									"host": [
 										"sync",
@@ -402,7 +402,7 @@
 							"raw": "{\n\t\"id_external\" : \"{{sync_user_id_external}}\"\n}"
 						},
 						"url": {
-							"raw": "https://sync.paybook.com/v1/users/{{sync_id_user}}",
+							"raw": "https://opendata-api.syncfy.com/v1/users/{{sync_id_user}}",
 							"protocol": "https",
 							"host": [
 								"sync",
@@ -447,7 +447,7 @@
 									"raw": "{\n\t\"id_external\" : \"{{sync_user_id_external}}\"\n}"
 								},
 								"url": {
-									"raw": "https://sync.paybook.com/v1/users/{{sync_id_user}}",
+									"raw": "https://opendata-api.syncfy.com/v1/users/{{sync_id_user}}",
 									"protocol": "https",
 									"host": [
 										"sync",
@@ -579,7 +579,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/users/{{sync_id_user}}",
+							"raw": "https://opendata-api.syncfy.com/v1/users/{{sync_id_user}}",
 							"protocol": "https",
 							"host": [
 								"sync",
@@ -606,7 +606,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/users/{{sync_id_user}}",
+									"raw": "https://opendata-api.syncfy.com/v1/users/{{sync_id_user}}",
 									"protocol": "https",
 									"host": [
 										"sync",
@@ -776,7 +776,7 @@
 							"raw": "{\n\t\"id_user\" : \"{{sync_id_user}}\"\n}"
 						},
 						"url": {
-							"raw": "https://sync.paybook.com/v1/sessions",
+							"raw": "https://opendata-api.syncfy.com/v1/sessions",
 							"protocol": "https",
 							"host": [
 								"sync",
@@ -807,7 +807,7 @@
 									"raw": "{\n\t\"id_user\" : \"{{sync_id_user}}\"\n}"
 								},
 								"url": {
-									"raw": "https://sync.paybook.com/v1/sessions",
+									"raw": "https://opendata-api.syncfy.com/v1/sessions",
 									"protocol": "https",
 									"host": [
 										"sync",
@@ -924,7 +924,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/sessions/{{sync_token}}/verify",
+							"raw": "https://opendata-api.syncfy.com/v1/sessions/{{sync_token}}/verify",
 							"protocol": "https",
 							"host": [
 								"sync",
@@ -946,7 +946,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/sessions/{{sync_token}}/verify",
+									"raw": "https://opendata-api.syncfy.com/v1/sessions/{{sync_token}}/verify",
 									"protocol": "https",
 									"host": [
 										"sync",
@@ -1065,7 +1065,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://sync.paybook.com/v1/sessions/{{sync_token}}",
+							"raw": "https://opendata-api.syncfy.com/v1/sessions/{{sync_token}}",
 							"protocol": "https",
 							"host": [
 								"sync",
@@ -1086,7 +1086,7 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "https://sync.paybook.com/v1/sessions/{{sync_token}}",
+									"raw": "https://opendata-api.syncfy.com/v1/sessions/{{sync_token}}",
 									"protocol": "https",
 									"host": [
 										"sync",
