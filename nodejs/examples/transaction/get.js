@@ -7,7 +7,7 @@ const SYNC_TOKEN = args['token'];
 const SYNC_ID_CREDENTIAL = args['id_credential'];
 const SYNC_ID_ACCOUNT = args['id_account'];
 
-const SYNC_API = 'https://sync.paybook.com/v1';
+const SYNC_API = 'https://opendata-api.syncfy.com/v1';
 
 async function main(){
   try{
