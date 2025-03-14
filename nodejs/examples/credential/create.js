@@ -7,7 +7,7 @@ const SYNC_TOKEN = args['token'];
 const SYNC_ID_SITE = args['id_site'];
 const SYNC_CREDENTIALS = JSON.parse(args['credentials']);
 
-const SYNC_API = 'https://sync.paybook.com/v1';
+const SYNC_API = 'https://opendata-api.syncfy.com/v1';
 
 function delay(ms){
   return new Promise(function(resolve){
