@@ -19,7 +19,7 @@ async function main(){
   try{
 
     var options_request = {
-      uri : SYNC_API + '/credentials?pretty=1',
+      uri : SYNC_API + '/credentials/pulls?pretty=1',
       headers : {
         'Authorization' : 'Bearer ' + SYNC_TOKEN,
         'Content-type' : 'application/json'

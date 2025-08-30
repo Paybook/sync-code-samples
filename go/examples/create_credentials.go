@@ -20,7 +20,7 @@ var (
 // CreateCredentials user on Sync
 func CreateCredentials() {
 	var credentialJob models.CredentialJob
-	baseURL := BaseURL + "credentials?pretty=1"
+	baseURL := BaseURL + "credentials/pulls?pretty=1"
 
 	resp, err := resty.SetDebug(Debug).R().
 		SetHeader("Content-type", "application/json").

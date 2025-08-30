@@ -18,7 +18,7 @@
 In order to test the Golang Sync examples is necessary that you have [Docker](https://www.docker.com/get-started) installed.
 
 ### Environment variables required
-SYNC_BASEURL=https://sync.paybook.com/v1/  
+SYNC_BASEURL=https://opendata-api.syncfy.com/v1/  
 SYNC_APIKEY=xxxxxxxxx    
 SYNC_CREDENTIALS={"username":"test","password":"test"}  
 SYNC_IDACCOUNT=xxxxxxx  
@@ -34,14 +34,14 @@ SYNC_TWOFA=`{"token":"test"}`
 To set a env variable in your Linux or MacOS system type
 
 ```
-export BASEURL=https://sync.paybook.com/v1/
+export BASEURL=https://opendata-api.syncfy.com/v1/
 ```
 
 To display a env variable type
 
 ```
 echo $BASEURL
-https://sync.paybook.com/v1/
+https://opendata-api.syncfy.com/v1/
 ```
 
 
@@ -55,7 +55,7 @@ docker run \
 --rm -it \  
 -v $PAYBOOK/git/sync-code-samples/go:/go/src/paybook.com/sync-code-samples \
 -w /go \
--e SYNC_BASEURL=https://sync.paybook.com/v1/ \
+-e SYNC_BASEURL=https://opendata-api.syncfy.com/v1/ \
 -e SYNC_APIKEY=xxxxxxxxx \
 -e SYNC_CREDENTIALS=`{"username":"test","password":"test"}` \
 -e SYNC_IDACCOUNT=xxxxxxxxx \
